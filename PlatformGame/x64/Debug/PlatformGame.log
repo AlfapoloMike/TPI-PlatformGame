@@ -1,18 +1,2 @@
-﻿  main.cpp
-  Background.cpp
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         with
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         [
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:             T=int
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         ]
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         with
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         [
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:             T=int
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         ]
-  Map.cpp
-  MappingLevel.cpp
-  Personaje.cpp
-  Generando código...
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Map.cpp(86,1): warning C4715: 'Map::spriteCoordFinder': no todas las rutas de acceso de control devuelven un valor
+﻿  MappingLevel.cpp
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe
