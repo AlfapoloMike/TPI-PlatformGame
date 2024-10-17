@@ -2,7 +2,7 @@
 
 
 backgroundTile::backgroundTile() {
-	_texture.loadFromFile("Brown.png");
+	_texture.loadFromFile("./assets/map/Purple.png");
 	_texture.setRepeated(true);
 	_sprite.setTextureRect(sf::IntRect(0, 0, 800.0f, 580.0f));
 	_sprite.setTexture(_texture);

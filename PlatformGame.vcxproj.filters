@@ -27,17 +27,23 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="MappingLevel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Personaje.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Enemigo.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Archivos de origen\Niveles</Filter>
+    </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="MappingLevel.cpp">
+      <Filter>Archivos de origen\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="Skull.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +57,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemigo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Skull.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
