@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ﻿  MappingLevel.cpp
+=======
+﻿  Skull.cpp
+  LINK : no se encontró C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+>>>>>>> Pruebas-Nati
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe

@@ -16,7 +16,7 @@ Map::Map(int nivel) {
 
 	createMapTiles();
 
-	_texture.loadFromFile("Terrain_(16x16).png");
+	_texture.loadFromFile("./assets/map/Terrain_(16x16).png");
 
 
 }
