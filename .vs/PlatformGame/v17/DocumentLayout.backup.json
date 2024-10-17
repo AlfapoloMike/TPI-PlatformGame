@@ -50,8 +50,7 @@
               "RelativeToolTip": "Map.cpp",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-17T15:08:17.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T15:08:17.234Z"
             },
             {
               "$type": "Document",
@@ -61,7 +60,7 @@
               "RelativeDocumentMoniker": "Background.cpp",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Background.cpp",
               "RelativeToolTip": "Background.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-17T14:21:14.018Z",
               "EditorCaption": ""
@@ -76,8 +75,7 @@
               "RelativeToolTip": "Skull.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-17T15:03:45.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T15:03:45.481Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "Skull.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-17T15:03:33.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T15:03:33.393Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-17T14:38:29.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T14:38:29.211Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "Enemigo.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-17T14:20:45.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T14:20:45.789Z"
             },
             {
               "$type": "Document",
@@ -128,8 +123,7 @@
               "RelativeToolTip": "Enemigo.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T23:12:42.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T23:12:42.595Z"
             }
           ]
         }

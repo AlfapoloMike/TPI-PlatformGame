@@ -1,12 +1,3 @@
-﻿  Background.cpp
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         with
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         [
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:             T=int
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,51): warning C4244:         ]
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244: 'argumento': conversión de 'float' a 'T'; posible pérdida de datos
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         with
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         [
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:             T=int
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Background.cpp(7,43): warning C4244:         ]
+﻿  Skull.cpp
+  LINK : no se encontró C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe
