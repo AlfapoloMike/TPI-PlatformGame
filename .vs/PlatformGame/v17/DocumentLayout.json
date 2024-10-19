@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Skull.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,8 +15,16 @@
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Skull.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Enemigo.h",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeDocumentMoniker": "Enemigo.h",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeToolTip": "Enemigo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-19T11:48:30.023Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -40,20 +57,20 @@
               "RelativeDocumentMoniker": "Animation.cpp",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.cpp",
               "RelativeToolTip": "Animation.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-19T11:33:57.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Animation.h",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.h",
               "RelativeDocumentMoniker": "Animation.h",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Animation.h",
               "RelativeToolTip": "Animation.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-19T11:33:36.899Z",
               "EditorCaption": ""
@@ -66,33 +83,33 @@
               "RelativeDocumentMoniker": "Skull.cpp",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.cpp",
               "RelativeToolTip": "Skull.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-17T19:58:52.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Skull.h",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.h",
               "RelativeDocumentMoniker": "Skull.h",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.h",
               "RelativeToolTip": "Skull.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-17T19:58:45.272Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAB4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-17T19:47:44.989Z",
               "EditorCaption": ""

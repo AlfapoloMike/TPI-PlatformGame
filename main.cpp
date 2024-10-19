@@ -18,26 +18,41 @@ int main()
 	window.setFramerateLimit(60);
 
 
+
+	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
 	Map nivel1(1);
 	backgroundTile tiled;
 	Personaje jugador;
-	Skull calavera("./assets/enemigos/Skull/Orange_Particle.png", sf::Vector2f(350.0f, 350.0f),sf::Vector2f(2.f,2.f));
+	Skull calavera("./assets/enemigos/Skull/Idle_2_(52x54).png", sf::Vector2f(550.0f, 350.0f),sf::Vector2f(2.f,2.f), sf::Vector2u(8, 1), 0.09f);
+	Skull calavera2("./assets/enemigos/Skull/Idle_2_(52x54).png", sf::Vector2f(500.0f, 150.0f), sf::Vector2f(2.f, 2.f), sf::Vector2u(8, 1), 0.09f);
+
+	
+	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
 
 	while (window.isOpen())
 	{
+
+		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
+
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
+		/////ACTUALIZACION DE PERSONAJE Y DEL FONDO CON MOVIMIENTO
 		tiled.backgroundUpdate();
-		jugador.personajeUpdate();
-		calavera.updateSkull();
+		//jugador.personajeUpdate();
+
+		//////////// ACTUALIZACION DE LA CALAVERA ANIMADA
+		calavera.updateSkull(0,deltaTime);
+		//calavera2.updateSkull(0, deltaTime);
 
 		window.clear();
 
@@ -45,7 +60,8 @@ int main()
 
 		nivel1.mapDrawer(window);
 		window.draw(calavera);
-		window.draw(jugador);
+		//window.draw(calavera2);
+		//window.draw(jugador);
 		window.display();
 	}
 
