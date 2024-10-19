@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Background.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Skull.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Map.h" />

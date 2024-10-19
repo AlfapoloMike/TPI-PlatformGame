@@ -22,6 +22,12 @@
     <Filter Include="Archivos de origen\Niveles">
       <UniqueIdentifier>{e0e3e46f-44f4-4d8b-84de-e97cca9d9d5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Enemigos">
+      <UniqueIdentifier>{35731824-7c29-4965-9445-092331cd0887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Niveles">
+      <UniqueIdentifier>{e9fc2856-1be8-4064-a0d5-5e114e1d8e76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,24 +51,30 @@
     <ClCompile Include="Skull.cpp">
       <Filter>Archivos de origen\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Background.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="MappingLevel.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Personaje.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Background.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="Enemigo.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="MappingLevel.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="Skull.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
