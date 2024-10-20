@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\MappingLevel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:MappingLevel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Skull.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Skull.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,27 +42,93 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "Frutas.h",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h",
+              "RelativeDocumentMoniker": "Frutas.h",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h",
+              "RelativeToolTip": "Frutas.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-20T18:08:04.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frutas.cpp",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
+              "RelativeDocumentMoniker": "Frutas.cpp",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
+              "RelativeToolTip": "Frutas.cpp",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-20T18:07:53.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Enemigo.cpp",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.cpp",
               "RelativeDocumentMoniker": "Enemigo.cpp",
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.cpp",
               "RelativeToolTip": "Enemigo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T23:12:42.595Z"
+              "WhenOpened": "2024-10-20T14:32:06.818Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MappingLevel.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\MappingLevel.cpp",
-              "RelativeDocumentMoniker": "MappingLevel.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\MappingLevel.cpp",
-              "RelativeToolTip": "MappingLevel.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Skull.cpp",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.cpp",
+              "RelativeDocumentMoniker": "Skull.cpp",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.cpp",
+              "RelativeToolTip": "Skull.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T23:06:32.399Z",
+              "WhenOpened": "2024-10-17T19:58:52.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Enemigo.h",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeDocumentMoniker": "Enemigo.h",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeToolTip": "Enemigo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-19T11:48:30.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Skull.h",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.h",
+              "RelativeDocumentMoniker": "Skull.h",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.h",
+              "RelativeToolTip": "Skull.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-17T19:58:45.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-17T19:47:44.989Z",
               "EditorCaption": ""
             }
           ]
