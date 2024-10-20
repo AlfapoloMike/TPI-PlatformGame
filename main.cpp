@@ -23,7 +23,7 @@ int main()
 	Map nivel1(1);
 	backgroundTile tiled;
 	Personaje jugador;
-	Skull calavera("./assets/enemigos/Skull/Idle_2_(52x54).png", sf::Vector2f(550.0f, 350.0f),sf::Vector2f(2.f,2.f), sf::Vector2u(8, 1), 0.09f);
+	Skull calavera("./assets/enemigos/Skull/Idle_Basic(52x54).png", sf::Vector2f(550.0f, 350.0f),sf::Vector2f(2.f,2.f), sf::Vector2u(8, 1), 0.09f);
 	Skull calavera2("./assets/enemigos/Skull/Idle_2_(52x54).png", sf::Vector2f(500.0f, 150.0f), sf::Vector2f(2.f, 2.f), sf::Vector2u(8, 1), 0.09f);
 
 	
