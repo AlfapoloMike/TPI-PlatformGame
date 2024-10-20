@@ -1,4 +1,3 @@
-﻿  Enemigo.cpp
-  main.cpp
-  Generando código...
+﻿  main.cpp
+C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\main.cpp(20,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe

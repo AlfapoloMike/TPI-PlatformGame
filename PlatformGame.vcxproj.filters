@@ -28,6 +28,18 @@
     <Filter Include="Archivos de encabezado\Niveles">
       <UniqueIdentifier>{e9fc2856-1be8-4064-a0d5-5e114e1d8e76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Frutas">
+      <UniqueIdentifier>{db9404a8-2413-45e8-aa6b-991ee1d95a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Frutas">
+      <UniqueIdentifier>{e12c1e22-d76b-4f6b-9565-b9ae268b70cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Animacion">
+      <UniqueIdentifier>{fbce1e20-b44a-4d64-92ea-2f81d1903932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Animacion">
+      <UniqueIdentifier>{b3e1b85a-1a85-4b70-aec1-8f729fe657e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,8 +60,11 @@
     <ClCompile Include="Skull.cpp">
       <Filter>Archivos de origen\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="Frutas.cpp">
+      <Filter>Archivos de origen\Frutas</Filter>
+    </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Animacion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,15 +83,15 @@
     <ClInclude Include="Skull.h">
       <Filter>Archivos de encabezado\Enemigos</Filter>
     </ClInclude>
+    <ClInclude Include="Frutas.h">
+      <Filter>Archivos de encabezado\Frutas</Filter>
+    </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Animacion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Fall_(32x32).png">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="assets\enemigos\Skull\Idle_2_(52x54).png">
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png">
