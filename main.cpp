@@ -51,17 +51,14 @@ int main()
 
 		//////////// ACTUALIZACION DE LA CALAVERA ANIMADA
 		calavera.updateSkull(0,deltaTime);
-		//calavera2.updateSkull(0, deltaTime);
 		fruta1.fruitUpdate(0, deltaTime);
 		fruta2.fruitUpdate(0, deltaTime);
-		int random = rand() % 8 + 1;
 
 		window.clear();
-		std::cout << "     " << random << "      ";
 		window.draw(tiled);
+
 		nivel1.mapDrawer(window);
 		window.draw(calavera);
-		//window.draw(calavera2);
 		window.draw(fruta1);
 		window.draw(fruta2);
 		window.display();
