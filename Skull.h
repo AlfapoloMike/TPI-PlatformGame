@@ -11,7 +11,7 @@ private:
 	AnimationState _animationState;
 	float _animationTimeCounter = 0;
 public:
-	Skull(std::string texture, sf::Vector2f newPosition, sf::Vector2f newVelocity, sf::Vector2u(spriteMatriz), float timeByFPS);
+	Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity);
 	void updateSkull(int row, float deltaTime);
 	void move();
 	void SetTextureRectAnimated();

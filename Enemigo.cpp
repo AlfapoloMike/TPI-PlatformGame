@@ -1,10 +1,9 @@
 #include "Enemigo.h"
 
 
-Enemigo::Enemigo(std::string texture, sf::Vector2f newPosition, sf::Vector2f newVelocity)
+Enemigo::Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity)
 {
 
-	setTexture(texture);
 	setPosition(newPosition);
 	setVelocity(newVelocity);
 

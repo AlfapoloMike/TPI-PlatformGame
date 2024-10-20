@@ -161,7 +161,6 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MappingLevel.cpp" />
-    <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Skull.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,7 +169,6 @@
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MappingLevel.h" />
-    <ClInclude Include="Personaje.h" />
     <ClInclude Include="Skull.h" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ protected:
 	sf::Vector2f _velocity;
 	Animation _animation;
 public:
-	Enemigo(std::string texture, sf::Vector2f newPosition, sf::Vector2f newVelocity);
+	Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity);
 	void setTexture(std::string texture);
 	void setPosition(sf::Vector2f newPosition);
 	void setSprite();
