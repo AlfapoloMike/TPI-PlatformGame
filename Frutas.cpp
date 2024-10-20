@@ -89,9 +89,7 @@ void Frutas::setAnimationState()
 void Frutas::setRandomPosition()
 {
 	int randomX = rand() % 600 + 100;
-	std::cout << "   " << randomX << "   ";
 	int randomY = rand() % 380 + 100;
-	std::cout << "   " << randomY << "   ";
 
 	setPositionFruit(sf::Vector2f(randomX, randomY));
 
