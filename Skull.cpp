@@ -7,7 +7,7 @@ Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity) :Enemigo(newPos
 {
 	_animationState = AnimationState::IDLE_BASIC;
 	setAnimationState();
-	_sprite.setOrigin(_animation.getUvRect().width/2.0, _animation.getUvRect().height);
+	_sprite.setOrigin(_animation.getUvRect().width/2.0, _animation.getUvRect().height/2.0);
 }
 
 void Skull::updateSkull(int row, float deltaTime)

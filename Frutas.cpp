@@ -5,7 +5,7 @@
 Frutas::Frutas()
 {
 	setRandomFruit();
-	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height);
+	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height/2.0);
 	setRandomPosition();
 	_sprite.setScale(1.4, 1.4);
 }
@@ -89,7 +89,7 @@ void Frutas::setAnimationState()
 void Frutas::setRandomPosition()
 {
 	int randomX = rand() % 600 + 100;
-	int randomY = rand() % 380 + 100;
+	int randomY = rand() % 500 + 100;
 
 	setPositionFruit(sf::Vector2f(randomX, randomY));
 

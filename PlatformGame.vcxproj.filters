@@ -66,6 +66,9 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Archivos de origen\Animacion</Filter>
     </ClCompile>
+    <ClCompile Include="Plataformas.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Archivos de encabezado\Animacion</Filter>
+    </ClInclude>
+    <ClInclude Include="Plataformas.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

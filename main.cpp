@@ -7,6 +7,9 @@
 #include "Skull.h"
 ///// PRUEBA FRUTAS
 #include "Frutas.h"
+//// PRUEBA PLATAFORMAS
+#include "Plataformas.h"
+
 
 using namespace std;
 
@@ -26,6 +29,7 @@ int main()
 	Skull calavera(sf::Vector2f(550.0f, 350.0f),sf::Vector2f(2.f,2.f));
 	Frutas fruta1;
 	Frutas fruta2;
+	Plataformas plataforma(sf::Vector2f(60, 480), sf::Vector2f(680, 60));
 	
 	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
@@ -61,6 +65,9 @@ int main()
 		window.draw(calavera);
 		window.draw(fruta1);
 		window.draw(fruta2);
+
+		//window.draw(plataforma);
+
 		window.display();
 	}
 
