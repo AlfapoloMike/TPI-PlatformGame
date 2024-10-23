@@ -21,6 +21,11 @@ Map::Map(int nivel) {
 
 }
 
+Map::Map()
+{
+}
+
+
 void Map::mapDrawer(sf::RenderWindow& window) {
 
 	for (int i = 0; i < 1200; i++) {
@@ -84,3 +89,4 @@ sf::Vector2i Map::spriteCoordFinder(int index)
 	}
 
 }
+

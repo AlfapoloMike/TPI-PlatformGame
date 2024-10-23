@@ -5,9 +5,9 @@
 Frutas::Frutas()
 {
 	setRandomFruit();
-	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height/2.0);
+	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height/2);
 	setRandomPosition();
-	_sprite.setScale(1.4, 1.4);
+	
 }
 
 void Frutas::setTextureFruit(std::string texture)
@@ -88,8 +88,8 @@ void Frutas::setAnimationState()
 
 void Frutas::setRandomPosition()
 {
-	int randomX = rand() % 600 + 100;
-	int randomY = rand() % 500 + 100;
+	float randomX = (float)(rand() % 600 + 100);
+	float randomY = (float)(rand() % 500 + 100);
 
 	setPositionFruit(sf::Vector2f(randomX, randomY));
 
@@ -149,7 +149,7 @@ void Frutas::setRectTextureAnimated()
 void Frutas::fruitUpdate(int row, float deltaTime)
 {
 	_sprite.setTextureRect(_animation.uvRect);
-	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height / 2.0);
+	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
 	_animation.Update(row, deltaTime);
 }
 

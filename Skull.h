@@ -17,6 +17,11 @@ public:
 	void SetTextureRectAnimated();
 	void setAnimationState();
 	void animationControl();
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+
+	sf::Sprite getSpriteSkull();
+	Skull();
 	~Skull();
 };
 

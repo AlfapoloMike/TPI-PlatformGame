@@ -91,6 +91,21 @@ void Skull::animationControl()
 	}
 }
 
+void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(_sprite, states);
+
+}
+
+sf::Sprite Skull::getSpriteSkull()
+{
+	return _sprite;
+}
+
+Skull::Skull()
+{
+}
+
 Skull::~Skull()
 {
 }

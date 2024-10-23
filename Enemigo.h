@@ -20,5 +20,6 @@ public:
 	sf::Vector2f getPosition();
 	sf::Vector2f getVelocity();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	Enemigo();
 	~Enemigo();
 };
