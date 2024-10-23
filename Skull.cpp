@@ -7,18 +7,9 @@ Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity) :Enemigo(newPos
 {
 	_animationState = AnimationState::IDLE_BASIC;
 	setAnimationState();
-	_sprite.setOrigin(_animation.getUvRect().width/2.0, _animation.getUvRect().height);
+	_sprite.setOrigin(_animation.getUvRect().width/2.0, _animation.getUvRect().height/2.0);
 }
 
-void Skull::updateSkull(int row, float deltaTime)
-{
-	
-	animationControl();
-	_sprite.setTextureRect(_animation.uvRect);
-	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height / 2.0);
-	_animation.Update(row, deltaTime);
-	move();
-}
 
 void Skull::move()
 {
@@ -91,7 +82,34 @@ void Skull::animationControl()
 	}
 }
 
+void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(_sprite, states);
+
+}
+
+void Skull::updateEnemie(int row, float deltaTime)
+{
+	animationControl();
+	_sprite.setTextureRect(_animation.uvRect);
+	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height / 2.0);
+	_animation.Update(row, deltaTime);
+	move();
+}
+
+sf::Sprite Skull::getSpriteSkull()
+{
+	return _sprite;
+}
+
+Skull::Skull()
+{
+		_animationState = AnimationState::IDLE_BASIC;
+}
+
 Skull::~Skull()
 {
 }
+
+
 

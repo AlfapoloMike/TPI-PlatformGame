@@ -1,8 +1,9 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "Animation.h"
+#include "Collisionable.h"
 
-class Enemigo : public sf::Drawable{
+class Enemigo : public sf::Drawable, public Collisionable{
 protected:
 	sf::Sprite _sprite;
 	sf::Texture _texture;
@@ -19,6 +20,10 @@ public:
 	sf::Texture getTexture();
 	sf::Vector2f getPosition();
 	sf::Vector2f getVelocity();
+	sf::FloatRect getBounds() const override;
+	virtual void updateEnemie(int row, float deltaTime)=0;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	Enemigo();
 	~Enemigo();
 };

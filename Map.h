@@ -13,8 +13,9 @@ private:
 
 public:
 	Map(int nivel);
-	void mapDrawer(sf::RenderWindow& window);
+	Map();
 	void createMapTiles();
 	sf::Vector2i spriteCoordFinder(int index);
+	void mapDrawer(sf::RenderWindow& window);
 
 };

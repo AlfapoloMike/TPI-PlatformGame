@@ -12,11 +12,15 @@ private:
 	float _animationTimeCounter = 0;
 public:
 	Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity);
-	void updateSkull(int row, float deltaTime);
 	void move();
 	void SetTextureRectAnimated();
 	void setAnimationState();
 	void animationControl();
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	void updateEnemie(int row, float deltaTime) override;
+
+	sf::Sprite getSpriteSkull();
+	Skull();
 	~Skull();
 };
 

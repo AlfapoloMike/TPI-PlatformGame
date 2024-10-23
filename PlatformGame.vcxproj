@@ -155,23 +155,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aldeano.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Collisionable.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Frutas.cpp" />
+    <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MappingLevel.cpp" />
+    <ClCompile Include="Nivel.cpp" />
+    <ClCompile Include="Plataformas.cpp" />
     <ClCompile Include="Skull.cpp" />
+    <ClCompile Include="Tortuga.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aldeano.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Collisionable.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Frutas.h" />
+    <ClInclude Include="Jugador.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MappingLevel.h" />
+    <ClInclude Include="Nivel.h" />
+    <ClInclude Include="Plataformas.h" />
     <ClInclude Include="Skull.h" />
+    <ClInclude Include="Tortuga.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png" />

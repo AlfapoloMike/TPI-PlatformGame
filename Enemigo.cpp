@@ -1,5 +1,5 @@
 #include "Enemigo.h"
-
+#include <iostream>
 
 Enemigo::Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity)
 {
@@ -32,6 +32,7 @@ void Enemigo::setVelocity(sf::Vector2f newVelocity)
 
 sf::Sprite Enemigo::getSprite()
 {
+
 	return _sprite;
 }
 
@@ -50,10 +51,21 @@ sf::Vector2f Enemigo::getVelocity()
 	return _velocity;
 }
 
+sf::FloatRect Enemigo::getBounds() const
+{
+	return _sprite.getGlobalBounds();
+}
+
+
 void Enemigo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
 
+
+}
+
+Enemigo::Enemigo()
+{
 }
 
 Enemigo::~Enemigo()
