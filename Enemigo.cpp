@@ -51,6 +51,12 @@ sf::Vector2f Enemigo::getVelocity()
 	return _velocity;
 }
 
+sf::FloatRect Enemigo::getBounds() const
+{
+	return _sprite.getGlobalBounds();
+}
+
+
 void Enemigo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);

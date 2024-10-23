@@ -12,7 +12,7 @@ class Nivel : public sf::Drawable{
 
 private:
 	//IColisionable *_enemigos=nullptr;
-	Enemigo* _enemigos[3] = {};
+	Enemigo* _enemigos[3];
 	//Aldeanos _aldeanos;
 	//Personaje _personaje;
 	Map _mapa;

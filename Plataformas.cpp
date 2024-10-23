@@ -24,6 +24,11 @@ void Plataformas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+sf::FloatRect Plataformas::getBounds() const
+{
+	return _shape.getGlobalBounds();
+}
+
 Plataformas::~Plataformas()
 {
 }

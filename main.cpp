@@ -11,6 +11,12 @@
 #include "Plataformas.h"
 /// INCLUYENDO EL NIVEL
 #include "Nivel.h"
+/// INCLUDE DE ALE
+#include "Collisionable.h"
+#include "Jugador.h"
+#include "Aldeano.h"
+#include "Tortuga.h"
+
 
 using namespace std;
 
@@ -49,6 +55,11 @@ int main()
 	Plataformas plataforma9(sf::Vector2f(520, 140), sf::Vector2f(80, 20));
 
 
+	Jugador frogar(sf::Vector2f(100.0f, 100.0f)); ////****
+	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
+
+
+
 	while (window.isOpen())
 	{
 
@@ -71,6 +82,9 @@ int main()
 		fruta1.fruitUpdate(0, deltaTime);
 		fruta2.fruitUpdate(0, deltaTime);
 		newNivel.nivelUpdate(window, deltaTime);
+		frogar.update();
+		tortuga1.update(0, deltaTime);
+
 
 		window.clear();
 		window.draw(tiled);
@@ -82,24 +96,20 @@ int main()
 		window.draw(fruta1);
 		window.draw(fruta2);
 
+		/*
 		window.draw(plataforma);
 		window.draw(plataforma1);
-
 		window.draw(plataforma2);
-
 		window.draw(plataforma3);
-
 		window.draw(plataforma4);
-
 		window.draw(plataforma5);
-
 		window.draw(plataforma6);
-
 		window.draw(plataforma7);
 		window.draw(plataforma8);
-
 		window.draw(plataforma9);
-
+		*/
+		window.draw(frogar);
+		window.draw(tortuga1);
 		window.draw(newNivel);
 
 		newNivel.nivelDrawer(window);

@@ -35,6 +35,7 @@ void Nivel::setEnemigos()
 	{
 	case NIVEL_1:
 
+
 		if (_enemigos == nullptr) {
 			return;
 		}
