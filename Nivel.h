@@ -4,6 +4,7 @@
 #include "Frutas.h"
 #include "Skull.h"
 #include "MappingLevel.h"
+#include "Background.h"
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
@@ -11,15 +12,16 @@ enum NIVELES {
 
 class Nivel : public sf::Drawable{
 
-private:
-	//IColisionable *_enemigos=nullptr;
-	Enemigo* _enemigos[3];
-	//Aldeanos _aldeanos;
-	//Personaje _personaje;
+protected:
+	Enemigo**_enemigos=nullptr;
 	Map _mapa;
 	Plataformas *_plataformas = nullptr;
-	//Frutas *_frutas = nullptr;
+	backgroundTile _background;
 	NIVELES _nivel = NIVELES::MENU;
+
+	//Aldeanos _aldeanos;
+	//Personaje _personaje;
+	//Frutas *_frutas = nullptr;
 
 
 

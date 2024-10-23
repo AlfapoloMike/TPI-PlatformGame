@@ -21,7 +21,9 @@ public:
 	sf::Vector2f getPosition();
 	sf::Vector2f getVelocity();
 	sf::FloatRect getBounds() const override;
+	virtual void updateEnemie(int row, float deltaTime)=0;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
 	Enemigo();
 	~Enemigo();
 };

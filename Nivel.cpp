@@ -34,24 +34,22 @@ void Nivel::setEnemigos()
 	{
 	case NIVEL_1:
 
+		_enemigos = new Enemigo * [3];
 
 		if (_enemigos == nullptr) {
+			std::cout << "No se asigno memoria";
 			return;
 		}
-
+		
 		_enemigos[0] = new Skull(sf::Vector2f(550.0f, 350.0f), sf::Vector2f(2.f, 2.f));
 		_enemigos[1] = new Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f));
 		_enemigos[2] = new Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f));
 
 		break;
-	case NIVEL_2:
-		break;
-	case NIVEL_3:
-		break;
-	case MENU:
-		break;
+		
 	default:
 		break;
+		
 	}
 
 }
@@ -82,16 +80,15 @@ void Nivel::setMap()
 
 void Nivel::nivelUpdate(sf::RenderWindow& window, float deltaTime)
 {
-
+	
 	
 	for (int i = 0; i < 3; i++) {
 
-		Skull* calavera = dynamic_cast<Skull*>(_enemigos[i]);
-		if (calavera)
-		{
-			calavera->updateSkull(0, deltaTime);
-		}
+		_enemigos[i]->updateEnemie(0, deltaTime);
 	}
+	
+	_background.backgroundUpdate();
+	
 
 
 }
@@ -104,22 +101,17 @@ void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
+	window.draw(_background);
+
 	_mapa.mapDrawer(window);
+	
 
 	for (int i = 0; i < 3; i++) {
-
-		Skull* calavera = dynamic_cast<Skull*>(_enemigos[i]);
-		if (calavera)
-		{
-			window.draw(calavera->getSpriteSkull());
-		}
+		window.draw(_enemigos[i]->getSprite());
 	}
+
 	for (int i = 0; i < 10; i++) {
-		Plataformas* platf = dynamic_cast<Plataformas*>(&_plataformas[i]);
-		if (platf)
-		{
-			window.draw(platf->getShape());
-		}
+		window.draw(_plataformas[i]);
 	}
 }
 
@@ -132,4 +124,8 @@ Nivel::~Nivel()
 	if (_plataformas != nullptr) {
 		delete[] _plataformas;
 	}
+	for (int i = 0; i < 3; ++i) {
+		delete _enemigos[i];  // Libera cada enemigo
+	}
+	delete[] _enemigos;
 }
