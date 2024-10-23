@@ -55,23 +55,24 @@ void mappingLevel(int vec[30][40], int level) {
 
 }
 
-/*
+
 void mappingPlatform(Plataformas *arrayPlataformas, int level) {
+
 
 	switch (level)
 	{
 	case 1:
-		
-		Plataformas plataforma(sf::Vector2f(60, 480), sf::Vector2f(680, 60));
-		Plataformas plataforma1(sf::Vector2f(60, 180), sf::Vector2f(80, 20));
-		Plataformas plataforma2(sf::Vector2f(400, 240), sf::Vector2f(100, 20));
-		Plataformas plataforma3(sf::Vector2f(340, 400), sf::Vector2f(400, 20));
-		Plataformas plataforma4(sf::Vector2f(60, 180), sf::Vector2f(80, 20));
-		Plataformas plataforma5(sf::Vector2f(660, 180), sf::Vector2f(80, 20));
-		Plataformas plataforma6(sf::Vector2f(580, 280), sf::Vector2f(160, 20));
-		Plataformas plataforma7(sf::Vector2f(160, 160), sf::Vector2f(80, 20));
-		Plataformas plataforma8(sf::Vector2f(240, 220), sf::Vector2f(80, 20));
-		Plataformas plataforma9(sf::Vector2f(520, 140), sf::Vector2f(80, 20));
+
+		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(60, 480), sf::Vector2f(680, 60));
+		arrayPlataformas[1]=Plataformas::Plataformas(sf::Vector2f(60, 180), sf::Vector2f(80, 20));
+		arrayPlataformas[2]=Plataformas::Plataformas(sf::Vector2f(400, 240), sf::Vector2f(100, 20));
+		arrayPlataformas[3]=Plataformas::Plataformas(sf::Vector2f(340, 400), sf::Vector2f(400, 20));
+		arrayPlataformas[4]=Plataformas::Plataformas(sf::Vector2f(60, 180), sf::Vector2f(80, 20));
+		arrayPlataformas[5]=Plataformas::Plataformas(sf::Vector2f(660, 180), sf::Vector2f(80, 20));
+		arrayPlataformas[6]=Plataformas::Plataformas(sf::Vector2f(580, 280), sf::Vector2f(160, 20));
+		arrayPlataformas[7]=Plataformas::Plataformas(sf::Vector2f(160, 160), sf::Vector2f(80, 20));
+		arrayPlataformas[8]=Plataformas::Plataformas(sf::Vector2f(240, 220), sf::Vector2f(80, 20));
+		arrayPlataformas[9]=Plataformas::Plataformas(sf::Vector2f(520, 140), sf::Vector2f(80, 20));
 		
 		break;
 	case 2:
@@ -83,7 +84,7 @@ void mappingPlatform(Plataformas *arrayPlataformas, int level) {
 	}
 
 }
-*/
+
 
 
 /*

@@ -18,6 +18,11 @@ void Plataformas::setSizePlataforma(sf::Vector2f newSize)
 	_shape.setSize(newSize);
 }
 
+sf::RectangleShape Plataformas::getShape()
+{
+	return _shape;
+}
+
 void Plataformas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_shape, states);
@@ -27,6 +32,10 @@ void Plataformas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 sf::FloatRect Plataformas::getBounds() const
 {
 	return _shape.getGlobalBounds();
+}
+
+Plataformas::Plataformas()
+{
 }
 
 Plataformas::~Plataformas()

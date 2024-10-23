@@ -3,7 +3,6 @@
 Nivel::Nivel(int level)
 {
 
-	
 
 	switch (level)
 	{
@@ -63,6 +62,8 @@ void Nivel::setMap()
 	{
 	case NIVEL_1:
 		_mapa = Map::Map(1);
+		_plataformas = new Plataformas[10];
+		mappingPlatform(_plataformas, 1);
 		break;
 	case NIVEL_2:
 		//_mapa = Map::Map(2);
@@ -111,7 +112,13 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		if (calavera)
 		{
 			window.draw(calavera->getSpriteSkull());
-			//std::cout << xPos << " de Enemigo: " << i << std::endl;
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		Plataformas* platf = dynamic_cast<Plataformas*>(&_plataformas[i]);
+		if (platf)
+		{
+			window.draw(platf->getShape());
 		}
 	}
 }
@@ -122,4 +129,7 @@ void Nivel::enemiesCreator() {
 
 Nivel::~Nivel()
 {
+	if (_plataformas != nullptr) {
+		delete[] _plataformas;
+	}
 }
