@@ -159,6 +159,11 @@ void Frutas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+sf::FloatRect Frutas::getBounds() const//*
+{
+	return _sprite.getGlobalBounds();
+}
+
 
 Frutas::~Frutas()
 {

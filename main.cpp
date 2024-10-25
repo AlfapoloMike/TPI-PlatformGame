@@ -3,12 +3,12 @@
 #include "Background.h"
 #include "Map.h"
 ////// PRUEBA DE CALAVERA ENEMIGO
-#include "Enemigo.h"
+#include "Enemigo.h" 
 #include "Skull.h"
 ///// PRUEBA FRUTAS
 #include "Frutas.h"
 //// PRUEBA PLATAFORMAS
-#include "Plataformas.h"
+#include "Plataformas.h" 
 /// INCLUYENDO EL NIVEL
 #include "Nivel.h"
 /// INCLUDE DE ALE
@@ -61,6 +61,7 @@ int main()
 				window.close();
 		}
 
+		//frogar.cmd();
 
 		fruta1.fruitUpdate(0, deltaTime);
 		fruta2.fruitUpdate(0, deltaTime);

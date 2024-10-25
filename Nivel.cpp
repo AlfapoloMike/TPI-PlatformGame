@@ -129,3 +129,4 @@ Nivel::~Nivel()
 	}
 	delete[] _enemigos;
 }
+

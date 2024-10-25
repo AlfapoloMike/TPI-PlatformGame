@@ -91,21 +91,21 @@ void Jugador::cmd() {
 		// Saltar recto
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 			_estado = ESTADOS::SALTO_1;
-			_velocidadSalto = 20;
+			_velocidadSalto = 22;
 		}
 
 		// Saltar hacia adelante
 		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			&& (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))) {
 			_estado = ESTADOS::SALTO_DER;
-			_velocidadSalto = 20;
+			_velocidadSalto = 22;
 		}
 
 		// Saltar hacia atrás
 		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			&& (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))) {
 			_estado = ESTADOS::SALTO_IZQ;
-			_velocidadSalto = 20;
+			_velocidadSalto = 22;
 		}
 	}
 }
@@ -118,6 +118,13 @@ void Jugador::quieto(float x, float y) {
 
 
 void Jugador::mover(float x, float y) {
+	/// Limites laterales de nivel
+	if (_sprite.getGlobalBounds().getPosition().x >= 712) {
+		_sprite.setPosition(712, _sprite.getGlobalBounds().getPosition().y);
+	}
+	if (_sprite.getGlobalBounds().getPosition().x < 56) {
+		_sprite.setPosition(56, _sprite.getGlobalBounds().getPosition().y);
+	}
 	_prevPosition = _sprite.getPosition();
 	_sprite.move(x, y);
 }

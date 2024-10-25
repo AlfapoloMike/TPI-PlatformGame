@@ -40,6 +40,12 @@
     <Filter Include="Archivos de origen\Animacion">
       <UniqueIdentifier>{b3e1b85a-1a85-4b70-aec1-8f729fe657e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Aldeanos">
+      <UniqueIdentifier>{081733b7-554c-4c25-bbf6-0d001e9953d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Aldeanos">
+      <UniqueIdentifier>{97536691-a5f7-4b1e-a164-3aa9525ed5e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,14 +81,14 @@
     <ClCompile Include="Jugador.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Aldeano.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Collisionable.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Aldeano.cpp">
+      <Filter>Archivos de origen\Aldeanos</Filter>
+    </ClCompile>
     <ClCompile Include="Tortuga.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Aldeanos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,14 +122,14 @@
     <ClInclude Include="Jugador.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Aldeano.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Collisionable.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Aldeano.h">
+      <Filter>Archivos de encabezado\Aldeanos</Filter>
+    </ClInclude>
     <ClInclude Include="Tortuga.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Aldeanos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -133,5 +139,8 @@
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png">
       <Filter>Archivos de recursos</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

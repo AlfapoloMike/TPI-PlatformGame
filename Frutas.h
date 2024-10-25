@@ -3,12 +3,13 @@
 #include "Animation.h"
 #include <stdlib.h>
 #include <time.h>
+#include "Collisionable.h"
 
 enum FRUIT_TYPE {
 	MANZANA, BANANA, FRUTILLA, KIWI, NARANJA, CEREZA, MELON, ANANA, FRUTA_RECOLECTADA 
 };
 
-class Frutas : public sf::Drawable{
+class Frutas : public sf::Drawable, public Collisionable { //*
 protected:
 	sf::Sprite _sprite;
 	sf::Texture _texture;
@@ -28,5 +29,6 @@ public:
 	//sf::Texture getTexture();
 	//sf::Vector2f getPosition();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	sf::FloatRect getBounds() const override;//*
 	~Frutas();
 };

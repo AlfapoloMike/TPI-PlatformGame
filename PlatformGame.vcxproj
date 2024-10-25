@@ -189,6 +189,9 @@
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png" />
     <Image Include="Fall_(32x32).png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
