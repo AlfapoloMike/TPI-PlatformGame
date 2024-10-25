@@ -130,3 +130,14 @@ Nivel::~Nivel()
 	delete[] _enemigos;
 }
 
+sf::Sprite Nivel::getSpriteEnemigo(int enemigo){
+	return _enemigos[enemigo]->getSprite();
+}
+
+Plataformas Nivel::getPlataforma(int plataforma)
+{
+	return _plataformas[plataforma];
+}
+
+
+

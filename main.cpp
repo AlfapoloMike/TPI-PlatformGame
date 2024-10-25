@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include "Background.h"
 #include "Map.h"
 ////// PRUEBA DE CALAVERA ENEMIGO
@@ -61,7 +62,7 @@ int main()
 				window.close();
 		}
 
-		//frogar.cmd();
+		frogar.cmd();
 
 		fruta1.fruitUpdate(0, deltaTime);
 		fruta2.fruitUpdate(0, deltaTime);
@@ -69,7 +70,34 @@ int main()
 		frogar.update();
 		tortuga1.update(0, deltaTime);
 
+		// Colisiones ****************************************************
+		// Con plataformas de Newnivel
+		for (int i = 0; i < 10; i++) {
+			if (frogar.getPrevPosition().y + frogar.getDraw().getGlobalBounds().height <= newNivel.getPlataforma(i).getBounds().top
+				&&frogar.getDraw().getGlobalBounds().intersects(newNivel.getPlataforma(i).getBounds())
+				&& frogar.getVelocidadSalto() < 0) {
+				std::cout << "Colisión vertical Plataforma " << i + 1 << std::endl;
+				frogar.quieto(frogar.getDraw().getPosition().x, newNivel.getPlataforma(i).getBounds().top - frogar.getDraw().getGlobalBounds().height);
+			}
 
+		}
+		// Con tortuga
+		if (frogar.isCollision(tortuga1)) {
+			std::cout << "Colision con TORTUGA!!!!" << std::endl;
+			if ((frogar.getPrevPosition().y + frogar.getBounds().height <= tortuga1.getBounds().top - 5) && frogar.getVelocidadSalto() < 0) {
+				std::cout << "Colisión vertical TORTUGA (superior)!" << std::endl;
+				frogar.mover(0, -23);
+			}
+		}
+		// Con enemigos
+		for (int i = 0; i < 3; i++) {
+			sf::Sprite enemie = newNivel.getSpriteEnemigo(i);
+			if (frogar.getDraw().getGlobalBounds().intersects(enemie.getGlobalBounds())) {
+				std::cout << "Colisión vertical CALAVERA " << i + 1 << std::endl;
+			}
+		}		
+		// ******************************************************************
+				
 		window.clear();
 
 

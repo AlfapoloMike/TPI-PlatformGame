@@ -5,17 +5,18 @@
 #include "Skull.h"
 #include "MappingLevel.h"
 #include "Background.h"
+#include "Collisionable.h"//****
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
 };
 
-class Nivel : public sf::Drawable{
+class Nivel : public sf::Drawable {
 
 protected:
-	Enemigo**_enemigos=nullptr;
+	Enemigo** _enemigos = nullptr;
 	Map _mapa;
-	Plataformas *_plataformas = nullptr;
+	Plataformas* _plataformas = nullptr;
 	backgroundTile _background;
 	NIVELES _nivel = NIVELES::MENU;
 
@@ -33,9 +34,10 @@ public:
 	void enemiesCreator();
 	void nivelUpdate(sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-	
+
 	~Nivel();
 
-
+	sf::Sprite getSpriteEnemigo(int enemigo);
+	Plataformas getPlataforma(int plataforma);
 
 };

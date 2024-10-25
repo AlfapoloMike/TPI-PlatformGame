@@ -5,7 +5,7 @@ Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize)
 {
 	setPositionPlataforma(newPosition);
 	setSizePlataforma(newSize);
-	_shape.setFillColor(sf::Color::Cyan);
+	_shape.setFillColor(sf::Color(0, 0, 0, 128));
 }
 
 void Plataformas::setPositionPlataforma(sf::Vector2f newPosition)
