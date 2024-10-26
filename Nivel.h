@@ -6,6 +6,8 @@
 #include "MappingLevel.h"
 #include "Background.h"
 #include "Collisionable.h"//****
+#include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
+
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
@@ -19,6 +21,7 @@ protected:
 	Plataformas* _plataformas = nullptr;
 	backgroundTile _background;
 	NIVELES _nivel = NIVELES::MENU;
+	float _pixelMetro;
 
 	//Aldeanos _aldeanos;
 	//Personaje _personaje;
@@ -27,9 +30,9 @@ protected:
 
 
 public:
-	Nivel(int level);
+	Nivel(int level, b2World& world, float pixelMetro);
 	void setEnemigos();
-	void setMap();
+	void setMap(b2World& world);
 	void nivelDrawer(sf::RenderWindow& window);
 	void enemiesCreator();
 	void nivelUpdate(sf::RenderWindow& window, float deltaTime);

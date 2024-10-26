@@ -1,8 +1,8 @@
 #include "Nivel.h"
 
-Nivel::Nivel(int level)
+Nivel::Nivel(int level, b2World& world, float pixelMetro)
 {
-
+	_pixelMetro = pixelMetro;
 
 	switch (level)
 	{
@@ -23,7 +23,7 @@ Nivel::Nivel(int level)
 		break;
 	}
 
-	setMap();
+	setMap(world);
 	setEnemigos();
 }
 
@@ -54,14 +54,14 @@ void Nivel::setEnemigos()
 
 }
 
-void Nivel::setMap()
+void Nivel::setMap(b2World& world)
 {
 	switch (_nivel)
 	{
 	case NIVEL_1:
 		_mapa = Map::Map(1);
 		_plataformas = new Plataformas[10];
-		mappingPlatform(_plataformas, 1);
+		mappingPlatform(_plataformas, 1, world, _pixelMetro);
 		break;
 	case NIVEL_2:
 		//_mapa = Map::Map(2);
