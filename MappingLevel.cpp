@@ -5,10 +5,7 @@ void mappingLevel(int vec[30][40], int level) {
 
 
 
-	switch (level)
-	{
-	case 1:
-
+	if (level == 1) {
 		int mapeoNivelUno[30][40]{
 {{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24}},
 {{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24},{24}},
@@ -46,64 +43,56 @@ void mappingLevel(int vec[30][40], int level) {
 				vec[y][x] = mapeoNivelUno[y][x];
 			}
 		}
-		break;
-
 	}
-
-
+	if (level == 2) {
+		/// ALGO
+	}
 
 
 }
 
 
-void mappingPlatform(Plataformas *arrayPlataformas, int level) {
+void mappingPlatform(Plataformas *arrayPlataformas, int level, b2World& world, float pixelMetro) {
 
 
-	switch (level)
-	{
-	case 1:
+	if (level == 1) {
 
-		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(60, 480), sf::Vector2f(680, 60)); // 1
-		arrayPlataformas[1]=Plataformas::Plataformas(sf::Vector2f(60, 180), sf::Vector2f(80, 20));
-		arrayPlataformas[2]=Plataformas::Plataformas(sf::Vector2f(400, 240), sf::Vector2f(100, 20)); //3
-		arrayPlataformas[3]=Plataformas::Plataformas(sf::Vector2f(340, 400), sf::Vector2f(400, 20)); //4
-		arrayPlataformas[4]=Plataformas::Plataformas(sf::Vector2f(670, 320), sf::Vector2f(20, 5));
-		arrayPlataformas[5]=Plataformas::Plataformas(sf::Vector2f(660, 180), sf::Vector2f(80, 20));
-		arrayPlataformas[6]=Plataformas::Plataformas(sf::Vector2f(580, 280), sf::Vector2f(160, 20));
-		arrayPlataformas[7]=Plataformas::Plataformas(sf::Vector2f(160, 160), sf::Vector2f(80, 20));
-		arrayPlataformas[8]=Plataformas::Plataformas(sf::Vector2f(240, 220), sf::Vector2f(80, 20));
-		arrayPlataformas[9]=Plataformas::Plataformas(sf::Vector2f(520, 140), sf::Vector2f(80, 20));
-		
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	default:
-		break;
+		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(100/pixelMetro, 415/pixelMetro), sf::Vector2f((80/pixelMetro)/2, 0.1), world); // 1
+		arrayPlataformas[1] = Plataformas::Plataformas(sf::Vector2f(400 / pixelMetro, 115 / pixelMetro), sf::Vector2f((680 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[2] = Plataformas::Plataformas(sf::Vector2f(540 / pixelMetro, 195 / pixelMetro), sf::Vector2f((400 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[3] = Plataformas::Plataformas(sf::Vector2f(450 / pixelMetro, 355 / pixelMetro), sf::Vector2f((100 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[4] = Plataformas::Plataformas(sf::Vector2f(660 / pixelMetro, 315 / pixelMetro), sf::Vector2f((160 / pixelMetro) / 2,0.1), world); // 1
+		arrayPlataformas[5] = Plataformas::Plataformas(sf::Vector2f(280 / pixelMetro, 375 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[6] = Plataformas::Plataformas(sf::Vector2f(200 / pixelMetro, 435 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[7] = Plataformas::Plataformas(sf::Vector2f(560 / pixelMetro, 455 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[8] = Plataformas::Plataformas(sf::Vector2f(700 / pixelMetro, 415 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
+		arrayPlataformas[9] = Plataformas::Plataformas(sf::Vector2f(600 / pixelMetro, 0 / pixelMetro), sf::Vector2f((60 / pixelMetro) / 2, (60 / pixelMetro) / 2), world); // 1
+
 	}
+	if (level == 2) {
+		//// ALGO
+	}
+
+
+
+
 
 }
 
 void mappingEnemies(Enemigo* arrayEnemigos, int level) {
 
 
-	switch (level)
-	{
-	case 1:
+	if (level == 1) {
 
 		arrayEnemigos[0] = Skull::Skull(sf::Vector2f(550.0f, 350.0f), sf::Vector2f(2.f, 2.f));
 		arrayEnemigos[1] = Skull::Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f));
 		arrayEnemigos[2] = Skull::Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f));
 
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	default:
-		break;
 	}
+	if (level == 2) {
+		//// ALGO
+	}
+
 
 }
 

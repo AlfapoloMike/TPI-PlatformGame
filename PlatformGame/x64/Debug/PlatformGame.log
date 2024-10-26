@@ -1,21 +1,2 @@
-﻿  Aldeano.cpp
-  Animation.cpp
-  Collisionable.cpp
-  Enemigo.cpp
-  Frutas.cpp
-  Jugador.cpp
-  main.cpp
-  Background.cpp
-  Map.cpp
-  MappingLevel.cpp
-  Nivel.cpp
-  Plataformas.cpp
-  Skull.cpp
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Skull.cpp(10,83): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Skull.cpp(10,48): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Skull.cpp(95,86): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Skull.cpp(95,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Tortuga.cpp
-  Generando código...
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Map.cpp(91,1): warning C4715: 'Map::spriteCoordFinder': no todas las rutas de acceso de control devuelven un valor
-  PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+﻿  Plataformas.cpp
+  PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe

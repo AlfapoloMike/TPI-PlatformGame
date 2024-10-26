@@ -16,9 +16,6 @@
     <Filter Include="Archivos de origen\Enemigos">
       <UniqueIdentifier>{ed160e13-231e-45fb-966f-40e6ff3d8a9a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\Personaje">
-      <UniqueIdentifier>{4db8069a-7f41-479a-a2a7-18707ba9a06c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Niveles">
       <UniqueIdentifier>{e0e3e46f-44f4-4d8b-84de-e97cca9d9d5d}</UniqueIdentifier>
     </Filter>
@@ -46,6 +43,24 @@
     <Filter Include="Archivos de origen\Aldeanos">
       <UniqueIdentifier>{97536691-a5f7-4b1e-a164-3aa9525ed5e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Plataformas">
+      <UniqueIdentifier>{a4a89e54-6661-4f4b-b7a7-b36215e79a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Plataformas">
+      <UniqueIdentifier>{4d2430d3-b25a-4347-bf26-887a2fa769ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Jugador">
+      <UniqueIdentifier>{c2dfe47e-83bb-4449-8900-8398c2c428b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Jugador">
+      <UniqueIdentifier>{4db8069a-7f41-479a-a2a7-18707ba9a06c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Niveles\Mapa">
+      <UniqueIdentifier>{6fd05f2f-6749-4d46-b0cf-78d5d6d8e7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Niveles\Mapa">
+      <UniqueIdentifier>{a43924b1-2b40-432e-b41a-625de7f9b696}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,15 +68,6 @@
     </ClCompile>
     <ClCompile Include="Enemigo.cpp">
       <Filter>Archivos de origen\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Archivos de origen\Niveles</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Archivos de origen\Niveles</Filter>
-    </ClCompile>
-    <ClCompile Include="MappingLevel.cpp">
-      <Filter>Archivos de origen\Niveles</Filter>
     </ClCompile>
     <ClCompile Include="Skull.cpp">
       <Filter>Archivos de origen\Enemigos</Filter>
@@ -72,15 +78,6 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Archivos de origen\Animacion</Filter>
     </ClCompile>
-    <ClCompile Include="Plataformas.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Nivel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Jugador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Collisionable.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -90,19 +87,28 @@
     <ClCompile Include="Tortuga.cpp">
       <Filter>Archivos de origen\Aldeanos</Filter>
     </ClCompile>
+    <ClCompile Include="Plataformas.cpp">
+      <Filter>Archivos de origen\Plataformas</Filter>
+    </ClCompile>
+    <ClCompile Include="Jugador.cpp">
+      <Filter>Archivos de origen\Jugador</Filter>
+    </ClCompile>
+    <ClCompile Include="Nivel.cpp">
+      <Filter>Archivos de origen\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Archivos de origen\Niveles\Mapa</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Archivos de origen\Niveles\Mapa</Filter>
+    </ClCompile>
+    <ClCompile Include="MappingLevel.cpp">
+      <Filter>Archivos de origen\Niveles\Mapa</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Background.h">
-      <Filter>Archivos de encabezado\Niveles</Filter>
-    </ClInclude>
     <ClInclude Include="Enemigo.h">
       <Filter>Archivos de encabezado\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Archivos de encabezado\Niveles</Filter>
-    </ClInclude>
-    <ClInclude Include="MappingLevel.h">
-      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="Skull.h">
       <Filter>Archivos de encabezado\Enemigos</Filter>
@@ -113,15 +119,6 @@
     <ClInclude Include="Animation.h">
       <Filter>Archivos de encabezado\Animacion</Filter>
     </ClInclude>
-    <ClInclude Include="Plataformas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Nivel.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Jugador.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Collisionable.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -130,6 +127,24 @@
     </ClInclude>
     <ClInclude Include="Tortuga.h">
       <Filter>Archivos de encabezado\Aldeanos</Filter>
+    </ClInclude>
+    <ClInclude Include="Plataformas.h">
+      <Filter>Archivos de encabezado\Plataformas</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Archivos de encabezado\Jugador</Filter>
+    </ClInclude>
+    <ClInclude Include="Nivel.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="MappingLevel.h">
+      <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
