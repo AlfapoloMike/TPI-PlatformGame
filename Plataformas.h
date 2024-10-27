@@ -10,6 +10,7 @@ private:
 	b2BodyDef _plataformaDef;
 	b2Body* _groundBody;
 	b2PolygonShape _groundBox;
+	b2FixtureDef _fixtureDef;
 public:
 	Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world);
 	void setPositionPlataforma(sf::Vector2f newPosition);

@@ -159,6 +159,7 @@
     <ClCompile Include="Aldeano.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Collisionable.cpp" />
+    <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Frutas.cpp" />
     <ClCompile Include="Jugador.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Collisionable.h" />
+    <ClInclude Include="Conejo.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Frutas.h" />
     <ClInclude Include="Jugador.h" />

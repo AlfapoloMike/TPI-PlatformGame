@@ -11,7 +11,7 @@ private:
 	AnimationState _animationState;
 	float _animationTimeCounter = 0;
 public:
-	Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity);
+	Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro);
 	void move();
 	void SetTextureRectAnimated();
 	void setAnimationState();

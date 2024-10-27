@@ -36,7 +36,10 @@ void Plataformas::setSizePlataforma(sf::Vector2f newSize)
 void Plataformas::setDensity()
 {
 	////// SETEAMOS LA DENSIDAD PARA QUE SEA ESTATICA
-	_groundBody->CreateFixture(&_groundBox, 0.0f);
+	_fixtureDef.shape = &_groundBox;
+	_fixtureDef.friction = 0.2f;
+	_fixtureDef.density = 0.0f;
+	_groundBody->CreateFixture(&_fixtureDef);
 }
 
 void Plataformas::getPositionBody()

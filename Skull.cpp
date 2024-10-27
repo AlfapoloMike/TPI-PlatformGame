@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 
-Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity) :Enemigo(newPosition, newVelocity)
+Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro) :Enemigo(newPosition, newVelocity, pixelMetro)
 {
 	_animationState = AnimationState::IDLE_BASIC;
 	setAnimationState();

@@ -83,10 +83,11 @@ void mappingEnemies(Enemigo* arrayEnemigos, int level) {
 
 
 	if (level == 1) {
-
+		/*
 		arrayEnemigos[0] = Skull::Skull(sf::Vector2f(550.0f, 350.0f), sf::Vector2f(2.f, 2.f));
 		arrayEnemigos[1] = Skull::Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f));
 		arrayEnemigos[2] = Skull::Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f));
+		*/
 
 	}
 	if (level == 2) {

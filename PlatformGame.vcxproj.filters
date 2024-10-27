@@ -105,6 +105,9 @@
     <ClCompile Include="MappingLevel.cpp">
       <Filter>Archivos de origen\Niveles\Mapa</Filter>
     </ClCompile>
+    <ClCompile Include="Conejo.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Conejo.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@
 #include "Jugador.h"
 #include "Aldeano.h"
 #include "Tortuga.h"
-
+#include "Conejo.h"
 
 using namespace std;
 
@@ -142,8 +142,14 @@ int main()
 
 	b2PolygonShape sensorShape;
 	/////////**********************************************************************************************************************************
+	///////// CONEJO
+	///////// TEST
 	/////////
-	/////////
+	Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.0f, 1.0f),2.0f,15.0f,pixelMetro);
+	/*****RECUADRO PARA VER AL CONEJO*******/
+	sf::RectangleShape rect(sf::Vector2f(0.5*40*2,0.5*40*2)); // Radio de 20 píxeles
+	rect.setFillColor(sf::Color::Cyan);
+	rect.setOrigin(rect.getSize()/2.0f); // Centrar el origen en el centro de la bola
 
 	while (window.isOpen())
 	{
@@ -166,6 +172,7 @@ int main()
 		newNivel.nivelUpdate(window, deltaTime);
 		frogar.update();
 		tortuga1.update(0, deltaTime);
+		rabbit.updateEnemie(0, deltaTime);
 
 		// Colisiones ****************************************************
 		// Con plataformas de Newnivel
@@ -173,7 +180,7 @@ int main()
 			if (frogar.getPrevPosition().y + frogar.getDraw().getGlobalBounds().height <= newNivel.getPlataforma(i).getBounds().top
 				&&frogar.getDraw().getGlobalBounds().intersects(newNivel.getPlataforma(i).getBounds())
 				&& frogar.getVelocidadSalto() < 0) {
-				std::cout << "Colisión vertical Plataforma " << i + 1 << std::endl;
+			//	std::cout << "Colisión vertical Plataforma " << i + 1 << std::endl;
 				frogar.quieto(frogar.getDraw().getPosition().x, newNivel.getPlataforma(i).getBounds().top - frogar.getDraw().getGlobalBounds().height);
 			}
 
@@ -182,17 +189,19 @@ int main()
 		if (frogar.isCollision(tortuga1)) {
 			std::cout << "Colision con TORTUGA!!!!" << std::endl;
 			if ((frogar.getPrevPosition().y + frogar.getBounds().height <= tortuga1.getBounds().top - 5) && frogar.getVelocidadSalto() < 0) {
-				std::cout << "Colisión vertical TORTUGA (superior)!" << std::endl;
+			//	std::cout << "Colisión vertical TORTUGA (superior)!" << std::endl;
 				frogar.mover(0, -23);
 			}
 		}
 		// Con enemigos
+		/*
 		for (int i = 0; i < 3; i++) {
 			sf::Sprite enemie = newNivel.getSpriteEnemigo(i);
 			if (frogar.getDraw().getGlobalBounds().intersects(enemie.getGlobalBounds())) {
-				std::cout << "Colisión vertical CALAVERA " << i + 1 << std::endl;
+				//std::cout << "Colisión vertical CALAVERA " << i + 1 << std::endl;
 			}
 		}		
+		*/
 		// ******************************************************************
 			
 		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
@@ -204,6 +213,11 @@ int main()
 		b2Vec2 position = body->GetPosition();
 		circle.setPosition(position.x * SCALE,600 - position.y * SCALE);
 
+
+		////**************************//////////////
+		b2Vec2 positionRabbit = rabbit.getPositionBody();
+		rect.setPosition(positionRabbit.x * SCALE, 600 - positionRabbit.y * SCALE);
+		
 
 		//******************************************************************
 		window.clear();
@@ -217,6 +231,8 @@ int main()
 		window.draw(tortuga1);
 		///****************************************************
 		window.draw(circle); ////// DIBUJAMOS LA ESFERA DE PRUEBA.
+		window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
+		window.draw(rabbit);
 		///****************************************************
 
 		window.display();
