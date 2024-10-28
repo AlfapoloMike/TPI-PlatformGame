@@ -45,7 +45,7 @@ void Conejo::setFixture()
 
 b2Vec2 Conejo::getPositionBody()
 {
-	std::cout << "Plataforma creada en la posición: (" << _body->GetPosition().x << ", " << _body->GetPosition().y << ")" << std::endl;
+	//std::cout << "Plataforma creada en la posición: (" << _body->GetPosition().x << ", " << _body->GetPosition().y << ")" << std::endl;
 	/////// ESTO SE PODRIA USAR PARA VERIFICAR LA COLISION? A REVISAR...
 	b2Vec2 position = _body->GetPosition();
 	return position;

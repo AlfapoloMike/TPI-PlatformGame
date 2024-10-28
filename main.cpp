@@ -19,6 +19,8 @@
 #include "Tortuga.h"
 #include "Conejo.h"
 
+#include "Corazon.h"
+
 using namespace std;
 
 
@@ -145,11 +147,13 @@ int main()
 	///////// CONEJO
 	///////// TEST
 	/////////
-	Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.0f, 1.0f),2.0f,15.0f,pixelMetro);
+	Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.85f, 1.1f),2.0f,15.0f,pixelMetro);
 	/*****RECUADRO PARA VER AL CONEJO*******/
 	sf::RectangleShape rect(sf::Vector2f(0.5*40*2,0.5*40*2)); // Radio de 20 píxeles
 	rect.setFillColor(sf::Color::Cyan);
 	rect.setOrigin(rect.getSize()/2.0f); // Centrar el origen en el centro de la bola
+
+	Corazon cora(sf::Vector2f(250.0f,250.0f));
 
 	while (window.isOpen())
 	{
@@ -173,7 +177,7 @@ int main()
 		frogar.update();
 		tortuga1.update(0, deltaTime);
 		rabbit.updateEnemie(0, deltaTime);
-
+		cora.update(deltaTime);
 		// Colisiones ****************************************************
 		// Con plataformas de Newnivel
 		for (int i = 0; i < 10; i++) {
@@ -234,6 +238,8 @@ int main()
 		window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
 		window.draw(rabbit);
 		///****************************************************
+		window.draw(cora);
+
 
 		window.display();
 	}
