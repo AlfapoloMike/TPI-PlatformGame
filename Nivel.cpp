@@ -25,6 +25,7 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 
 	setMap(world);
 	setEnemigos();
+	setUI();
 }
 
 
@@ -91,8 +92,9 @@ void Nivel::nivelUpdate(sf::RenderWindow& window, float deltaTime)
 	
 	_background.backgroundUpdate();
 	
-
-
+	for (int i = 0; i < 4; i++) {
+		_corazones[i].update(deltaTime);
+	}
 }
 
 void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -116,9 +118,31 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 	for (int i = 0; i < 10; i++) {
 		window.draw(_plataformas[i]);
 	}
+
+	for (int i = 0; i < 4; i++) {
+		window.draw(_corazones[i]);
+	}
+
+
 }
 
 void Nivel::enemiesCreator() {
+
+}
+/////////////////////// ESTE METODO SE TIENE QUE REVISAR LA IMPLEMENTACION EN EL LUGAR CORRECTO
+void Nivel::setUI() {
+
+	_corazones = new Corazon[4]{
+	Corazon::Corazon(sf::Vector2f(90.0f,25.0f)),
+	Corazon::Corazon(sf::Vector2f(130.0f,25.0f)),
+	Corazon::Corazon(sf::Vector2f(170.0f,25.0f)),
+	Corazon::Corazon(sf::Vector2f(210.0f,25.0f))
+	};
+
+	if (_corazones == nullptr) {
+		return;
+	}
+
 
 }
 
@@ -138,6 +162,11 @@ Nivel::~Nivel()
 		*/
 		delete[] _enemigos;
 	}
+
+	if (_corazones != nullptr) {
+		delete[] _corazones;
+	}
+
 }
 /*
 sf::Sprite Nivel::getSpriteEnemigo(int enemigo){

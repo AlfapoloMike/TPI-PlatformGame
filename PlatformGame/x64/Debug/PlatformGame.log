@@ -1,4 +1,2 @@
-﻿  Corazon.cpp
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Corazon.cpp(87,86): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Corazon.cpp(87,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  GameUi.cpp
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe

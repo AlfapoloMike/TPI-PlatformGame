@@ -18,16 +18,19 @@ private:
 	STATES_HEART _state = STATES_HEART::IDLE;
 	bool _active = true;
 	int _filaAnimation = 0;
+	int _columnAnimation = 10;
 	float _animationCounterTime = 0;
 
 public:
 	Corazon(sf::Vector2f newPosition);
+	Corazon();
 	void setPosition(sf::Vector2f newPosition);
 	void setTextura();
 	void SetTextureRectAnimated();
 	void setAnimation();
 	void controlAnimation(float deltaTime);
 	void update(float deltaTime);
+	sf::Sprite getSprite();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	~Corazon();
 

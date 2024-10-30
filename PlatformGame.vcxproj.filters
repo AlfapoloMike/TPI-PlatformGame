@@ -117,6 +117,9 @@
     <ClCompile Include="Corazon.cpp">
       <Filter>Archivos de origen\Interfaz</Filter>
     </ClCompile>
+    <ClCompile Include="GameUi.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="Corazon.h">
       <Filter>Archivos de encabezado\Interfaz</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUi.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
