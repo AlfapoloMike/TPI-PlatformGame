@@ -53,8 +53,6 @@ void Corazon::controlAnimation(float deltaTime)
 {
 	///////////////////// RANDOM PARA TESTEAR COMO SI EL PERSONAJE SUFRIERA DAÑOS
 
-		_active = true;
-
 
 	////// CONTROLO EL TIEMPO DE CADA ANIMACION Y SU SECUENCIA
 	///// SI ES TRUE = EL CORAZON ESTA ACTIVO Y LAS ANIMACIONES SON DEL CORAZON LLENO
@@ -121,6 +119,11 @@ void Corazon::controlAnimation(float deltaTime)
 
 	}
 
+}
+
+void Corazon::setActive(bool newState)
+{
+	_active = newState;
 }
 
 void Corazon::update(float deltaTime)

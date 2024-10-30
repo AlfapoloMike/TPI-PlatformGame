@@ -29,6 +29,7 @@ public:
 	void SetTextureRectAnimated();
 	void setAnimation();
 	void controlAnimation(float deltaTime);
+	void setActive(bool newState);
 	void update(float deltaTime);
 	sf::Sprite getSprite();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;

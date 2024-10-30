@@ -31,7 +31,7 @@ private:
 	b2BodyDef _bodyDef;
 	b2Body* _body;
 	b2PolygonShape _bodyBox;
-	b2FixtureDef _fixtureDef;
+	b2Fixture* _fixture;
 	float _velocidad = 2.0f;
 	float _limiteIzq, _limiteDer;
 	STATES _estado = STATES::RUN_R;

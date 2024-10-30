@@ -36,11 +36,15 @@ void Conejo::setSizeBody(sf::Vector2f newSize)
 
 void Conejo::setFixture()
 {
+	b2FixtureDef _fixtureDef;
+
 	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.density = 1.0f;   // DENSISDAD
 	_fixtureDef.friction = 0.8f;  // FRICCION
 	_fixtureDef.restitution = 0.0f; // REBOTE , VALOR = 0 SIGNIFICA SIN REBOTE
-	_body->CreateFixture(&_fixtureDef);
+	_fixture=_body->CreateFixture(&_fixtureDef);
+
+
 }
 
 b2Vec2 Conejo::getPositionBody()
@@ -55,14 +59,16 @@ void Conejo::updateEnemie(int row, float deltaTime)
 {
 	float posX = _body->GetPosition().x;
 
-	// Cambiar la dirección cuando alcanza los límites
+	// CAMBIA DE DIRECCION
+	// SE PODRIA IMPLEMENTAR DE ALGUNA FORMA CON BOX2D O
+	// UNA FORMA DINAMICA DE ENCONTRAR EL ANCHO DE CADA PLATAFORMA DONDE ESTA PARADO
+
 	if (posX <= _limiteIzq || posX >= _limiteDer) {
 		_velocidad = _velocidad * -1; // Invertir la velocidad
 		_sprite.setScale(_sprite.getScale().x*-1,_sprite.getScale().y);
 
 	}
 
-	// Aplicar la velocidad actualizada al enemigo
 	//////// ANIMACION
 
 	_sprite.setTextureRect(_animation.uvRect);
@@ -70,10 +76,11 @@ void Conejo::updateEnemie(int row, float deltaTime)
 	_animation.Update(row, deltaTime);
 
 
+	///// RECIBIMOS LA POSICION ACTUAL DEL CUERPO
 	b2Vec2 positionRabbit = getPositionBody();
 
-
-	///// MEJORA EL TRASPASO DE DATOS DE 40 = PIXEL METRO Y 600 = ALTO DE PANTALLA
+	///// SE POSICIONA EL SPRITE EN EL CUERPO
+	///// MEJORAR EL TRASPASO DE DATOS DE 40 = PIXEL METRO Y 600 = ALTO DE PANTALLA
 	_sprite.setPosition(positionRabbit.x * 40, 600 - positionRabbit.y * 40);
 
 	/// MOVIMIENTO
@@ -83,8 +90,10 @@ void Conejo::updateEnemie(int row, float deltaTime)
 
 void Conejo::moveEnemy()
 {
+	
+	///// SE GUARDA LA VELOCIDAD ACTUAL DE X E Y
 	b2Vec2 velocidadActual = _body->GetLinearVelocity();
-
+	///// SE PASA LA VELOCIDAD DE Y ACTUAL, Y LA NUEVA VELOCIDAD DE X (_velocidad esta seteado como propiedad de clase)
 	_body->SetLinearVelocity(b2Vec2(_velocidad, velocidadActual.y));
 
 }
@@ -98,13 +107,16 @@ void setAnimation() {
 }
 
 void Conejo::SetTextureRectAnimated() {
-
+	///// SE SETEA EL RECTANGULO QUE CORRESPONDE SOLO A LA PARTE
+	///// QUE QUEREMOS VER DE LA TEXTURA, YA QUE LA TEXTURA ES UN CONJUNTO DE FRAMES
 	_sprite.setTextureRect(_animation.uvRect);
 
 }
 
 void Conejo::setAnimationState()
 {
+
+	//////// SEGUN EL ESTADO SETEAMOS LA ANIMACION Y SUS PARAMETROS.
 	if (_estado == RUN_R || _estado == RUN_L) {
 		setTexture("./assets/enemigos/Bunny/Run_(34x44).png");
 		_animation.setImageCount(sf::Vector2u(12, 1));

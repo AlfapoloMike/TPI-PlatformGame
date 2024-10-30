@@ -143,6 +143,8 @@ void Nivel::setUI() {
 		return;
 	}
 
+	///// PRUEBA DE CORAZON DAÑADO
+	_corazones[3].setActive(false);
 
 }
 
