@@ -11,13 +11,13 @@ protected:
 	sf::Vector2f _velocity;
 	Animation _animation;
 public:
-	Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity);
+	Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro);
 	void setTexture(std::string texture);
 	void setPosition(sf::Vector2f newPosition);
 	void setSprite();
 	void setVelocity(sf::Vector2f newVelocity);
-	sf::Sprite getSprite();
-	sf::Texture getTexture();
+	//sf::Sprite getSprite();
+	//sf::Texture getTexture();
 	sf::Vector2f getPosition();
 	sf::Vector2f getVelocity();
 	sf::FloatRect getBounds() const override;

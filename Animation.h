@@ -15,6 +15,8 @@ public:
 	~Animation();
 	sf::IntRect getUvRect();
 	void Update(int row, float deltaTime);
+	void Update(int row, float deltaTime, int limitColumn);
+
 
 public:
 	sf::IntRect uvRect;

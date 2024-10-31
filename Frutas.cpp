@@ -2,12 +2,42 @@
 #include <iostream>
 
 
-Frutas::Frutas()
+Frutas::Frutas(b2World &world)
 {
 	setRandomFruit();
-	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height/2);
+	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
 	setRandomPosition();
-	
+	setBodyInWorld(world);
+	setSizeBody();
+	setFixture();
+}
+
+void Frutas::setPositionBody(sf::Vector2f newPosition)
+{
+	_bodyDef.type = b2_staticBody;
+	_bodyDef.position.Set(newPosition.x, newPosition.y);
+}
+
+void Frutas::setBodyInWorld(b2World& world)
+{
+	_body = world.CreateBody(&_bodyDef);
+
+}
+
+void Frutas::setSizeBody()
+{
+	_bodyBox.SetAsBox(0.2f,0.2f);
+
+}
+
+void Frutas::setFixture()
+{
+	b2FixtureDef _fixtureDef;
+
+	_fixtureDef.shape = &_bodyBox;
+	_fixtureDef.friction = 0.2f;
+	_fixtureDef.density = 0.3f;
+	_fixture = _body->CreateFixture(&_fixtureDef);
 }
 
 void Frutas::setTextureFruit(std::string texture)
@@ -18,7 +48,7 @@ void Frutas::setTextureFruit(std::string texture)
 
 void Frutas::setPositionFruit(sf::Vector2f newPosition)
 {
-	_sprite.setPosition(sf::Vector2f(newPosition.x, newPosition.y));
+	_sprite.setPosition(newPosition.x * 40, 600 - newPosition.y * 40);
 
 }
 
@@ -88,10 +118,13 @@ void Frutas::setAnimationState()
 
 void Frutas::setRandomPosition()
 {
-	float randomX = (float)(rand() % 600 + 100);
-	float randomY = (float)(rand() % 500 + 100);
-
-	setPositionFruit(sf::Vector2f(randomX, randomY));
+	int maxX = 16, minX = 4;
+	int maxY = 11, minY = 4;
+	float randomX = (float)(rand() % (maxX - minX + 1) + minX);
+	float randomY = (float)(rand() % (maxY - minY + 1) + minY);
+	std::cout << " random x: " << randomX << " y el random y: " << randomY<<std::endl;
+	setPositionBody(sf::Vector2f(randomX, randomY));
+	setPositionFruit(sf::Vector2f(randomX,randomY));
 
 }
 

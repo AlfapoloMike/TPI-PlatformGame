@@ -1,10 +1,10 @@
 #include "Enemigo.h"
 #include <iostream>
 
-Enemigo::Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity)
+Enemigo::Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro)
 {
-
-	setPosition(newPosition);
+	
+	//setPosition(newPosition);
 	setVelocity(newVelocity);
 
 }
@@ -29,7 +29,7 @@ void Enemigo::setVelocity(sf::Vector2f newVelocity)
 	_velocity.x = newVelocity.x;
 	_velocity.y = newVelocity.y;
 }
-
+/*
 sf::Sprite Enemigo::getSprite()
 {
 
@@ -40,6 +40,7 @@ sf::Texture Enemigo::getTexture()
 {
 	return _texture;
 }
+*/
 
 sf::Vector2f Enemigo::getPosition()
 {

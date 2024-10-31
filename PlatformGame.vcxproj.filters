@@ -61,6 +61,12 @@
     <Filter Include="Archivos de origen\Niveles\Mapa">
       <UniqueIdentifier>{a43924b1-2b40-432e-b41a-625de7f9b696}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Interfaz">
+      <UniqueIdentifier>{11ee5ebf-d551-4691-9a08-38f0119ea0e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Interfaz">
+      <UniqueIdentifier>{1b90a76d-afa6-4c6c-8a8b-4ff2ca995d82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,6 +111,15 @@
     <ClCompile Include="MappingLevel.cpp">
       <Filter>Archivos de origen\Niveles\Mapa</Filter>
     </ClCompile>
+    <ClCompile Include="Conejo.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Corazon.cpp">
+      <Filter>Archivos de origen\Interfaz</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUi.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -145,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Conejo.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Corazon.h">
+      <Filter>Archivos de encabezado\Interfaz</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUi.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

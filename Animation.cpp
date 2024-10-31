@@ -61,3 +61,26 @@ void Animation::Update(int row, float deltaTime)
 
 
 }
+
+void Animation::Update(int row, float deltaTime, int limitColumn)
+{
+	currentImage.y = row;
+	totalTime += deltaTime;
+
+	if (totalTime >= switchTime)
+	{
+		totalTime -= switchTime;
+		currentImage.x++;
+
+		if (currentImage.x >= limitColumn) {
+
+			currentImage.x = 0;
+		}
+
+	}
+
+	uvRect.left = currentImage.x * uvRect.width;
+	uvRect.top = currentImage.y * uvRect.height;
+
+
+}

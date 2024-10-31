@@ -9,6 +9,10 @@ Tortuga::Tortuga(sf::Vector2f newPosition, sf::Vector2f newVelocity) :Aldeano(ne
 	_espinas = false;
 	setAnimationState();
 	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height); /// Para evitar warning cast con float.
+
+
+
+
 }
 
 void Tortuga::update(int row, float deltaTime) {
@@ -17,6 +21,9 @@ void Tortuga::update(int row, float deltaTime) {
 	_sprite.setTextureRect(_animation.uvRect);
 	_sprite.setOrigin(_animation.getUvRect().width / 2.f, _animation.getUvRect().height / 2.f);
 	_animation.Update(row, deltaTime);
+
+
+
 }
 
 void Tortuga::SetTextureRectAnimated() {
@@ -98,5 +105,35 @@ void Tortuga::animationControl() {  /// Control de tiempo por animacion
 }
 
 Tortuga::~Tortuga(){
+}
+
+void Tortuga::setPositionBody(sf::Vector2f newPosition)
+{
+
+}
+
+void Tortuga::setBodyInWorld(b2World& world)
+{
+
+}
+
+void Tortuga::setSizeBody(sf::Vector2f newSize)
+{
+
+}
+
+void Tortuga::setFixture()
+{
+
+
+}
+
+void Tortuga::getPositionBody()
+{
+}
+
+void Tortuga::moveEnemy(float velocidad)
+{
+
 }
 
