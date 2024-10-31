@@ -84,8 +84,7 @@ int main()
 
 
 	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
-	Frutas fruta1;
-	Frutas fruta2;
+
 	
 	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
@@ -155,6 +154,12 @@ int main()
 
 	Corazon cora(sf::Vector2f(200.0f, 200.0f));
 	GameUi ui;
+
+
+	/////////////FRUTAS
+
+	Frutas fruta1(world);
+	Frutas fruta2(world);
 
 	while (window.isOpen())
 	{

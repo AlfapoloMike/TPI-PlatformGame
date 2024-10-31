@@ -7,8 +7,8 @@ Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World
 	////// ACA ESTAMOS DECLARANDO EL OBJETO CON SUS DEFINICIOES DE BOX2D
 	setPositionPlataforma(newPosition);
 	setBodyInWorld(world);
-	setSizePlataforma(newSize);
-	setDensity();
+	setSizeBody(newSize);
+	setFixture();
 
 	/////  ACA ESTOY DECLARANDO LOS VALORES DE LA TEXTURA RECTANGULO DE SFML
 	printRectangle(newSize);
@@ -17,34 +17,36 @@ Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World
 void Plataformas::setPositionPlataforma(sf::Vector2f newPosition)
 {
 	///// DEFINIMOS LA POSICION DE LA PLATAFORMA
-	_plataformaDef.position.Set(newPosition.x,newPosition.y);
+	_bodyDef.type = b2_staticBody;
+	_bodyDef.position.Set(newPosition.x,newPosition.y);
 }
 
 void Plataformas::setBodyInWorld(b2World& world)
 {
 	////// SETEAMOS LA PLATAFORMA DENTRO DEL MUNDO CON UNA REFERENCIA
-	_groundBody = world.CreateBody(&_plataformaDef);
+	_body = world.CreateBody(&_bodyDef);
 
 }
 
-void Plataformas::setSizePlataforma(sf::Vector2f newSize)
+void Plataformas::setSizeBody(sf::Vector2f newSize)
 {
 	/////// SETEAMOS EL CUERPO DE LA PLATAFORMA CON TAMAÑO
-	_groundBox.SetAsBox(newSize.x, newSize.y);
+	_bodyBox.SetAsBox(newSize.x, newSize.y);
 }
 
-void Plataformas::setDensity()
+void Plataformas::setFixture()
 {
 	////// SETEAMOS LA DENSIDAD PARA QUE SEA ESTATICA
-	_fixtureDef.shape = &_groundBox;
+	b2FixtureDef _fixtureDef;
+	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.friction = 0.2f;
 	_fixtureDef.density = 0.0f;
-	_groundBody->CreateFixture(&_fixtureDef);
+	_fixture=_body->CreateFixture(&_fixtureDef);
 }
 
 void Plataformas::getPositionBody()
 {
-	std::cout << "Plataforma creada en la posición: (" << _groundBody->GetPosition().x << ", " << _groundBody->GetPosition().y << ")" << std::endl;
+	std::cout << "Plataforma creada en la posición: (" << _body->GetPosition().x << ", " << _body->GetPosition().y << ")" << std::endl;
 	/////// ESTO SE PODRIA USAR PARA VERIFICAR LA COLISION? A REVISAR...
 
 }
@@ -56,7 +58,7 @@ void Plataformas::printRectangle(sf::Vector2f newSize)
 
 	_shape.setSize(sf::Vector2f((newSize.x*40*2),(newSize.y*40*2)));
 	_shape.setOrigin(sf::Vector2f(_shape.getSize().x / 2, _shape.getSize().y / 2));
-	_shape.setPosition(sf::Vector2f(_groundBody->GetPosition().x*40,600-_groundBody->GetPosition().y*40));
+	_shape.setPosition(sf::Vector2f(_body->GetPosition().x*40,600- _body->GetPosition().y*40));
 	_shape.setFillColor(sf::Color::Red);
 }
 

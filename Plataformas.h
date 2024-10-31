@@ -7,16 +7,16 @@
 class Plataformas : public sf::Drawable, public Collisionable {
 private:
 	sf::RectangleShape _shape;
-	b2BodyDef _plataformaDef;
-	b2Body* _groundBody;
-	b2PolygonShape _groundBox;
-	b2FixtureDef _fixtureDef;
+	b2BodyDef _bodyDef;
+	b2Body* _body;
+	b2PolygonShape _bodyBox;
+	b2Fixture* _fixture;
 public:
 	Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world);
 	void setPositionPlataforma(sf::Vector2f newPosition);
 	void setBodyInWorld(b2World &world);
-	void setSizePlataforma(sf::Vector2f newSize);
-	void setDensity();
+	void setSizeBody(sf::Vector2f newSize);
+	void setFixture();
 	void getPositionBody();
 
 	void printRectangle(sf::Vector2f newSize);
