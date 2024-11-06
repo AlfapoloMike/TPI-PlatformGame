@@ -33,7 +33,7 @@ public:
 	void setSizeBody();
 	void setFixture();
 	//////// SFML
-	void setTextureFruit(std::string texture);
+	void setTextureFruit();
 	void setPositionFruit(sf::Vector2f newPosition);
 	void setAnimationState();
 	void setRandomPosition();

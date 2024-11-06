@@ -70,7 +70,7 @@ void Skull::setAnimationState()
 
 }
 
-void Skull::animationControl()
+void Skull::animationControl(float deltaTime)
 {
 	if (_animationState == HIT_WALL) {
 		_animationTimeCounter += 0.09f;
@@ -90,7 +90,7 @@ void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Skull::updateEnemie(int row, float deltaTime)
 {
-	animationControl();
+	animationControl(deltaTime);
 	_sprite.setTextureRect(_animation.uvRect);
 	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height / 2.0);
 	_animation.Update(row, deltaTime);

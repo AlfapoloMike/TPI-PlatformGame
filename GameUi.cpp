@@ -34,8 +34,11 @@ void GameUi::setPoints()
 	_points.setFillColor(sf::Color::White);
 	_points.setPosition(400, 10);
 }
-void GameUi::update()
+void GameUi::update(float deltaTime)
 {
+
+	///// AQUI SE TENDRIA QUE ESTAR RECIBIENDO LA VIDA DEL JUGADOR COMO PARAMETRO PARA MODIFICAR LOS CORAZONES.
+
 	if (_reloj.getElapsedTime().asSeconds() >= 1.0f) {
 
 		_timeCount[1]++;
@@ -53,11 +56,18 @@ void GameUi::update()
 		}
 		
 	}
+
+	for (int i = 0; i < 4; i++) {
+		_corazones[i].update(deltaTime);
+	}
 }
 void GameUi::drawUi(sf::RenderWindow& window)
 {
 	window.draw(_timer);
 	window.draw(_points);
+	for (int i = 0; i < 4; i++) {
+		window.draw(_corazones[i]);
+	}
 }
 
 

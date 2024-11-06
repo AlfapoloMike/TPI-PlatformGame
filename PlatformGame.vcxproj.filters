@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de origen\Enemigos">
-      <UniqueIdentifier>{ed160e13-231e-45fb-966f-40e6ff3d8a9a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Niveles">
       <UniqueIdentifier>{e0e3e46f-44f4-4d8b-84de-e97cca9d9d5d}</UniqueIdentifier>
     </Filter>
@@ -66,6 +63,9 @@
     </Filter>
     <Filter Include="Archivos de origen\Interfaz">
       <UniqueIdentifier>{1b90a76d-afa6-4c6c-8a8b-4ff2ca995d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Enemigos">
+      <UniqueIdentifier>{ed160e13-231e-45fb-966f-40e6ff3d8a9a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +118,7 @@
       <Filter>Archivos de origen\Interfaz</Filter>
     </ClCompile>
     <ClCompile Include="GameUi.cpp">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
