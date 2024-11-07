@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  GameUi.cpp
   Nivel.cpp
   main.cpp
   Generando código...
+=======
+﻿  Frutas.cpp
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 =======
 ﻿  Frutas.cpp
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)

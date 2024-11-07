@@ -195,6 +195,9 @@ int main()
 		rabbit.updateEnemie(0, deltaTime);
 		cora.update(deltaTime);
 		ui.update();
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 		// Colisiones ****************************************************
 		// Con plataformas de Newnivel
@@ -250,6 +253,9 @@ int main()
 =======
 		window.draw(fruta1);
 		window.draw(fruta2);
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 		window.draw(frogar);
 		window.draw(tortuga1);
