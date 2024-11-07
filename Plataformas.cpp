@@ -42,8 +42,8 @@ void Plataformas::setFixture(CollisionCategory category)
 	_fixtureDef.friction = 0.5f;
 	_fixtureDef.density = 0.0f;
 
-	_fixtureDef.filter.categoryBits = category; // Categoría del muro
-	_fixtureDef.filter.maskBits = ENEMY;   // Colisiona solo con el personaje
+	_fixtureDef.filter.categoryBits = WALL; // Categoría del muro
+	_fixtureDef.filter.maskBits = PLAYER | ENEMY;   // Colisiona solo con el personaje
 
 
 	_fixture=_body->CreateFixture(&_fixtureDef);
