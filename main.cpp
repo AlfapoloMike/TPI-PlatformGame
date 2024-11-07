@@ -196,6 +196,9 @@ int main()
 		cora.update(deltaTime);
 		ui.update();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
@@ -254,6 +257,9 @@ int main()
 		window.draw(fruta1);
 		window.draw(fruta2);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)

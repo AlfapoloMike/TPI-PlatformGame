@@ -5,9 +5,12 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Corazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Corazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
 =======
+=======
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -19,6 +22,7 @@
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Skull.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -39,6 +43,10 @@
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -49,6 +57,7 @@
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -68,6 +77,8 @@
 =======
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -84,6 +95,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           "SelectedChildIndex": 7,
@@ -147,6 +159,12 @@
             {
               "$type": "Document",
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
               "DocumentIndex": 0,
               "Title": "Frutas.cpp",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
@@ -154,6 +172,7 @@
               "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeToolTip": "Frutas.cpp",
               "ViewState": "AgIAAAQAAAAAAAAAAAAuwCEAAAABAAAAAAAAAA==",
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -236,12 +255,15 @@
               "ViewState": "AgIAAIcAAAAAAAAAAAAwwJoAAAAPAAAAAAAAAA==",
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-07T14:12:44.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               "DocumentIndex": 10,
@@ -254,6 +276,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
 =======
 =======
+=======
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
               "DocumentIndex": 4,
               "Title": "Nivel.h",
               "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.h",
@@ -278,6 +302,9 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
               "DocumentIndex": 5,
               "Title": "Enemigo.cpp",
@@ -325,6 +352,9 @@
               "ViewState": "AgIAAOcAAAAAAAAAAAAAAKAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
+=======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 =======
 >>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
