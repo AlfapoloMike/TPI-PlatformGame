@@ -94,8 +94,6 @@ int main()
 	sf::Clock clock;
 
 
-
-	Jugador frogar(sf::Vector2f(100.0f, 100.0f)); ////****
 	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
 
 
@@ -107,6 +105,8 @@ int main()
 
 	// Crear el mundo Box2D con la gravedad definida
 	b2World world(gravity);
+
+	Jugador frogar(world);
 
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
@@ -171,12 +171,14 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			if (event.type == sf::Event::Closed) {
 				window.close();
+			}
+			frogar.handleEvent(event);
 		}
 
-		frogar.cmd();
 
+<<<<<<< HEAD
 
 		newNivel.nivelUpdate(world, window, deltaTime);
 		frogar.update();
@@ -214,6 +216,16 @@ int main()
 		}		
 		*/
 		// ******************************************************************
+=======
+		fruta1.fruitUpdate(0, deltaTime);
+		fruta2.fruitUpdate(0, deltaTime);
+		newNivel.nivelUpdate(window, deltaTime);
+		tortuga1.update(0, deltaTime);
+		rabbit.updateEnemie(0, deltaTime);
+		cora.update(deltaTime);
+		frogar.update(0, deltaTime);
+		ui.update();
+>>>>>>> ale_pruebas
 			
 		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
 
@@ -235,8 +247,14 @@ int main()
 
 
 		newNivel.nivelDrawer(window);
+<<<<<<< HEAD
 		window.draw(frogar);
+=======
+		window.draw(fruta1);
+		window.draw(fruta2);
+>>>>>>> ale_pruebas
 		window.draw(tortuga1);
+		window.draw(frogar);
 		///****************************************************
 		window.draw(circle); ////// DIBUJAMOS LA ESFERA DE PRUEBA.
 		//window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO

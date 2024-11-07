@@ -1,29 +1,30 @@
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\vc143.pdb
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\vc143.idb
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\tortuga.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\skull.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\plataformas.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\nivel.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\mappinglevel.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\map.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\background.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\main.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\jugador.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\frutas.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\enemigo.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\collisionable.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\animation.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\aldeano.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\conejo.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\corazon.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\x64\debug\platformgame.exe
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\x64\debug\platformgame.pdb
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.ilk
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.items.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.read.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.write.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.command.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.read.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.secondary.1.tlog
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.write.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\vc143.pdb
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\vc143.idb
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\tortuga.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\skull.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\plataformas.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\nivel.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\mappinglevel.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\map.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\background.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\main.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\jugador.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\gameui.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\frutas.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\enemigo.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\corazon.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\conejo.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\collisionable.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\animation.obj
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\aldeano.obj
+c:\users\ale\documents\github\tpi-platformgame\x64\debug\platformgame.exe
+c:\users\ale\documents\github\tpi-platformgame\x64\debug\platformgame.pdb
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.ilk
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.items.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.read.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.write.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.command.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.read.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.secondary.1.tlog
+c:\users\ale\documents\github\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.write.1.tlog
