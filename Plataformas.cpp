@@ -1,5 +1,5 @@
 #include "Plataformas.h"
-
+#include "CollisionCategories.h"
 
 Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world)
 {
@@ -39,8 +39,13 @@ void Plataformas::setFixture()
 	////// SETEAMOS LA DENSIDAD PARA QUE SEA ESTATICA
 	b2FixtureDef _fixtureDef;
 	_fixtureDef.shape = &_bodyBox;
-	_fixtureDef.friction = 0.2f;
+	_fixtureDef.friction = 0.5f;
 	_fixtureDef.density = 0.0f;
+
+	_fixtureDef.filter.categoryBits = WALL; // Categoría del muro
+	_fixtureDef.filter.maskBits = ENEMY;   // Colisiona solo con el personaje
+
+
 	_fixture=_body->CreateFixture(&_fixtureDef);
 }
 
@@ -59,7 +64,7 @@ void Plataformas::printRectangle(sf::Vector2f newSize)
 	_shape.setSize(sf::Vector2f((newSize.x*40*2),(newSize.y*40*2)));
 	_shape.setOrigin(sf::Vector2f(_shape.getSize().x / 2, _shape.getSize().y / 2));
 	_shape.setPosition(sf::Vector2f(_body->GetPosition().x*40,600- _body->GetPosition().y*40));
-	_shape.setFillColor(sf::Color::Red);
+	_shape.setFillColor(sf::Color(255, 0, 0, 128));
 }
 
 sf::RectangleShape Plataformas::getShape()

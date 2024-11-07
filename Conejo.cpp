@@ -1,4 +1,5 @@
 #include "Conejo.h"
+#include "CollisionCategories.h"
 
 Conejo::Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float limiteIzq, float limiteDer, float pixelMetro):Enemigo(newPosition,newVelocity, pixelMetro)
 {
@@ -19,6 +20,7 @@ void Conejo::setPositionBody(sf::Vector2f newPosition)
 {
 	///// DEFINIMOS LA POSICION DE LA PLATAFORMA
 	_bodyDef.position.Set(newPosition.x, newPosition.y);
+	_bodyDef.linearDamping = 0.5f;
 	_bodyDef.type = b2_dynamicBody;
 }
 
@@ -40,8 +42,13 @@ void Conejo::setFixture()
 
 	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.density = 1.0f;   // DENSISDAD
-	_fixtureDef.friction = 0.8f;  // FRICCION
+	_fixtureDef.friction = 0.5f;  // FRICCION
 	_fixtureDef.restitution = 0.0f; // REBOTE , VALOR = 0 SIGNIFICA SIN REBOTE
+
+
+	_fixtureDef.filter.categoryBits = ENEMY;
+	_fixtureDef.filter.maskBits = WALL;  
+
 	_fixture=_body->CreateFixture(&_fixtureDef);
 
 

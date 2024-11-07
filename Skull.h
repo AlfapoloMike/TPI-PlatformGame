@@ -15,7 +15,7 @@ public:
 	void move();
 	void SetTextureRectAnimated();
 	void setAnimationState();
-	void animationControl();
+	void animationControl(float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void updateEnemie(int row, float deltaTime) override;
 

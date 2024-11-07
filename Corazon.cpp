@@ -41,7 +41,7 @@ void Corazon::setAnimation()
 		_animation.setSwitchTime(0.09f);
 	}
 	if (_state == STATES_HEART::HITTED) {
-		_animation.setSwitchTime(0.12f);
+		_animation.setSwitchTime(0.16f);
 	}
 	if (_state == STATES_HEART::RESTORED) {
 		_animation.setSwitchTime(0.09f);
@@ -60,7 +60,7 @@ void Corazon::controlAnimation(float deltaTime)
 
 	if (_state == STATES_HEART::IDLE && _active == true) {
 
-		if (_animationCounterTime >= 14.0f) {
+		if (_animationCounterTime >= 2.7f) {
 
 
 				_state = STATES_HEART::SHINE;
@@ -69,14 +69,13 @@ void Corazon::controlAnimation(float deltaTime)
 				_filaAnimation = 1;
 				_columnAnimation = 10;
 
-
 		}
 
-		_animationCounterTime += 0.09f;
+		_animationCounterTime += deltaTime;
 
 	}else if (_state == STATES_HEART::SHINE && _active == true) {
-		_animationCounterTime += 0.09f;
-		if (_animationCounterTime >= 1.54f) {
+
+		if (_animationCounterTime >= 0.54f) {
 			_state = STATES_HEART::IDLE;
 			setAnimation();
 			_animationCounterTime = 0;
@@ -84,6 +83,8 @@ void Corazon::controlAnimation(float deltaTime)
 			_columnAnimation = 10;
 
 		}
+		_animationCounterTime += deltaTime;
+
 	}
 	if (_active == false) {
 		
@@ -96,14 +97,15 @@ void Corazon::controlAnimation(float deltaTime)
 
 		}
 		else if (_state == STATES_HEART::HITTED) {
-			_animationCounterTime += 0.09f;
-			if (_animationCounterTime >= 3.4f) {
+
+			if (_animationCounterTime >= 0.96f) {
 				_state = STATES_HEART::DAMAGED;
 				setAnimation();
 				_animationCounterTime = 0;
 				_filaAnimation = 6;
 				_columnAnimation = 0;
 			}
+			_animationCounterTime += deltaTime;
 		}
 	}
 

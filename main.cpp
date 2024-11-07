@@ -21,6 +21,9 @@
 
 #include "Corazon.h"
 #include "GameUi.h"
+#include "GameContactListener.h"
+
+
 using namespace std;
 
 
@@ -108,6 +111,10 @@ int main()
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
 	
+	GameContactListener _contactListener;
+
+	world.SetContactListener(&_contactListener);
+
 	
 	///**************************************************************************************
 	/////////
@@ -146,27 +153,20 @@ int main()
 	///////// CONEJO
 	///////// TEST
 	/////////
-	Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.85f, 1.1f),2.0f,15.0f,pixelMetro);
+	//Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.85f, 1.1f),2.0f,15.0f,pixelMetro);
 	/*****RECUADRO PARA VER AL CONEJO*******/
 	sf::RectangleShape rect(sf::Vector2f(0.5*40*2,0.5*40*2)); // Radio de 20 píxeles
 	rect.setFillColor(sf::Color::Cyan);
 	rect.setOrigin(rect.getSize()/2.0f); // Centrar el origen en el centro de la bola
 
-	Corazon cora(sf::Vector2f(200.0f, 200.0f));
-	GameUi ui;
-
-
-	/////////////FRUTAS
-
-	Frutas fruta1(world);
-	Frutas fruta2(world);
 
 	while (window.isOpen())
 	{
 
 		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
-
+		world.Step(1 / 60.0f, 8, 3);
+	
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -177,14 +177,14 @@ int main()
 
 		frogar.cmd();
 
-		fruta1.fruitUpdate(0, deltaTime);
-		fruta2.fruitUpdate(0, deltaTime);
-		newNivel.nivelUpdate(window, deltaTime);
+
+		newNivel.nivelUpdate(world, window, deltaTime);
 		frogar.update();
 		tortuga1.update(0, deltaTime);
-		rabbit.updateEnemie(0, deltaTime);
-		cora.update(deltaTime);
-		ui.update();
+		//rabbit.updateEnemie(0, deltaTime);
+
+
+
 		// Colisiones ****************************************************
 		// Con plataformas de Newnivel
 		for (int i = 0; i < 10; i++) {
@@ -217,7 +217,6 @@ int main()
 			
 		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
 
-		world.Step(1 / 60.0f, 8, 3);
 
 		// Obtener la posición de la bola de Box2D y actualizar el círculo SFML
 		//////// ACA SE ESTA ACTUALIZANDO EL SHAPE DE LA ESFERA DE PRUEBA
@@ -226,8 +225,8 @@ int main()
 
 
 		////**************************//////////////
-		b2Vec2 positionRabbit = rabbit.getPositionBody();
-		rect.setPosition(positionRabbit.x * SCALE, 600 - positionRabbit.y * SCALE);
+		//b2Vec2 positionRabbit = rabbit.getPositionBody();
+		//rect.setPosition(positionRabbit.x * SCALE, 600 - positionRabbit.y * SCALE);
 		
 
 		//******************************************************************
@@ -236,17 +235,14 @@ int main()
 
 
 		newNivel.nivelDrawer(window);
-		window.draw(fruta1);
-		window.draw(fruta2);
 		window.draw(frogar);
 		window.draw(tortuga1);
 		///****************************************************
 		window.draw(circle); ////// DIBUJAMOS LA ESFERA DE PRUEBA.
-		window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
-		window.draw(rabbit);
+		//window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
+		//window.draw(rabbit);
 		///****************************************************
-		//////////TEXTO DE UI
-		ui.drawUi(window);
+
 
 
 		window.display();
