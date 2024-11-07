@@ -5,7 +5,10 @@ C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Cone
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Corazon.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\Corazon.obj
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Enemigo.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\Enemigo.obj
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Frutas.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\Frutas.obj
+<<<<<<< HEAD
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\GameContactListener.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\GameContactListener.obj
+=======
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\GameUi.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\GameUi.obj
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Jugador.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\Jugador.obj
 C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\main.cpp;C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\PlatformGame\x64\Debug\main.obj

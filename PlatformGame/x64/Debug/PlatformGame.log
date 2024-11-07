@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿  GameUi.cpp
   Nivel.cpp
   main.cpp
   Generando código...
+=======
+﻿  Frutas.cpp
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
   PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe

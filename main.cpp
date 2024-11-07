@@ -177,6 +177,7 @@ int main()
 
 		frogar.cmd();
 
+<<<<<<< HEAD
 
 		newNivel.nivelUpdate(world, window, deltaTime);
 		frogar.update();
@@ -185,6 +186,16 @@ int main()
 
 
 
+=======
+		fruta1.fruitUpdate(0, deltaTime);
+		fruta2.fruitUpdate(0, deltaTime);
+		newNivel.nivelUpdate(window, deltaTime);
+		frogar.update();
+		tortuga1.update(0, deltaTime);
+		rabbit.updateEnemie(0, deltaTime);
+		cora.update(deltaTime);
+		ui.update();
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 		// Colisiones ****************************************************
 		// Con plataformas de Newnivel
 		for (int i = 0; i < 10; i++) {
@@ -235,6 +246,11 @@ int main()
 
 
 		newNivel.nivelDrawer(window);
+<<<<<<< HEAD
+=======
+		window.draw(fruta1);
+		window.draw(fruta2);
+>>>>>>> parent of cbb3a9f (Actualizacion Jugador a Box2d)
 		window.draw(frogar);
 		window.draw(tortuga1);
 		///****************************************************
