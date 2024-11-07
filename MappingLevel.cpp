@@ -1,5 +1,5 @@
 #include "MappingLevel.h"
-
+#include "CollisionCategories.h"
 
 void mappingLevel(int vec[30][40], int level) {
 
@@ -57,16 +57,16 @@ void mappingPlatform(Plataformas *arrayPlataformas, int level, b2World& world, f
 
 	if (level == 1) {
 
-		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(100/pixelMetro, 415/pixelMetro), sf::Vector2f((80/pixelMetro)/2, 0.1), world); // 1
-		arrayPlataformas[1] = Plataformas::Plataformas(sf::Vector2f(400 / pixelMetro, 115 / pixelMetro), sf::Vector2f((680 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[2] = Plataformas::Plataformas(sf::Vector2f(540 / pixelMetro, 195 / pixelMetro), sf::Vector2f((400 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[3] = Plataformas::Plataformas(sf::Vector2f(450 / pixelMetro, 355 / pixelMetro), sf::Vector2f((100 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[4] = Plataformas::Plataformas(sf::Vector2f(660 / pixelMetro, 315 / pixelMetro), sf::Vector2f((160 / pixelMetro) / 2,0.1), world); // 1
-		arrayPlataformas[5] = Plataformas::Plataformas(sf::Vector2f(280 / pixelMetro, 375 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[6] = Plataformas::Plataformas(sf::Vector2f(200 / pixelMetro, 435 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[7] = Plataformas::Plataformas(sf::Vector2f(560 / pixelMetro, 455 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[8] = Plataformas::Plataformas(sf::Vector2f(700 / pixelMetro, 415 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world); // 1
-		arrayPlataformas[9] = Plataformas::Plataformas(sf::Vector2f(600 / pixelMetro, 0 / pixelMetro), sf::Vector2f((60 / pixelMetro) / 2, (60 / pixelMetro) / 2), world); // 1
+		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(100/pixelMetro, 415/pixelMetro), sf::Vector2f((80/pixelMetro)/2, 0.1), world, WALL); // 1
+		arrayPlataformas[1] = Plataformas::Plataformas(sf::Vector2f(400 / pixelMetro, 115 / pixelMetro), sf::Vector2f((680 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[2] = Plataformas::Plataformas(sf::Vector2f(540 / pixelMetro, 195 / pixelMetro), sf::Vector2f((400 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[3] = Plataformas::Plataformas(sf::Vector2f(450 / pixelMetro, 355 / pixelMetro), sf::Vector2f((100 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[4] = Plataformas::Plataformas(sf::Vector2f(660 / pixelMetro, 315 / pixelMetro), sf::Vector2f((160 / pixelMetro) / 2,0.1), world, WALL); // 1
+		arrayPlataformas[5] = Plataformas::Plataformas(sf::Vector2f(280 / pixelMetro, 375 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[6] = Plataformas::Plataformas(sf::Vector2f(200 / pixelMetro, 435 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[7] = Plataformas::Plataformas(sf::Vector2f(560 / pixelMetro, 455 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[8] = Plataformas::Plataformas(sf::Vector2f(700 / pixelMetro, 415 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
+		arrayPlataformas[9] = Plataformas::Plataformas(sf::Vector2f(600 / pixelMetro, 0 / pixelMetro), sf::Vector2f((60 / pixelMetro) / 2, (60 / pixelMetro) / 2), world, WALL); // 1
 
 	}
 	if (level == 2) {

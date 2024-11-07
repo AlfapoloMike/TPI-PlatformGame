@@ -2,6 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "Collisionable.h"
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
+#include "CollisionCategories.h"
 #include <iostream>
 
 class Plataformas : public sf::Drawable, public Collisionable {
@@ -12,11 +13,11 @@ private:
 	b2PolygonShape _bodyBox;
 	b2Fixture* _fixture;
 public:
-	Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world);
+	Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, CollisionCategory category);
 	void setPositionPlataforma(sf::Vector2f newPosition);
 	void setBodyInWorld(b2World &world);
 	void setSizeBody(sf::Vector2f newSize);
-	void setFixture();
+	void setFixture(CollisionCategory category);
 	void getPositionBody();
 
 	void printRectangle(sf::Vector2f newSize);
