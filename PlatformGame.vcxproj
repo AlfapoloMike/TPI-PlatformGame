@@ -163,6 +163,7 @@
     <ClCompile Include="Corazon.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Frutas.cpp" />
+    <ClCompile Include="GameContactListener.cpp" />
     <ClCompile Include="GameUi.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="main.cpp" />
@@ -179,10 +180,12 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Collisionable.h" />
+    <ClInclude Include="CollisionCategories.h" />
     <ClInclude Include="Conejo.h" />
     <ClInclude Include="Corazon.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Frutas.h" />
+    <ClInclude Include="GameContactListener.h" />
     <ClInclude Include="GameUi.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Map.h" />

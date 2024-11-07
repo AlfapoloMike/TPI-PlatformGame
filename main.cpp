@@ -21,6 +21,9 @@
 
 #include "Corazon.h"
 #include "GameUi.h"
+#include "GameContactListener.h"
+
+
 using namespace std;
 
 
@@ -108,6 +111,10 @@ int main()
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
 	
+	GameContactListener _contactListener;
+
+	world.SetContactListener(&_contactListener);
+
 	
 	///**************************************************************************************
 	/////////
@@ -158,7 +165,8 @@ int main()
 
 		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
-
+		world.Step(1 / 60.0f, 8, 3);
+	
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -209,7 +217,6 @@ int main()
 			
 		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
 
-		world.Step(1 / 60.0f, 8, 3);
 
 		// Obtener la posición de la bola de Box2D y actualizar el círculo SFML
 		//////// ACA SE ESTA ACTUALIZANDO EL SHAPE DE LA ESFERA DE PRUEBA

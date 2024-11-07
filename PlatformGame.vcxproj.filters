@@ -67,6 +67,12 @@
     <Filter Include="Archivos de origen\Enemigos">
       <UniqueIdentifier>{ed160e13-231e-45fb-966f-40e6ff3d8a9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\GameUi">
+      <UniqueIdentifier>{dea7a9f4-f995-4c85-a51e-d3df9f039027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\GameUi">
+      <UniqueIdentifier>{f1eedc97-5733-4190-ac29-8f8960fcb50f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,8 +123,11 @@
     <ClCompile Include="Corazon.cpp">
       <Filter>Archivos de origen\Interfaz</Filter>
     </ClCompile>
-    <ClCompile Include="GameUi.cpp">
+    <ClCompile Include="GameContactListener.cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUi.cpp">
+      <Filter>Archivos de origen\GameUi</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,8 +176,14 @@
     <ClInclude Include="Corazon.h">
       <Filter>Archivos de encabezado\Interfaz</Filter>
     </ClInclude>
-    <ClInclude Include="GameUi.h">
+    <ClInclude Include="GameContactListener.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCategories.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUi.h">
+      <Filter>Archivos de encabezado\GameUi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

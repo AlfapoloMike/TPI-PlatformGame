@@ -11,7 +11,6 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 		break;
 	case 1:
 		_nivel = NIVELES::NIVEL_1;
-		//setEnemigos(level);
 		break;
 	case 2:
 		_nivel = NIVELES::NIVEL_2;
@@ -45,7 +44,7 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 		_enemigos[0] = new Skull(sf::Vector2f(550.0f, 500.0f), sf::Vector2f(2.f, 2.f),1.0f);
 		_enemigos[1] = new Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f), 40.0f);
 		_enemigos[2] = new Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f), 40.0f);
-		_enemigos[3] = new Conejo(sf::Vector2f(9.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.85f, 1.1f), 2.0f, 15.0f, 40);
+		_enemigos[3] = new Conejo(sf::Vector2f(10.0f, 8.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
 
 		break;
 		
