@@ -10,6 +10,7 @@
 #include "Corazon.h"
 #include "Conejo.h"
 #include "GameUi.h"
+#include "CollisionCategories.h"
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU

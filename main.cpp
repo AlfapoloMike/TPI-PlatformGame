@@ -94,7 +94,7 @@ int main()
 
 
 
-	Jugador frogar(sf::Vector2f(100.0f, 100.0f)); ////****
+	
 	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
 
 
@@ -106,6 +106,8 @@ int main()
 
 	// Crear el mundo Box2D con la gravedad definida
 	b2World world(gravity);
+
+	Jugador frogar(world);
 
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
@@ -170,15 +172,17 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			if (event.type == sf::Event::Closed) {
 				window.close();
+			}
+			frogar.handleEvent(event);
 		}
 
 		frogar.cmd();
 
 
 		newNivel.nivelUpdate(world, window, deltaTime);
-		frogar.update();
+		frogar.update(0, deltaTime);
 		tortuga1.update(0, deltaTime);
 		//rabbit.updateEnemie(0, deltaTime);
 
