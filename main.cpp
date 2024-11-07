@@ -92,6 +92,7 @@ int main()
 
 
 
+	Jugador frogar(sf::Vector2f(100.0f, 100.0f)); ////****
 	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
 
 
@@ -103,8 +104,6 @@ int main()
 
 	// Crear el mundo Box2D con la gravedad definida
 	b2World world(gravity);
-
-	Jugador frogar(world);
 
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
@@ -172,22 +171,49 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed) {
+			if (event.type == sf::Event::Closed)
 				window.close();
-			}
-			frogar.handleEvent(event); /// PERSONAJE
 		}
 
+		frogar.cmd();
 
 		fruta1.fruitUpdate(0, deltaTime);
 		fruta2.fruitUpdate(0, deltaTime);
 		newNivel.nivelUpdate(window, deltaTime);
+		frogar.update();
 		tortuga1.update(0, deltaTime);
 		rabbit.updateEnemie(0, deltaTime);
 		cora.update(deltaTime);
 		ui.update();
-		frogar.update(0, deltaTime); /// PERSONAJE
+		// Colisiones ****************************************************
+		// Con plataformas de Newnivel
+		for (int i = 0; i < 10; i++) {
+			if (frogar.getPrevPosition().y + frogar.getDraw().getGlobalBounds().height <= newNivel.getPlataforma(i).getBounds().top
+				&&frogar.getDraw().getGlobalBounds().intersects(newNivel.getPlataforma(i).getBounds())
+				&& frogar.getVelocidadSalto() < 0) {
+			//	std::cout << "Colisión vertical Plataforma " << i + 1 << std::endl;
+				frogar.quieto(frogar.getDraw().getPosition().x, newNivel.getPlataforma(i).getBounds().top - frogar.getDraw().getGlobalBounds().height);
+			}
 
+		}
+		// Con tortuga
+		if (frogar.isCollision(tortuga1)) {
+			std::cout << "Colision con TORTUGA!!!!" << std::endl;
+			if ((frogar.getPrevPosition().y + frogar.getBounds().height <= tortuga1.getBounds().top - 5) && frogar.getVelocidadSalto() < 0) {
+			//	std::cout << "Colisión vertical TORTUGA (superior)!" << std::endl;
+				frogar.mover(0, -23);
+			}
+		}
+		// Con enemigos
+		/*
+		for (int i = 0; i < 3; i++) {
+			sf::Sprite enemie = newNivel.getSpriteEnemigo(i);
+			if (frogar.getDraw().getGlobalBounds().intersects(enemie.getGlobalBounds())) {
+				//std::cout << "Colisión vertical CALAVERA " << i + 1 << std::endl;
+			}
+		}		
+		*/
+		// ******************************************************************
 			
 		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
 
@@ -212,12 +238,12 @@ int main()
 		newNivel.nivelDrawer(window);
 		window.draw(fruta1);
 		window.draw(fruta2);
+		window.draw(frogar);
 		window.draw(tortuga1);
 		///****************************************************
 		window.draw(circle); ////// DIBUJAMOS LA ESFERA DE PRUEBA.
 		window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
 		window.draw(rabbit);
-		window.draw(frogar); /// PERSONAJE
 		///****************************************************
 		//////////TEXTO DE UI
 		ui.drawUi(window);
