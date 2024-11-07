@@ -1,18 +1,18 @@
 #include "Plataformas.h"
-#include "CollisionCategories.h"
 
-Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world)
+Plataformas::Plataformas(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, CollisionCategory category)
 {
 
 	////// ACA ESTAMOS DECLARANDO EL OBJETO CON SUS DEFINICIOES DE BOX2D
 	setPositionPlataforma(newPosition);
 	setBodyInWorld(world);
 	setSizeBody(newSize);
-	setFixture();
+	setFixture(category);
 
 	/////  ACA ESTOY DECLARANDO LOS VALORES DE LA TEXTURA RECTANGULO DE SFML
 	printRectangle(newSize);
 }
+
 
 void Plataformas::setPositionPlataforma(sf::Vector2f newPosition)
 {
@@ -34,7 +34,7 @@ void Plataformas::setSizeBody(sf::Vector2f newSize)
 	_bodyBox.SetAsBox(newSize.x, newSize.y);
 }
 
-void Plataformas::setFixture()
+void Plataformas::setFixture(CollisionCategory category)
 {
 	////// SETEAMOS LA DENSIDAD PARA QUE SEA ESTATICA
 	b2FixtureDef _fixtureDef;
@@ -42,7 +42,7 @@ void Plataformas::setFixture()
 	_fixtureDef.friction = 0.5f;
 	_fixtureDef.density = 0.0f;
 
-	_fixtureDef.filter.categoryBits = WALL; // Categoría del muro
+	_fixtureDef.filter.categoryBits = category; // Categoría del muro
 	_fixtureDef.filter.maskBits = ENEMY;   // Colisiona solo con el personaje
 
 

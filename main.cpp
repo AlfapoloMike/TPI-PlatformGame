@@ -19,7 +19,6 @@
 #include "Tortuga.h"
 #include "Conejo.h"
 
-#include "Corazon.h"
 #include "GameUi.h"
 #include "GameContactListener.h"
 
