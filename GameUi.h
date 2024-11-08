@@ -22,10 +22,10 @@ private:
 public:
 	GameUi();
 	void setFont();
-	void setCorazones();
+	void setCorazones(bool vidas[4]);
 	void setTimer();
 	void setPoints();
-	void update(float deltaTime);
+	void update(float deltaTime, bool vidas[4]);
 	void drawUi(sf::RenderWindow& window);
 	~GameUi();
 };

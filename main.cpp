@@ -107,8 +107,6 @@ int main()
 	// Crear el mundo Box2D con la gravedad definida
 	b2World world(gravity);
 
-	Jugador frogar(world);
-
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
 	Nivel newNivel(1, world, pixelMetro);
 	
@@ -149,17 +147,6 @@ int main()
 	circle.setOrigin(20.0f, 20.0f); // Centrar el origen en el centro de la bola
 
 
-	b2PolygonShape sensorShape;
-	/////////**********************************************************************************************************************************
-	///////// CONEJO
-	///////// TEST
-	/////////
-	//Conejo rabbit(sf::Vector2f(3.0f, 13.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.85f, 1.1f),2.0f,15.0f,pixelMetro);
-	/*****RECUADRO PARA VER AL CONEJO*******/
-	sf::RectangleShape rect(sf::Vector2f(0.5*40*2,0.5*40*2)); // Radio de 20 píxeles
-	rect.setFillColor(sf::Color::Cyan);
-	rect.setOrigin(rect.getSize()/2.0f); // Centrar el origen en el centro de la bola
-
 
 	while (window.isOpen())
 	{
@@ -175,51 +162,26 @@ int main()
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
-			frogar.handleEvent(event);
-		}
 
-		frogar.cmd();
+			newNivel.playerEventHandler(event);
+		}
 
 
 		newNivel.nivelUpdate(world, window, deltaTime);
-		frogar.update(0, deltaTime);
+
 		tortuga1.update(0, deltaTime);
-		//rabbit.updateEnemie(0, deltaTime);
 
-
-
-
-	
-
-			
-		////// ACA SE ESTA ACTUALIZANDO EL MUNDO 
-
-
-		// Obtener la posición de la bola de Box2D y actualizar el círculo SFML
-		//////// ACA SE ESTA ACTUALIZANDO EL SHAPE DE LA ESFERA DE PRUEBA
 		b2Vec2 position = body->GetPosition();
 		circle.setPosition(position.x * SCALE,600 - position.y * SCALE);
 
 
-		////**************************//////////////
-		//b2Vec2 positionRabbit = rabbit.getPositionBody();
-		//rect.setPosition(positionRabbit.x * SCALE, 600 - positionRabbit.y * SCALE);
-		
-
-		//******************************************************************
 		window.clear();
 
 
 
 		newNivel.nivelDrawer(window);
-
-		window.draw(frogar);
 		window.draw(tortuga1);
-		///****************************************************
-		window.draw(circle); ////// DIBUJAMOS LA ESFERA DE PRUEBA.
-		//window.draw(rect); ///////// DIBUJAMOS CAJA DE PRUEBA PARA CONEJO
-		//window.draw(rabbit);
-		///****************************************************
+		window.draw(circle); 
 
 
 

@@ -24,9 +24,17 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 
 	setMap(world);
 	setEnemigos(world, pixelMetro);
+	setPlayer(world);
 	setUI();
 }
 
+void Nivel::setPlayer(b2World& world) {
+	_personaje = new Jugador(world);
+
+	if (_personaje == nullptr) {
+		return;
+	}
+}
 
 void Nivel::setEnemigos(b2World& world, float pixelMetro)
 {
@@ -44,7 +52,7 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 		_enemigos[0] = new Skull(sf::Vector2f(550.0f, 500.0f), sf::Vector2f(2.f, 2.f),1.0f);
 		_enemigos[1] = new Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f), 40.0f);
 		_enemigos[2] = new Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f), 40.0f);
-		_enemigos[3] = new Conejo(sf::Vector2f(10.0f, 8.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
+		_enemigos[3] = new Conejo(sf::Vector2f(3.0f, 15.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
 
 		break;
 		
@@ -112,7 +120,11 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	
 	_background.backgroundUpdate();
 	
-	_ui.update(deltaTime);
+	_personaje->update(0, deltaTime);
+
+	
+
+	_ui.update(deltaTime,_personaje->getVida());
 
 
 }
@@ -122,6 +134,11 @@ void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+void Nivel::playerEventHandler(const sf::Event& event) {
+
+	_personaje->handleEvent(event);
+
+}
 
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
@@ -129,7 +146,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 	_mapa.mapDrawer(window);
 	
-	//COMENTAR ESTO >>
 	for (int i = 0; i < 4; i++) {
 		window.draw(_enemigos[i]->getSprite());
 	}
@@ -143,6 +159,8 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 	for (int i = 0; i < _frutas.size(); i++) {
 		window.draw(*_frutas[i]);
 	}
+
+	window.draw(*_personaje);
 
 	_ui.drawUi(window);
 
@@ -179,6 +197,9 @@ Nivel::~Nivel()
 		delete[] _enemigos;
 	}
 
+	if (_personaje != nullptr) {
+		delete _personaje;
+	}
 
 }
 /*

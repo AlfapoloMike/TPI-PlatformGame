@@ -24,6 +24,9 @@ public:
 	void SetTextureRectAnimated();
 	void setAnimationState();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	void recibeDanio();
+
 	~Conejo();
 
 	//// Box2D GENERACION
