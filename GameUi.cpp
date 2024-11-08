@@ -12,8 +12,13 @@ void GameUi::setFont()
 	_font.loadFromFile("./assets/fonts/Pixel_Times.ttf");
 }
 
-void GameUi::setCorazones()
+void GameUi::setCorazones(bool vidas[4])
 {
+	for (int i = 0; i < 4; i++) {
+		if (vidas[i] == false) {
+			_corazones[i].setActive(false);
+		}
+	}
 }
 
 void GameUi::setTimer()
@@ -34,7 +39,7 @@ void GameUi::setPoints()
 	_points.setFillColor(sf::Color::White);
 	_points.setPosition(400, 10);
 }
-void GameUi::update(float deltaTime)
+void GameUi::update(float deltaTime, bool vidas[4])
 {
 
 	///// AQUI SE TENDRIA QUE ESTAR RECIBIENDO LA VIDA DEL JUGADOR COMO PARAMETRO PARA MODIFICAR LOS CORAZONES.
@@ -56,6 +61,8 @@ void GameUi::update(float deltaTime)
 		}
 		
 	}
+
+	setCorazones(vidas);
 
 	for (int i = 0; i < 4; i++) {
 		_corazones[i].update(deltaTime);

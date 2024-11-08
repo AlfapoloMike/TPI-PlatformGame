@@ -19,11 +19,19 @@ public:
     void setPosition(sf::Vector2f newPosition);
     void SetTextureRectAnimated();
     void setAnimationState();
+    void setSaltos();
+    void setContactFloor(bool state);
+    void setFilterDataPlayer(CollisionCategory newFilter, bool state);
 
     // Getters
     sf::Sprite& getDraw();
     sf::Texture getTexture();
     b2Vec2 getPosition();
+    bool* getVida();
+
+    ///gameplay
+
+    void recibeDanio(int lado);
 
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
@@ -36,19 +44,19 @@ private:
     sf::Texture _texture;
 
     enum ESTADOS {
-        AVANZA_DER,
-        AVANZA_IZQ,
-        SALTO_1,
-        SALTO_2,
+        SALTO,
         QUIETO,
-        CAE
+        CAE,
+        HITTED,
+        CAMINAR
     };
     ESTADOS _estado;
 
-    int _saltos;
+    int _saltos=0;
     Animation _animation;
     float _animationTimeCounter = 0;
     float prevPos;
-    float animationJump = 0;
-    bool vidas[4]{true};
+    float animationTimer = 0;
+    bool floorContacting = false;
+    bool vidas[4]{true, true, true, true};
 };

@@ -20,7 +20,6 @@ void Conejo::setPositionBody(sf::Vector2f newPosition)
 {
 	///// DEFINIMOS LA POSICION DE LA PLATAFORMA
 	_bodyDef.position.Set(newPosition.x, newPosition.y);
-	_bodyDef.linearDamping = 0.5f;
 	_bodyDef.type = b2_dynamicBody;
 }
 
@@ -28,6 +27,9 @@ void Conejo::setBodyInWorld(b2World& world)
 {
 	////// SETEAMOS LA PLATAFORMA DENTRO DEL MUNDO CON UNA REFERENCIA
 	_body = world.CreateBody(&_bodyDef);
+
+	/////////asgina a travez de un puntero el objeto conejo al userData
+	_body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
 }
 
 void Conejo::setSizeBody(sf::Vector2f newSize)
@@ -42,12 +44,12 @@ void Conejo::setFixture()
 
 	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.density = 1.0f;   // DENSISDAD
-	_fixtureDef.friction = 0.5f;  // FRICCION
+	_fixtureDef.friction = 0.3f;  // FRICCION
 	_fixtureDef.restitution = 0.0f; // REBOTE , VALOR = 0 SIGNIFICA SIN REBOTE
 
 
 	_fixtureDef.filter.categoryBits = ENEMY;
-	_fixtureDef.filter.maskBits = WALL;  
+	_fixtureDef.filter.maskBits = WALL | PLAYER;
 
 	_fixture=_body->CreateFixture(&_fixtureDef);
 
@@ -136,6 +138,11 @@ void Conejo::setAnimationState()
 void Conejo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
+}
+
+void Conejo::recibeDanio()
+{
+	std::cout << "recibi daño, auch" << std::endl;
 }
 
 

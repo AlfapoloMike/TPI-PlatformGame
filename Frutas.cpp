@@ -40,7 +40,11 @@ void Frutas::setFixture()
 	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.friction = 0.2f;
 	_fixtureDef.density = 0.3f;
-	//_fixtureDef.isSensor = true;
+	_fixtureDef.isSensor = true;
+	
+	_fixtureDef.filter.categoryBits = FRUITS; // Categoría del muro
+	_fixtureDef.filter.maskBits = PLAYER;   // Colisiona solo con el personaje
+
 	_fixture = _body->CreateFixture(&_fixtureDef);
 }
 
@@ -232,6 +236,8 @@ void Frutas::fruitUpdate(int row, float deltaTime)
 	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
 	_animation.Update(row, deltaTime);
 }
+
+
 
 void Frutas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {

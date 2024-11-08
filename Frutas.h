@@ -5,6 +5,7 @@
 #include <time.h>
 #include "Collisionable.h"
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
+#include "CollisionCategories.h"
 
 
 enum FRUIT_TYPE {
@@ -40,6 +41,10 @@ public:
 	void setRandomFruit();
 	void setRectTextureAnimated();
 	void fruitUpdate(int row, float deltaTime);
+
+
+
+
 	//sf::Sprite getSprite();
 	//sf::Texture getTexture();
 	//sf::Vector2f getPosition();

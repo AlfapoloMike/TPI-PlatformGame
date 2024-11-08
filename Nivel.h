@@ -11,6 +11,7 @@
 #include "Conejo.h"
 #include "GameUi.h"
 #include "CollisionCategories.h"
+#include "Jugador.h"
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
@@ -38,13 +39,14 @@ protected:
 	/// contador de tiempo para el spawn de frutas
 	float _fruitSpawnerTime = 0;
 
+	Jugador *_personaje = nullptr;
 	//Aldeanos _aldeanos;
-	//Personaje _personaje;
 
 
 
 public:
 	Nivel(int level, b2World& world, float pixelMetro);
+	void setPlayer(b2World& world);
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
 	void setMap(b2World& world);
@@ -54,6 +56,8 @@ public:
 	void gameStateController();
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	void playerEventHandler(const sf::Event& event);
 
 	~Nivel();
 
