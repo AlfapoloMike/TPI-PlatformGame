@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Conejo.h"
 #include "Jugador.h"
+#include "Frutas.h"
+#include "Plataformas.h"
 
 class GameContactListener : public b2ContactListener {
 

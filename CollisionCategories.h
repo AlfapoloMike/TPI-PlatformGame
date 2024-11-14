@@ -6,6 +6,8 @@ enum CollisionCategory : uint16_t {
     WALL = 0x0004,
     ENEMY = 0x0008,
     FRUITS = 0x0010,
+    SKULLS = 0x0020,
+    PLATFORM = 0x0040,
     ////001
     ////010
     ////100

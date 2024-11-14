@@ -3,11 +3,64 @@
 #include <SFML/Graphics.hpp>
 
 
-Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro) :Enemigo(newPosition, newVelocity, pixelMetro)
+Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro) :Enemigo(newPosition, newVelocity, pixelMetro)
 {
 	_animationState = AnimationState::IDLE_BASIC;
 	setAnimationState();
 	_sprite.setOrigin(_animation.getUvRect().width/2.0, _animation.getUvRect().height/2.0);
+	setPositionBody(newPosition);
+	setBodyInWorld(world);
+	setSizeBody(newSize);
+	setFixture();
+	setAnimationState();
+	setPosition(sf::Vector2f(newPosition.x * pixelMetro, 600 - newPosition.y * pixelMetro));
+}
+
+void Skull::setPositionBody(sf::Vector2f newPosition)
+{
+	///// DEFINIMOS LA POSICION DEL CUERPO
+	_bodyDef.position.Set(newPosition.x, newPosition.y);
+	_bodyDef.type = b2_dynamicBody;
+}
+
+void Skull::setBodyInWorld(b2World& world)
+{
+	////// SETEAMOS LA PLATAFORMA DENTRO DEL MUNDO CON UNA REFERENCIA
+	_body = world.CreateBody(&_bodyDef);
+
+	/////////asgina a travez de un puntero el objeto conejo al userData
+	_body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
+}
+
+
+void Skull::setSizeBody(sf::Vector2f newSize)
+{
+	/////// SETEAMOS EL CUERPO DE LA PLATAFORMA CON TAMAÑO
+	_bodyBox.SetAsBox(newSize.x, newSize.y);
+}
+
+void Skull::setFixture()
+{
+	b2FixtureDef _fixtureDef;
+
+	_fixtureDef.shape = &_bodyBox;
+	_fixtureDef.density = 1.0f;   // DENSISDAD
+	_fixtureDef.friction = 0.5f;  // FRICCION
+	_fixtureDef.restitution = 0.0f; // REBOTE , VALOR = 0 SIGNIFICA SIN REBOTE
+
+
+	_fixtureDef.filter.categoryBits = SKULLS;
+	_fixtureDef.filter.maskBits = WALL;
+
+	_fixture = _body->CreateFixture(&_fixtureDef);
+
+
+}
+
+b2Vec2 Skull::getPositionBody()
+{
+	b2Vec2 position = _body->GetPosition();
+	return position;
 }
 
 
@@ -90,9 +143,14 @@ void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Skull::updateEnemie(int row, float deltaTime)
 {
+
+	b2Vec2 position = getPositionBody();
+
+
 	animationControl(deltaTime);
 	_sprite.setTextureRect(_animation.uvRect);
 	_sprite.setOrigin(_animation.getUvRect().width / 2.0, _animation.getUvRect().height / 2.0);
+	_sprite.setPosition(position.x * 40, 600 - position.y * 40);
 	_animation.Update(row, deltaTime);
 	move();
 }

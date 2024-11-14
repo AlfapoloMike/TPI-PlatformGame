@@ -35,7 +35,7 @@ void Tortuga::setAnimationState() {
 
 
 	if (_animationState == AnimationState::IDLE) {
-		setTexture("./assets/aldeanos/Turtle/Idle2(44x26).png");
+		setTexture("./assets/aldeanos/Turtle/Idle1(44x26).png");
 		_animation.setImageCount(sf::Vector2u(14, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);

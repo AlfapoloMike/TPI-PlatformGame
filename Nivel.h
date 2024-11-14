@@ -26,6 +26,9 @@ protected:
 	Map _mapa;
 	/// plataformas segun nivel
 	Plataformas* _plataformas = nullptr;
+
+	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
+
 	/// fondo segun nviel
 	backgroundTile _background;
 	/// indicador de nivel

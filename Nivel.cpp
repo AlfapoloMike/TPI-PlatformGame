@@ -49,10 +49,10 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 			return;
 		}
 		
-		_enemigos[0] = new Skull(sf::Vector2f(550.0f, 500.0f), sf::Vector2f(2.f, 2.f),1.0f);
-		_enemigos[1] = new Skull(sf::Vector2f(350.0f, 250.0f), sf::Vector2f(2.f, 2.f), 40.0f);
-		_enemigos[2] = new Skull(sf::Vector2f(620.0f, 180.0f), sf::Vector2f(2.f, 2.f), 40.0f);
-		_enemigos[3] = new Conejo(sf::Vector2f(3.0f, 15.0f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
+		_enemigos[0] = new Skull(sf::Vector2f(13.75f, 12.5f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
+		_enemigos[1] = new Skull(sf::Vector2f(8.75f, 6.25f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
+		_enemigos[2] = new Skull(sf::Vector2f(15.5f, 4.5f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
+		_enemigos[3] = new Conejo(sf::Vector2f(12.0f, 11.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
 
 		break;
 		
@@ -77,6 +77,15 @@ void Nivel::setFruits(b2World& world, float deltaTime)
 		}
 	}
 
+	for (int i = 0; i < _frutas.size(); i++) {
+		if (_frutas[i]->getPickedState() == true) {
+			std::cout << _frutas[i]->getPoints() << std::endl;
+			_ui.sumarPuntos(_frutas[i]->getPoints());
+			_frutas.erase(_frutas.begin() + i);
+			i--;
+		}
+	}
+
 }
 
 void Nivel::setMap(b2World& world)
@@ -85,8 +94,22 @@ void Nivel::setMap(b2World& world)
 	{
 	case NIVEL_1:
 		_mapa = Map::Map(1);
-		_plataformas = new Plataformas[10];
-		mappingPlatform(_plataformas, 1, world, _pixelMetro);
+
+
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(10.0f, 2.85f), sf::Vector2f(8.5f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(13.5f, 4.85f), sf::Vector2f(5.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(11.25f, 8.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(16.5f, 7.85f), sf::Vector2f(2.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(7.0f, 9.35f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(5.0f, 4.85f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(14.0f, 11.37f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(17.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.37f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(10.0f, 1.375), sf::Vector2f(9.0f, 0.1f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(10.0f, 13.675f), sf::Vector2f(9.0f, 0.1f), world, false));
+
 		break;
 	case NIVEL_2:
 		//_mapa = Map::Map(2);
@@ -122,7 +145,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	
 	_personaje->update(0, deltaTime);
 
-	
+
 
 	_ui.update(deltaTime,_personaje->getVida());
 
@@ -146,13 +169,22 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 	_mapa.mapDrawer(window);
 	
+
+
+	/*
+	for (int i = 0; i < 13; i++) {
+		window.draw(_plataformas[i]);
+	}
+	*/
+
+	for (int i = 0; i < _plataformasN.size(); i++) {
+		window.draw(_plataformasN[i]->getShape());
+	}
+
+	window.draw(_enemigos[3]->getSquareTest());
+
 	for (int i = 0; i < 4; i++) {
 		window.draw(_enemigos[i]->getSprite());
-	}
-	
-
-	for (int i = 0; i < 10; i++) {
-		window.draw(_plataformas[i]);
 	}
 
 
@@ -202,11 +234,10 @@ Nivel::~Nivel()
 	}
 
 }
-/*
-sf::Sprite Nivel::getSpriteEnemigo(int enemigo){
-	return _enemigos[enemigo]->getSprite();
+
+void checkFruits() {
+
 }
-*/
 
 Plataformas Nivel::getPlataforma(int plataforma)
 {

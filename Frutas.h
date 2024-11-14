@@ -9,7 +9,7 @@
 
 
 enum FRUIT_TYPE {
-	MANZANA, BANANA, FRUTILLA, KIWI, NARANJA, CEREZA, MELON, ANANA, FRUTA_RECOLECTADA 
+	MANZANA, BANANA, FRUTILLA, KIWI, NARANJA, CEREZA, MELON, ANANA, PICKED
 };
 
 class Frutas : public sf::Drawable, public Collisionable {
@@ -24,6 +24,9 @@ protected:
 	b2Body* _body;
 	b2PolygonShape _bodyBox;
 	b2Fixture* _fixture;
+	bool _picked = false;
+	float _animationTimer = 0;
+	int _points;
 
 
 public:
@@ -40,10 +43,12 @@ public:
 	void setRandomPosition();
 	void setRandomFruit();
 	void setRectTextureAnimated();
+	void animationControl(float deltaTime);
 	void fruitUpdate(int row, float deltaTime);
+	void setFruitPicked();
 
-
-
+	int getPoints();
+	bool getPickedState();
 
 	//sf::Sprite getSprite();
 	//sf::Texture getTexture();

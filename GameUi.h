@@ -15,6 +15,7 @@ private:
 
 	sf::Text _timer;
 	sf::Text _points;
+	int _totalPoints = 0;
 	int _timeCount[2]{};
 	sf::Clock _reloj;
 
@@ -25,6 +26,7 @@ public:
 	void setCorazones(bool vidas[4]);
 	void setTimer();
 	void setPoints();
+	void sumarPuntos(int puntos);
 	void update(float deltaTime, bool vidas[4]);
 	void drawUi(sf::RenderWindow& window);
 	~GameUi();

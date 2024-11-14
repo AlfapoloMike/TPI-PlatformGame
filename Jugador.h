@@ -22,12 +22,14 @@ public:
     void setSaltos();
     void setContactFloor(bool state);
     void setFilterDataPlayer(CollisionCategory newFilter, bool state);
+    void setInWall(bool state);
 
     // Getters
     sf::Sprite& getDraw();
     sf::Texture getTexture();
     b2Vec2 getPosition();
     bool* getVida();
+    bool getFloorContact();
 
     ///gameplay
 
@@ -48,7 +50,9 @@ private:
         QUIETO,
         CAE,
         HITTED,
-        CAMINAR
+        CAMINAR,
+        DOBLE_SALTO,
+        IN_WALL
     };
     ESTADOS _estado;
 
