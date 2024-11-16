@@ -32,12 +32,15 @@ void GameUi::setTimer()
 
 void GameUi::setPoints()
 {
-	int puntaje = 3500;
 	_points.setFont(_font);
-	_points.setString("Puntos: "+ std::to_string(puntaje));
+	_points.setString("Puntos: "+ std::to_string(_totalPoints));
 	_points.setCharacterSize(24);
 	_points.setFillColor(sf::Color::White);
 	_points.setPosition(400, 10);
+}
+void GameUi::sumarPuntos(int puntos)
+{
+	_totalPoints += puntos;
 }
 void GameUi::update(float deltaTime, bool vidas[4])
 {
@@ -61,6 +64,9 @@ void GameUi::update(float deltaTime, bool vidas[4])
 		}
 		
 	}
+
+	_points.setString("Puntos: " + std::to_string(_totalPoints));
+
 
 	setCorazones(vidas);
 

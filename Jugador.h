@@ -22,12 +22,16 @@ public:
     void setSaltos();
     void setContactFloor(bool state);
     void setFilterDataPlayer(CollisionCategory newFilter, bool state);
+    void setInWall(bool state);
 
     // Getters
     sf::Sprite& getDraw();
     sf::Texture getTexture();
     b2Vec2 getPosition();
     bool* getVida();
+    bool getFloorContact();
+
+    bool getWallContact();
 
     ///gameplay
 
@@ -48,7 +52,9 @@ private:
         QUIETO,
         CAE,
         HITTED,
-        CAMINAR
+        CAMINAR,
+        DOBLE_SALTO,
+        IN_WALL
     };
     ESTADOS _estado;
 
@@ -58,5 +64,9 @@ private:
     float prevPos;
     float animationTimer = 0;
     bool floorContacting = false;
+    bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
+    CollisionCategory _lastEnemyContact;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS;
+
 };

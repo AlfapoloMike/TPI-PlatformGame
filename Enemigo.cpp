@@ -17,7 +17,7 @@ void Enemigo::setTexture(std::string texture)
 
 void Enemigo::setPosition(sf::Vector2f newPosition)
 {
-	_sprite.setPosition(sf::Vector2f(newPosition.x, newPosition.y));
+	_sprite.setPosition(sf::Vector2f(newPosition.x*40, newPosition.y*40));
 }
 
 void Enemigo::setSprite()
@@ -62,8 +62,13 @@ void Enemigo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
 
-
 }
+
+sf::RectangleShape Enemigo::getSquareTest()
+{
+	return _colisionSquare;
+}
+
 
 Enemigo::Enemigo()
 {
