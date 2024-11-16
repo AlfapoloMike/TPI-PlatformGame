@@ -18,7 +18,8 @@ Jugador::Jugador(b2World& world) {
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | ENEMY | FRUITS | PLATFORM;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS;   // Colisiona solo con el personaje
+		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
 	// Ajustar el origen al centro del personaje (en relación con el nuevo SCALE)
@@ -100,7 +101,7 @@ void Jugador::animationControl(float deltaTime) {
 			_estado = CAE;
 			setAnimationState();
 			animationTimer = 0;
-			setFilterDataPlayer(ENEMY, true);
+			setFilterDataPlayer(_lastEnemyContact, true);
 		}
 	}
 
@@ -234,6 +235,9 @@ bool Jugador::getFloorContact()
 	return floorContacting;
 }
 
+bool Jugador::getWallContact() {
+	return roofContacting;
+}
 
 
 /// SETTERS
@@ -316,14 +320,15 @@ void Jugador::setFilterDataPlayer(CollisionCategory newFilter, bool state)
 	if (state == true) {
 
 		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-		filtro.maskBits |= newFilter;
+		filtro.maskBits |= _maskBits;
 		_body->GetFixtureList()->SetFilterData(filtro);
 	}
 	//////// APAGAMOS UN FILTRO DE CONTACTO
 	else if (state == false) {
 		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-		filtro.maskBits &= ~newFilter;
+		filtro.maskBits &= ~_maskBits;
 		_body->GetFixtureList()->SetFilterData(filtro);
+		_lastEnemyContact = newFilter;
 	}
 
 }
@@ -332,9 +337,11 @@ void Jugador::setInWall(bool state)
 {
 	if (state == true) {
 		_estado = IN_WALL;
+		roofContacting = true;
 		setAnimationState();
 	}
 	else if (state == false && _estado != HITTED) {
+		roofContacting = false;
 		_estado = CAE;
 		setAnimationState();
 	}

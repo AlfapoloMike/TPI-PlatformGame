@@ -13,6 +13,7 @@
 #include "CollisionCategories.h"
 #include "Jugador.h"
 
+
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
 };
@@ -21,7 +22,8 @@ class Nivel : public sf::Drawable {
 
 protected:
 	/// Array de punteros Enemigo
-	Enemigo** _enemigos = nullptr;
+
+	std::vector<std::shared_ptr<Enemigo>> enemigos;
 	/// mapa con las texturas del fondo
 	Map _mapa;
 	/// plataformas segun nivel

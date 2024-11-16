@@ -17,6 +17,8 @@ private:
 	b2Body* _body;
 	b2PolygonShape _bodyBox;
 	b2Fixture* _fixture;
+	b2Vec2 _positionBody;
+	sf::Vector2f _velocidad = sf::Vector2f(2.5f,2.5f);
 
 public:
 	Skull(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro);
@@ -25,6 +27,7 @@ public:
 	void setSizeBody(sf::Vector2f newSize);
 	void setFixture();
 	b2Vec2 getPositionBody();
+	void setNewDirection(bool horizontalContact, bool verticalContact);
 	void move();
 	void SetTextureRectAnimated();
 	void setAnimationState();

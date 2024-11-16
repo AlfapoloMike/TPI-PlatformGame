@@ -6,6 +6,7 @@
 #include "Jugador.h"
 #include "Frutas.h"
 #include "Plataformas.h"
+#include "Skull.h"
 
 class GameContactListener : public b2ContactListener {
 

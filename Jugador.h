@@ -31,6 +31,8 @@ public:
     bool* getVida();
     bool getFloorContact();
 
+    bool getWallContact();
+
     ///gameplay
 
     void recibeDanio(int lado);
@@ -62,5 +64,9 @@ private:
     float prevPos;
     float animationTimer = 0;
     bool floorContacting = false;
+    bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
+    CollisionCategory _lastEnemyContact;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS;
+
 };

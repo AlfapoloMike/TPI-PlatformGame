@@ -41,18 +41,12 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 	switch (_nivel)
 	{
 	case NIVEL_1:
-
-		_enemigos = new Enemigo * [4];
-
-		if (_enemigos == nullptr) {
-			std::cout << "No se asigno memoria";
-			return;
-		}
-		
-		_enemigos[0] = new Skull(sf::Vector2f(13.75f, 12.5f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
-		_enemigos[1] = new Skull(sf::Vector2f(8.75f, 6.25f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
-		_enemigos[2] = new Skull(sf::Vector2f(15.5f, 4.5f), sf::Vector2f(0.5f, 0.5f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro);
-		_enemigos[3] = new Conejo(sf::Vector2f(12.0f, 11.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40);
+		///442 /// 4725
+		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(7.75f, 10.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
+		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(10.75f, 5.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
+		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(13.75f, 7.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
+		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(8.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40));
+		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(12.0f, 8.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40));
 
 		break;
 		
@@ -95,14 +89,13 @@ void Nivel::setMap(b2World& world)
 	case NIVEL_1:
 		_mapa = Map::Map(1);
 
-
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(10.0f, 2.85f), sf::Vector2f(8.5f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(13.5f, 4.85f), sf::Vector2f(5.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(11.25f, 8.85f), sf::Vector2f(1.25f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(16.5f, 7.85f), sf::Vector2f(2.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(7.0f, 9.35f), sf::Vector2f(1.0f, 0.1f), world, true));
-		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(5.0f, 4.85f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(5.0f, 10.85f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(14.0f, 11.37f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(17.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.37f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, false));
@@ -134,10 +127,14 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	for (int i = 0; i < _frutas.size(); i++) {
 		_frutas[i]->fruitUpdate(0, deltaTime);
 	}
-	
-	for (int i = 0; i < 4; i++) {
 
-		_enemigos[i]->updateEnemie(0, deltaTime);
+	for (const auto& enemigo : enemigos) {
+		if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+			calavera->updateEnemie(0, deltaTime);
+		}
+		else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+			conejo->updateEnemie(0, deltaTime);
+		}
 	}
 	
 	
@@ -170,21 +167,17 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 	_mapa.mapDrawer(window);
 	
 
-
-	/*
-	for (int i = 0; i < 13; i++) {
-		window.draw(_plataformas[i]);
-	}
-	*/
-
 	for (int i = 0; i < _plataformasN.size(); i++) {
 		window.draw(_plataformasN[i]->getShape());
 	}
 
-	window.draw(_enemigos[3]->getSquareTest());
-
-	for (int i = 0; i < 4; i++) {
-		window.draw(_enemigos[i]->getSprite());
+	for (const auto& enemigo : enemigos) {
+		if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+			window.draw(calavera->getSprite());
+		}
+		else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+			window.draw(conejo->getSprite());
+		}
 	}
 
 
@@ -214,20 +207,6 @@ void Nivel::gameStateController()
 
 Nivel::~Nivel()
 {
-	if (_plataformas != nullptr) {
-		delete[] _plataformas;
-	}
-	if (_enemigos != nullptr) {
-		
-		for (int i = 0; i < 4; ++i) {
-			if (_enemigos[i] != nullptr) {
-				delete _enemigos[i];  // Libera cada enemigo
-
-			}
-		}
-		
-		delete[] _enemigos;
-	}
 
 	if (_personaje != nullptr) {
 		delete _personaje;
