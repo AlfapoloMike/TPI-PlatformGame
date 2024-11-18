@@ -12,27 +12,31 @@ enum STATES {
 
 class Conejo : public Enemigo {
 
-	/********************/
+
 public:
-	Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float limiteIzq, float limiteDer, float pixelMetro);
-	void moveEnemy();
-	void setContact(bool state);
+	Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro);
+
+	//***************BOX2D****************************/
 	void setPositionBody(sf::Vector2f newPosition);
-	void setNewPosition(b2Vec2 newPosition);
 	void setBodyInWorld(b2World& world);
 	void setSizeBody(sf::Vector2f newSize);
 	void setFixture();
 	b2Vec2 getPositionBody();
+
+	//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+	void setNewPosition(b2Vec2 newPosition);
+	void moveEnemy();
+	void setContact(bool state);
 	void setNewDirection(bool lado);
-	void updateEnemie(int row, float deltaTime) override;
-	void SetTextureRectAnimated();
-	void setAnimationState();
-	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void setBorderWalk(float izquierdo, float derecho);
 
+	//***************SFML**************************/
+	void SetTextureRectAnimated();
+	void setAnimationState();
 
-
-	void recibeDanio();
+	//***************UPDATE Y DRAW****************************/
+	void updateEnemie(int row, float deltaTime) override;
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	~Conejo();
 

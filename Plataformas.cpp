@@ -48,7 +48,7 @@ void Plataformas::setFixture(bool tipo)
 		_fixtureDef.restitution = 0.0f;
 
 		_fixtureDef.filter.categoryBits = PLATFORM; // Categoría del muro
-		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS;   // Colisiona solo con el personaje
+		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE;   // Colisiona solo con el personaje
 
 	_fixture=_body->CreateFixture(&_fixtureDef);
 	}
@@ -116,10 +116,7 @@ void Plataformas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
-sf::FloatRect Plataformas::getBounds() const
-{
-	return _shape.getGlobalBounds();
-}
+
 
 Plataformas::Plataformas()
 {

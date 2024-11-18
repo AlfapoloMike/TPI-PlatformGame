@@ -10,7 +10,6 @@ public:
     Jugador(b2World& world);
     void update(int row, float deltaTime);
     void cmd();
-    void handleEvent(const sf::Event& event);
     void animationControl(float deltaTime);
     ~Jugador();
 
@@ -22,6 +21,7 @@ public:
     void setSaltos();
     void setContactFloor(bool state);
     void setFilterDataPlayer(CollisionCategory newFilter, bool state);
+    void setFilterDataPlayer(bool state);
     void setInWall(bool state);
 
     // Getters

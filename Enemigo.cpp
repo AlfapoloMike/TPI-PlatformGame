@@ -4,7 +4,7 @@
 Enemigo::Enemigo(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro)
 {
 	
-	setPosition(newPosition);
+	setPosition(newPosition, pixelMetro);
 	setVelocity(newVelocity);
 
 }
@@ -15,9 +15,9 @@ void Enemigo::setTexture(std::string texture)
 	_sprite.setTexture(_texture);
 }
 
-void Enemigo::setPosition(sf::Vector2f newPosition)
+void Enemigo::setPosition(sf::Vector2f newPosition, float pixelMetro)
 {
-	_sprite.setPosition(sf::Vector2f(newPosition.x*40, newPosition.y*40));
+	_sprite.setPosition(sf::Vector2f(newPosition.x* pixelMetro, 600 - newPosition.y* pixelMetro));
 }
 
 void Enemigo::setSprite()
@@ -52,21 +52,12 @@ sf::Vector2f Enemigo::getVelocity()
 	return _velocity;
 }
 
-sf::FloatRect Enemigo::getBounds() const
-{
-	return _sprite.getGlobalBounds();
-}
 
 
 void Enemigo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
 
-}
-
-sf::RectangleShape Enemigo::getSquareTest()
-{
-	return _colisionSquare;
 }
 
 

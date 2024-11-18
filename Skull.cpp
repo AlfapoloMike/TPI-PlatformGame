@@ -13,10 +13,11 @@ Skull::Skull(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf:
 	setAnimationState();
 	//_sprite.setOrigin(newSize.x * 40, newSize.y * 40);
 	_sprite.setOrigin((float)_animation.getUvRect().width/ 2, (float)_animation.getUvRect().height/2);
-	setPosition(sf::Vector2f(newPosition.x * pixelMetro, 600 - newPosition.y * pixelMetro));
+	setPosition(sf::Vector2f(newPosition.x , newPosition.y ), pixelMetro);
 	_sprite.setScale(1, 1);
 }
 
+//***************BOX2D****************************/
 void Skull::setPositionBody(sf::Vector2f newPosition)
 {
 	///// DEFINIMOS LA POSICION DEL CUERPO
@@ -36,7 +37,6 @@ void Skull::setBodyInWorld(b2World& world)
 	_body->SetGravityScale(0.0f);
 	_body->SetLinearVelocity(b2Vec2(_velocidad.x, _velocidad.y));
 }
-
 
 void Skull::setSizeBody(sf::Vector2f newSize)
 {
@@ -67,7 +67,9 @@ b2Vec2 Skull::getPositionBody()
 	b2Vec2 position = _body->GetPosition();
 	return position;
 }
+//***************BOX2D****************************/
 
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
 void Skull::setNewDirection(bool horizontalContact, bool verticalContact) {
 
 	b2Vec2 velocidad = _body->GetLinearVelocity();
@@ -75,7 +77,7 @@ void Skull::setNewDirection(bool horizontalContact, bool verticalContact) {
 
 	if (horizontalContact == true) {
 
-		_body->SetLinearVelocity(b2Vec2(velocidad.x*-1, velocidad.y));
+		_body->SetLinearVelocity(b2Vec2(velocidad.x * -1, velocidad.y));
 		_sprite.scale(-1, 1);
 		if (_animationState != HIT_WALL) {
 			_animationState = HIT_WALL;
@@ -92,45 +94,10 @@ void Skull::setNewDirection(bool horizontalContact, bool verticalContact) {
 	}
 
 }
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
 
-void Skull::move()
-{
-	
 
-	
-	/*
-
-	if (_sprite.getGlobalBounds().getPosition().x >= (740 - _animation.uvRect.width)) {
-		_velocity.x = _velocity.x * -1;
-		_sprite.scale(-1, 1);
-		_animationState = HIT_WALL;
-		setAnimationState();
-	}
-	if (_sprite.getGlobalBounds().getPosition().x <= (60)) {
-		_velocity.x = _velocity.x * -1;
-		_sprite.scale(-1, 1);
-		_animationState = HIT_WALL;
-		setAnimationState();
-
-	}
-	if (_sprite.getGlobalBounds().getPosition().y >= (540 - _animation.uvRect.height)) {
-		
-		_velocity.y = _velocity.y * -1;
-		_animationState = HIT_WALL;
-		setAnimationState();
-
-	}
-	
-	if (_sprite.getGlobalBounds().getPosition().y <= (60)) {
-		_velocity.y = _velocity.y * -1;
-		_animationState = HIT_WALL;
-		setAnimationState();
-
-	}
-	
-		_sprite.move(_velocity.x, _velocity.y);
-	*/
-}
+//***************SFML**************************/
 
 void Skull::SetTextureRectAnimated() {
 	
@@ -168,12 +135,9 @@ void Skull::animationControl(float deltaTime)
 		}
 	}
 }
+//***************SFML****************************/
 
-void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-	target.draw(_sprite, states);
-
-}
+//***************UPDATE Y DRAW****************************/
 
 void Skull::updateEnemie(int row, float deltaTime)
 {
@@ -181,21 +145,22 @@ void Skull::updateEnemie(int row, float deltaTime)
 	b2Vec2 position = getPositionBody();
 
 
-	move();
+
 	animationControl(deltaTime);
 	_sprite.setPosition(position.x * 40, 600 - position.y * 40);
 	_sprite.setTextureRect(_animation.uvRect);
 	_animation.Update(row, deltaTime);
 }
 
+void Skull::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(_sprite, states);
+
+}
+
 sf::Sprite Skull::getSpriteSkull()
 {
 	return _sprite;
-}
-
-Skull::Skull()
-{
-		_animationState = AnimationState::IDLE_BASIC;
 }
 
 Skull::~Skull()

@@ -28,14 +28,12 @@ public:
 	void setFixture();
 	b2Vec2 getPositionBody();
 	void setNewDirection(bool horizontalContact, bool verticalContact);
-	void move();
 	void SetTextureRectAnimated();
 	void setAnimationState();
 	void animationControl(float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void updateEnemie(int row, float deltaTime) override;
 	sf::Sprite getSpriteSkull();
-	Skull();
 	~Skull();
 };
 

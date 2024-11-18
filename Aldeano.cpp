@@ -1,8 +1,8 @@
 #include "Aldeano.h"
 
 
-Aldeano::Aldeano(sf::Vector2f newPosition, sf::Vector2f newVelocity){
-	setPosition(newPosition);
+Aldeano::Aldeano(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro){
+	setPosition(newPosition, pixelMetro);
 	setVelocity(newVelocity);
 }
 
@@ -12,8 +12,8 @@ void Aldeano::setTexture(std::string texture){
 	_sprite.setTexture(_texture);
 }
 
-void Aldeano::setPosition(sf::Vector2f newPosition){
-	_sprite.setPosition(sf::Vector2f(newPosition.x, newPosition.y));
+void Aldeano::setPosition(sf::Vector2f newPosition, float pixelMetro){
+	_sprite.setPosition(sf::Vector2f(newPosition.x* pixelMetro,600 - newPosition.y* pixelMetro));
 }
 
 void Aldeano::setSprite(){
@@ -47,9 +47,7 @@ void Aldeano::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
 }
 
-sf::FloatRect Aldeano::getBounds() const {
-	return _sprite.getGlobalBounds();
-}
+
 
 Aldeano::~Aldeano(){
 }
