@@ -1,15 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
-#include "Collisionable.h"
+#include "CollisionCategories.h"
 
-class Aldeano : public sf::Drawable, public Collisionable {
+class Aldeano : public sf::Drawable {
 public:
-    Aldeano(sf::Vector2f newPosition, sf::Vector2f newVelocity);
+    Aldeano(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro);
 
     // Setters
     void setTexture(std::string texture);
-    void setPosition(sf::Vector2f newPosition);
+    void setPosition(sf::Vector2f newPosition, float pixelMetro);
     void setSprite();
     void setVelocity(sf::Vector2f newVelocity);
 
@@ -19,8 +19,9 @@ public:
     sf::Vector2f getPosition();
     sf::Vector2f getVelocity();
 
+    virtual void updateVillager(int row, float deltaTime) = 0;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-    sf::FloatRect getBounds() const override; /// La polimorfiada Collisionable.h
+
     ~Aldeano();
 
 protected:
@@ -29,5 +30,7 @@ protected:
     sf::Vector2f _position;
     sf::Vector2f _velocity;
     Animation _animation;
+    sf::Vector2f _size;
+
 };
 

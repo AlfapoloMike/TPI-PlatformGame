@@ -1,7 +1,7 @@
 #include "Conejo.h"
 
 
-Conejo::Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float limiteIzq, float limiteDer, float pixelMetro):Enemigo(newPosition,newVelocity, pixelMetro)
+Conejo::Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro):Enemigo(newPosition,newVelocity, pixelMetro)
 {
 
 	_estado = STATES::RUN_R;
@@ -12,14 +12,16 @@ Conejo::Conejo(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, s
 	setFixture();
 	_velocidad = 0.01f;
 	setAnimationState();
-	//_sprite.setOrigin(newSize.x * 40, newSize.y * 40);
 	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
-	setPosition(sf::Vector2f(newPosition.x*pixelMetro, 600 - newPosition.y*pixelMetro));
+	setPosition(sf::Vector2f(newPosition.x, newPosition.y), pixelMetro);
 	_sprite.setScale(-1, 1);
 	_size = newSize;
 
 
 }
+
+
+//***************BOX2D****************************/
 
 void Conejo::setPositionBody(sf::Vector2f newPosition)
 {
@@ -74,6 +76,40 @@ b2Vec2 Conejo::getPositionBody()
 	return position;
 }
 
+//***************BOX2D****************************/
+
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+void Conejo::moveEnemy()
+{
+	///// RECIBIMOS LA POSICION ACTUAL DEL CUERPO
+	_positionBody = getPositionBody();
+
+
+	// CAMBIA DE DIRECCION
+	if (_positionBody.x <= _limiteIzq + _size.x && _estado == RUN_L) {
+		_velocidad = 2; // Invertir la velocidad
+		_sprite.setScale(-1, 1);
+		_estado = RUN_R;
+		setAnimationState();
+		_contacting = false;
+	}
+	else if (_positionBody.x >= _limiteDer - _size.x && _estado == RUN_R) {
+		_velocidad = -2; // Invertir la velocidad
+		_sprite.setScale(1, 1);
+		_estado = RUN_L;
+		setAnimationState();
+		_contacting = false;
+	}
+
+
+
+	///// SE GUARDA LA VELOCIDAD ACTUAL DE X E Y
+	b2Vec2 velocidadActual = _body->GetLinearVelocity();
+	///// SE PASA LA VELOCIDAD DE Y ACTUAL, Y LA NUEVA VELOCIDAD DE X (_velocidad esta seteado como propiedad de clase)
+	_body->SetLinearVelocity(b2Vec2(_velocidad, velocidadActual.y));
+
+}
+
 void Conejo::setNewDirection(bool lado) {
 	///// SE GUARDA LA VELOCIDAD ACTUAL DE X E Y
 
@@ -92,69 +128,25 @@ void Conejo::setNewDirection(bool lado) {
 			_sprite.setScale(1, 1);
 			_estado = RUN_R;
 			setAnimationState();
-			std::cout << " ENTRANDO ACA ACA ACA ACA ACA " << std::endl;
 		}
 	}
 
 }
 
-void Conejo::updateEnemie(int row, float deltaTime)
-{
-
-
-	Conejo::moveEnemy();
-	//////// ANIMACION
-	_sprite.setPosition(_positionBody.x * 40, 600 - _positionBody.y * 40);
-	_sprite.setTextureRect(_animation.uvRect);
-	_animation.Update(row, deltaTime);
-
-
-}
-
-
-void Conejo::moveEnemy()
-{
-	///// RECIBIMOS LA POSICION ACTUAL DEL CUERPO
-	_positionBody = getPositionBody();
-	
-
-	// CAMBIA DE DIRECCION
-	if (_positionBody.x <= _limiteIzq + _size.x && _estado == RUN_L) {
-		_velocidad = 2; // Invertir la velocidad
-		_sprite.setScale(-1,1);
-		_estado = RUN_R;
-		setAnimationState();
-		std::cout << "Pasamos por la izquierda" << std::endl;
-		_contacting = false;
-	}else if (_positionBody.x >= _limiteDer - _size.x && _estado == RUN_R) {
-		_velocidad = -2; // Invertir la velocidad
-		_sprite.setScale(1,1);
-		_estado = RUN_L;
-		setAnimationState();
-		std::cout << "Pasamos por la derecha" << std::endl;
-		_contacting = false;
-	}
-
-
-
-	///// SE GUARDA LA VELOCIDAD ACTUAL DE X E Y
-	b2Vec2 velocidadActual = _body->GetLinearVelocity();
-	///// SE PASA LA VELOCIDAD DE Y ACTUAL, Y LA NUEVA VELOCIDAD DE X (_velocidad esta seteado como propiedad de clase)
-	_body->SetLinearVelocity(b2Vec2(_velocidad, velocidadActual.y));
-
-}
-
-
 void Conejo::setContact(bool state) {
 	_contacting = state;
 }
 
-/////////////////// GRAPHICS
-
-
-void setAnimation() {
-
+void Conejo::setBorderWalk(float izquierdo, float derecho)
+{
+	_limiteIzq = izquierdo;
+	_limiteDer = derecho;
+	_velocidad = 2.0f;
 }
+
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+
+//***************SFML**************************/
 
 void Conejo::SetTextureRectAnimated() {
 	///// SE SETEA EL RECTANGULO QUE CORRESPONDE SOLO A LA PARTE
@@ -183,24 +175,26 @@ void Conejo::setAnimationState()
 
 }
 
+//***************UPDATE Y DRAW****************************/
+
+void Conejo::updateEnemie(int row, float deltaTime)
+{
+
+
+	Conejo::moveEnemy();
+	//////// ANIMACION
+	_sprite.setPosition(_positionBody.x * 40, 600 - _positionBody.y * 40);
+	_sprite.setTextureRect(_animation.uvRect);
+	_animation.Update(row, deltaTime);
+
+
+}
+
 void Conejo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
 }
 
-void Conejo::setBorderWalk(float izquierdo, float derecho)
-{
-	_limiteIzq = izquierdo;
-	_limiteDer = derecho;
-	_velocidad = 2.0f;
-}
-
-
-
-void Conejo::recibeDanio()
-{
-	std::cout << "recibi daño, auch" << std::endl;
-}
 
 
 Conejo::~Conejo()

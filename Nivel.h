@@ -5,13 +5,14 @@
 #include "Skull.h"
 #include "MappingLevel.h"
 #include "Background.h"
-#include "Collisionable.h"//****
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include "Corazon.h"
 #include "Conejo.h"
 #include "GameUi.h"
 #include "CollisionCategories.h"
 #include "Jugador.h"
+#include "Aldeano.h"
+#include "Tortuga.h"
 
 
 enum NIVELES {
@@ -22,15 +23,15 @@ class Nivel : public sf::Drawable {
 
 protected:
 	/// Array de punteros Enemigo
-
 	std::vector<std::shared_ptr<Enemigo>> enemigos;
+	/// Array de punteros Aldeanos
+	std::vector<std::shared_ptr<Aldeano>> aldeanos;
+
 	/// mapa con las texturas del fondo
 	Map _mapa;
 	/// plataformas segun nivel
 	Plataformas* _plataformas = nullptr;
-
 	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
-
 	/// fondo segun nviel
 	backgroundTile _background;
 	/// indicador de nivel
@@ -55,6 +56,7 @@ public:
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
 	void setMap(b2World& world);
+	void setVillager(b2World& world, float pixelMetro);
 	void nivelDrawer(sf::RenderWindow& window);
 	void enemiesCreator();
 	void setUI();
@@ -62,7 +64,7 @@ public:
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-	void playerEventHandler(const sf::Event& event);
+
 
 	~Nivel();
 

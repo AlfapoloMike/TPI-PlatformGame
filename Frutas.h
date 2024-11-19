@@ -3,7 +3,6 @@
 #include "Animation.h"
 #include <stdlib.h>
 #include <time.h>
-#include "Collisionable.h"
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include "CollisionCategories.h"
 
@@ -12,7 +11,7 @@ enum FRUIT_TYPE {
 	MANZANA, BANANA, FRUTILLA, KIWI, NARANJA, CEREZA, MELON, ANANA, PICKED
 };
 
-class Frutas : public sf::Drawable, public Collisionable {
+class Frutas : public sf::Drawable {
 protected:
 	sf::Sprite _sprite;
 	sf::Texture _texture;
@@ -54,6 +53,5 @@ public:
 	//sf::Texture getTexture();
 	//sf::Vector2f getPosition();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-	sf::FloatRect getBounds() const override;
 	~Frutas();
 };

@@ -13,7 +13,6 @@
 /// INCLUYENDO EL NIVEL
 #include "Nivel.h"
 /// INCLUDE DE ALE
-#include "Collisionable.h"
 #include "Jugador.h"
 #include "Aldeano.h"
 #include "Tortuga.h"
@@ -22,6 +21,8 @@
 #include "GameUi.h"
 #include "GameContactListener.h"
 
+
+#include "Portal.h"
 
 using namespace std;
 
@@ -33,6 +34,7 @@ int main()
 	window.setFramerateLimit(60);
 	srand((unsigned)time(NULL));
 
+	Portal portal(sf::Vector2f(100.0f, 100.0f));
 
 	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
 
@@ -42,10 +44,7 @@ int main()
 	sf::Clock clock;
 
 
-
 	
-	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
-
 
 	//////////////////////PRUEBAS DE BOX2D*********************************************
 
@@ -63,6 +62,8 @@ int main()
 
 	world.SetContactListener(&_contactListener);
 
+	Tortuga tortugui(sf::Vector2f(10.0f, 10.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(2.0f, 0.0f), pixelMetro);
+
 
 	while (window.isOpen())
 	{
@@ -79,23 +80,20 @@ int main()
 				window.close();
 			}
 
-			newNivel.playerEventHandler(event);
 		}
 
-
+		tortugui.updateVillager(0, deltaTime);
 		newNivel.nivelUpdate(world, window, deltaTime);
 
-		tortuga1.update(0, deltaTime);
-
+		portal.Update(0, deltaTime);
 
 		window.clear();
 
 
 
 		newNivel.nivelDrawer(window);
-		window.draw(tortuga1);
-
-
+		window.draw(portal);
+		window.draw(tortugui);
 
 		window.display();
 	}

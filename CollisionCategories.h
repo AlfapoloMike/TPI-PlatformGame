@@ -8,6 +8,18 @@ enum CollisionCategory : uint16_t {
     FRUITS = 0x0010,
     SKULLS = 0x0020,
     PLATFORM = 0x0040,
+    TURTLE = 0x0080,
+    /*
+    A = 0x0080,
+    B = 0x0100,
+    C = 0x0200,
+    D = 0x0400,
+    E = 0x0800,
+    F = 0x1000,
+    G = 0x2000,
+    H = 0x4000,
+    I = 0x8000,
+    */
     ////001
     ////010
     ////100

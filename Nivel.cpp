@@ -25,6 +25,7 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	setMap(world);
 	setEnemigos(world, pixelMetro);
 	setPlayer(world);
+	setVillager(world, pixelMetro);
 	setUI();
 }
 
@@ -41,12 +42,12 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 	switch (_nivel)
 	{
 	case NIVEL_1:
-		///442 /// 4725
+	
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(7.75f, 10.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(10.75f, 5.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(13.75f, 7.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
-		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(8.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40));
-		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(12.0f, 8.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), 2.0f, 15.0f, 40));
+		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(8.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
+		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(12.0f, 8.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
 
 		break;
 		
@@ -117,7 +118,23 @@ void Nivel::setMap(b2World& world)
 	}
 }
 
+void Nivel::setVillager(b2World& world, float pixelMetro) {
+	switch (_nivel)
+	{
+	case NIVEL_1:
 
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(3.75f, 11.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(12.75f, 12.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(8.75f, 8.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+
+		break;
+
+	default:
+		break;
+
+	}
+
+}
 
 void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime)
 {
@@ -137,6 +154,11 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		}
 	}
 	
+	for (const auto& aldeano : aldeanos) {
+		if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+			tortuga->updateVillager(0, deltaTime);
+		}
+	}
 	
 	_background.backgroundUpdate();
 	
@@ -154,11 +176,7 @@ void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
-void Nivel::playerEventHandler(const sf::Event& event) {
 
-	_personaje->handleEvent(event);
-
-}
 
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
@@ -177,6 +195,12 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		}
 		else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
 			window.draw(conejo->getSprite());
+		}
+	}
+
+	for (const auto& aldeano : aldeanos) {
+		if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+			window.draw(tortuga->getSprite());
 		}
 	}
 

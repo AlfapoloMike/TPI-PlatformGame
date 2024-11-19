@@ -18,7 +18,7 @@ Jugador::Jugador(b2World& world) {
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE;   // Colisiona solo con el personaje
 		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
@@ -37,6 +37,18 @@ Jugador::Jugador(b2World& world) {
 void Jugador::update(int row, float deltaTime) {
 	// Obtener posición de Box2D y adaptarla con el nuevo SCALE
 	b2Vec2 pos = _body->GetPosition();
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
+	if (velocity.y > 0 && floorContacting == false) {
+		std::cout << "Desactivo la plataforma" << std::endl;
+		setFilterDataPlayer(PLATFORM, false);
+	}
+	else if (velocity.y < 0) {
+		setFilterDataPlayer(PLATFORM, true);
+
+	}
+
+
 	_sprite.setPosition(pos.x * SCALE, 600.0f - (pos.y * SCALE));
 	cmd();
 	animationControl(deltaTime);
@@ -82,13 +94,6 @@ void Jugador::cmd() {
 
 }
 
-void Jugador::handleEvent(const sf::Event& event) {
-
-
-
-}
-
-
 
 void Jugador::animationControl(float deltaTime) {
 
@@ -101,7 +106,7 @@ void Jugador::animationControl(float deltaTime) {
 			_estado = CAE;
 			setAnimationState();
 			animationTimer = 0;
-			setFilterDataPlayer(_lastEnemyContact, true);
+			setFilterDataPlayer(true);
 		}
 	}
 
@@ -320,6 +325,23 @@ void Jugador::setFilterDataPlayer(CollisionCategory newFilter, bool state)
 	if (state == true) {
 
 		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits |= newFilter;
+		_body->GetFixtureList()->SetFilterData(filtro);
+	}
+	//////// APAGAMOS UN FILTRO DE CONTACTO
+	else if (state == false) {
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits &= ~newFilter;
+		_body->GetFixtureList()->SetFilterData(filtro);
+
+	}
+
+}
+void Jugador::setFilterDataPlayer(bool state) {
+
+	if (state == true) {
+
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 		filtro.maskBits |= _maskBits;
 		_body->GetFixtureList()->SetFilterData(filtro);
 	}
@@ -328,7 +350,6 @@ void Jugador::setFilterDataPlayer(CollisionCategory newFilter, bool state)
 		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 		filtro.maskBits &= ~_maskBits;
 		_body->GetFixtureList()->SetFilterData(filtro);
-		_lastEnemyContact = newFilter;
 	}
 
 }
@@ -405,6 +426,15 @@ void Jugador::recibeDanio(int lado)
 	}
 
 
+}
+
+void Jugador::rebote() {
+
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
+	velocity.y = 5.0f;
+
+	_body->SetLinearVelocity(velocity);
 }
 
 void Jugador::draw(sf::RenderTarget& target, sf::RenderStates states) const {

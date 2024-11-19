@@ -158,7 +158,6 @@
   <ItemGroup>
     <ClCompile Include="Aldeano.cpp" />
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Collisionable.cpp" />
     <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Corazon.cpp" />
     <ClCompile Include="Enemigo.cpp" />
@@ -172,6 +171,7 @@
     <ClCompile Include="MappingLevel.cpp" />
     <ClCompile Include="Nivel.cpp" />
     <ClCompile Include="Plataformas.cpp" />
+    <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Skull.cpp" />
     <ClCompile Include="Tortuga.cpp" />
   </ItemGroup>
@@ -179,7 +179,6 @@
     <ClInclude Include="Aldeano.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
-    <ClInclude Include="Collisionable.h" />
     <ClInclude Include="CollisionCategories.h" />
     <ClInclude Include="Conejo.h" />
     <ClInclude Include="Corazon.h" />
@@ -192,6 +191,7 @@
     <ClInclude Include="MappingLevel.h" />
     <ClInclude Include="Nivel.h" />
     <ClInclude Include="Plataformas.h" />
+    <ClInclude Include="Portal.h" />
     <ClInclude Include="Skull.h" />
     <ClInclude Include="Tortuga.h" />
   </ItemGroup>

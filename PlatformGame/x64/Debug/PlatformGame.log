@@ -1,30 +1,70 @@
-﻿  GameContactListener.cpp
+﻿  Aldeano.cpp
+  Animation.cpp
+D:\Nueva carpeta\TPI-PlatformGame\Animation.cpp(75,22): warning C4018: '>=': no coinciden signed/unsigned
+  Conejo.cpp
+  Corazon.cpp
+D:\Nueva carpeta\TPI-PlatformGame\Corazon.cpp(9,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\Nueva carpeta\TPI-PlatformGame\Corazon.cpp(9,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\Nueva carpeta\TPI-PlatformGame\Corazon.cpp(134,86): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Nueva carpeta\TPI-PlatformGame\Corazon.cpp(134,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Enemigo.cpp
+  Frutas.cpp
+  GameContactListener.cpp
+  GameUi.cpp
   Jugador.cpp
-  Nivel.cpp
-C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Jugador.cpp(72,17): warning C4305: '=': truncamiento de 'double' a 'float'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82): warning C4244:         ]
-  (compilando archivo de origen "Nivel.cpp")
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,82):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\Nivel.cpp(48,27):
-          Vea la referencia a la creación de una instancia de la función plantilla "std::shared_ptr<Conejo> std::make_shared<Conejo,sf::Vector2f,sf::Vector2f,b2World&,sf::Vector2f,float,float,int>(sf::Vector2f &&,sf::Vector2f &&,b2World &,sf::Vector2f &&,float &&,float &&,int &&)" que se está compilando
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\memory(2906,46):
-          Vea la referencia a la creación de una instancia de la función plantilla "std::_Ref_count_obj2<Conejo>::_Ref_count_obj2<_Ty,_Ty,b2World&,_Ty,float,float,int>(_Ty &&,_Ty &&,b2World &,_Ty &&,float &&,float &&,int &&)" que se está compilando
-          with
-          [
-              _Ty=sf::Vector2f
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\memory(2095,18):
-          Vea la referencia a la creación de una instancia de la función plantilla "void std::_Construct_in_place<_Ty,sf::Vector2<float>,sf::Vector2<float>,b2World&,sf::Vector2<float>,float,float,int>(_Ty &,sf::Vector2<float> &&,sf::Vector2<float> &&,b2World &,sf::Vector2<float> &&,float &&,float &&,int &&) noexcept(false)" que se está compilando
-          with
-          [
-              _Ty=Conejo
-          ]
-  
+D:\Nueva carpeta\TPI-PlatformGame\Jugador.cpp(84,17): warning C4305: '=': truncamiento de 'double' a 'float'
   main.cpp
+  Background.cpp
+  Map.cpp
+  MappingLevel.cpp
+  Nivel.cpp
+  Plataformas.cpp
+  Portal.cpp
+  Skull.cpp
+  Tortuga.cpp
   Generando código...
-  PlatformGame.vcxproj -> C:\Users\Miguel Aguilar\Desktop\TPI - Juego de plataformas\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+D:\Nueva carpeta\TPI-PlatformGame\Map.cpp(91,1): warning C4715: 'Map::spriteCoordFinder': no todas las rutas de acceso de control devuelven un valor
+box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_world.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collision.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collision.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_block_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_block_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_settings.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_settings.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_broad_phase.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_broad_phase.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_manager.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_manager.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_math.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_math.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_island.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_island.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_dynamic_tree.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_dynamic_tree.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_draw.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_draw.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_time_of_impact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_time_of_impact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_timer.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_timer.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_stack_allocator.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_stack_allocator.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_world_callbacks.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world_callbacks.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_contact_solver.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_contact_solver.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_circle_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_circle_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_polygon_contact.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_contact.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_distance_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_distance_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_friction_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_friction_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_gear_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_gear_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_motor_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_motor_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_mouse_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_mouse_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_prismatic_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_prismatic_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_pulley_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_pulley_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_revolute_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_revolute_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_weld_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_weld_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_wheel_joint.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_wheel_joint.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_edge.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_edge.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_chain_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+  PlatformGame.vcxproj -> D:\Nueva carpeta\TPI-PlatformGame\x64\Debug\PlatformGame.exe

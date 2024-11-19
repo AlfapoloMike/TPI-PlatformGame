@@ -90,9 +90,6 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Archivos de origen\Animacion</Filter>
     </ClCompile>
-    <ClCompile Include="Collisionable.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Aldeano.cpp">
       <Filter>Archivos de origen\Aldeanos</Filter>
     </ClCompile>
@@ -129,6 +126,9 @@
     <ClCompile Include="GameUi.cpp">
       <Filter>Archivos de origen\GameUi</Filter>
     </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -142,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Archivos de encabezado\Animacion</Filter>
-    </ClInclude>
-    <ClInclude Include="Collisionable.h">
-      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Aldeano.h">
       <Filter>Archivos de encabezado\Aldeanos</Filter>
@@ -184,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="GameUi.h">
       <Filter>Archivos de encabezado\GameUi</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

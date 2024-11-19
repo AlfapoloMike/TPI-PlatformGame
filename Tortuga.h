@@ -5,33 +5,50 @@
 class Tortuga : public Aldeano {
 
 public:
-	Tortuga(sf::Vector2f newPosition, sf::Vector2f newVelocity);
-	void update(int row, float deltaTime);
-	//void move(); Tortuga no se mueve
-	void SetTextureRectAnimated();
-	void setAnimationState();
-	void animationControl();
-	~Tortuga();
+	Tortuga(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro);
 
+	//void move(); Tortuga no se mueve
+
+
+	void move(float velocidad);
+
+	void recibeDanio();
+
+	//***************BOX2D****************************/
 	void setPositionBody(sf::Vector2f newPosition);
 	void setBodyInWorld(b2World& world);
 	void setSizeBody(sf::Vector2f newSize);
 	void setFixture();
-	void getPositionBody();
-	void moveEnemy(float velocidad);
+	b2Vec2 getPositionBody();
+	bool getSpikes();
+
+	//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+	/*
+	void setNewPosition(b2Vec2 newPosition);
+	void moveEnemy();
+	*/
+	void setNewDirection(bool lado);
+	void setContact(bool state);
+	void setBorderWalk(float izquierdo, float derecho);
+
+	//***************SFML**************************/
+	void SetTextureRectAnimated();
+	void setAnimationState();
+	void animationControl(float deltaTime);
+
+	//***************UPDATE Y DRAW****************************/
+
+	void updateVillager(int row, float deltaTime) override;
+	~Tortuga();
 
 private:
 	enum AnimationState {
 		ESPINAS_EXT,
 		ESPINAS_RET,
 		ESPINAS_IDLE,
-		IDLE
+		IDLE,
+		HITTED
 	};
-
-	AnimationState _animationState;
-	float _animationTimeCounter = 0;
-	bool _espinas;
-
 
 	/********************/
 	//// Box2D GENERACION
@@ -39,8 +56,16 @@ private:
 	b2BodyDef _bodyDef;
 	b2Body* _body;
 	b2PolygonShape _bodyBox;
-	b2FixtureDef _fixtureDef;
-	b2Vec2 _velocidad;
-	/********************/
+	b2Fixture* _fixture;
+	float _velocidad = 0.0f;
+	/// en principio los limites tienen que ser el ancho de pantalla
+	// al tocar la plataforma donde aparece, los limites se re-setean
+	float _limiteIzq = 0.0f, _limiteDer = 20.0f;
+	AnimationState _animationState = IDLE;
+	b2Vec2 _positionBody;
+	bool _contacting = false;
+	float _animationTimeCounter = 0;
+	bool _spikes = false;
+	bool _alive = true;
 };
 
