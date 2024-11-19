@@ -12,13 +12,15 @@ public:
 
 	void move(float velocidad);
 
+	void recibeDanio();
+
 	//***************BOX2D****************************/
 	void setPositionBody(sf::Vector2f newPosition);
 	void setBodyInWorld(b2World& world);
 	void setSizeBody(sf::Vector2f newSize);
 	void setFixture();
 	b2Vec2 getPositionBody();
-
+	bool getSpikes();
 
 	//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
 	/*
@@ -44,7 +46,8 @@ private:
 		ESPINAS_EXT,
 		ESPINAS_RET,
 		ESPINAS_IDLE,
-		IDLE
+		IDLE,
+		HITTED
 	};
 
 	/********************/
@@ -62,5 +65,7 @@ private:
 	b2Vec2 _positionBody;
 	bool _contacting = false;
 	float _animationTimeCounter = 0;
+	bool _spikes = false;
+	bool _alive = true;
 };
 

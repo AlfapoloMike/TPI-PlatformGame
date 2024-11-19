@@ -269,6 +269,90 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 	/****************************************COLISION TORTUGA Y MURO******************************************************************/
 
+	/****************************************COLISION JUGADOR Y TORTUGA ******************************************************************/
+
+	if ((categoryA & TURTLE) && (categoryB & PLAYER) ||
+		(categoryA & PLAYER) && (categoryB & TURTLE)) {
+
+
+
+		if (categoryA & PLAYER) {
+			//std::cout << "PUNTERO DE A --- " << bodyA->GetUserData().pointer << std::endl;
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+			turtle = reinterpret_cast<Tortuga*>(bodyB->GetUserData().pointer);
+			if (player != nullptr && turtle != nullptr) {
+				
+
+				bool spikes = turtle->getSpikes();
+				if (spikes == true) {
+
+					player->recibeDanio(2);
+					player->setFilterDataPlayer(false);
+					contact->SetEnabled(false);
+
+
+				}
+				else if (spikes == false) {
+					if (normal.y < 0.0) {
+			
+
+						std::cout << "Mate tortuga" << std::endl;
+						turtle->recibeDanio();
+						player->rebote();
+						contact->SetEnabled(false);
+
+					}
+					else if (normal.y > 0.0) {
+						player->recibeDanio(2);
+						player->setFilterDataPlayer(false);
+						contact->SetEnabled(false);
+					}
+				}
+
+			}
+		}
+		else if (categoryB & PLAYER) {
+			//std::cout << "PUNTERO DE B --- " << bodyB->GetUserData().pointer << std::endl;
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+			turtle = reinterpret_cast<Tortuga*>(bodyA->GetUserData().pointer);
+
+			if (player != nullptr) {
+
+				bool spikes = turtle->getSpikes();
+				if (spikes == true) {
+
+						player->recibeDanio(2);
+						player->setFilterDataPlayer(false);
+						contact->SetEnabled(false);
+
+					
+				}else if (spikes == false) {
+					if (normal.y < 0.0) {
+						player->recibeDanio(2);
+						player->setFilterDataPlayer(false);
+						contact->SetEnabled(false);
+					}
+					else if (normal.y > 0.0) {
+	
+						std::cout << "Mate tortuga" << std::endl;
+						turtle->recibeDanio();
+						player->rebote();
+						contact->SetEnabled(false);
+
+					}
+				}
+
+
+
+			}
+		}
+
+
+	}
+
+	/****************************************COLISION JUGADOR Y TORTUGA ******************************************************************/
+
+
 	//*********************************** COLISIONES CON JUGADOR Y CONEJO **************************************
 
 

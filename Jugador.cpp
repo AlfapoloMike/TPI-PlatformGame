@@ -18,7 +18,7 @@ Jugador::Jugador(b2World& world) {
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE;   // Colisiona solo con el personaje
 		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
@@ -426,6 +426,15 @@ void Jugador::recibeDanio(int lado)
 	}
 
 
+}
+
+void Jugador::rebote() {
+
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
+	velocity.y = 5.0f;
+
+	_body->SetLinearVelocity(velocity);
 }
 
 void Jugador::draw(sf::RenderTarget& target, sf::RenderStates states) const {
