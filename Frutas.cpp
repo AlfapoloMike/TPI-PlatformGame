@@ -19,11 +19,13 @@ void Frutas::setPositionBody(sf::Vector2f newPosition)
 {
 	_bodyDef.type = b2_staticBody;
 	_bodyDef.position.Set(newPosition.x, newPosition.y);
+
 }
 
 void Frutas::setBodyInWorld(b2World& world)
 {
 	_body = world.CreateBody(&_bodyDef);
+	_body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
 
 }
 
@@ -95,7 +97,7 @@ void Frutas::setTextureFruit()
 		_texture.loadFromFile("./assets/frutas/Melon.png");
 		_sprite.setTexture(_texture);
 	}
-	else if (frutaTipo == FRUTA_RECOLECTADA) {
+	else if (frutaTipo == PICKED) {
 		_texture.loadFromFile("./assets/frutas/Recolectada.png");
 		_sprite.setTexture(_texture);
 	}
@@ -160,7 +162,7 @@ void Frutas::setAnimationState()
 		_animation.setSwitchTime(0.04f);
 		_animation.setImageUvRectSize(&_texture);
 	}
-	else if(frutaTipo == FRUTA_RECOLECTADA) {
+	else if(frutaTipo == PICKED) {
 		//setTextureFruit("./assets/frutas/Recolectada.png");
 		_animation.setImageCount(sf::Vector2u(6, 1));
 		_animation.setSwitchTime(0.09f);
@@ -191,34 +193,41 @@ void Frutas::setRandomFruit()
 
 	if (random == 1) {
 		frutaTipo = FRUIT_TYPE::MANZANA;
-
+		_points = 100;
 	}
 	else if (random == 2) {
 		frutaTipo = FRUIT_TYPE::BANANA;
+		_points = 50;
 
 	}
 	else if (random == 3) {
 		frutaTipo = FRUIT_TYPE::FRUTILLA;
+		_points = 150;
 
 	}
 	else if (random == 4) {
 		frutaTipo = FRUIT_TYPE::KIWI;
+		_points = 70;
 
 	}
 	else if (random == 5) {
 		frutaTipo = FRUIT_TYPE::NARANJA;
+		_points = 30;
 
 	}
 	else if (random == 6) {
 		frutaTipo = FRUIT_TYPE::CEREZA;
+		_points = 30;
 
 	}
 	else if (random == 7) {
 		frutaTipo = FRUIT_TYPE::MELON;
+		_points = 110;
 
 	}
 	else if (random == 8) {
 		frutaTipo = FRUIT_TYPE::ANANA;
+		_points = 70;
 
 	}
 
@@ -230,11 +239,44 @@ void Frutas::setRectTextureAnimated()
 
 }
 
+void Frutas::animationControl(float deltaTime) {
+
+	if (frutaTipo == PICKED) {
+		_animationTimer += deltaTime;
+		if (_animationTimer >= 0.45f) {
+			_picked = true;
+		}
+	}
+}
+
 void Frutas::fruitUpdate(int row, float deltaTime)
 {
 	_sprite.setTextureRect(_animation.uvRect);
 	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
+	animationControl(deltaTime);
 	_animation.Update(row, deltaTime);
+}
+
+void Frutas::setFruitPicked()
+{
+	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+	filtro.maskBits &= ~PLAYER;
+	_body->GetFixtureList()->SetFilterData(filtro);
+
+	frutaTipo = PICKED;
+	setTextureFruit();
+	setAnimationState();
+}
+
+int Frutas::getPoints()
+{
+
+	return _points;
+}
+
+bool Frutas::getPickedState()
+{
+	return _picked;
 }
 
 
@@ -245,10 +287,6 @@ void Frutas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
-sf::FloatRect Frutas::getBounds() const
-{
-	return _sprite.getGlobalBounds();
-}
 
 
 Frutas::~Frutas()

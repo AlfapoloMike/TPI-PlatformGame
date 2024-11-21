@@ -56,18 +56,39 @@ void mappingPlatform(Plataformas *arrayPlataformas, int level, b2World& world, f
 
 
 	if (level == 1) {
+		
+		arrayPlataformas[0] = Plataformas(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[1] = Plataformas(sf::Vector2f(10.0f, 2.85f), sf::Vector2f(8.5f, 0.1f), world, true); // 1
+		arrayPlataformas[2] = Plataformas(sf::Vector2f(13.5f, 4.85f), sf::Vector2f(5.0f, 0.1f), world, true); // 1
+		arrayPlataformas[3] = Plataformas(sf::Vector2f(11.25f, 8.85f), sf::Vector2f(1.25f, 0.1f), world, true); // 1
+		arrayPlataformas[4] = Plataformas(sf::Vector2f(16.5f, 7.85f), sf::Vector2f(2.0f, 0.1f), world, true); // 1
+		arrayPlataformas[5] = Plataformas(sf::Vector2f(7.0f, 9.35f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[6] = Plataformas(sf::Vector2f(5.0f, 4.85f), sf::Vector2f(1.0f, 0.1f), world, true); // 1<<<<<<<<<
+		arrayPlataformas[7] = Plataformas(sf::Vector2f(14.0f, 11.37f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[8] = Plataformas(sf::Vector2f(17.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[9] = Plataformas(sf::Vector2f(1.37f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, false); // 1
+		arrayPlataformas[10] = Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, false); // 1
+		arrayPlataformas[11] = Plataformas(sf::Vector2f(10.0f, 1.375), sf::Vector2f(9.0f, 0.1f), world, false); // 1
+		arrayPlataformas[12] = Plataformas(sf::Vector2f(10.0f, 13.675f), sf::Vector2f(9.0f, 0.1f), world, false); // 1
+		
 
-		arrayPlataformas[0]=Plataformas::Plataformas(sf::Vector2f(100/pixelMetro, 415/pixelMetro), sf::Vector2f((80/pixelMetro)/2, 0.1), world, WALL); // 1
-		arrayPlataformas[1] = Plataformas::Plataformas(sf::Vector2f(400 / pixelMetro, 115 / pixelMetro), sf::Vector2f((680 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[2] = Plataformas::Plataformas(sf::Vector2f(540 / pixelMetro, 195 / pixelMetro), sf::Vector2f((400 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[3] = Plataformas::Plataformas(sf::Vector2f(450 / pixelMetro, 355 / pixelMetro), sf::Vector2f((100 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[4] = Plataformas::Plataformas(sf::Vector2f(660 / pixelMetro, 315 / pixelMetro), sf::Vector2f((160 / pixelMetro) / 2,0.1), world, WALL); // 1
-		arrayPlataformas[5] = Plataformas::Plataformas(sf::Vector2f(280 / pixelMetro, 375 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[6] = Plataformas::Plataformas(sf::Vector2f(200 / pixelMetro, 435 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[7] = Plataformas::Plataformas(sf::Vector2f(560 / pixelMetro, 455 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[8] = Plataformas::Plataformas(sf::Vector2f(700 / pixelMetro, 415 / pixelMetro), sf::Vector2f((80 / pixelMetro) / 2, 0.1), world, WALL); // 1
-		arrayPlataformas[9] = Plataformas::Plataformas(sf::Vector2f(600 / pixelMetro, 0 / pixelMetro), sf::Vector2f((60 / pixelMetro) / 2, (60 / pixelMetro) / 2), world, WALL); // 1
+	/*
+		arrayPlataformas[0] = Plataformas::Plataformas(sf::Vector2f(17.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[1] = Plataformas::Plataformas(sf::Vector2f(14.0f, 11.37f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[2] = Plataformas::Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, true); // 1
+		arrayPlataformas[3] = Plataformas::Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, true); // 1
+		arrayPlataformas[4] = Plataformas::Plataformas(sf::Vector2f(16.5f, 7.85f), sf::Vector2f(2.0f, 0.1f), world, true); // 1
+		arrayPlataformas[5] = Plataformas::Plataformas(sf::Vector2f(7.0f, 9.35f), sf::Vector2f(1.0f, 0.1f), world, true); // 1
+		arrayPlataformas[6] = Plataformas::Plataformas(sf::Vector2f(5.0f, 4.85f), sf::Vector2f(1.0f, 0.1f), world, true); // 1<<<<<<<<<
+		arrayPlataformas[7] = Plataformas::Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, true); // 1
+		arrayPlataformas[8] = Plataformas::Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, true); // 1
+		arrayPlataformas[9] = Plataformas::Plataformas(sf::Vector2f(1.37f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, WALL); // 1
+		arrayPlataformas[10] = Plataformas::Plataformas(sf::Vector2f(18.625f, 7.5f), sf::Vector2f(0.1f, 6.0f), world, WALL); // 1
+		arrayPlataformas[11] = Plataformas::Plataformas(sf::Vector2f(10.0f, 1.375), sf::Vector2f(9.0f, 0.1f), world, WALL); // 1
+		arrayPlataformas[12] = Plataformas::Plataformas(sf::Vector2f(10.0f, 13.675f), sf::Vector2f(9.0f, 0.1f), world, WALL); // 1
+	*/
 
+		
 	}
 	if (level == 2) {
 		//// ALGO

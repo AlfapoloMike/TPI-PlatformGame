@@ -8,24 +8,26 @@ Jugador::Jugador(b2World& world) {
 
 	_body = world.CreateBody(&_bodyDef);
 
-	/////////asgina a travez de un puntero el objeto conejo al userData
+	/////////asgina a travez de un puntero el objeto Jugador al userData
 	_body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
 
-	_bodyBox.SetAsBox(0.35f, 0.35f); // Tamaño en metros (1 metro de ancho y alto)
+	_bodyBox.SetAsBox(0.4f, 0.4f); // Tamaño en metros (1 metro de ancho y alto)
 	b2FixtureDef _fixtureDef;
 	_fixtureDef.shape = &_bodyBox;
 	_fixtureDef.density = 1.0f; // Mantén la densidad para colisiones
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | ENEMY | FRUITS;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE;   // Colisiona solo con el personaje
+		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
 	// Ajustar el origen al centro del personaje (en relación con el nuevo SCALE)
-	_sprite.setOrigin(16, 16);
 	_estado = QUIETO;
-	_saltos = 0;
 	setAnimationState();
+	_sprite.setOrigin(0.4f*40, 0.4f * 40);
+	_sprite.setPosition(2.50f * 40, 600 - 7.0f * 40);
+	_saltos = 0;
 
 
 }
@@ -35,11 +37,22 @@ Jugador::Jugador(b2World& world) {
 void Jugador::update(int row, float deltaTime) {
 	// Obtener posición de Box2D y adaptarla con el nuevo SCALE
 	b2Vec2 pos = _body->GetPosition();
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
+	if (velocity.y > 0 && floorContacting == false) {
+		std::cout << "Desactivo la plataforma" << std::endl;
+		setFilterDataPlayer(PLATFORM, false);
+	}
+	else if (velocity.y < 0) {
+		setFilterDataPlayer(PLATFORM, true);
+
+	}
+
+
 	_sprite.setPosition(pos.x * SCALE, 600.0f - (pos.y * SCALE));
 	cmd();
 	animationControl(deltaTime);
 	_sprite.setTextureRect(_animation.uvRect);
-	_sprite.setOrigin(_animation.getUvRect().width / 2.f, _animation.getUvRect().height / 2.f);
 	_animation.Update(0, deltaTime);
 }
 
@@ -81,15 +94,11 @@ void Jugador::cmd() {
 
 }
 
-void Jugador::handleEvent(const sf::Event& event) {
-
-
-
-}
-
-
 
 void Jugador::animationControl(float deltaTime) {
+
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
 
 	if (_estado == HITTED) {
 		animationTimer += deltaTime;
@@ -97,57 +106,112 @@ void Jugador::animationControl(float deltaTime) {
 			_estado = CAE;
 			setAnimationState();
 			animationTimer = 0;
-			setFilterDataPlayer(ENEMY, true);
+			setFilterDataPlayer(true);
 		}
 	}
-	if (floorContacting == false && _estado == CAE) {
-		b2Vec2 velocity = _body->GetLinearVelocity();
-		if (velocity.x > 0) {
-			_sprite.setScale(1, 1);
-		}
-		else if (velocity.x < 0) {
-			_sprite.setScale(-1, 1);
-		}
-	}
+
 	if (floorContacting == true && _estado == CAE) {
 		_estado = QUIETO;
 		setAnimationState();
 	}
 
+
 	if (_estado == QUIETO) {
-		b2Vec2 velocity = _body->GetLinearVelocity();
-		if (velocity.x > 0) {
+		if (velocity.x > 0 && velocity.y <= 0.01f) {
 			_estado = CAMINAR;
 			setAnimationState();
 			_sprite.setScale(-1, 1);
 		}
-		else if (velocity.x < 0) {
+		else if (velocity.x < 0 && velocity.y <= 0.01f) {
 			_estado = CAMINAR;
 			setAnimationState();
 			_sprite.setScale(1, 1);
+		}
+		else if (velocity.y > 0.01f) {
+			_estado = SALTO;
+			setAnimationState();
 		}
 
 
 	}
 	if (_estado == CAMINAR) {
-		b2Vec2 velocity = _body->GetLinearVelocity();
 		if (velocity.x > 0) {
 			_sprite.setScale(1, 1);
 		}
 		else if (velocity.x < 0) {
 			_sprite.setScale(-1, 1);
 		}
-		else {
+		if (velocity.x == 0) {
 			_estado = QUIETO;
 			setAnimationState();
 		}
-	}
-	if (_estado != CAE && floorContacting == false) {
-		if (animationTimer == 0) {
-			_estado = CAE;
+		else if (velocity.y > 0.01f) {
+			_estado = SALTO;
 			setAnimationState();
 		}
 	}
+	if (_estado == SALTO) {
+
+
+		if (velocity.x > 0) {
+			_sprite.setScale(1, 1);
+		}
+		else if (velocity.x < 0) {
+			_sprite.setScale(-1, 1);
+		}
+		if (velocity.y <= 0.01f) {
+			_estado = CAE;
+			setAnimationState();
+
+			if (_saltos == 2) {
+				std::cout << "DOBLE SALTE" << std::endl;
+				_estado = DOBLE_SALTO;
+				setAnimationState();
+			}
+		}
+		else if (velocity.y >= 0.01 && _saltos == 2) {
+			std::cout << "DOBLE SALTE" << std::endl;
+			_estado = DOBLE_SALTO;
+			setAnimationState();
+		}
+
+	}
+	if (_estado == DOBLE_SALTO) {
+		animationTimer += deltaTime;
+		if (animationTimer >= 0.3f) {
+			if (velocity.y >= 0.01f) {
+				_estado = SALTO;
+				setAnimationState();
+				animationTimer = 0;
+				_saltos++;
+
+			}
+			else if (velocity.y <= 0.01f) {
+				_estado = CAE;
+				setAnimationState();
+				animationTimer = 0;
+				_saltos++;
+
+			}
+		}
+	}
+	if (_estado == CAE) {
+
+		if (velocity.x > 0) {
+			_sprite.setScale(1, 1);
+		}
+		else if (velocity.x < 0) {
+			_sprite.setScale(-1, 1);
+		}
+		if (_saltos == 2) {
+			_estado = DOBLE_SALTO;
+			setAnimationState();
+			animationTimer = 0;
+		}
+	}
+
+
+
 
 
 }
@@ -171,6 +235,14 @@ bool* Jugador::getVida()
 	return vidas;
 }
 
+bool Jugador::getFloorContact()
+{
+	return floorContacting;
+}
+
+bool Jugador::getWallContact() {
+	return roofContacting;
+}
 
 
 /// SETTERS
@@ -199,6 +271,7 @@ void Jugador::setAnimationState() {
 		_animation.setImageCount(sf::Vector2u(11, 1));
 		_animation.setSwitchTime(0.06f);
 		_animation.setImageUvRectSize(&_texture);
+		
 	}
 	if (_estado == ESTADOS::SALTO) {
 		setTexture("./assets/personaje/Frogar/Jump(32x32).png");
@@ -209,7 +282,13 @@ void Jugador::setAnimationState() {
 	if (_estado == ESTADOS::CAMINAR) {
 		setTexture("./assets/personaje/Frogar/Run(32x32).png");
 		_animation.setImageCount(sf::Vector2u(12, 1));
-		_animation.setSwitchTime(0.09f);
+		_animation.setSwitchTime(0.07f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	if (_estado == ESTADOS::DOBLE_SALTO) {
+		setTexture("./assets/personaje/Frogar/DoubleJump(32x32).png");
+		_animation.setImageCount(sf::Vector2u(6, 1));
+		_animation.setSwitchTime(0.02f);
 		_animation.setImageUvRectSize(&_texture);
 	}
 
@@ -219,6 +298,13 @@ void Jugador::setAnimationState() {
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
 	}
+	if (_estado == ESTADOS::IN_WALL) {
+		setTexture("./assets/personaje/Frogar/WallJump(32x32).png");
+		_animation.setImageCount(sf::Vector2u(5, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+
 
 }
 
@@ -238,15 +324,47 @@ void Jugador::setFilterDataPlayer(CollisionCategory newFilter, bool state)
 	//////// ENCENDEMOS UN FILTRO DE CONTACTO 
 	if (state == true) {
 
-	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-	filtro.maskBits |= newFilter;
-	_body->GetFixtureList()->SetFilterData(filtro);
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits |= newFilter;
+		_body->GetFixtureList()->SetFilterData(filtro);
 	}
 	//////// APAGAMOS UN FILTRO DE CONTACTO
 	else if (state == false) {
-	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-	filtro.maskBits &= ~newFilter;
-	_body->GetFixtureList()->SetFilterData(filtro);
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits &= ~newFilter;
+		_body->GetFixtureList()->SetFilterData(filtro);
+
+	}
+
+}
+void Jugador::setFilterDataPlayer(bool state) {
+
+	if (state == true) {
+
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits |= _maskBits;
+		_body->GetFixtureList()->SetFilterData(filtro);
+	}
+	//////// APAGAMOS UN FILTRO DE CONTACTO
+	else if (state == false) {
+		b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+		filtro.maskBits &= ~_maskBits;
+		_body->GetFixtureList()->SetFilterData(filtro);
+	}
+
+}
+
+void Jugador::setInWall(bool state)
+{
+	if (state == true) {
+		_estado = IN_WALL;
+		roofContacting = true;
+		setAnimationState();
+	}
+	else if (state == false && _estado != HITTED) {
+		roofContacting = false;
+		_estado = CAE;
+		setAnimationState();
 	}
 
 }
@@ -308,6 +426,15 @@ void Jugador::recibeDanio(int lado)
 	}
 
 
+}
+
+void Jugador::rebote() {
+
+	b2Vec2 velocity = _body->GetLinearVelocity();
+
+	velocity.y = 5.0f;
+
+	_body->SetLinearVelocity(velocity);
 }
 
 void Jugador::draw(sf::RenderTarget& target, sf::RenderStates states) const {

@@ -13,7 +13,6 @@
 /// INCLUYENDO EL NIVEL
 #include "Nivel.h"
 /// INCLUDE DE ALE
-#include "Collisionable.h"
 #include "Jugador.h"
 #include "Aldeano.h"
 #include "Tortuga.h"
@@ -23,58 +22,9 @@
 #include "GameContactListener.h"
 
 
+#include "Portal.h"
+
 using namespace std;
-
-
-
-
-
-
-
-class TestBall {
-public:
-	TestBall(b2World& world, float startX, float startY, float radius = 1.0f) {
-		// Definir el cuerpo dinámico
-		b2BodyDef bodyDef;
-		bodyDef.type = b2_dynamicBody;
-		bodyDef.position.Set(startX, startY);
-
-		// Crear el cuerpo en el mundo
-		ballBody = world.CreateBody(&bodyDef);
-
-		// Definir la forma de la bola
-		b2CircleShape circleShape;
-		circleShape.m_radius = radius;
-
-		// Configurar propiedades físicas
-		b2FixtureDef fixtureDef;
-		fixtureDef.shape = &circleShape;
-		fixtureDef.density = 1.0f;
-		fixtureDef.friction = 0.3f;
-		fixtureDef.restitution = 0.6f;
-
-		// Asociar el fixture a la bola
-		ballBody->CreateFixture(&fixtureDef);
-	}
-
-	// Obtener posición para verificar en la simulación
-	b2Vec2 getPosition() const {
-		return ballBody->GetPosition();
-	}
-
-	float getAngle() const {
-		return ballBody->GetAngle();
-	}
-
-private:
-	b2Body* ballBody;
-};
-
-
-
-
-
-
 
 
 
@@ -84,6 +34,7 @@ int main()
 	window.setFramerateLimit(60);
 	srand((unsigned)time(NULL));
 
+	Portal portal(sf::Vector2f(100.0f, 100.0f));
 
 	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
 
@@ -93,10 +44,7 @@ int main()
 	sf::Clock clock;
 
 
-
 	
-	Tortuga tortuga1(sf::Vector2f(300.0f, 468.0f), sf::Vector2f(0.f, 0.f)); ////****
-
 
 	//////////////////////PRUEBAS DE BOX2D*********************************************
 
@@ -114,38 +62,7 @@ int main()
 
 	world.SetContactListener(&_contactListener);
 
-	
-	///**************************************************************************************
-	/////////
-	////////                   TODO ESTO ES UNA DECLARACION PREDETERMINADA DE UNA ESFERA CON GRAVEDAD PARA PROBAR LAS PLATAFORMAS.
-	////////
-	const float SCALE = 40.0f; // Factor de conversión de Box2D (metros) a SFML (píxeles)
-	const float WINDOW_WIDTH = 800.0f;
-	const float WINDOW_HEIGHT = 600.0f;
-
-		// Crear un cuerpo dinámico para la bola
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(12.9f,15.0f); // Posición inicial (en metros)
-	b2Body* body = world.CreateBody(&bodyDef);
-
-	// Crear una forma de círculo para el cuerpo de la bola
-	b2CircleShape circleShape;
-	circleShape.m_radius = 20.0f / SCALE; // Radio de la bola en metros (20 píxeles)
-
-	// Crear una "fixture" para el cuerpo de la bola
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &circleShape;
-	fixtureDef.density = 1.0f;    // Densidad para el cálculo de la masa
-	fixtureDef.friction = 0.3f;   // Fricción al colisionar
-	fixtureDef.restitution = 0.6f; // Rebote de la bola
-	body->CreateFixture(&fixtureDef);
-
-	// Crear el círculo SFML para la bola
-	sf::CircleShape circle(20.0f); // Radio de 20 píxeles
-	circle.setFillColor(sf::Color::Cyan);
-	circle.setOrigin(20.0f, 20.0f); // Centrar el origen en el centro de la bola
-
+	Tortuga tortugui(sf::Vector2f(10.0f, 10.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(2.0f, 0.0f), pixelMetro);
 
 
 	while (window.isOpen())
@@ -153,7 +70,7 @@ int main()
 
 		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
-		world.Step(1 / 60.0f, 8, 3);
+		world.Step(1 / 60.0f, 8, 5);
 	
 
 		sf::Event event;
@@ -163,27 +80,20 @@ int main()
 				window.close();
 			}
 
-			newNivel.playerEventHandler(event);
 		}
 
-
+		tortugui.updateVillager(0, deltaTime);
 		newNivel.nivelUpdate(world, window, deltaTime);
 
-		tortuga1.update(0, deltaTime);
-
-		b2Vec2 position = body->GetPosition();
-		circle.setPosition(position.x * SCALE,600 - position.y * SCALE);
-
+		portal.Update(0, deltaTime);
 
 		window.clear();
 
 
 
 		newNivel.nivelDrawer(window);
-		window.draw(tortuga1);
-		window.draw(circle); 
-
-
+		window.draw(portal);
+		window.draw(tortugui);
 
 		window.display();
 	}
