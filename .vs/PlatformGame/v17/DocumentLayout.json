@@ -1,61 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\",
+  "WorkspaceRootPath": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\CollisionCategories.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\CollisionCategories.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:CollisionCategories.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Jugador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Corazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Corazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Corazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Conejo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -84,24 +84,23 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Frutas.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.h",
               "RelativeDocumentMoniker": "Frutas.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.h",
               "RelativeToolTip": "Frutas.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-08T23:23:06.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T23:23:06.82Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Frutas.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeDocumentMoniker": "Frutas.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Frutas.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeToolTip": "Frutas.cpp",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAmwOYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAgwAABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-08T23:20:21.232Z",
               "EditorCaption": ""
@@ -110,157 +109,145 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Corazon.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Corazon.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Corazon.cpp",
               "RelativeDocumentMoniker": "Corazon.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Corazon.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Corazon.cpp",
               "RelativeToolTip": "Corazon.cpp",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAAEEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-08T18:24:11.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T18:24:11.232Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Plataformas.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Plataformas.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Plataformas.cpp",
               "RelativeDocumentMoniker": "Plataformas.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Plataformas.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Plataformas.cpp",
               "RelativeToolTip": "Plataformas.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-08T14:22:28.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T14:22:28.353Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Conejo.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.cpp",
               "RelativeDocumentMoniker": "Conejo.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.cpp",
               "RelativeToolTip": "Conejo.cpp",
               "ViewState": "AgIAABsAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-08T14:14:29.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T14:14:29.436Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Jugador.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.cpp",
               "RelativeDocumentMoniker": "Jugador.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.cpp",
               "RelativeToolTip": "Jugador.cpp",
               "ViewState": "AgIAANgAAAAAAAAAAAAnwOcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-07T19:42:35.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T19:42:35.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Jugador.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.h",
               "RelativeDocumentMoniker": "Jugador.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Jugador.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Jugador.h",
               "RelativeToolTip": "Jugador.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-07T20:53:10.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T20:53:10.001Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "GameContactListener.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeDocumentMoniker": "GameContactListener.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeToolTip": "GameContactListener.cpp",
               "ViewState": "AgIAAIYAAAAAAAAAAAAUwJQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-07T14:19:57.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T14:19:57.972Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "GameContactListener.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.h",
               "RelativeDocumentMoniker": "GameContactListener.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\GameContactListener.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\GameContactListener.h",
               "RelativeToolTip": "GameContactListener.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-07T20:32:37.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T20:32:37.048Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\main.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAIwAAAAAAAAAAAAnwJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-25T02:06:48.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T02:06:48.084Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Conejo.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.h",
               "RelativeDocumentMoniker": "Conejo.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Conejo.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Conejo.h",
               "RelativeToolTip": "Conejo.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-07T20:30:08.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T20:30:08.942Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Nivel.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
               "RelativeDocumentMoniker": "Nivel.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
               "RelativeToolTip": "Nivel.h",
               "ViewState": "AgIAACYAAAAAAAAAAAAwwCkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-31T00:31:14.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T00:31:14.772Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "CollisionCategories.h",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\CollisionCategories.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\CollisionCategories.h",
               "RelativeDocumentMoniker": "CollisionCategories.h",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\CollisionCategories.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\CollisionCategories.h",
               "RelativeToolTip": "CollisionCategories.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-07T18:49:26.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T18:49:26.521Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Nivel.cpp",
-              "DocumentMoniker": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeDocumentMoniker": "Nivel.cpp",
-              "ToolTip": "C:\\Users\\Miguel Aguilar\\Desktop\\TPI - Juego de plataformas\\TPI-PlatformGame\\Nivel.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeToolTip": "Nivel.cpp",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-07T14:12:44.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T14:12:44.076Z"
             }
           ]
         }
