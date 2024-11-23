@@ -18,6 +18,8 @@ private:
 	int _totalPoints = 0;
 	int _timeCount[2]{};
 	sf::Clock _reloj;
+	sf::Sprite _shape;
+	sf::Texture _texture;
 
 
 public:
@@ -27,6 +29,8 @@ public:
 	void setTimer();
 	void setPoints();
 	void sumarPuntos(int puntos);
+	void setGameUiBackground();
+	int getTime();
 	void update(float deltaTime, bool vidas[4]);
 	void drawUi(sf::RenderWindow& window);
 	~GameUi();

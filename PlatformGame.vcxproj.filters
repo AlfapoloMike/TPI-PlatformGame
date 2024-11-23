@@ -129,6 +129,9 @@
     <ClCompile Include="Portal.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="FatBird.cpp">
+      <Filter>Archivos de origen\Aldeanos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -184,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="Portal.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FatBird.h">
+      <Filter>Archivos de encabezado\Aldeanos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

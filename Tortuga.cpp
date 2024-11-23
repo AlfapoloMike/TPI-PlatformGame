@@ -105,6 +105,12 @@ void Tortuga::setAnimationState() {
 		_animation.setSwitchTime(0.12f);
 		_animation.setImageUvRectSize(&_texture);
 	}
+	if (_animationState == AnimationState::IDLE && _alive == false) {
+		setTexture("./assets/aldeanos/Turtle/Idle1_free(44x26).png");
+		_animation.setImageCount(sf::Vector2u(14, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
 }
 
 void Tortuga::animationControl(float deltaTime) {  /// Control de tiempo por animacion
@@ -113,10 +119,12 @@ void Tortuga::animationControl(float deltaTime) {  /// Control de tiempo por ani
 		
 		_animationTimeCounter += deltaTime;
 		if (_animationTimeCounter >= 3.78f) { // 2.43segs Termina IDLE y extiende espinas
+			if (_alive == true) {
 			_animationState = ESPINAS_EXT;
 			_spikes = true;
 			_animationTimeCounter = 0;
 			setAnimationState();
+			}
 		}
 		
 	}
@@ -153,6 +161,15 @@ void Tortuga::animationControl(float deltaTime) {  /// Control de tiempo por ani
 			_animationTimeCounter = 0;
 		}
 		
+	}
+	if (_animationState == HITTED) {
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 0.4f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
+			_spikes = false;
+			_animationState = IDLE;
+			setAnimationState();
+			_animationTimeCounter = 0;
+		}
 	}
 }
 
@@ -238,9 +255,12 @@ void Tortuga::move(float velocidad)
 
 void Tortuga::recibeDanio() {
 	
-	//_animationState = HITTED;
-	//_alive = false;
+
+	_alive = false;
 	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 	filtro.maskBits &= ~PLAYER;
 	_body->GetFixtureList()->SetFilterData(filtro);
+	_animationState = HITTED;
+	setAnimationState();
+	_animationTimeCounter = 0;
 }

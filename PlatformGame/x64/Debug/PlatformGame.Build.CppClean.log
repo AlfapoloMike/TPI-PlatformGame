@@ -1,21 +1,32 @@
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\aldeano.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\animation.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\background.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\collisionable.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\conejo.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\corazon.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\enemigo.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\frutas.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\gamecontactlistener.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\gameui.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\jugador.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\map.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\mappinglevel.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\nivel.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\plataformas.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\portal.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\skull.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\tortuga.obj
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\vc143.idb
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\vc143.pdb
-c:\users\miguel aguilar\desktop\tpi - juego de plataformas\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\vc143.pdb
+f:\tpi-platformgame\platformgame\x64\debug\vc143.idb
+f:\tpi-platformgame\platformgame\x64\debug\main.obj
+f:\tpi-platformgame\platformgame\x64\debug\nivel.obj
+f:\tpi-platformgame\platformgame\x64\debug\jugador.obj
+f:\tpi-platformgame\platformgame\x64\debug\gamecontactlistener.obj
+f:\tpi-platformgame\platformgame\x64\debug\tortuga.obj
+f:\tpi-platformgame\platformgame\x64\debug\skull.obj
+f:\tpi-platformgame\platformgame\x64\debug\portal.obj
+f:\tpi-platformgame\platformgame\x64\debug\plataformas.obj
+f:\tpi-platformgame\platformgame\x64\debug\mappinglevel.obj
+f:\tpi-platformgame\platformgame\x64\debug\map.obj
+f:\tpi-platformgame\platformgame\x64\debug\background.obj
+f:\tpi-platformgame\platformgame\x64\debug\gameui.obj
+f:\tpi-platformgame\platformgame\x64\debug\frutas.obj
+f:\tpi-platformgame\platformgame\x64\debug\enemigo.obj
+f:\tpi-platformgame\platformgame\x64\debug\corazon.obj
+f:\tpi-platformgame\platformgame\x64\debug\conejo.obj
+f:\tpi-platformgame\platformgame\x64\debug\animation.obj
+f:\tpi-platformgame\platformgame\x64\debug\aldeano.obj
+f:\tpi-platformgame\x64\debug\platformgame.exe
+f:\tpi-platformgame\x64\debug\platformgame.pdb
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.ilk
+f:\tpi-platformgame\platformgame\x64\debug\collisionable.obj
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.command.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.items.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.read.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\cl.write.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.command.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.read.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.secondary.1.tlog
+f:\tpi-platformgame\platformgame\x64\debug\platformgame.tlog\link.write.1.tlog

@@ -2,6 +2,7 @@
 
 GameUi::GameUi()
 {
+	setGameUiBackground();
 	setFont();
 	setTimer();
 	setPoints();
@@ -42,6 +43,17 @@ void GameUi::sumarPuntos(int puntos)
 {
 	_totalPoints += puntos;
 }
+void GameUi::setGameUiBackground()
+{
+
+	_texture.loadFromFile("./assets/map/Borde.png");
+	_shape.setTexture(_texture);
+
+}
+int GameUi::getTime()
+{
+	return _timeCount[0];
+}
 void GameUi::update(float deltaTime, bool vidas[4])
 {
 
@@ -76,6 +88,7 @@ void GameUi::update(float deltaTime, bool vidas[4])
 }
 void GameUi::drawUi(sf::RenderWindow& window)
 {
+	window.draw(_shape);
 	window.draw(_timer);
 	window.draw(_points);
 	for (int i = 0; i < 4; i++) {

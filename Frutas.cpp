@@ -12,6 +12,7 @@ Frutas::Frutas(b2World &world)
 	setBodyInWorld(world);
 	setSizeBody();
 	setFixture();
+	_sprite.setScale(1.2, 1.2);
 }
 
 
@@ -31,7 +32,7 @@ void Frutas::setBodyInWorld(b2World& world)
 
 void Frutas::setSizeBody()
 {
-	_bodyBox.SetAsBox(0.2f,0.2f);
+	_bodyBox.SetAsBox(0.25f,0.25f);
 
 }
 
@@ -45,7 +46,7 @@ void Frutas::setFixture()
 	_fixtureDef.isSensor = true;
 	
 	_fixtureDef.filter.categoryBits = FRUITS; // Categoría del muro
-	_fixtureDef.filter.maskBits = PLAYER;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = PLAYER | FRUITS;   // Colisiona solo con el personaje
 
 	_fixture = _body->CreateFixture(&_fixtureDef);
 }
@@ -175,12 +176,35 @@ void Frutas::setAnimationState()
 
 void Frutas::setRandomPosition()
 {
-	int maxX = 16, minX = 4;
-	int maxY = 11, minY = 4;
+	//16x
+	//11y
+	int maxX = 32.5, minX = 4;
+	int maxY = 20, minY = 4;
 	float randomX = (float)(rand() % (maxX - minX + 1) + minX);
 	float randomY = (float)(rand() % (maxY - minY + 1) + minY);
+
+	///_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(20.75f, 6.5f), sf::Vector2f(0.5f, 3.75f), world, false));
+	///_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(8.75f, 17.0f), sf::Vector2f(7.15f, 0.85f), world, false));
+
+	
+	if (randomX >= 20 && randomX <= 22 && randomY >= 2.5 && randomY <= 11) {
+		std::cout << "Debe cambiar de posicion " << std::endl;
+		setRandomPosition();
+
+	}
+	else if (randomX >= 1.0 && randomX <= 16.5 && randomY >= 15 && randomY < 18.5) {
+		std::cout << "Debe cambiar de posicion " << std::endl;
+
+		setRandomPosition();
+	}
+	else {
+
 	setPositionBody(sf::Vector2f(randomX, randomY));
 	setPositionFruit(sf::Vector2f(randomX,randomY));
+
+	}
+
+
 
 }
 

@@ -8,6 +8,7 @@
 #include "Plataformas.h"
 #include "Skull.h"
 #include "Tortuga.h"
+#include "FatBird.h"
 
 class GameContactListener : public b2ContactListener {
 

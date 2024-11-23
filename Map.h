@@ -3,19 +3,45 @@
 #include "MappingLevel.h"
 
 
-class Map {
+class Map : public sf::Drawable {
 
-private:
-	sf::VertexArray *_mapVertex=nullptr;
+protected:
+	sf::Sprite _shape;
 	sf::Texture _texture;
-	int _mappingLevel[30][40]{};
 	int _nivel = 0;
 
 public:
 	Map(int nivel);
-	Map();
-	void createMapTiles();
-	sf::Vector2i spriteCoordFinder(int index);
-	void mapDrawer(sf::RenderWindow& window);
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	sf::Sprite getShape();
 
 };
+
+
+
+
+
+
+/*
+
+funcion global guardar puntaje partida (char nombre, int puntaje)
+
+	archivo = abrir archivo y guardarlo
+
+	for(recorro el archivo){
+		archivo = archivo[i]
+		if(puntaje > archivo.puntaje){
+	
+			ponemos el puntero adelante del indice de archivo.puntaje
+			y guardamos el nuevo valor
+
+		}
+
+
+	}
+
+
+
+
+*/
