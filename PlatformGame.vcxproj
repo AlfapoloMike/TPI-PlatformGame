@@ -128,6 +128,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>box2d-2.4.2\include;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,6 +162,7 @@
     <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Corazon.cpp" />
     <ClCompile Include="Enemigo.cpp" />
+    <ClCompile Include="FatBird.cpp" />
     <ClCompile Include="Frutas.cpp" />
     <ClCompile Include="GameContactListener.cpp" />
     <ClCompile Include="GameUi.cpp" />
@@ -183,6 +185,7 @@
     <ClInclude Include="Conejo.h" />
     <ClInclude Include="Corazon.h" />
     <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="FatBird.h" />
     <ClInclude Include="Frutas.h" />
     <ClInclude Include="GameContactListener.h" />
     <ClInclude Include="GameUi.h" />

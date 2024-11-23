@@ -13,7 +13,9 @@
 #include "Jugador.h"
 #include "Aldeano.h"
 #include "Tortuga.h"
-
+#include <SFML/Graphics.hpp>
+#include <algorithm>
+#include "FatBird.h"
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU
@@ -28,7 +30,7 @@ protected:
 	std::vector<std::shared_ptr<Aldeano>> aldeanos;
 
 	/// mapa con las texturas del fondo
-	Map _mapa;
+	Map *_mapa =nullptr;
 	/// plataformas segun nivel
 	Plataformas* _plataformas = nullptr;
 	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
@@ -47,12 +49,18 @@ protected:
 
 	Jugador *_personaje = nullptr;
 	//Aldeanos _aldeanos;
+	sf::Vector2f _nivelSize= sf::Vector2f(1460.0f, 960.0f);
 
+	sf::View _vista = sf::View(sf::FloatRect(0, 0, 800, 600));
+	sf::Vector2f _vistaSize;
+	sf::Sprite _mapaTest;
+	sf::Texture textura;
 
 
 public:
 	Nivel(int level, b2World& world, float pixelMetro);
 	void setPlayer(b2World& world);
+	void setPlayerView();
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
 	void setMap(b2World& world);

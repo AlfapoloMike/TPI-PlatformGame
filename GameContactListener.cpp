@@ -27,13 +27,40 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Plataformas* plataforma = nullptr;
 	Skull* calavera = nullptr;
 	Tortuga* turtle = nullptr;
+	Fatbird* bird = nullptr;
 
+
+	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
+		(categoryA & PLATFORM) && (categoryB & FATBIRD)) {
+
+
+
+		if (categoryA & FATBIRD) {
+
+			bird = reinterpret_cast<Fatbird*>(bodyA->GetUserData().pointer);
+			std::cout << "toque plataforma";
+			bird->setStateFloor();
+		}
+		else if (categoryB & FATBIRD) {
+			bird = reinterpret_cast<Fatbird*>(bodyB->GetUserData().pointer);
+			std::cout << "toque plataforma";
+			bird->setStateFloor();
+
+		}
+
+
+
+	}
+
+
+	/***************************************************************************************************************/
 	if ((categoryA & SKULLS) && (categoryB & WALL) ||
 		(categoryA & WALL) && (categoryB & SKULLS)) {
 
 
 
 		if (categoryA & SKULLS) {
+
 			calavera = reinterpret_cast<Skull*>(bodyA->GetUserData().pointer);
 
 
@@ -288,6 +315,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 					player->recibeDanio(2);
 					player->setFilterDataPlayer(false);
+					player->setSaltos();
 					contact->SetEnabled(false);
 
 
@@ -299,6 +327,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 						std::cout << "Mate tortuga" << std::endl;
 						turtle->recibeDanio();
 						player->rebote();
+						player->setSaltos();
 						contact->SetEnabled(false);
 
 					}
@@ -600,12 +629,14 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 	if ((categoryA & FRUITS) && (categoryB & PLAYER) ||
 		(categoryA & PLAYER) && (categoryB & FRUITS)) {
-		fruta = reinterpret_cast<Frutas*>(bodyB->GetUserData().pointer);
+		
 
 		if (categoryA & FRUITS) {
+			fruta = reinterpret_cast<Frutas*>(bodyA->GetUserData().pointer);
 			fruta->setFruitPicked();
 		}
 		else if (categoryB & FRUITS) {
+			fruta = reinterpret_cast<Frutas*>(bodyB->GetUserData().pointer);
 			fruta->setFruitPicked();
 		}
 

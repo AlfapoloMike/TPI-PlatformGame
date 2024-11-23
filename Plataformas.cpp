@@ -48,7 +48,7 @@ void Plataformas::setFixture(bool tipo)
 		_fixtureDef.restitution = 0.0f;
 
 		_fixtureDef.filter.categoryBits = PLATFORM; // Categoría del muro
-		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE;   // Colisiona solo con el personaje
+		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE | FATBIRD;   // Colisiona solo con el personaje
 
 	_fixture=_body->CreateFixture(&_fixtureDef);
 	}
@@ -60,7 +60,7 @@ void Plataformas::setFixture(bool tipo)
 		_fixtureDef.restitution = 0.0f;
 
 		_fixtureDef.filter.categoryBits = WALL; // Categoría del muro
-		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS;   // Colisiona solo con el personaje
+		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | FRUITS;   // Colisiona solo con el personaje
 
 		_fixture = _body->CreateFixture(&_fixtureDef);
 	}
@@ -100,8 +100,8 @@ void Plataformas::printRectangle(sf::Vector2f newPosition, sf::Vector2f newSize)
 	_shape.setOrigin(sf::Vector2f(newSize.x*40, newSize.y *40));
 	//_shape.setPosition(sf::Vector2f(_body->GetPosition().x*40,600- _body->GetPosition().y*40));
 	_shape.setPosition(sf::Vector2f(newPosition.x*40,600- newPosition.y*40));
-	//_shape.setFillColor(sf::Color(255, 0, 0, 128));
-	_shape.setFillColor(sf::Color(0, 0, 0, 0));
+	_shape.setFillColor(sf::Color(255, 0, 0, 128));
+	//_shape.setFillColor(sf::Color(0, 0, 0, 0));
 
 }
 
