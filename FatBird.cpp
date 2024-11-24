@@ -20,6 +20,7 @@ Fatbird::Fatbird(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world,
 
 
 }
+//***************BOX2D****************************/
 
 void Fatbird::setPositionBody(sf::Vector2f newPosition)
 {
@@ -27,7 +28,6 @@ void Fatbird::setPositionBody(sf::Vector2f newPosition)
 	_bodyDef.position.Set(newPosition.x, newPosition.y);
 	_bodyDef.type = b2_dynamicBody;
 }
-
 
 void Fatbird::setBodyInWorld(b2World& world)
 {
@@ -62,6 +62,16 @@ void Fatbird::setFixture()
 
 }
 
+b2Vec2 Fatbird::getPositionBody()
+{
+	b2Vec2 position = _body->GetPosition();
+	return position;
+}
+//***************BOX2D****************************/
+
+
+//***************SFML**************************/
+
 void Fatbird::SetTextureRectAnimated() {
 	_sprite.setTextureRect(_animation.uvRect);
 
@@ -86,7 +96,7 @@ void Fatbird::setAnimationState() {
 	}
 	if (_state == STATE::HIT) {
 		setTexture("./assets/aldeanos/fatbird/Hit(40x48).png");
-		_animation.setImageCount(sf::Vector2u(4, 1));
+		_animation.setImageCount(sf::Vector2u(5, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
 
@@ -94,11 +104,10 @@ void Fatbird::setAnimationState() {
 	if (_state == STATE::GROUND) {
 		setTexture("./assets/aldeanos/fatbird/Ground(40x48).png");
 		_animation.setImageCount(sf::Vector2u(4, 1));
-		_animation.setSwitchTime(0.3f);
+		_animation.setSwitchTime(0.2f);
 		_animation.setImageUvRectSize(&_texture);
 	}
 }
-
 
 
 void Fatbird::animationControl(float deltaTime) {  /// Control de tiempo por animacion
@@ -122,9 +131,13 @@ void Fatbird::animationControl(float deltaTime) {  /// Control de tiempo por ani
 
 		_animationTimeCounter += deltaTime;
 		if (_animationTimeCounter >= 3.78f) { // 2.43segs Terminan las espinas activas y comienza a retraerlas.
-			_dizzy = false;
-			_state = STATE::IDLE;
-			setAnimationState();
+			if (_alive == true) {
+				_dizzy = false;
+				_state = STATE::IDLE;
+				_contacting = false;
+				_animationTimeCounter = 0;
+				setAnimationState();
+			}
 
 		}
 
@@ -133,15 +146,27 @@ void Fatbird::animationControl(float deltaTime) {  /// Control de tiempo por ani
 
 		_animationTimeCounter += deltaTime;
 		if (_animationTimeCounter >= 0.9f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
-			_state = STATE::IDLE;
-			setAnimationState();
-			_animationTimeCounter = 0;
+			if (_contacting == true) {
+				_state = STATE::GROUND;
+				setAnimationState();
+				_animationTimeCounter = 0;
+			}
+			else {
+				_state = STATE::FALLING;
+				setAnimationState();
+				_animationTimeCounter = 0;
+			}
+		
 		}
 
 	}
 	
 
 }
+//***************SFML**************************/
+
+
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
 
 void Fatbird::move()
 {
@@ -149,7 +174,7 @@ void Fatbird::move()
 
 
 	if (_state == STATE::IDLE && _dizzy == false) {
-		_velocidad = 8.0f;
+		_velocidad = 3.5f;
 		///// SE GUARDA LA VELOCIDAD ACTUAL DE X E Y
 		b2Vec2 velocidadActual = _body->GetLinearVelocity();
 		///// SE PASA LA VELOCIDAD DE Y ACTUAL, Y LA NUEVA VELOCIDAD DE X (_velocidad esta seteado como propiedad de clase)
@@ -162,10 +187,31 @@ void Fatbird::move()
 void Fatbird::setStateFloor() {
 	_dizzy = true;
 	_state = STATE::GROUND;
+	_contacting = true;
 	_animationTimeCounter = 0;
 	setAnimationState();
 
 }
+
+void Fatbird::recibeDanio() {
+
+
+	_alive = false;
+	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+	filtro.maskBits &= ~PLAYER;
+	_body->GetFixtureList()->SetFilterData(filtro);
+	_state = STATE::HIT;
+	setAnimationState();
+	_animationTimeCounter = 0;
+}
+
+void Fatbird::setContact(bool state)
+{
+	_contacting = state;
+}
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+
+//***************UPDATE Y DRAW****************************/
 
 void Fatbird::updateVillager(int row, float deltaTime)
 {
@@ -179,69 +225,5 @@ void Fatbird::updateVillager(int row, float deltaTime)
 
 }
 
-/*
-void Fatbird::setNewDirection(bool lado)
-{
-
-	if (lado == true) {
-		if (_velocidad < 0) {
-			_velocidad = _velocidad * -1;
-			_sprite.setScale(-1, 1);
-		}
-
-
-	}
-	else if (lado == false) {
-		if (_velocidad > 0) {
-			_velocidad = _velocidad * -1;
-			_sprite.setScale(1, 1);
-		}
-	}
-}
-*/
-
-void Fatbird::setContact(bool state)
-{
-	_contacting = state;
-}
-/*
-void Fatbird::setBorderWalk(float izquierdo, float derecho)
-{
-	_limiteIzq = izquierdo;
-	_limiteDer = derecho;
-	_velocidad = 2.0f;
-}
-*/
-
 Fatbird::~Fatbird() {
 }
-
-
-
-b2Vec2 Fatbird::getPositionBody()
-{
-	b2Vec2 position = _body->GetPosition();
-	return position;
-}
-/*
-bool Fatbird::getSpikes()
-{
-	return _spikes;
-}
-*/
-
-
-
-/*
-void Fatbird::recibeDanio() {
-
-
-	_alive = false;
-	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-	filtro.maskBits &= ~PLAYER;
-	_body->GetFixtureList()->SetFilterData(filtro);
-	_animationState = HITTED;
-	setAnimationState();
-	_animationTimeCounter = 0;
-}
-*/

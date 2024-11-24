@@ -7,12 +7,6 @@ class Tortuga : public Aldeano {
 public:
 	Tortuga(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world, sf::Vector2f newVelocity, float pixelMetro);
 
-	//void move(); Tortuga no se mueve
-
-
-	void move(float velocidad);
-
-	void recibeDanio();
 
 	//***************BOX2D****************************/
 	void setPositionBody(sf::Vector2f newPosition);
@@ -20,16 +14,15 @@ public:
 	void setSizeBody(sf::Vector2f newSize);
 	void setFixture();
 	b2Vec2 getPositionBody();
-	bool getSpikes();
 
 	//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
-	/*
-	void setNewPosition(b2Vec2 newPosition);
-	void moveEnemy();
-	*/
+
 	void setNewDirection(bool lado);
 	void setContact(bool state);
 	void setBorderWalk(float izquierdo, float derecho);
+	void move(float velocidad);
+	void recibeDanio();
+	bool getSpikes();
 
 	//***************SFML**************************/
 	void SetTextureRectAnimated();
