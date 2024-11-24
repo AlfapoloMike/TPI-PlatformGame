@@ -132,6 +132,9 @@
     <ClCompile Include="FatBird.cpp">
       <Filter>Archivos de origen\Aldeanos</Filter>
     </ClCompile>
+    <ClCompile Include="Rino.cpp">
+      <Filter>Archivos de origen\Aldeanos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -189,6 +192,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="FatBird.h">
+      <Filter>Archivos de encabezado\Aldeanos</Filter>
+    </ClInclude>
+    <ClInclude Include="Rino.h">
       <Filter>Archivos de encabezado\Aldeanos</Filter>
     </ClInclude>
   </ItemGroup>

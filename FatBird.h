@@ -58,6 +58,8 @@ public:
 
 	b2Vec2 getPositionBody();
 
+	void recibeDanio();
+
 	void move();
 
 	~Fatbird();
