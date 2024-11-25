@@ -39,6 +39,8 @@ public:
 
     void rebote();
 
+    bool getIsHitted();
+
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -56,19 +58,21 @@ private:
         HITTED,
         CAMINAR,
         DOBLE_SALTO,
-        IN_WALL
+        IN_WALL,
+        HITTED_CD
     };
     ESTADOS _estado;
 
     int _saltos=0;
     Animation _animation;
-    float _animationTimeCounter = 0;
+    float hittedCdCounter = 0;
     float prevPos;
     float animationTimer = 0;
     bool floorContacting = false;
     bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
     CollisionCategory _lastEnemyContact;
-    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO;
+    bool hittedCd = false;
 
 };

@@ -17,6 +17,7 @@
 #include "Aldeano.h"
 #include "Tortuga.h"
 #include "Conejo.h"
+#include "Fatbird.h"
 
 #include "GameUi.h"
 #include "GameContactListener.h"
@@ -44,7 +45,6 @@ int main()
 	sf::Clock clock;
 
 
-	
 
 	//////////////////////PRUEBAS DE BOX2D*********************************************
 
@@ -61,8 +61,6 @@ int main()
 	GameContactListener _contactListener;
 
 	world.SetContactListener(&_contactListener);
-
-	Tortuga tortugui(sf::Vector2f(10.0f, 10.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(2.0f, 0.0f), pixelMetro);
 
 
 	while (window.isOpen())
@@ -82,9 +80,7 @@ int main()
 
 		}
 
-		tortugui.updateVillager(0, deltaTime);
 		newNivel.nivelUpdate(world, window, deltaTime);
-
 		portal.Update(0, deltaTime);
 
 		window.clear();
@@ -93,8 +89,6 @@ int main()
 
 		newNivel.nivelDrawer(window);
 		window.draw(portal);
-		window.draw(tortugui);
-
 		window.display();
 	}
 	

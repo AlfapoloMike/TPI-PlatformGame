@@ -18,6 +18,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	b2WorldManifold worldManifold;
 	contact->GetWorldManifold(&worldManifold);
 	//// GUARDAMOS UN VECTOR QUE INDICA LA DIRECCION EN LA QUE LOS DOS CUERPOS COLISIONAN, LO GUARDA COMO UN VECTOR
+	//// EL CALCULO ES FIXTURE A > FIXTURE B
 	b2Vec2 normal = worldManifold.normal;
 
 	//PUNTERO VACIO PARA GUARDAR EL PUNTERO DE JUGADOR<<<<<
@@ -27,6 +28,102 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Plataformas* plataforma = nullptr;
 	Skull* calavera = nullptr;
 	Tortuga* turtle = nullptr;
+	Fatbird* bird = nullptr;
+	Frutas* fruta = nullptr;
+	Rino* rino = nullptr;
+
+	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
+	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
+		(categoryA & PLATFORM) && (categoryB & FATBIRD)) {
+
+
+
+		if (categoryA & FATBIRD) {
+
+			if (bird = reinterpret_cast<Fatbird*>(bodyA->GetUserData().pointer)) {
+			
+				bird->setStateFloor();
+
+			}
+		}
+		else if (categoryB & FATBIRD) {
+			if (bird = reinterpret_cast<Fatbird*>(bodyB->GetUserData().pointer)) {
+			
+				bird->setStateFloor();
+
+			}
+
+		}
+
+
+
+	}
+
+	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
+
+	/*************************************************FATBIRD Y PLAYER**************************************************************/
+
+
+	if ((categoryA & FATBIRD) && (categoryB & PLAYER) ||
+		(categoryA & PLAYER) && (categoryB & FATBIRD)) {
+
+
+
+		if (categoryA & PLAYER) {
+
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+			bird = reinterpret_cast<Fatbird*>(bodyB->GetUserData().pointer);
+			
+			if (player != nullptr && bird != nullptr) {
+
+
+				if (normal.y < -0.7f) {
+					bird->recibeDanio();
+					player->setSaltos();
+					player->rebote();
+					contact->SetEnabled(false);
+				}
+				else {
+					player->recibeDanio(2);
+					player->setFilterDataPlayer(false);
+
+					contact->SetEnabled(false);
+
+				}
+
+			}
+		}
+		else if (categoryB & PLAYER) {
+
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+			bird = reinterpret_cast<Fatbird*>(bodyA->GetUserData().pointer);
+
+			if (player != nullptr && bird !=nullptr) {
+
+	
+				if (normal.y > 0.7f) {
+					bird->recibeDanio();
+					player->setSaltos();
+					player->rebote();
+					contact->SetEnabled(false);
+				}
+				else {
+					player->recibeDanio(2);
+					player->setFilterDataPlayer(false);
+					contact->SetEnabled(false);
+
+				}
+				
+
+
+
+			}
+		}
+
+
+	}
+	/*************************************************FATBIRD Y PLAYER**************************************************************/
+	//*********************************** COLISIONES CON CALAVERA Y MURO **************************************
 
 	if ((categoryA & SKULLS) && (categoryB & WALL) ||
 		(categoryA & WALL) && (categoryB & SKULLS)) {
@@ -34,55 +131,98 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 
 		if (categoryA & SKULLS) {
-			calavera = reinterpret_cast<Skull*>(bodyA->GetUserData().pointer);
 
 
-			if (normal.x > 0.0f) {
-				calavera->setNewDirection(true, false);
+			if (calavera = reinterpret_cast<Skull*>(bodyA->GetUserData().pointer)) {
 
+				if (normal.x > 0.0f || normal.x < 0.0f) {
+					calavera->setNewDirection(true, false);
+
+				}
+				if (normal.y > 0.0f || normal.y < 0.0f) {
+					calavera->setNewDirection(false, true);
+
+				}
 			}
-			else if (normal.x < 0.0f) {
-				calavera->setNewDirection(true, false);
 
-
-			}
-			if (normal.y > 0.0f) {
-				calavera->setNewDirection(false, true);
-
-			}
-			else if (normal.y < 0.0f) {
-				calavera->setNewDirection(false, true);
-			}
 		}
 		else if (categoryB & SKULLS) {
-			calavera = reinterpret_cast<Skull*>(bodyB->GetUserData().pointer);
 			
+			if (calavera = reinterpret_cast<Skull*>(bodyB->GetUserData().pointer)) {
 
-			if (normal.x > 0.0f) {
+				if (normal.x > 0.0f || normal.x < 0.0f) {
+					calavera->setNewDirection(true, false);
 
-				calavera->setNewDirection(true, false);
+				}
+				if (normal.y > 0.0f || normal.y < 0.0f) {
+					calavera->setNewDirection(false, true);
 
-			}
-			else if (normal.x < 0.0f) {
-
-
-				calavera->setNewDirection(true, false);
-
-			}
-			if (normal.y > 0.0f) {
-				calavera->setNewDirection(false, true);
+				}
 
 			}
-			else if (normal.y < 0.0f) {
-				calavera->setNewDirection(false, true);
-
-			}
+			
 		}
 
 
 
 	}
-	
+	//*********************************** COLISIONES CON CALAVERA Y MURO **************************************
+
+	//*********************************** COLISIONES CON RINO Y MURO **************************************
+
+
+	if ((categoryA & RINO) && (categoryB & WALL) ||
+		(categoryA & WALL) && (categoryB & RINO)) {
+
+
+
+		if (categoryA & RINO) {
+
+
+			if (rino = reinterpret_cast<Rino*>(bodyA->GetUserData().pointer)) {
+
+
+				if (normal.x > 0.5f) {
+
+					rino->setNewDirectionL();
+					std::cout << "toque derecha - rino=a" << std::endl;
+				}
+				else if (normal.x < 0.0f) {
+
+					std::cout << "toque izquierda - rino=a" << std::endl;
+
+					rino->setNewDirectionR();
+				}
+			}
+
+		}
+		else if (categoryB & RINO) {
+
+			if (rino = reinterpret_cast<Rino*>(bodyB->GetUserData().pointer)) {
+
+
+				if (normal.x > 0.0f) {
+			
+					std::cout << "toque izquierda - rino=a" << std::endl;
+					rino->setNewDirectionR();
+
+				}
+				else if (normal.x < 0.5f) {
+
+					std::cout << "toque derecha - rino=b" << std::endl;
+					rino->setNewDirectionL();
+
+				}
+
+			}
+
+		}
+
+
+
+	}
+	//*********************************** COLISIONES CON RINO Y MURO **************************************
+
 	//*********************************** COLISIONES CON CONEJO Y MURO **************************************
 
 	if ((categoryA & BUNNY) && (categoryB & WALL) ||
@@ -91,43 +231,41 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 		
 		if (categoryA & BUNNY) {
-			conejo = reinterpret_cast<Conejo*>(bodyA->GetUserData().pointer);
-			//std::cout << "contacto";
-			conejo->setContact(true);
+			
+			if (conejo = reinterpret_cast<Conejo*>(bodyA->GetUserData().pointer)) {
 
-			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-				conejo->setNewDirection(true);
-				std::cout << "Tocamos el lado derecho" << std::endl;
+				conejo->setContact(true);
+
+				if (normal.x > 0.0f) {
+					
+
+					conejo->setNewDirection(true);
+				}
+				else if (normal.x < 0.0f) {
+					
+					conejo->setNewDirection(false);
+
+				}
 			}
-			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-				conejo->setNewDirection(false);
-
-				std::cout << "Tocamos el lado izquierdo" << std::endl;
-
-			}
+	
 		}
 		else if (categoryB & BUNNY) {
-			conejo = reinterpret_cast<Conejo*>(bodyB->GetUserData().pointer);
-			conejo->setContact(true);
 
+			if (conejo = reinterpret_cast<Conejo*>(bodyB->GetUserData().pointer)) {
+				
+				conejo->setContact(true);
 
-			//std::cout << "contacto";
+				if (normal.x > 0.0f) {
+					
+					conejo->setNewDirection(true);
+				}
+				else if (normal.x < 0.0f) {
+					
+					conejo->setNewDirection(false);
 
-			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-				conejo->setNewDirection(true);
-
-				std::cout << "Tocamos el lado derecho" << std::endl;
+				}
 			}
-			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-				conejo->setNewDirection(false);
 
-				std::cout << "Tocamos el lado izquierdo" << std::endl;
-
-			}
 
 		}
 		
@@ -139,16 +277,14 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	if ((categoryA & BUNNY) && (categoryB & PLATFORM) ||
 		(categoryA & PLATFORM) && (categoryB & BUNNY)) {
 
-		Plataformas* plataforma2 = nullptr;
-
 
 		if (categoryA & BUNNY) {
 			conejo = reinterpret_cast<Conejo*>(bodyA->GetUserData().pointer);
-			plataforma2 = reinterpret_cast<Plataformas*>(bodyB->GetUserData().pointer);
+			plataforma = reinterpret_cast<Plataformas*>(bodyB->GetUserData().pointer);
 			
-			b2Vec2 bordes = plataforma2->getBorder();
+			b2Vec2 bordes = plataforma->getBorder();
 
-			if (plataforma2) {
+			if (plataforma && conejo) {
 				conejo->setBorderWalk(bordes.x, bordes.y);
 			}
 
@@ -156,11 +292,11 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		}
 		if (categoryB & BUNNY) {
 			conejo = reinterpret_cast<Conejo*>(bodyB->GetUserData().pointer);
-			plataforma2 = reinterpret_cast<Plataformas*>(bodyA->GetUserData().pointer);
+			plataforma = reinterpret_cast<Plataformas*>(bodyA->GetUserData().pointer);
 
-			b2Vec2 bordes = plataforma2->getBorder();
+			b2Vec2 bordes = plataforma->getBorder();
 
-			if (plataforma2) {
+			if (plataforma && conejo) {
 				
 				conejo->setBorderWalk(bordes.x, bordes.y);
 
@@ -178,17 +314,14 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	if ((categoryA & TURTLE) && (categoryB & PLATFORM) ||
 		(categoryA & PLATFORM) && (categoryB & TURTLE)) {
 
-		Plataformas* plataforma2 = nullptr;
-
 
 		if (categoryA & TURTLE) {
 			turtle = reinterpret_cast<Tortuga*>(bodyA->GetUserData().pointer);
-			plataforma2 = reinterpret_cast<Plataformas*>(bodyB->GetUserData().pointer);
+			plataforma = reinterpret_cast<Plataformas*>(bodyB->GetUserData().pointer);
 
-			b2Vec2 bordes = plataforma2->getBorder();
+			b2Vec2 bordes = plataforma->getBorder();
 
-			if (plataforma2) {
-				std::cout << "Toca" << std::endl;
+			if (plataforma && turtle) {
 				turtle->setBorderWalk(bordes.x, bordes.y);
 			}
 
@@ -196,13 +329,11 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		}
 		if (categoryB & TURTLE) {
 			turtle = reinterpret_cast<Tortuga*>(bodyB->GetUserData().pointer);
-			plataforma2 = reinterpret_cast<Plataformas*>(bodyA->GetUserData().pointer);
+			plataforma = reinterpret_cast<Plataformas*>(bodyA->GetUserData().pointer);
 
-			b2Vec2 bordes = plataforma2->getBorder();
+			b2Vec2 bordes = plataforma->getBorder();
 
-			if (plataforma2) {
-				std::cout << "Toca" << std::endl;
-
+			if (plataforma && turtle) {
 				turtle->setBorderWalk(bordes.x, bordes.y);
 
 			}
@@ -224,42 +355,36 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 		if (categoryA & TURTLE) {
 			turtle = reinterpret_cast<Tortuga*>(bodyA->GetUserData().pointer);
-			//std::cout << "contacto";
-			turtle->setContact(true);
+			if (turtle) {
 
-			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-				turtle->setNewDirection(true);
-				std::cout << "Tocamos el lado derecho" << std::endl;
+				turtle->setContact(true);
+
+				if (normal.x < 0.0f) {
+					turtle->setNewDirection(true);
+				}
+				else if (normal.x > 0.0f) {
+					turtle->setNewDirection(false);
+				}
 			}
-			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-				turtle->setNewDirection(false);
 
-				std::cout << "Tocamos el lado izquierdo" << std::endl;
-
-			}
 		}
 		else if (categoryB & TURTLE) {
 			turtle = reinterpret_cast<Tortuga*>(bodyB->GetUserData().pointer);
-			turtle->setContact(true);
 
+			if (turtle) {
+				turtle->setContact(true);
 
-			//std::cout << "contacto";
+				//std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
-			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-				turtle->setNewDirection(true);
+				if (normal.x > 0.0f) {
+					turtle->setNewDirection(true);
+				}
+				else if (normal.x < 0.0f) {
+					turtle->setNewDirection(false);
 
-				std::cout << "Tocamos el lado derecho" << std::endl;
+				}
 			}
-			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-				turtle->setNewDirection(false);
 
-				std::cout << "Tocamos el lado izquierdo" << std::endl;
-
-			}
 
 		}
 
@@ -277,10 +402,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 
 		if (categoryA & PLAYER) {
-			//std::cout << "PUNTERO DE A --- " << bodyA->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
 			turtle = reinterpret_cast<Tortuga*>(bodyB->GetUserData().pointer);
-			if (player != nullptr && turtle != nullptr) {
+			if (player && turtle) {
 				
 
 				bool spikes = turtle->getSpikes();
@@ -288,6 +412,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 					player->recibeDanio(2);
 					player->setFilterDataPlayer(false);
+					player->setSaltos();
 					contact->SetEnabled(false);
 
 
@@ -295,10 +420,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 				else if (spikes == false) {
 					if (normal.y < 0.0) {
 			
-
-						std::cout << "Mate tortuga" << std::endl;
 						turtle->recibeDanio();
 						player->rebote();
+						player->setSaltos();
 						contact->SetEnabled(false);
 
 					}
@@ -312,17 +436,17 @@ void GameContactListener::BeginContact(b2Contact* contact)
 			}
 		}
 		else if (categoryB & PLAYER) {
-			//std::cout << "PUNTERO DE B --- " << bodyB->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 			turtle = reinterpret_cast<Tortuga*>(bodyA->GetUserData().pointer);
 
-			if (player != nullptr) {
+			if (player && turtle) {
 
 				bool spikes = turtle->getSpikes();
 				if (spikes == true) {
 
 						player->recibeDanio(2);
 						player->setFilterDataPlayer(false);
+						player->setSaltos();
 						contact->SetEnabled(false);
 
 					
@@ -333,10 +457,10 @@ void GameContactListener::BeginContact(b2Contact* contact)
 						contact->SetEnabled(false);
 					}
 					else if (normal.y > 0.0) {
-	
-						std::cout << "Mate tortuga" << std::endl;
+						
 						turtle->recibeDanio();
 						player->rebote();
+						player->setSaltos();
 						contact->SetEnabled(false);
 
 					}
@@ -362,9 +486,8 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 
 		if (categoryA & PLAYER) {
-			//std::cout << "PUNTERO DE A --- " << bodyA->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
-			if(player != nullptr) {
+			if(player) {
 				player->recibeDanio(2);
 				player->setFilterDataPlayer(false);
 				contact->SetEnabled(false);
@@ -372,10 +495,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 			}
 		}
 		else if (categoryB & PLAYER) {
-			//std::cout << "PUNTERO DE B --- " << bodyB->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
-			if (player != nullptr) {
+			if (player) {
 
 				player->recibeDanio(2);
 				player->setFilterDataPlayer(false);
@@ -398,85 +520,22 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 
 		if (categoryA & PLAYER) {
-			//std::cout << "PUNTERO DE A --- " << bodyA->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
-			if (player != nullptr) {
+			if (player) {
 				player->recibeDanio(1);
 				player->setFilterDataPlayer(false);
 				contact->SetEnabled(false);
-				/*
-				if (normal.x > 0.0f) {
-					//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-					player->recibeDanio(2);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-
-				}
-				else if (normal.x < 0.0f) {
-					//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-					player->recibeDanio(1);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-
-				}
-
-				if (normal.y > 0.0f) {
-					//	std::cout << "Colisión: Parte superior de BodyA" << std::endl;
-					player->recibeDanio(2);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-				}
-				else if (normal.y < 0.0f) {
-					//	std::cout << "Colisión: Parte inferior de BodyA" << std::endl;
-					player->recibeDanio(2);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-				}
-				*/
 			}
 		}
 		else if (categoryB & PLAYER) {
-			//std::cout << "PUNTERO DE B --- " << bodyB->GetUserData().pointer << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
-			if (player != nullptr) {
+			if (player) {
 
 				player->recibeDanio(1);
 				player->setFilterDataPlayer(false);
 				contact->SetEnabled(false);
-				// Aplicamos el impulso hacia atrás en el personaje
-				//std::cout << "Impulso aplicado hacia atrás." << std::endl;
-				/*
-				if (normal.x > 0.0f) {
-					//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-					player->recibeDanio(2);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-
-				}
-				else if (normal.x < 0.0f) {
-					//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-					player->recibeDanio(1);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-				}
-
-				if (normal.x > 0.0f && normal.y < 0) {
-					//std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
-					player->recibeDanio(1);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-
-				}
-				else if (normal.x < 0.0f && normal.y < 0) {
-					//std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
-					player->recibeDanio(2);
-					player->setFilterDataPlayer(SKULLS, false);
-					contact->SetEnabled(false);
-
-
-				}
-				*/
+				
 			}
 		}
 
@@ -491,42 +550,39 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	if ((categoryA & PLAYER) && (categoryB & PLATFORM) ||
 		(categoryA & PLATFORM) && (categoryB & PLAYER)) {
 		if (categoryA & PLAYER) {
+
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
 
 			std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
+			if (player) {
+				if (normal.y < 0.0f)
+				{
+					player->setSaltos();
+					player->setContactFloor(true);
+					player->setInWall(false);
 
-			// fixtureA es el personaje, fixtureB es la plataforma
-			if (normal.y > 0.0f) { // Contacto por abajo del personaje
-
-
+				}
 			}
-			else if (normal.y < 0.0f) { // Contacto por arriba del personaje
-				player->setSaltos();
-				player->setContactFloor(true);
-				player->setInWall(false);
 
-			}
 		}
 		else if (categoryB & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
 			std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
+			if (player) {
+				if (normal.y > 0.0f)
+				{
 
-			// fixtureB es el personaje, fixtureA es la plataforma
-			if (normal.y > 0.0f) { // Contacto por arriba del personaje
+					player->setSaltos();
+					player->setContactFloor(true);
+					player->setInWall(false);
 
-				player->setSaltos();
-				player->setContactFloor(true);
-				player->setInWall(false);
-
+				}
 			}
-			else if (normal.y < 0.0f) { // Contacto por abajo del personaje
 
 
-
-			}
 		}
 	}
 
@@ -540,22 +596,14 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		(categoryA & WALL) && (categoryB & PLAYER)) {
 
 		if (categoryA & PLAYER) {
-			//std::cout << "Categoria A es jugador" << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
-			/*
-			if (!player->getFloorContact()) {
-				player->setInWall(true);
-			}
-			*/
 
-			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
+			if (normal.x < 0.0f) {
 				if (!player->getFloorContact()) {
 					player->setInWall(true);
 				}
 			}
-			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
+			else if (normal.x > 0.0f) {
 				if (!player->getFloorContact()) {
 					player->setInWall(true);
 				}
@@ -565,22 +613,14 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		}
 		
 		if (categoryB & PLAYER) {
-			//std::cout << "Categoria B es jugador " << std::endl;
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
-			/*
-			if (!player->getFloorContact()) {
-				player->setInWall(true);
-			}
-			*/
 
 			if (normal.x > 0.0f) {
-				//	std::cout << "Colisión: Lado derecho de BodyA" << std::endl;
 				if (!player->getFloorContact()) {
 					player->setInWall(true);
 				}
 			}
 			else if (normal.x < 0.0f) {
-				//	std::cout << "Colisión: Lado izquierdo de BodyA" << std::endl;
 				if (!player->getFloorContact()) {
 					player->setInWall(true);
 				}
@@ -596,16 +636,17 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 	//*********************************** COLISIONES CON JUGADOR Y FRUTAS **************************************
 
-	Frutas* fruta = nullptr;
 
 	if ((categoryA & FRUITS) && (categoryB & PLAYER) ||
 		(categoryA & PLAYER) && (categoryB & FRUITS)) {
-		fruta = reinterpret_cast<Frutas*>(bodyB->GetUserData().pointer);
+		
 
 		if (categoryA & FRUITS) {
+			fruta = reinterpret_cast<Frutas*>(bodyA->GetUserData().pointer);
 			fruta->setFruitPicked();
 		}
 		else if (categoryB & FRUITS) {
+			fruta = reinterpret_cast<Frutas*>(bodyB->GetUserData().pointer);
 			fruta->setFruitPicked();
 		}
 

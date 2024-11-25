@@ -128,6 +128,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>box2d-2.4.2\include;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,6 +162,7 @@
     <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Corazon.cpp" />
     <ClCompile Include="Enemigo.cpp" />
+    <ClCompile Include="FatBird.cpp" />
     <ClCompile Include="Frutas.cpp" />
     <ClCompile Include="GameContactListener.cpp" />
     <ClCompile Include="GameUi.cpp" />
@@ -172,6 +174,7 @@
     <ClCompile Include="Nivel.cpp" />
     <ClCompile Include="Plataformas.cpp" />
     <ClCompile Include="Portal.cpp" />
+    <ClCompile Include="Rino.cpp" />
     <ClCompile Include="Skull.cpp" />
     <ClCompile Include="Tortuga.cpp" />
   </ItemGroup>
@@ -183,6 +186,7 @@
     <ClInclude Include="Conejo.h" />
     <ClInclude Include="Corazon.h" />
     <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="FatBird.h" />
     <ClInclude Include="Frutas.h" />
     <ClInclude Include="GameContactListener.h" />
     <ClInclude Include="GameUi.h" />
@@ -192,6 +196,7 @@
     <ClInclude Include="Nivel.h" />
     <ClInclude Include="Plataformas.h" />
     <ClInclude Include="Portal.h" />
+    <ClInclude Include="Rino.h" />
     <ClInclude Include="Skull.h" />
     <ClInclude Include="Tortuga.h" />
   </ItemGroup>

@@ -4,7 +4,7 @@ const float SCALE = 40.0f; // Actualizamos el valor de SCALE a 40
 
 Jugador::Jugador(b2World& world) {
 	_bodyDef.type = b2_dynamicBody;
-	_bodyDef.position.Set(2.50f, 7.0f); // Posición inicial en metros
+	_bodyDef.position.Set(8.50f, 19.0f); // Posición inicial en metros
 
 	_body = world.CreateBody(&_bodyDef);
 
@@ -18,7 +18,7 @@ Jugador::Jugador(b2World& world) {
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE | FATBIRD | RINO;   // Colisiona solo con el personaje
 		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
@@ -40,7 +40,7 @@ void Jugador::update(int row, float deltaTime) {
 	b2Vec2 velocity = _body->GetLinearVelocity();
 
 	if (velocity.y > 0 && floorContacting == false) {
-		std::cout << "Desactivo la plataforma" << std::endl;
+		
 		setFilterDataPlayer(PLATFORM, false);
 	}
 	else if (velocity.y < 0) {
@@ -65,11 +65,11 @@ void Jugador::cmd() {
 		// Movimiento horizontal
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-			velocity.x = 2.0f; /// DERECHA
+			velocity.x = 3.0f; /// DERECHA
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)
 			|| sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-			velocity.x = -2.0f; /// IZQUIERDA
+			velocity.x = -3.0f; /// IZQUIERDA
 		}
 		else {
 			velocity.x = 0; /// QUIETO
@@ -100,13 +100,25 @@ void Jugador::animationControl(float deltaTime) {
 	b2Vec2 velocity = _body->GetLinearVelocity();
 
 
-	if (_estado == HITTED) {
+	if (_estado == HITTED && hittedCd == false) {
 		animationTimer += deltaTime;
 		if (animationTimer >= 1.3f) {
 			_estado = CAE;
 			setAnimationState();
 			animationTimer = 0;
+			hittedCd = true;
+			//setFilterDataPlayer(true);
+		}
+	}
+	if (hittedCd == true) {
+		hittedCdCounter += deltaTime;
+		_sprite.setColor(sf::Color(255, 255, 255, 128));
+		if (hittedCdCounter >= 1.5f) {
+			_sprite.setColor(sf::Color::White);
+			hittedCd = false;
+			hittedCdCounter = 0;
 			setFilterDataPlayer(true);
+
 		}
 	}
 
@@ -164,13 +176,11 @@ void Jugador::animationControl(float deltaTime) {
 			setAnimationState();
 
 			if (_saltos == 2) {
-				std::cout << "DOBLE SALTE" << std::endl;
 				_estado = DOBLE_SALTO;
 				setAnimationState();
 			}
 		}
 		else if (velocity.y >= 0.01 && _saltos == 2) {
-			std::cout << "DOBLE SALTE" << std::endl;
 			_estado = DOBLE_SALTO;
 			setAnimationState();
 		}
@@ -356,7 +366,7 @@ void Jugador::setFilterDataPlayer(bool state) {
 
 void Jugador::setInWall(bool state)
 {
-	if (state == true) {
+	if (state == true && _estado != HITTED) {
 		_estado = IN_WALL;
 		roofContacting = true;
 		setAnimationState();
@@ -372,54 +382,56 @@ void Jugador::setInWall(bool state)
 
 void Jugador::recibeDanio(int lado)
 {
+	if (hittedCd == false) {
+		if (_estado != HITTED) {
 
-	if (_estado != HITTED) {
+			if (vidas[3] == true) {
 
-		if (vidas[3] == true) {
+				vidas[3] = false;
 
-			vidas[3] = false;
-
-			_estado = HITTED;
-			setAnimationState();
-
-
-		}
-		else if (vidas[2] == true) {
-
-			vidas[2] = false;
-
-			_estado = HITTED;
-			setAnimationState();
+				_estado = HITTED;
+				setAnimationState();
 
 
-		}
-		else if (vidas[1] == true) {
+			}
+			else if (vidas[2] == true) {
 
-			vidas[1] = false;
+				vidas[2] = false;
 
-			_estado = HITTED;
-			setAnimationState();
-
-		}
-		else if (vidas[0] == true) {
-
-			vidas[0] = false;
+				_estado = HITTED;
+				setAnimationState();
 
 
-			_estado = HITTED;
-			setAnimationState();
+			}
+			else if (vidas[1] == true) {
+
+				vidas[1] = false;
+
+				_estado = HITTED;
+				setAnimationState();
+
+			}
+			else if (vidas[0] == true) {
+
+				vidas[0] = false;
 
 
-			std::cout << "Perdiste" << std::endl;
-
-		}
-		else if (vidas[0] == false) {
-			std::cout << "Estas muertisimo" << std::endl;
+				_estado = HITTED;
+				setAnimationState();
 
 
-			_estado = HITTED;
-			setAnimationState();
+				std::cout << "Perdiste" << std::endl;
 
+			}
+			else if (vidas[0] == false) {
+				std::cout << "Estas muertisimo" << std::endl;
+
+
+				_estado = HITTED;
+				setAnimationState();
+
+
+			}
 
 		}
 
@@ -435,6 +447,16 @@ void Jugador::rebote() {
 	velocity.y = 5.0f;
 
 	_body->SetLinearVelocity(velocity);
+}
+
+bool Jugador::getIsHitted() {
+
+	if (_estado == HITTED) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void Jugador::draw(sf::RenderTarget& target, sf::RenderStates states) const {

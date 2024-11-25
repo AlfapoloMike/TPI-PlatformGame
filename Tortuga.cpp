@@ -22,142 +22,8 @@ Tortuga::Tortuga(sf::Vector2f newPosition, sf::Vector2f newSize, b2World& world,
 
 }
 
-void Tortuga::updateVillager(int row, float deltaTime)
-{
-	move(2.0f);
-	animationControl(deltaTime);
-	_sprite.setPosition(_positionBody.x * 40, 600 - _positionBody.y * 40);
-	_sprite.setTextureRect(_animation.uvRect);
-	_sprite.setOrigin(_animation.getUvRect().width / 2.f, _animation.getUvRect().height / 2.f);
-	_animation.Update(row, deltaTime);
 
-}
-
-
-void Tortuga::setNewDirection(bool lado)
-{
-
-	if (lado == true) {
-		if (_velocidad < 0) {
-			_velocidad = _velocidad * -1;
-			_sprite.setScale(-1, 1);
-		}
-
-
-	}
-	else if (lado == false) {
-		if (_velocidad > 0) {
-			_velocidad = _velocidad * -1;
-			_sprite.setScale(1, 1);
-		}
-	}
-}
-
-void Tortuga::setContact(bool state)
-{
-	_contacting = state;
-}
-
-void Tortuga::setBorderWalk(float izquierdo, float derecho)
-{
-	_limiteIzq = izquierdo;
-	_limiteDer = derecho;
-	_velocidad = 2.0f;
-}
-
-void Tortuga::SetTextureRectAnimated() {
-	_sprite.setTextureRect(_animation.uvRect);
-
-}
-
-void Tortuga::setAnimationState() {
-
-
-	if (_animationState == AnimationState::IDLE) {
-		setTexture("./assets/aldeanos/Turtle/Idle2(44x26).png");
-		_animation.setImageCount(sf::Vector2u(14, 1));
-		_animation.setSwitchTime(0.09f);
-		_animation.setImageUvRectSize(&_texture);
-	}
-	if (_animationState == AnimationState::ESPINAS_EXT) {
-		setTexture("./assets/aldeanos/Turtle/Spikesout(44x26).png");
-		_animation.setImageCount(sf::Vector2u(8, 1));
-		_animation.setSwitchTime(0.12f);
-		_animation.setImageUvRectSize(&_texture);
-
-	}
-	if (_animationState == AnimationState::ESPINAS_IDLE) {
-		setTexture("./assets/aldeanos/Turtle/idle1(44x26).png");
-		_animation.setImageCount(sf::Vector2u(14, 1));
-		_animation.setSwitchTime(0.09f);
-		_animation.setImageUvRectSize(&_texture);
-
-	}
-	if (_animationState == AnimationState::ESPINAS_RET) {
-		setTexture("./assets/aldeanos/Turtle/Spikesin(44x26).png");
-		_animation.setImageCount(sf::Vector2u(8, 1));
-		_animation.setSwitchTime(0.12f);
-		_animation.setImageUvRectSize(&_texture);
-	}
-	if (_animationState == AnimationState::HITTED) {
-		setTexture("./assets/aldeanos/Turtle/Hit(44x26).png");
-		_animation.setImageCount(sf::Vector2u(5, 1));
-		_animation.setSwitchTime(0.12f);
-		_animation.setImageUvRectSize(&_texture);
-	}
-}
-
-void Tortuga::animationControl(float deltaTime) {  /// Control de tiempo por animacion
-
-	if (_animationState == IDLE) {
-		
-		_animationTimeCounter += deltaTime;
-		if (_animationTimeCounter >= 3.78f) { // 2.43segs Termina IDLE y extiende espinas
-			_animationState = ESPINAS_EXT;
-			_spikes = true;
-			_animationTimeCounter = 0;
-			setAnimationState();
-		}
-		
-	}
-
-	if (_animationState == ESPINAS_EXT) {
-		
-		_animationTimeCounter += deltaTime;
-		if (_animationTimeCounter >= 0.9f) { // 0.37segs Termin0 de extenderlas y comienzan permanencer activas
-			_animationState = ESPINAS_IDLE;
-			_animationTimeCounter = 0;
-			setAnimationState();
-
-		}
-		
-	}
-	if (_animationState == ESPINAS_IDLE) {
-		
-		_animationTimeCounter += deltaTime;
-		if (_animationTimeCounter >= 3.78f) { // 2.43segs Terminan las espinas activas y comienza a retraerlas.
-			_animationState = ESPINAS_RET;
-			_animationTimeCounter = 0;
-			setAnimationState();
-
-		}
-		
-	}
-	if (_animationState == ESPINAS_RET) {
-		
-		_animationTimeCounter += deltaTime;
-		if (_animationTimeCounter >= 0.9f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
-			_spikes = false;
-			_animationState = IDLE;
-			setAnimationState();
-			_animationTimeCounter = 0;
-		}
-		
-	}
-}
-
-Tortuga::~Tortuga(){
-}
+//***************BOX2D****************************/
 
 void Tortuga::setPositionBody(sf::Vector2f newPosition)
 {
@@ -206,6 +72,10 @@ b2Vec2 Tortuga::getPositionBody()
 	b2Vec2 position = _body->GetPosition();
 	return position;
 }
+//***************BOX2D****************************/
+
+
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
 
 bool Tortuga::getSpikes()
 {
@@ -218,7 +88,7 @@ void Tortuga::move(float velocidad)
 
 
 	// CAMBIA DE DIRECCION
-	if (_positionBody.x <= _limiteIzq + _size.x ) {
+	if (_positionBody.x <= _limiteIzq + _size.x) {
 		_velocidad = 2; // Invertir la velocidad
 		_sprite.setScale(-1, 1);
 		_contacting = false;
@@ -237,10 +107,175 @@ void Tortuga::move(float velocidad)
 }
 
 void Tortuga::recibeDanio() {
-	
-	//_animationState = HITTED;
-	//_alive = false;
+
+
+	_alive = false;
 	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 	filtro.maskBits &= ~PLAYER;
 	_body->GetFixtureList()->SetFilterData(filtro);
+	_animationState = HITTED;
+	setAnimationState();
+	_animationTimeCounter = 0;
+}
+
+void Tortuga::setNewDirection(bool lado)
+{
+
+	if (lado == true) {
+		if (_velocidad < 0) {
+			_velocidad = _velocidad * -1;
+			_sprite.setScale(-1, 1);
+		}
+
+
+	}
+	else if (lado == false) {
+		if (_velocidad > 0) {
+			_velocidad = _velocidad * -1;
+			_sprite.setScale(1, 1);
+		}
+	}
+}
+
+void Tortuga::setContact(bool state)
+{
+	_contacting = state;
+}
+
+void Tortuga::setBorderWalk(float izquierdo, float derecho)
+{
+	_limiteIzq = izquierdo;
+	_limiteDer = derecho;
+	_velocidad = 2.0f;
+}
+//***************MOVIMIENTO, VELOCIDAD Y DIRECCION*******************************//
+
+//***************SFML**************************/
+
+void Tortuga::SetTextureRectAnimated() {
+	_sprite.setTextureRect(_animation.uvRect);
+
+}
+
+void Tortuga::setAnimationState() {
+
+
+	if (_animationState == AnimationState::IDLE) {
+		setTexture("./assets/aldeanos/Turtle/Idle2(44x26).png");
+		_animation.setImageCount(sf::Vector2u(14, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	if (_animationState == AnimationState::ESPINAS_EXT) {
+		setTexture("./assets/aldeanos/Turtle/Spikesout(44x26).png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.12f);
+		_animation.setImageUvRectSize(&_texture);
+
+	}
+	if (_animationState == AnimationState::ESPINAS_IDLE) {
+		setTexture("./assets/aldeanos/Turtle/idle1(44x26).png");
+		_animation.setImageCount(sf::Vector2u(14, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+
+	}
+	if (_animationState == AnimationState::ESPINAS_RET) {
+		setTexture("./assets/aldeanos/Turtle/Spikesin(44x26).png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.12f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	if (_animationState == AnimationState::HITTED) {
+		setTexture("./assets/aldeanos/Turtle/Hit(44x26).png");
+		_animation.setImageCount(sf::Vector2u(5, 1));
+		_animation.setSwitchTime(0.12f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	if (_animationState == AnimationState::IDLE && _alive == false) {
+		setTexture("./assets/aldeanos/Turtle/Idle1_free(44x26).png");
+		_animation.setImageCount(sf::Vector2u(14, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+}
+
+void Tortuga::animationControl(float deltaTime) {  /// Control de tiempo por animacion
+
+	if (_animationState == IDLE) {
+
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 3.78f) { // 2.43segs Termina IDLE y extiende espinas
+			if (_alive == true) {
+				_animationState = ESPINAS_EXT;
+				_spikes = true;
+				_animationTimeCounter = 0;
+				setAnimationState();
+			}
+		}
+
+	}
+
+	if (_animationState == ESPINAS_EXT) {
+
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 0.9f) { // 0.37segs Termin0 de extenderlas y comienzan permanencer activas
+			_animationState = ESPINAS_IDLE;
+			_animationTimeCounter = 0;
+			setAnimationState();
+
+		}
+
+	}
+	if (_animationState == ESPINAS_IDLE) {
+
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 3.78f) { // 2.43segs Terminan las espinas activas y comienza a retraerlas.
+			_animationState = ESPINAS_RET;
+			_animationTimeCounter = 0;
+			setAnimationState();
+
+		}
+
+	}
+	if (_animationState == ESPINAS_RET) {
+
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 0.9f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
+			_spikes = false;
+			_animationState = IDLE;
+			setAnimationState();
+			_animationTimeCounter = 0;
+		}
+
+	}
+	if (_animationState == HITTED) {
+		_animationTimeCounter += deltaTime;
+		if (_animationTimeCounter >= 0.4f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
+			_spikes = false;
+			_animationState = IDLE;
+			setAnimationState();
+			_animationTimeCounter = 0;
+		}
+	}
+}
+
+
+//***************SFML**************************/
+
+//***************UPDATE Y DRAW****************************/
+
+void Tortuga::updateVillager(int row, float deltaTime)
+{
+	move(2.0f);
+	animationControl(deltaTime);
+	_sprite.setPosition(_positionBody.x * 40, 600 - _positionBody.y * 40);
+	_sprite.setTextureRect(_animation.uvRect);
+	_sprite.setOrigin(_animation.getUvRect().width / 2.f, _animation.getUvRect().height / 2.f);
+	_animation.Update(row, deltaTime);
+
+}
+
+
+Tortuga::~Tortuga() {
 }

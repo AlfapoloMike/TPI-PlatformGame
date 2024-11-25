@@ -9,6 +9,8 @@ enum CollisionCategory : uint16_t {
     SKULLS = 0x0020,
     PLATFORM = 0x0040,
     TURTLE = 0x0080,
+    FATBIRD = 0x0100,
+    RINO = 0x0200,
     /*
     A = 0x0080,
     B = 0x0100,
