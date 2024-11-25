@@ -16,6 +16,7 @@
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 #include "FatBird.h"
+#include "Rino.h"
 
 enum NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU

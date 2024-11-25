@@ -168,6 +168,8 @@ void Nivel::setVillager(b2World& world, float pixelMetro) {
 		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(24.50f, 15.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(30.50f, 5.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(3.50f, 8.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Rino>(sf::Vector2f(3.50f, 4.0f), sf::Vector2f(0.65f, 0.425f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Rino>(sf::Vector2f(24.50f, 4.0f), sf::Vector2f(0.65f, 0.425f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 
 		///8.50f, 19.0f
 
@@ -205,9 +207,14 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
 			fatbird->updateVillager(0, deltaTime);
 		}
+		if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+			rino->updateVillager(0, deltaTime);
+		}
 	}
 	
-	_background.backgroundUpdate();
+	bool hitted = _personaje->getIsHitted();
+
+	_background.backgroundUpdate(deltaTime,hitted);
 	
 	_personaje->update(0, deltaTime);
 
@@ -264,6 +271,9 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		}
 		if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
 			window.draw(fatbird->getSprite());
+		}
+		if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+			window.draw(rino->getSprite());
 		}
 	}
 

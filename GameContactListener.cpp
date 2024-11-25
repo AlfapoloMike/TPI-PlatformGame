@@ -30,6 +30,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Tortuga* turtle = nullptr;
 	Fatbird* bird = nullptr;
 	Frutas* fruta = nullptr;
+	Rino* rino = nullptr;
 
 	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
 	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
@@ -122,6 +123,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 	}
 	/*************************************************FATBIRD Y PLAYER**************************************************************/
+	//*********************************** COLISIONES CON CALAVERA Y MURO **************************************
 
 	if ((categoryA & SKULLS) && (categoryB & WALL) ||
 		(categoryA & WALL) && (categoryB & SKULLS)) {
@@ -164,7 +166,63 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 
 	}
-	
+	//*********************************** COLISIONES CON CALAVERA Y MURO **************************************
+
+	//*********************************** COLISIONES CON RINO Y MURO **************************************
+
+
+	if ((categoryA & RINO) && (categoryB & WALL) ||
+		(categoryA & WALL) && (categoryB & RINO)) {
+
+
+
+		if (categoryA & RINO) {
+
+
+			if (rino = reinterpret_cast<Rino*>(bodyA->GetUserData().pointer)) {
+
+
+				if (normal.x > 0.5f) {
+
+					rino->setNewDirectionL();
+					std::cout << "toque derecha - rino=a" << std::endl;
+				}
+				else if (normal.x < 0.0f) {
+
+					std::cout << "toque izquierda - rino=a" << std::endl;
+
+					rino->setNewDirectionR();
+				}
+			}
+
+		}
+		else if (categoryB & RINO) {
+
+			if (rino = reinterpret_cast<Rino*>(bodyB->GetUserData().pointer)) {
+
+
+				if (normal.x > 0.0f) {
+			
+					std::cout << "toque izquierda - rino=a" << std::endl;
+					rino->setNewDirectionR();
+
+				}
+				else if (normal.x < 0.5f) {
+
+					std::cout << "toque derecha - rino=b" << std::endl;
+					rino->setNewDirectionL();
+
+				}
+
+			}
+
+		}
+
+
+
+	}
+	//*********************************** COLISIONES CON RINO Y MURO **************************************
+
 	//*********************************** COLISIONES CON CONEJO Y MURO **************************************
 
 	if ((categoryA & BUNNY) && (categoryB & WALL) ||
