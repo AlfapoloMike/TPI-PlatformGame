@@ -39,6 +39,8 @@ public:
 
     void rebote();
 
+    bool getIsHitted();
+
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -70,7 +72,7 @@ private:
     bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
     CollisionCategory _lastEnemyContact;
-    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO;
     bool hittedCd = false;
 
 };
