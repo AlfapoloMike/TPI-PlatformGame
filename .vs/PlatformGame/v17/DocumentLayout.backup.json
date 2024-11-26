@@ -3,8 +3,25 @@
   "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Rino.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Rino.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+=======
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Laser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Laser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+>>>>>>> mike-mage
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Background.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -111,10 +128,79 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+=======
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enemigo.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeDocumentMoniker": "Enemigo.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Enemigo.h",
+              "RelativeToolTip": "Enemigo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-26T16:53:49.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enemigo.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Enemigo.cpp",
+              "RelativeDocumentMoniker": "Enemigo.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Enemigo.cpp",
+              "RelativeToolTip": "Enemigo.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-26T16:53:43.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Laser.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Laser.h",
+              "RelativeDocumentMoniker": "Laser.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Laser.h*",
+              "RelativeToolTip": "Laser.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-26T16:52:15.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Laser.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Laser.cpp",
+              "RelativeDocumentMoniker": "Laser.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Laser.cpp",
+              "RelativeToolTip": "Laser.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-26T16:51:56.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Background.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Background.h",
+              "RelativeDocumentMoniker": "Background.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Background.h",
+              "RelativeToolTip": "Background.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-25T19:19:28.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+>>>>>>> mike-mage
               "Title": "Background.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Background.cpp",
               "RelativeDocumentMoniker": "Background.cpp",
@@ -122,12 +208,15 @@
               "RelativeToolTip": "Background.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-21T18:37:19.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T18:37:19.635Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 8,
+=======
+              "DocumentIndex": 11,
+>>>>>>> mike-mage
               "Title": "Tortuga.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Tortuga.cpp",
               "RelativeDocumentMoniker": "Tortuga.cpp",
@@ -139,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Tortuga.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Tortuga.h",
               "RelativeDocumentMoniker": "Tortuga.h",
@@ -151,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "GameContactListener.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.h",
               "RelativeDocumentMoniker": "GameContactListener.h",
@@ -163,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "GameContactListener.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeDocumentMoniker": "GameContactListener.cpp",
@@ -175,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "main.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
@@ -187,7 +276,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
+=======
+              "DocumentIndex": 6,
+>>>>>>> mike-mage
               "Title": "Nivel.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeDocumentMoniker": "Nivel.cpp",
@@ -199,7 +292,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 7,
+=======
+              "DocumentIndex": 10,
+>>>>>>> mike-mage
               "Title": "Nivel.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.h",
               "RelativeDocumentMoniker": "Nivel.h",
@@ -211,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Plataformas.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Plataformas.cpp",
               "RelativeDocumentMoniker": "Plataformas.cpp",
@@ -223,7 +320,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
+=======
+              "DocumentIndex": 7,
+>>>>>>> mike-mage
               "Title": "Jugador.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Jugador.h",
               "RelativeDocumentMoniker": "Jugador.h",
@@ -235,7 +336,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 5,
+>>>>>>> mike-mage
               "Title": "Jugador.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Jugador.cpp",
               "RelativeDocumentMoniker": "Jugador.cpp",
@@ -247,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "GameUi.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameUi.h",
               "RelativeDocumentMoniker": "GameUi.h",
@@ -259,7 +364,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 9,
+>>>>>>> mike-mage
               "Title": "Frutas.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeDocumentMoniker": "Frutas.cpp",
@@ -271,7 +380,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 13,
+>>>>>>> mike-mage
               "Title": "Rino.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Rino.cpp",
               "RelativeDocumentMoniker": "Rino.cpp",
@@ -284,6 +397,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "Background.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Background.h",
@@ -297,6 +411,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
+=======
+              "DocumentIndex": 12,
+>>>>>>> mike-mage
               "Title": "Rino.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Rino.h",
               "RelativeDocumentMoniker": "Rino.h",
@@ -308,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CollisionCategories.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\CollisionCategories.h",
               "RelativeDocumentMoniker": "CollisionCategories.h",
@@ -320,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "MappingLevel.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\MappingLevel.cpp",
               "RelativeDocumentMoniker": "MappingLevel.cpp",
@@ -332,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Map.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
@@ -344,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "Map.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
@@ -356,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "GameUi.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameUi.cpp",
               "RelativeDocumentMoniker": "GameUi.cpp",

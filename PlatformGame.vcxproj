@@ -167,6 +167,7 @@
     <ClCompile Include="GameContactListener.cpp" />
     <ClCompile Include="GameUi.cpp" />
     <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="Laser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="GameContactListener.h" />
     <ClInclude Include="GameUi.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Laser.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MappingLevel.h" />
     <ClInclude Include="Nivel.h" />
