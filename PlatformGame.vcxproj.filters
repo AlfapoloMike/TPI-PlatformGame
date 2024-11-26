@@ -73,6 +73,12 @@
     <Filter Include="Archivos de encabezado\GameUi">
       <UniqueIdentifier>{f1eedc97-5733-4190-ac29-8f8960fcb50f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Boss">
+      <UniqueIdentifier>{20218817-daa1-49c5-9710-9c730954bc28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Boss">
+      <UniqueIdentifier>{45bd2702-fda6-4f45-a36a-abfbefc70428}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -135,6 +141,9 @@
     <ClCompile Include="Rino.cpp">
       <Filter>Archivos de origen\Aldeanos</Filter>
     </ClCompile>
+    <ClCompile Include="Laser.cpp">
+      <Filter>Archivos de origen\Boss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -196,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="Rino.h">
       <Filter>Archivos de encabezado\Aldeanos</Filter>
+    </ClInclude>
+    <ClInclude Include="Laser.h">
+      <Filter>Archivos de encabezado\Boss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
