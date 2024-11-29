@@ -144,6 +144,12 @@
     <ClCompile Include="Laser.cpp">
       <Filter>Archivos de origen\Boss</Filter>
     </ClCompile>
+    <ClCompile Include="Crystal.cpp">
+      <Filter>Archivos de origen\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="IceBall.cpp">
+      <Filter>Archivos de origen\Boss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -207,6 +213,12 @@
       <Filter>Archivos de encabezado\Aldeanos</Filter>
     </ClInclude>
     <ClInclude Include="Laser.h">
+      <Filter>Archivos de encabezado\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Crystal.h">
+      <Filter>Archivos de encabezado\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="IceBall.h">
       <Filter>Archivos de encabezado\Boss</Filter>
     </ClInclude>
   </ItemGroup>

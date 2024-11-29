@@ -10,6 +10,8 @@
 #include "Tortuga.h"
 #include "FatBird.h"
 #include "Rino.h"
+#include "Laser.h"
+#include "Crystal.h"
 
 class GameContactListener : public b2ContactListener {
 

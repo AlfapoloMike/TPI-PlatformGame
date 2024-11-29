@@ -28,8 +28,12 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	setEnemigos(world, pixelMetro);
 	setPlayer(world);
 	setVillager(world, pixelMetro);
+	if (_nivel == NIVELES::BOSS) {
+		setCrystals(world, 0);
+	}
 	setPlayerView();
 	setUI();
+
 }
 
 void Nivel::setPlayer(b2World& world) {
@@ -50,7 +54,7 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 {
 	switch (_nivel)
 	{
-	case NIVEL_1:
+	case NIVELES::NIVEL_1:
 	
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(7.75f, 10.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(10.75f, 5.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
@@ -96,11 +100,23 @@ void Nivel::setFruits(b2World& world, float deltaTime)
 
 }
 
+void Nivel::setCrystals(b2World& world, float deltaTime) {
+
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 2, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 1, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 1, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 1, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 1, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(33.0f, 5.0f), world, 40, 2, true));
+
+
+}
+
 void Nivel::setMap(b2World& world)
 {
 	switch (_nivel)
 	{
-	case NIVEL_1:
+	case NIVELES::NIVEL_1:
 
 		_mapa= new Map(1);
 		if (_mapa == nullptr) {
@@ -146,11 +162,11 @@ void Nivel::setMap(b2World& world)
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.55f, 20.75f), sf::Vector2f(0.25f, 4.25f), world, false));
 
 		break;
-	case NIVEL_2:
+	case NIVELES::NIVEL_2:
 		break;
-	case NIVEL_3:
+	case NIVELES::NIVEL_3:
 		break;
-	case MENU:
+	case NIVELES::MENU:
 		break;
 	default:
 		break;
@@ -160,7 +176,7 @@ void Nivel::setMap(b2World& world)
 void Nivel::setVillager(b2World& world, float pixelMetro) {
 	switch (_nivel)
 	{
-	case NIVEL_1:
+	case NIVELES::NIVEL_1:
 
 		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(18.0f, 12.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(12.75f, 12.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
@@ -211,12 +227,19 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 			rino->updateVillager(0, deltaTime);
 		}
 	}
-	
+
+
 	bool hitted = _personaje->getIsHitted();
 
 	_background.backgroundUpdate(deltaTime,hitted);
 	
 	_personaje->update(0, deltaTime);
+
+	//_cryst->Update(0, deltaTime, world);
+
+	for (int i = 0; i < _crystals.size(); i++) {
+		_crystals[i]->Update(0, deltaTime, world);
+	}
 
 
 	_ui.update(deltaTime,_personaje->getVida());
@@ -245,6 +268,8 @@ void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
+
+
 	window.setView(_vista);
 
 
@@ -282,12 +307,17 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		window.draw(*_frutas[i]);
 	}
 
+	for (int i = 0; i < _crystals.size(); i++) {
+		window.draw(*_crystals[i]);
+	}
+
 	window.draw(*_personaje);
 
 
 	window.setView(window.getDefaultView());
-
 	_ui.drawUi(window);
+
+
 
 }
 
@@ -307,6 +337,15 @@ void Nivel::gameStateController()
 	if (_alive[0] == false || time >=3) {
 		std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 	}
+}
+
+void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
+	/*
+	_viewport = viewport;
+	_vista.setViewport(viewport); // Ajusta el viewport para mantener la proporción
+	window.setView(_vista);
+	*/
+
 }
 
 Nivel::~Nivel()

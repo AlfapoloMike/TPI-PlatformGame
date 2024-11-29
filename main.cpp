@@ -24,6 +24,9 @@
 
 
 #include "Portal.h"
+#include "Laser.h"
+#include "Crystal.h"
+#include "IceBall.h"
 
 using namespace std;
 
@@ -35,15 +38,12 @@ int main()
 	window.setFramerateLimit(60);
 	srand((unsigned)time(NULL));
 
-	Portal portal(sf::Vector2f(100.0f, 100.0f));
-
 	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
 
 	
 	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
 	sf::Clock clock;
-
 
 
 	//////////////////////PRUEBAS DE BOX2D*********************************************
@@ -77,18 +77,37 @@ int main()
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
+			else if (event.type == sf::Event::Resized) {
+				// Calcula el nuevo aspecto de la ventana
+				float windowWidth = event.size.width;
+				float windowHeight = event.size.height;
+				float windowRatio = windowWidth / windowHeight;
+				float viewRatio = 800.0f / 600.0f;
+
+				sf::FloatRect viewport;
+
+				if (windowRatio > viewRatio) {
+					// La ventana es más ancha que la vista
+					float width = viewRatio / windowRatio;
+					viewport = sf::FloatRect((1.0f - width) / 2.0f, 0.0f, width, 1.0f);
+				}
+				else {
+					// La ventana es más alta que la vista
+					float height = windowRatio / viewRatio;
+					viewport = sf::FloatRect(0.0f, (1.0f - height) / 2.0f, 1.0f, height);
+				}
+				///////ESTO ESTA SIN IMPLEMENTAR, ESTA COMENTADO EN NIVEL PORQUE LOS BORDES QUEDAN CON FRANJA NEGRA
+				newNivel.vistaSetViewPort(viewport, window);
+			}
 
 		}
 
-		newNivel.nivelUpdate(world, window, deltaTime);
-		portal.Update(0, deltaTime);
 
+		newNivel.nivelUpdate(world, window, deltaTime);
 		window.clear();
 
 
-
 		newNivel.nivelDrawer(window);
-		window.draw(portal);
 		window.display();
 	}
 	

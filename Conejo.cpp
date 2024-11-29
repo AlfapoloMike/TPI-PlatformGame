@@ -181,7 +181,7 @@ void Conejo::updateEnemie(int row, float deltaTime)
 {
 
 
-	Conejo::moveEnemy();
+	moveEnemy();
 	//////// ANIMACION
 	_sprite.setPosition(_positionBody.x * 40, 600 - _positionBody.y * 40);
 	_sprite.setTextureRect(_animation.uvRect);
