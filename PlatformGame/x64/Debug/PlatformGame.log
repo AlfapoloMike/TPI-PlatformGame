@@ -1,2 +1,3 @@
-﻿  Nivel.cpp
+﻿  Tottem.cpp
+F:\TPI-PlatformGame\Tottem.cpp(24,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
   PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe

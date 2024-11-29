@@ -18,6 +18,7 @@
 #include "FatBird.h"
 #include "Rino.h"
 #include "Crystal.h"
+#include "Tottem.h"
 
 enum class NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS
@@ -59,6 +60,9 @@ protected:
 
 	std::vector<std::unique_ptr<Crystal>> _crystals;
 
+	std::vector<std::unique_ptr<Tottem>> _tottems;
+
+
 	sf::FloatRect _viewport;
 
 public:
@@ -69,6 +73,7 @@ public:
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
 	void setCrystals(b2World& world, float deltaTime);
+	void setTottems(b2World& world, float deltaTime);
 	void setMap(b2World& world);
 	void setVillager(b2World& world, float pixelMetro);
 	void nivelDrawer(sf::RenderWindow& window);

@@ -72,7 +72,7 @@ private:
     bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
     CollisionCategory _lastEnemyContact;
-    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL | CollisionCategory::TOTTEMS;
     bool hittedCd = false;
 
 };

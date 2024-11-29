@@ -181,6 +181,7 @@
     <ClCompile Include="Rino.cpp" />
     <ClCompile Include="Skull.cpp" />
     <ClCompile Include="Tortuga.cpp" />
+    <ClCompile Include="Tottem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aldeano.h" />
@@ -206,6 +207,7 @@
     <ClInclude Include="Rino.h" />
     <ClInclude Include="Skull.h" />
     <ClInclude Include="Tortuga.h" />
+    <ClInclude Include="Tottem.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png" />
