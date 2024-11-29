@@ -10,7 +10,8 @@ GameUi::GameUi()
 
 void GameUi::setFont()
 {
-	_font.loadFromFile("./assets/fonts/Pixel_Times.ttf");
+	//_font.loadFromFile("./assets/fonts/Pixel_Times.ttf");
+	_font.loadFromFile("./assets/fonts/Pixelon.ttf");
 }
 
 void GameUi::setCorazones(bool vidas[4])
