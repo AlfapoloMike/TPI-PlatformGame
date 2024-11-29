@@ -11,6 +11,9 @@ enum CollisionCategory : uint16_t {
     TURTLE = 0x0080,
     FATBIRD = 0x0100,
     RINO = 0x0200,
+    LASER = 0x0400,
+    CRYSTAL = 0x0800,
+    ICEBALL = 0x1000,
     /*
     A = 0x0080,
     B = 0x0100,

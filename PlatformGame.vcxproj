@@ -146,13 +146,14 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>box2d-2.4.2\include;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-window-d.lib;sfml-system-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-window.lib;sfml-system.lib;sfml-graphics.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>box2d-2.4.2\build\bin\Debug;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -161,12 +162,15 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Corazon.cpp" />
+    <ClCompile Include="Crystal.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="FatBird.cpp" />
     <ClCompile Include="Frutas.cpp" />
     <ClCompile Include="GameContactListener.cpp" />
     <ClCompile Include="GameUi.cpp" />
+    <ClCompile Include="IceBall.cpp" />
     <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="Laser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -185,12 +189,15 @@
     <ClInclude Include="CollisionCategories.h" />
     <ClInclude Include="Conejo.h" />
     <ClInclude Include="Corazon.h" />
+    <ClInclude Include="Crystal.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="FatBird.h" />
     <ClInclude Include="Frutas.h" />
     <ClInclude Include="GameContactListener.h" />
     <ClInclude Include="GameUi.h" />
+    <ClInclude Include="IceBall.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Laser.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MappingLevel.h" />
     <ClInclude Include="Nivel.h" />

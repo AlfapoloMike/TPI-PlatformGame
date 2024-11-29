@@ -1,4 +1,2 @@
-﻿  Background.cpp
-F:\TPI-PlatformGame\Background.cpp(18,17): warning C4805: '==': combinación no segura del tipo 'int' y el tipo 'bool' en la operación
-F:\TPI-PlatformGame\Background.cpp(41,15): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+﻿  Nivel.cpp
   PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe

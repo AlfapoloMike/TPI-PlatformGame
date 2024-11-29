@@ -17,9 +17,10 @@
 #include <algorithm>
 #include "FatBird.h"
 #include "Rino.h"
+#include "Crystal.h"
 
-enum NIVELES {
-	NIVEL_1, NIVEL_2, NIVEL_3, MENU
+enum class NIVELES {
+	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS
 };
 
 class Nivel : public sf::Drawable {
@@ -51,25 +52,30 @@ protected:
 	Jugador *_personaje = nullptr;
 	//Aldeanos _aldeanos;
 	sf::Vector2f _nivelSize= sf::Vector2f(1460.0f, 960.0f);
-
 	sf::View _vista = sf::View(sf::FloatRect(0, 0, 800, 600));
 	sf::Vector2f _vistaSize;
 	sf::Sprite _mapaTest;
 	sf::Texture textura;
 
+	std::vector<std::unique_ptr<Crystal>> _crystals;
+
+	sf::FloatRect _viewport;
 
 public:
+
 	Nivel(int level, b2World& world, float pixelMetro);
 	void setPlayer(b2World& world);
 	void setPlayerView();
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
+	void setCrystals(b2World& world, float deltaTime);
 	void setMap(b2World& world);
 	void setVillager(b2World& world, float pixelMetro);
 	void nivelDrawer(sf::RenderWindow& window);
 	void enemiesCreator();
 	void setUI();
 	void gameStateController();
+	void vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window);
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
@@ -81,3 +87,44 @@ public:
 	Plataformas getPlataforma(int plataforma);
 
 };
+
+
+/*
+sf::View view(sf::FloatRect(0, 0, 800, 600)); // Vista original
+
+while (window.isOpen()) {
+	sf::Event event;
+	while (window.pollEvent(event)) {
+		if (event.type == sf::Event::Closed) {
+			window.close();
+		} else if (event.type == sf::Event::Resized) {
+			// Calcula el nuevo aspecto de la ventana
+			float windowWidth = event.size.width;
+			float windowHeight = event.size.height;
+			float windowRatio = windowWidth / windowHeight;
+			float viewRatio = 800.0f / 600.0f;
+
+			sf::FloatRect viewport;
+
+			if (windowRatio > viewRatio) {
+				// La ventana es más ancha que la vista
+				float width = viewRatio / windowRatio;
+				viewport = sf::FloatRect((1.0f - width) / 2.0f, 0.0f, width, 1.0f);
+			} else {
+				// La ventana es más alta que la vista
+				float height = windowRatio / viewRatio;
+				viewport = sf::FloatRect(0.0f, (1.0f - height) / 2.0f, 1.0f, height);
+			}
+
+			view.setViewport(viewport); // Ajusta el viewport para mantener la proporción
+			window.setView(view);
+		}
+	}
+
+	window.clear();
+	window.draw(yourDrawable); // Dibuja tu contenido
+	window.display();
+}
+
+
+*/

@@ -24,10 +24,14 @@ void Skull::setPositionBody(sf::Vector2f newPosition)
 	_bodyDef.position.Set(newPosition.x, newPosition.y);
 	_bodyDef.type = b2_dynamicBody;
 
+
+
 }
 
 void Skull::setBodyInWorld(b2World& world)
 {
+
+
 	////// SETEAMOS LA PLATAFORMA DENTRO DEL MUNDO CON UNA REFERENCIA
 	_body = world.CreateBody(&_bodyDef);
 
@@ -36,6 +40,8 @@ void Skull::setBodyInWorld(b2World& world)
 	////// Asignamos una escala de gravedad 0 para que no sea afectado por la gravedad.
 	_body->SetGravityScale(0.0f);
 	_body->SetLinearVelocity(b2Vec2(_velocidad.x, _velocidad.y));
+
+
 }
 
 void Skull::setSizeBody(sf::Vector2f newSize)

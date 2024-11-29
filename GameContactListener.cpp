@@ -31,6 +31,8 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Fatbird* bird = nullptr;
 	Frutas* fruta = nullptr;
 	Rino* rino = nullptr;
+	Crystal* crystal = nullptr;
+	IceBall* iceball = nullptr;
 
 	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
 	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
@@ -633,7 +635,159 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	//*********************************** COLISIONES CON JUGADOR Y MUROS **************************************
 
 
+	if ((categoryA & PLAYER) && (categoryB & LASER) ||
+		(categoryA & LASER) && (categoryB & PLAYER)) {
 
+		if (categoryA & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+
+			player->recibeDanio(1);
+			player->setFilterDataPlayer(false);
+			contact->SetEnabled(false);
+
+		}
+
+		if (categoryB & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+
+			player->recibeDanio(1);
+			player->setFilterDataPlayer(false);
+			contact->SetEnabled(false);
+
+
+		}
+	}
+
+	if ((categoryA & PLAYER) && (categoryB & ICEBALL) ||
+		(categoryA & ICEBALL) && (categoryB & PLAYER)) {
+
+		if (categoryA & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+			iceball = reinterpret_cast<IceBall*>(bodyB->GetUserData().pointer);
+
+			if (player && iceball) {
+				iceball->explodeBall();
+				player->recibeDanio(1);
+				player->setFilterDataPlayer(false);
+				contact->SetEnabled(false);
+			}
+	
+
+		}
+
+		if (categoryB & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+			iceball = reinterpret_cast<IceBall*>(bodyA->GetUserData().pointer);
+			if (player && iceball) {
+				iceball->explodeBall();
+				player->recibeDanio(1);
+				player->setFilterDataPlayer(false);
+				contact->SetEnabled(false);
+
+			}
+	
+
+
+		}
+	}
+
+
+	if ((categoryA & CRYSTAL) && (categoryB & WALL) ||
+		(categoryA & WALL) && (categoryB & CRYSTAL)) {
+
+		if (categoryA & CRYSTAL) {
+			crystal = reinterpret_cast<Crystal*>(bodyA->GetUserData().pointer);
+			
+			if (crystal) {
+				if (crystal->isLaser()) {
+					crystal->changeDirection();
+				}
+				else {
+					crystal->setRandomPosition();
+				}
+			}
+		}
+
+		if (categoryB & CRYSTAL) {
+			crystal = reinterpret_cast<Crystal*>(bodyB->GetUserData().pointer);
+
+			if (crystal) {
+				if (crystal->isLaser()) {
+					crystal->changeDirection();
+				}
+				else {
+					crystal->setRandomPosition();
+				}
+			}
+
+		}
+	}
+
+
+	if ((categoryA & ICEBALL) && (categoryB & WALL) ||
+		(categoryA & WALL) && (categoryB & ICEBALL)) {
+
+		if (categoryA & ICEBALL) {
+			iceball = reinterpret_cast<IceBall*>(bodyA->GetUserData().pointer);
+
+			if (iceball) {
+
+				if (normal.x > 0 || normal.x <0) {
+					//iceball->setNewDirection(false, true);
+					iceball->explodeBall();
+				}
+	
+				if (normal.y > 0 || normal.y < 0) {
+					//iceball->setNewDirection(true, false);
+					iceball->explodeBall();
+
+				}
+	
+			}
+		}
+
+		if (categoryB & ICEBALL) {
+			iceball = reinterpret_cast<IceBall*>(bodyB->GetUserData().pointer);
+
+			if (iceball) {
+				if (normal.x > 0 || normal.x < 0) {
+					//iceball->setNewDirection(true, false);
+					iceball->explodeBall();
+
+				}
+
+				if (normal.y > 0 || normal.y < 0) {
+					//iceball->setNewDirection(false, true);
+					iceball->explodeBall();
+
+
+
+				}
+			}
+
+		}
+	}
+	//*********************************** COLISIONES CON JUGADOR Y MUROS **************************************
+
+
+	if ((categoryA & PLAYER) && (categoryB & LASER) ||
+		(categoryA & LASER) && (categoryB & PLAYER)) {
+
+		if (categoryA & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+
+			std::cout << "Auch recibi danio" << std::endl;
+
+		}
+
+		if (categoryB & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+
+			std::cout << "Auch recibi danio" << std::endl;
+
+
+		}
+	}
 	//*********************************** COLISIONES CON JUGADOR Y FRUTAS **************************************
 
 

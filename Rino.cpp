@@ -106,10 +106,13 @@ void Rino::setAnimationState() {
 		_animation.setImageUvRectSize(&_texture);
 	}
 	if (_animationState == Rino_STATE::RUN) {
+		
 		setTexture("./assets/aldeanos/Rino/Run(52x34).png");
 		_animation.setImageCount(sf::Vector2u(6, 1));
 		_animation.setSwitchTime(0.05f);
 		_animation.setImageUvRectSize(&_texture);
+		
+
 	}
 
 }
