@@ -27,6 +27,7 @@
 #include "Laser.h"
 #include "Crystal.h"
 #include "IceBall.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -59,6 +60,9 @@ int main()
 	Nivel newNivel(1, world, pixelMetro);
 	
 	GameContactListener _contactListener;
+
+	bool menuSi = true;
+	Menu menu;
 
 	world.SetContactListener(&_contactListener);
 
@@ -99,16 +103,34 @@ int main()
 				///////ESTO ESTA SIN IMPLEMENTAR, ESTA COMENTADO EN NIVEL PORQUE LOS BORDES QUEDAN CON FRANJA NEGRA
 				newNivel.vistaSetViewPort(viewport, window);
 			}
+			// Manejar eventos según el estado actual
+			if (menuSi) {
+				menu.manejoEvents(event, menuSi); // Método para manejar eventos en el menú
+			}
 
 		}
 
+		if (menuSi) {
+			menu.update(window, menuSi);
+			menu.draw(window);
+		}
+		else {
+			newNivel.nivelUpdate(world, window, deltaTime);
 
-		newNivel.nivelUpdate(world, window, deltaTime);
+			window.clear();
+
+
+
+			newNivel.nivelDrawer(window);
+			window.display();
+
+		}
+		/*newNivel.nivelUpdate(world, window, deltaTime);
 		window.clear();
 
 
 		newNivel.nivelDrawer(window);
-		window.display();
+		window.display();*/
 	}
 	
 	return 0;
