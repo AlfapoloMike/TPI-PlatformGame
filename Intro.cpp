@@ -3,6 +3,7 @@
 #include <iostream>
 
 Intro::Intro() {
+
     opacidad = 0;
     _rutaImagen = "./assets/fondos/introUTN.png";
     if (!_introTexture.loadFromFile(_rutaImagen)) {
@@ -10,9 +11,6 @@ Intro::Intro() {
     }
     _introSprite.setTexture(_introTexture);
 
-    if (!_introMusic.openFromFile("./assets/audios/PolyStation.wav")) {
-        std::cout << "Error al cargar la música de la intro" << std::endl;
-    }
 }
 Intro::~Intro()
 {
