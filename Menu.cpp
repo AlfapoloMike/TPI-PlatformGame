@@ -2,12 +2,12 @@
 #include <iostream>
 
 /// CONSTRUCTOR
-Menu::Menu(){
+Menu::Menu() {
 
     selectedIndex = 0; // 
     currentState = intro; // Estado inicial
     nextState = menu;
-    
+
     // CARGA FONT GENERAL
     if (!font.loadFromFile("./assets/fonts/Pixelon.ttf")) {
         std::cout << "Error al cargar la fuente" << std::endl;
@@ -76,7 +76,7 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
 
     setMusica(); // Actualiza musica segun estado
 
-    if (currentState == intro) { 
+    if (currentState == intro) {
         _intro.update(cambioEstado);
         if (cambioEstado) {
             currentState = nextState;
@@ -86,7 +86,7 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
     }
 
     if (cambioEstado) { // Chequeo cambio de estado;
-        if (clock.getElapsedTime().asSeconds() >= 0.4f) { // Seteo tiempo de transicion
+        if (_clockMenu.getElapsedTime().asSeconds() >= 0.4f) { // Seteo tiempo de transicion
             if (currentState == history && nextState == menu) {
                 menuSi = false;
             }
@@ -98,8 +98,8 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
 
     else if (currentState == menu) {
 
-     /// CONFIGURACION OPCIONES MENU + SOMBRA
-     // TITULO     
+        /// CONFIGURACION OPCIONES MENU + SOMBRA
+        // TITULO     
         menuTitulo.setFont(font);
         menuTitulo.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
         menuTitulo.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
@@ -186,7 +186,7 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
 /////////////////////////////////////////// DRAW ///////////////////////////////////////////
 void Menu::draw(sf::RenderWindow& window) {
 
-    window.clear(); // Limpio ventana (podria estar en main antes de draw)
+    //window.clear(); // Limpio ventana (podria estar en main antes de draw)
 
     if (currentState == intro) {
         window.draw(_intro);
@@ -238,7 +238,7 @@ void Menu::draw(sf::RenderWindow& window) {
         window.draw(_historia); // Historia
     }
 
-    window.display(); // Dibujos a pantalla (podria estar en main despues de draw)
+    //window.display(); // Dibujos a pantalla (podria estar en main despues de draw)
 }
 
 
@@ -273,9 +273,9 @@ void Menu::manejoEvents(sf::Event& event, bool& menuSi) {
                 //*********** Resetea texto de la historia para el proximo ingreso a historia
                 _completa = true; // bandera true historia completa
                 _noComenzar = false; // bandera vuelta historia desde el comienzo
-                
+
                 cambioEstado = true;
-                clock.restart();
+                _clockMenu.restart();
             }
             if (event.key.code == sf::Keyboard::Escape) {
                 _musicaFondo.stop();
@@ -293,7 +293,7 @@ void Menu::manejoEvents(sf::Event& event, bool& menuSi) {
             }
 
         }
-        
+
     }
 
 }
@@ -305,7 +305,7 @@ void Menu::manejoInputs(sf::Event& event) {
 
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Enter && !cambioEstado) {
-            //clock.restart();
+            //_clockMenu.restart();
             if (_enter.getStatus() != sf::Music::Playing) {
                 _enter.setVolume(100);
                 _enter.play();
@@ -328,7 +328,7 @@ void Menu::manejoInputs(sf::Event& event) {
 
             // Activar la transición y reiniciar el reloj
             cambioEstado = true;
-            clock.restart();
+            _clockMenu.restart();
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             selectedIndex = (selectedIndex - 1 + numOptions) % numOptions; // Mover el selector hacia arriba
@@ -363,28 +363,28 @@ void Menu::manejoNameInput(sf::Event& event) {
                 (letratipeada >= '0' && letratipeada <= '9') || // 48 - 57
                 letratipeada == ' ') { // 32
                 playerName += letratipeada;
-                _letra.play();                
+                _letra.play();
             }
         }
     }
-    
+
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Enter && !cambioEstado) {
-            clock.restart();
+            _clockMenu.restart();
             if (!playerName.empty()) {
                 if (_enter.getStatus() != sf::Music::Playing) {
                     _enter.setVolume(100);
                     _enter.play();
                 }
                 nextState = history;
-                _musicaFondo.stop();
+                //_musicaFondo.stop();
                 cambioEstado = true;
             }
             else {
                 _error.play();
             }
-            
-            clock.restart();
+
+            _clockMenu.restart();
         }
         else if (event.key.code == sf::Keyboard::Escape && !cambioEstado) {
             playerName = ""; // Limpiar el nombre si se cancela
@@ -392,9 +392,9 @@ void Menu::manejoNameInput(sf::Event& event) {
             _musicaFondo.stop();
             cambioEstado = true;
         }
-        
+
     }
-    
+
 }
 
 void Menu::setMusica() {
@@ -408,7 +408,7 @@ void Menu::setMusica() {
             break;
         case menu:
             rutaMusica = "./assets/audios/menu.mp3";
-            _musicaFondo.setVolume(100);            
+            _musicaFondo.setVolume(100);
             break;
         case enter_name:
             rutaMusica = "./assets/audios/enter_name.mp3";

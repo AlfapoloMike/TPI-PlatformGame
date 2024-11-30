@@ -24,12 +24,8 @@ private:
 	sf::Text _historiaPress;
 	std::string _historia = "";
 
-	sf::Clock clock;               // Reloj para medir el tiempo
-	//float timePerLetter = 0.02f;   // Tiempo entre letras, puedes ajustarlo según necesites
+	sf::Clock _clockHistoria;               // Reloj para medir el tiempo
 	std::string _textoMostrado; // Texto mostrado hasta ahora
 	int _letraActual = 0;   // Índice del carácter que estamos mostrando actualmente
-	//bool _completa = false; // Para saber si se termino de mostrar toda la historia
-	//bool bandera = false;
 
 };
-

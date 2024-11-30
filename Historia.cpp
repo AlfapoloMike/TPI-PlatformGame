@@ -1,16 +1,16 @@
 #include "Historia.h"
 #include <iostream>
 
-Historia::Historia(){
+Historia::Historia() {
 
-	if (!_historiaTexture.loadFromFile("./assets/fondos/fondo.png")) {
-		std::cout << "Error al cargar fondo Historia" << std::endl;
-	}
-	_historiaSprite.setTexture(_historiaTexture);
+    if (!_historiaTexture.loadFromFile("./assets/fondos/fondo.png")) {
+        std::cout << "Error al cargar fondo Historia" << std::endl;
+    }
+    _historiaSprite.setTexture(_historiaTexture);
 
-	if (!font.loadFromFile("./assets/fonts/Pixelon.ttf")) {
-		std::cout << "Error al cargar la fuente" << std::endl;
-	}
+    if (!font.loadFromFile("./assets/fonts/Pixelon.ttf")) {
+        std::cout << "Error al cargar la fuente" << std::endl;
+    }
 
     //Titulo + sombra
     _historiaTitulo.setFont(font);
@@ -73,22 +73,21 @@ Historia::Historia(){
     _historiaText.setPosition(45.0f, 100.0f); // Ajustar posición para centrar historia
 }
 
-Historia::~Historia(){
+Historia::~Historia() {
 }
 
-//void Historia::update(){   
+
 void Historia::update(bool& _completa, bool& noComenzar) {
-    //std::cout << "HISTORIA UPDATE" << std::endl;
 
     if (!_completa) {
-        //std::cout << "NO TERMINO" << std::endl;
+
         // Si ha pasado el tiempo suficiente, mostramos la siguiente letra
-        if (clock.getElapsedTime().asSeconds() >= 0.01f) { // 0.01 <=== velocidad del texto
+        if (_clockHistoria.getElapsedTime().asSeconds() >= 0.01f) { // 0.01 <=== velocidad del texto
             // Agregar la siguiente letra a _textoMostrado
             if (_letraActual < _historiaText.getString().getSize()) {
                 _textoMostrado += _historiaText.getString()[_letraActual];
                 _letraActual++;
-                clock.restart(); // Reiniciar el reloj para el siguiente intervalo
+                _clockHistoria.restart(); // Reiniciar el reloj para el siguiente intervalo
             }
             else {
                 //std::cout << "TERMINO" << std::endl;
@@ -98,7 +97,7 @@ void Historia::update(bool& _completa, bool& noComenzar) {
         }
     }
     // ****** Resetea texto o lo autocompleta
-    if(_completa){
+    if (_completa) {
         // autocompleta
         if (noComenzar) {
             _textoMostrado = _historia;
@@ -108,7 +107,7 @@ void Historia::update(bool& _completa, bool& noComenzar) {
         else {
             _letraActual = 0;
             _textoMostrado = "";
-            clock.restart();
+            _clockHistoria.restart();
             noComenzar = true; // bandera para que no comience historia de nuevo
             _completa = false;
         }
@@ -116,8 +115,8 @@ void Historia::update(bool& _completa, bool& noComenzar) {
 
 }
 
-void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const{
-    //std::cout << "DRAW HISTORIA" << std::endl;
+void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+
     target.draw(_historiaSprite, states); // Dibuja fondo
     target.draw(_historiaTituloSombra, states);  // Dibuja sombra del titulo
     target.draw(_historiaTitulo, states);        // Dibuja el título

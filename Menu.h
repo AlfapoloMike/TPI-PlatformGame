@@ -9,15 +9,14 @@
 #include "Creditos.h"
 #include "Historia.h"
 
-//enum AppState { intro, menu, enter_name, history, statics, credits, quit }; // Estado del MENU
 
 class Menu {
 public:
     enum AppState { intro, menu, enter_name, history, statics, credits, quit }; // Estados del MENU
     Menu();
     ~Menu();
-    void update(sf::RenderWindow &window, bool &menuSi);
-    void draw(sf::RenderWindow &window);
+    void update(sf::RenderWindow& window, bool& menuSi);
+    void draw(sf::RenderWindow& window);
     void manejoEvents(sf::Event& event, bool& menuSi);
     void manejoInputs(sf::Event& event);
     void manejoNameInput(sf::Event& event);
@@ -32,7 +31,7 @@ private:
     int selectedIndex;
     sf::Text pressText;
     bool cambioEstado = false;
-    sf::Clock clock; // handleInput REVISAR si eliminar o no
+    sf::Clock _clockMenu; // handleInput REVISAR si eliminar o no
     bool _completa = false;
     bool _noComenzar = false;
     sf::Music _enter;

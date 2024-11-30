@@ -18,6 +18,7 @@
 #include "FatBird.h"
 #include "Rino.h"
 #include "Crystal.h"
+#include "Menu.h"
 
 enum class NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS
@@ -32,7 +33,7 @@ protected:
 	std::vector<std::shared_ptr<Aldeano>> aldeanos;
 
 	/// mapa con las texturas del fondo
-	Map *_mapa =nullptr;
+	Map* _mapa = nullptr;
 	/// plataformas segun nivel
 	Plataformas* _plataformas = nullptr;
 	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
@@ -49,9 +50,9 @@ protected:
 	/// contador de tiempo para el spawn de frutas
 	float _fruitSpawnerTime = 0;
 
-	Jugador *_personaje = nullptr;
+	Jugador* _personaje = nullptr;
 	//Aldeanos _aldeanos;
-	sf::Vector2f _nivelSize= sf::Vector2f(1460.0f, 960.0f);
+	sf::Vector2f _nivelSize = sf::Vector2f(1460.0f, 960.0f);
 	sf::View _vista = sf::View(sf::FloatRect(0, 0, 800, 600));
 	sf::Vector2f _vistaSize;
 	sf::Sprite _mapaTest;
@@ -60,6 +61,11 @@ protected:
 	std::vector<std::unique_ptr<Crystal>> _crystals;
 
 	sf::FloatRect _viewport;
+
+	// Agregado Ale
+	Menu menu;
+	bool menuSi = true;
+	bool settingAll = true;
 
 public:
 
@@ -78,6 +84,10 @@ public:
 	void vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window);
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	// Agregado Ale
+	void setLevel(NIVELES nivel);
+	void cmdNivel(sf::Event& event);
 
 
 

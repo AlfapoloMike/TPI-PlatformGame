@@ -10,7 +10,6 @@ public:
 	~Ranking();
 	void update(bool& cambioEstado);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-	//void draw(sf::RenderWindow &window);
 
 
 private:
@@ -30,9 +29,5 @@ private:
 	std::string players;
 	std::string scores;
 
-	//std::string players = ""; // ???
-	//std::string scores = ""; // ???  CONSULTAR Por que si las declaro aca(y no en update) Lo dibuja muchas veces.
-
-	//sf::Music _rankingMusic;
 };
 
