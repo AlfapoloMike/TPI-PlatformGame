@@ -174,6 +174,7 @@
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="Laser.cpp" />
+    <ClCompile Include="Mage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Rino.cpp" />
     <ClCompile Include="Skull.cpp" />
     <ClCompile Include="Tortuga.cpp" />
+    <ClCompile Include="Tottem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aldeano.h" />
@@ -208,6 +210,7 @@
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Laser.h" />
+    <ClInclude Include="Mage.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MappingLevel.h" />
     <ClInclude Include="Menu.h" />
@@ -220,6 +223,7 @@
     <ClInclude Include="Rino.h" />
     <ClInclude Include="Skull.h" />
     <ClInclude Include="Tortuga.h" />
+    <ClInclude Include="Tottem.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\enemigos\Skull\Hit_Wall_2_(52x54).png" />

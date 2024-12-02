@@ -33,6 +33,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Rino* rino = nullptr;
 	Crystal* crystal = nullptr;
 	IceBall* iceball = nullptr;
+	Tottem* tottem = nullptr;
 
 	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
 	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
@@ -789,6 +790,81 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		}
 	}
 	//*********************************** COLISIONES CON JUGADOR Y FRUTAS **************************************
+
+	if ((categoryA & TOTTEMS) && (categoryB & PLAYER) ||
+		(categoryA & PLAYER) && (categoryB & TOTTEMS)) {
+
+
+
+		if (categoryA & PLAYER) {
+
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+			tottem = reinterpret_cast<Tottem*>(bodyB->GetUserData().pointer);
+
+			if (player != nullptr && tottem != nullptr) {
+
+
+				if (normal.y < -0.7f) {
+					tottem->setDestroyed();
+					player->setSaltos();
+					player->rebote();
+					contact->SetEnabled(false);
+				}
+				else {
+					std::cout << " LO TOQUE POR UN LADO QUE NO ES ARRIBA " << std::endl;
+					contact->SetEnabled(false);
+				}
+
+			}
+		}
+		else if (categoryB & PLAYER) {
+
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+			tottem = reinterpret_cast<Tottem*>(bodyA->GetUserData().pointer);
+
+			if (player != nullptr && tottem != nullptr) {
+
+
+				if (normal.y > 0.7f) {
+					tottem->setDestroyed();
+					player->setSaltos();
+					player->rebote();
+					contact->SetEnabled(false);
+				}
+				else {
+					std::cout << " LO TOQUE POR UN LADO QUE NO ES ARRIBA " << std::endl;
+					contact->SetEnabled(false);
+
+				}
+
+
+
+
+			}
+		}
+
+
+	}
+
+
+	if ((categoryA & TOTTEMS) && (categoryB & PLATFORM) ||
+		(categoryA & PLATFORM) && (categoryB & TOTTEMS)) {
+
+
+		if (categoryA & TOTTEMS) {
+			tottem = reinterpret_cast<Tottem*>(bodyA->GetUserData().pointer);
+			tottem->setSpawning();
+		}
+		else if (categoryB & TOTTEMS) {
+			tottem = reinterpret_cast<Tottem*>(bodyB->GetUserData().pointer);
+			tottem->setSpawning();
+		}
+
+
+
+	}
+
+
 
 
 	if ((categoryA & FRUITS) && (categoryB & PLAYER) ||

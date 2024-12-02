@@ -177,6 +177,12 @@
     <ClCompile Include="Creditos.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Tottem.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Mage.cpp">
+      <Filter>Archivos de origen\Boss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -268,6 +274,12 @@
     </ClInclude>
     <ClInclude Include="Ranking.h">
       <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Tottem.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Mage.h">
+      <Filter>Archivos de encabezado\Boss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

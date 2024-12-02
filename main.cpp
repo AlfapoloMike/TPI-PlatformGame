@@ -101,7 +101,7 @@ int main()
 					viewport = sf::FloatRect(0.0f, (1.0f - height) / 2.0f, 1.0f, height);
 				}
 				///////ESTO ESTA SIN IMPLEMENTAR, ESTA COMENTADO EN NIVEL PORQUE LOS BORDES QUEDAN CON FRANJA NEGRA
-				newNivel.vistaSetViewPort(viewport, window);
+				//newNivel.vistaSetViewPort(viewport, window);
 			}
 			// Manejar eventos según el estado actual
 			if (menuSi) {
@@ -109,7 +109,7 @@ int main()
 			}
 
 		}
-
+		/*
 		if (menuSi) {
 			menu.update(window, menuSi);
 			menu.draw(window);
@@ -125,12 +125,13 @@ int main()
 			window.display();
 
 		}
-		/*newNivel.nivelUpdate(world, window, deltaTime);
+		*/
+		newNivel.nivelUpdate(world, window, deltaTime);
 		window.clear();
 
 
 		newNivel.nivelDrawer(window);
-		window.display();*/
+		window.display();
 	}
 	
 	return 0;

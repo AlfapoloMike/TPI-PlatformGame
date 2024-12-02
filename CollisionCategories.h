@@ -14,6 +14,8 @@ enum CollisionCategory : uint16_t {
     LASER = 0x0400,
     CRYSTAL = 0x0800,
     ICEBALL = 0x1000,
+    TOTTEMS = 0x2000,
+    MAGE = 0x4000,
     /*
     A = 0x0080,
     B = 0x0100,

@@ -45,7 +45,13 @@ void Laser::setBodyInWorld(b2World& world)
 void Laser::setSizeBody()
 {
 	/////// SETEAMOS EL CUERPO DE LA PLATAFORMA CON TAMAÑO
-	_bodyBox.SetAsBox(36.5f, 0.1f);
+	if (_sideR) {
+		_bodyBox.SetAsBox(33.0f, 0.1f);
+	}
+	else {
+		_bodyBox.SetAsBox(36.5f, 0.1f);
+
+	}
 }
 
 void Laser::setFixture()

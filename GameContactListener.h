@@ -12,6 +12,7 @@
 #include "Rino.h"
 #include "Laser.h"
 #include "Crystal.h"
+#include "Tottem.h"
 
 class GameContactListener : public b2ContactListener {
 

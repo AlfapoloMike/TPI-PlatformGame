@@ -28,11 +28,8 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	setEnemigos(world, pixelMetro);
 	setPlayer(world);
 	setVillager(world, pixelMetro);
-	if (_nivel == NIVELES::BOSS) {
-		setCrystals(world, 0);
-	}
+	setCrystals(world, 0);
 	setPlayerView();
-	setUI();
 
 }
 
@@ -109,6 +106,23 @@ void Nivel::setCrystals(b2World& world, float deltaTime) {
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(2.0f, 5.0f), world, 40, 1, false));
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(33.0f, 5.0f), world, 40, 2, true));
 
+
+}
+
+void Nivel::setTottems(b2World& world, float deltaTime) {
+
+	if (_tottems.size() < 3) {
+		_tottems.push_back(std::make_unique<Tottem>(world, 40));
+	}
+
+	for (int i = 0; i < _tottems.size(); i++) {
+		if (_tottems[i]->isDestroyed() == true) {
+			///std::cout << " EL MAGO RECIBIO DANIO " << std::endl;
+			///// HACER DAÑO AL MAGO CON METODO
+			_tottems.erase(_tottems.begin() + i);
+			i--;
+		}
+	}
 
 }
 
@@ -202,6 +216,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 {
 	
 	setFruits(world, deltaTime);
+	setTottems(world, deltaTime);
 
 	for (int i = 0; i < _frutas.size(); i++) {
 		_frutas[i]->fruitUpdate(0, deltaTime);
@@ -239,6 +254,10 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 	for (int i = 0; i < _crystals.size(); i++) {
 		_crystals[i]->Update(0, deltaTime, world);
+	}
+
+	for (int i = 0; i < _tottems.size(); i++) {
+		_tottems[i]->Update(0, deltaTime, world);
 	}
 
 
@@ -311,6 +330,11 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		window.draw(*_crystals[i]);
 	}
 
+	for (int i = 0; i < _tottems.size(); i++) {
+		window.draw(*_tottems[i]);
+	}
+
+
 	window.draw(*_personaje);
 
 
@@ -321,14 +345,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 }
 
-void Nivel::enemiesCreator() {
-
-}
-
-void Nivel::setUI() {
-
-
-}
 
 void Nivel::gameStateController()
 {
