@@ -48,7 +48,7 @@ void Plataformas::setFixture(bool tipo)
 		_fixtureDef.restitution = 0.0f;
 
 		_fixtureDef.filter.categoryBits = PLATFORM; // Categoría del muro
-		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE | FATBIRD | RINO | CRYSTAL | TOTTEMS;   // Colisiona solo con el personaje
+		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE | FATBIRD | RINO | CRYSTAL | TOTTEMS | MAGE;   // Colisiona solo con el personaje
 
 	_fixture=_body->CreateFixture(&_fixtureDef);
 	}
@@ -60,7 +60,7 @@ void Plataformas::setFixture(bool tipo)
 		_fixtureDef.restitution = 0.0f;
 
 		_fixtureDef.filter.categoryBits = WALL; // Categoría del muro
-		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | FRUITS | TURTLE | RINO | CRYSTAL | ICEBALL | TOTTEMS;   // Colisiona solo con el personaje
+		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | FRUITS | TURTLE | RINO | CRYSTAL | ICEBALL | TOTTEMS ;   // Colisiona solo con el personaje
 
 		_fixture = _body->CreateFixture(&_fixtureDef);
 	}

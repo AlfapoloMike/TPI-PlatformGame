@@ -30,7 +30,6 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	setVillager(world, pixelMetro);
 	setCrystals(world, 0);
 	setPlayerView();
-	setUI();
 
 }
 
@@ -115,8 +114,15 @@ void Nivel::setTottems(b2World& world, float deltaTime) {
 	if (_tottems.size() < 3) {
 		_tottems.push_back(std::make_unique<Tottem>(world, 40));
 	}
-	//_tottems.push_back(std::make_unique<Tottem>(world, 40));
 
+	for (int i = 0; i < _tottems.size(); i++) {
+		if (_tottems[i]->isDestroyed() == true) {
+			///std::cout << " EL MAGO RECIBIO DANIO " << std::endl;
+			///// HACER DAÑO AL MAGO CON METODO
+			_tottems.erase(_tottems.begin() + i);
+			i--;
+		}
+	}
 
 }
 
@@ -339,14 +345,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 }
 
-void Nivel::enemiesCreator() {
-
-}
-
-void Nivel::setUI() {
-
-
-}
 
 void Nivel::gameStateController()
 {

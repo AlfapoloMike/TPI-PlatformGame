@@ -77,7 +77,7 @@ void Tottem::setFixture()
 
 
 	_fixtureDef.filter.categoryBits = TOTTEMS;
-	_fixtureDef.filter.maskBits = PLAYER | WALL | PLATFORM;
+	_fixtureDef.filter.maskBits = WALL | PLATFORM;
 
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
@@ -105,18 +105,73 @@ void Tottem::SetTextureRectAnimated() {
 
 void Tottem::setAnimationState()
 {
+	if (_state == TOTTEM_STATE::SPAWNING) {
+		setTexture("./assets/mago/TottemSpawning.png");
+		_animation.setImageCount(sf::Vector2u(5, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == TOTTEM_STATE::ACTIVE) {
+		setTexture("./assets/mago/TottemIdle.png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
 
-	setTexture("./assets/mago/TottemIdle.png");
-	_animation.setImageCount(sf::Vector2u(8, 1));
-	_animation.setSwitchTime(0.09f);
-	_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == TOTTEM_STATE::HITTED) {
+		setTexture("./assets/mago/TottemDestroy.png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == TOTTEM_STATE::DESTROYED) {
+		setTexture("./assets/mago/TottemInvisible.png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == TOTTEM_STATE::PRESPAWN) {
+		setTexture("./assets/mago/TottemInvisible.png");
+		_animation.setImageCount(sf::Vector2u(8, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+
+}
+
+void Tottem::animationControl(float deltaTime) {
+	///_animationTimer
+
+	if (_state == TOTTEM_STATE::SPAWNING) {
+		_animationTimer += deltaTime;
+		if (_animationTimer >= 0.4f) {
+
+			_animationTimer = 0;
+
+			b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+			filtro.maskBits |= PLAYER;
+			_body->GetFixtureList()->SetFilterData(filtro);
+
+			_state = TOTTEM_STATE::ACTIVE;
+						setAnimationState();
+		}
+	}
+	else if (_state == TOTTEM_STATE::HITTED) {
+		_animationTimer += deltaTime;
+		if (_animationTimer >= 0.8f) {
+			_animationTimer = 0;
+			_state = TOTTEM_STATE::DESTROYED;
+			_isDestroyed = true;
+			setAnimationState();
+		}
+	}
 
 }
 
 void Tottem::Update(int row, float deltaTime, b2World& world) {
 
 	_positionBody = _body->GetPosition();
-
+	animationControl(deltaTime);
 	_sprite.setPosition(_positionBody.x * 40, 600 - (_positionBody.y * 40));
 	_sprite.setTextureRect(_animation.uvRect);
 	_animation.Update(row, deltaTime);
@@ -124,7 +179,29 @@ void Tottem::Update(int row, float deltaTime, b2World& world) {
 
 }
 
+void Tottem::setDestroyed() {
 
+	std::cout << " SETEE DESTROYED? " << std::endl;
+
+	_state = TOTTEM_STATE::HITTED;
+	setAnimationState();
+
+	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
+	filtro.maskBits &= ~PLAYER;
+	_body->GetFixtureList()->SetFilterData(filtro);
+
+}
+
+void Tottem::setSpawning() {
+
+	_state = TOTTEM_STATE::SPAWNING;
+	setAnimationState();
+
+}
+
+bool Tottem::isDestroyed() {
+	return _isDestroyed;
+}
 
 void Tottem::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
@@ -132,11 +209,6 @@ void Tottem::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(_sprite, states);
 
 
-}
-
-bool Tottem::isDestroyed()
-{
-	return false;
 }
 
 

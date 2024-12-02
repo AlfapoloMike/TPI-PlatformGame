@@ -7,6 +7,14 @@
 #include <time.h>
 #include <iostream>
 
+enum class TOTTEM_STATE {
+	PRESPAWN,
+	SPAWNING,
+	ACTIVE,
+	HITTED,
+	DESTROYED
+};
+
 class Tottem : public sf::Drawable {
 
 private:
@@ -16,8 +24,9 @@ private:
 	sf::Vector2f _velocity;
 	sf::Vector2f _size;
 	Animation _animation;
+	TOTTEM_STATE _state= TOTTEM_STATE::PRESPAWN;
 
-	float spawnTime = 0;
+	float _animationTimer = 0;
 
 	b2BodyDef _bodyDef;
 	b2Body* _body;
@@ -25,6 +34,7 @@ private:
 	b2Fixture* _fixture;
 	b2Vec2 _positionBody;
 	sf::Vector2f _velocidad = sf::Vector2f(2.5f, 2.5f);
+
 
 	bool _isDestroyed = false;
 
@@ -48,7 +58,13 @@ public:
 
 	void setAnimationState();
 
+	void animationControl(float deltaTime);
+
 	void Update(int row, float deltaTime, b2World& world);
+
+	void setDestroyed();
+
+	void setSpawning();
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

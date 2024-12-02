@@ -77,8 +77,6 @@ public:
 	void setMap(b2World& world);
 	void setVillager(b2World& world, float pixelMetro);
 	void nivelDrawer(sf::RenderWindow& window);
-	void enemiesCreator();
-	void setUI();
 	void gameStateController();
 	void vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window);
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
