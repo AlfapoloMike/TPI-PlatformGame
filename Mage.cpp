@@ -12,6 +12,7 @@ Mage::Mage(b2World& world,sf::Vector2f position, int pixelMetro)
 	setAnimationState();
 	_sprite.setOrigin((float)_animation.getUvRect().width / 2, (float)_animation.getUvRect().height / 2);
 	_sprite.setPosition(_positionBody.x * pixelMetro, 600 - (_positionBody.y * pixelMetro));
+	_sprite.setScale(-1.3, 1.3);
 	//_sprite.setScale(1.2, 1.5);
 }
 
@@ -44,7 +45,7 @@ void Mage::setBodyInWorld(b2World& world)
 void Mage::setSizeBody()
 {
 	/////// SETEAMOS EL CUERPO DE LA PLATAFORMA CON TAMAÑO
-	_bodyBox.SetAsBox(0.375f, 0.4375f);
+	_bodyBox.SetAsBox(0.5f, 1.0f);
 }
 
 void Mage::setFixture()
@@ -86,42 +87,75 @@ void Mage::SetTextureRectAnimated() {
 
 void Mage::setAnimationState()
 {
-	/*
-	if (_state == TOTTEM_STATE::SPAWNING) {
-		setTexture("./assets/mago/TottemSpawning.png");
-		_animation.setImageCount(sf::Vector2u(5, 1));
+	
+	if (_state == MAGE_STATE::IDLE) {
+		setTexture("./assets/mago/MageIdle.png");
+		_animation.setImageCount(sf::Vector2u(11, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
 	}
-	*/
+	else if (_state == MAGE_STATE::SPAWN) {
+		setTexture("./assets/mago/MageSpawn.png");
+		_animation.setImageCount(sf::Vector2u(12, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == MAGE_STATE::CASTING) {
+		setTexture("./assets/mago/MageSpawn.png");
+		_animation.setImageCount(sf::Vector2u(12, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == MAGE_STATE::CASTING_FINAL) {
+		setTexture("./assets/mago/MageStartCasting.png");
+		_animation.setImageCount(sf::Vector2u(12, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == MAGE_STATE::SKILL) {
+		setTexture("./assets/mago/MageSkillCast.png");
+		_animation.setImageCount(sf::Vector2u(19, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == MAGE_STATE::DYING) {
+		setTexture("./assets/mago/MageDeath.png");
+		_animation.setImageCount(sf::Vector2u(11, 1));
+		_animation.setSwitchTime(0.09f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	
 
 
 }
 
 void Mage::animationControl(float deltaTime) {
-	///_animationTimer
-	/*
-	if (_state == TOTTEM_STATE::SPAWNING) {
+
+	if (_state == MAGE_STATE::SPAWN) {
 		_animationTimer += deltaTime;
-		if (_animationTimer >= 0.4f) {
+		if (_animationTimer >= 0.9f) {
 
 			_animationTimer = 0;
+			_state = MAGE_STATE::IDLE;
+			setAnimationState();
+		}
+	}else if (_state == MAGE_STATE::CASTING_FINAL) { ////// ESTO SE ACTIVA EN MINUTO 1.30 DEL BOSS
+		_animationTimer += deltaTime;
+		if (_animationTimer >= 0.8f) {
 
-			b2Filter filtro = _body->GetFixtureList()->GetFilterData();
-			filtro.maskBits |= PLAYER;
-			_body->GetFixtureList()->SetFilterData(filtro);
-
-			_state = TOTTEM_STATE::ACTIVE;
+			_animationTimer = 0;
+			_state = MAGE_STATE::SKILL;
 			setAnimationState();
 		}
 	}
-	*/
+	
 
 }
 
 void Mage::Update(int row, float deltaTime, b2World& world) {
 
 	_positionBody = _body->GetPosition();
+	checkLife();
 	animationControl(deltaTime);
 	_sprite.setPosition(_positionBody.x * 40, 600 - (_positionBody.y * 40));
 	_sprite.setTextureRect(_animation.uvRect);
@@ -130,15 +164,35 @@ void Mage::Update(int row, float deltaTime, b2World& world) {
 
 }
 
-void Mage::setDestroyed() {
+void Mage::damaged(bool damageIs) {
 
+	bool aux = damageIs;
+
+	for (int i = 0; i < 12; i++) {
+		if(_vida[i] == true && aux == true){
+			std::cout << "El mago recibio danio y se puso en false la posicion: " << i << "  " << std::endl;
+			_vida[i] = false;
+			return;
+		}
+	}
 
 }
 
-void Mage::setSpawning() {
+void Mage::checkLife() {
 
+	int counter = 0;
 
+	for (int i = 0; i < 12; i++) {
+		if (_vida[i] == false) {
+			counter++;
+		}
+	}
 
+	if (counter == 12 && _state != MAGE_STATE::DYING) {
+		_state = MAGE_STATE::DYING;
+		_animationTimer = 0;
+		setAnimationState();
+	}
 }
 
 bool Mage::isDestroyed() {

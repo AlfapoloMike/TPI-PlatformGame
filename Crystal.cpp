@@ -64,12 +64,10 @@ void Crystal::setRandomPosition() {
 
 
 	if (randomX >= 18 && randomX <= 23 && randomY >= 2.5 && randomY <= 20) {
-		std::cout << "Debe cambiar de posicion " << std::endl;
 		setRandomPosition();
 
 	}
 	else if (randomX >= 1.0 && randomX <= 16.5 && randomY >= 14 && randomY < 20.0) {
-		std::cout << "Debe cambiar de posicion " << std::endl;
 		setRandomPosition();
 	}
 	else {
@@ -153,13 +151,7 @@ void Crystal::SetTextureRectAnimated() {
 
 void Crystal::setAnimationState()
 {
-	/*
-	setTexture("./assets/mago/spells/laser.png");
-	_animation.setImageCount(sf::Vector2u(7, 1));
-	_animation.setSwitchTime(0.09f);
-	_animation.setImageUvRectSize(&_texture);
 
-	*/
 	setTexture("./assets/mago/spells/Crystal.png");
 	_animation.setImageCount(sf::Vector2u(6, 1));
 	_animation.setSwitchTime(0.09f);
@@ -260,7 +252,6 @@ void Crystal::spawnIceBall(b2World& world, float deltaTime)
 
 		spawnTime += deltaTime;
 		if (spawnTime > 1.0f) {
-			std::cout << "spawneo una bola de hielo " << std::endl;
 			_iceBall.push_back(std::make_unique<IceBall>(sf::Vector2f(_positionBody.x, _positionBody.y), 40, world));
 
 			spawnTime = 0;
