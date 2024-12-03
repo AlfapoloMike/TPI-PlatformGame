@@ -1,9 +1,2 @@
-﻿  Historia.cpp
-  Menu.cpp
-  Nivel.cpp
-  Resultado.cpp
-  main.cpp
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\main.cpp(85,23): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\main.cpp(86,24): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-  Generando código...
+﻿  Menu.cpp
   PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe
