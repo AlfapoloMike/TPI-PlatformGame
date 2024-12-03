@@ -24,15 +24,20 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 		break;
 	}
 
-	setMap(world);
-	setEnemigos(world, pixelMetro);
-	setPlayer(world);
-	setVillager(world, pixelMetro);
-	//setCrystals(world, 0);
+	//if(level != 0){
+	//	setMap(world);
+	//	setEnemigos(world, pixelMetro);
+	//	setPlayer(world);
+	//	setVillager(world, pixelMetro);
+	//	if (_nivel == NIVELES::BOSS) {
+	//		setCrystals(world, 0);
+	//	}
+	//	setPlayerView();
+	//	setUI();
+	//}
 
 	mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
 
-	setPlayerView();
 
 }
 
@@ -55,7 +60,7 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 	switch (_nivel)
 	{
 	case NIVELES::NIVEL_1:
-	
+
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(7.75f, 10.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(10.75f, 5.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(13.75f, 7.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
@@ -67,10 +72,10 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 
 
 		break;
-		
+
 	default:
 		break;
-		
+
 	}
 
 }
@@ -134,7 +139,7 @@ void Nivel::setMap(b2World& world)
 	{
 	case NIVELES::NIVEL_1:
 
-		_mapa= new Map(1);
+		_mapa = new Map(1);
 		if (_mapa == nullptr) {
 			return;
 		}
@@ -216,7 +221,10 @@ void Nivel::setVillager(b2World& world, float pixelMetro) {
 
 void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime)
 {
-	
+	/*if (menuSi) {
+		menu.update(window, menuSi);
+	}
+
 	setFruits(world, deltaTime);
 	setTottems(world, deltaTime);
 
@@ -232,7 +240,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 			conejo->updateEnemie(0, deltaTime);
 		}
 	}
-	
+
 	for (const auto& aldeano : aldeanos) {
 		if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
 			tortuga->updateVillager(0, deltaTime);
@@ -249,7 +257,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	bool hitted = _personaje->getIsHitted();
 
 	_background.backgroundUpdate(deltaTime,hitted);
-	
+
 	_personaje->update(0, deltaTime);
 
 	//_cryst->Update(0, deltaTime, world);
@@ -274,10 +282,97 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 
 
-	_vista.setCenter(position.x, 600 - position.y);	
+	_vista.setCenter(position.x, 600 - position.y);
 
 
-	gameStateController();
+	gameStateController();*/
+
+	/// MODIFICACION ALE
+	switch (_nivel) {
+	case NIVELES::MENU:
+
+		if (menuSi) {
+			menu.update(window, menuSi);
+
+		}
+		else {
+			setLevel(NIVELES::NIVEL_1);
+		}
+
+		break;
+	case NIVELES::NIVEL_1:
+		if (settingAll) {
+			setMap(world);
+			setEnemigos(world, _pixelMetro);
+			setPlayer(world);
+			setVillager(world, _pixelMetro);
+			//if (_nivel == NIVELES::BOSS) {
+			setCrystals(world, 0);
+
+			//}
+			setPlayerView();
+			setUI();
+			settingAll = false;
+		}
+
+		setFruits(world, deltaTime);
+
+		for (int i = 0; i < _frutas.size(); i++) {
+			_frutas[i]->fruitUpdate(0, deltaTime);
+		}
+
+		for (const auto& enemigo : enemigos) {
+			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+				calavera->updateEnemie(0, deltaTime);
+			}
+			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+				conejo->updateEnemie(0, deltaTime);
+			}
+		}
+
+		for (const auto& aldeano : aldeanos) {
+			if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+				tortuga->updateVillager(0, deltaTime);
+			}
+			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
+				fatbird->updateVillager(0, deltaTime);
+			}
+			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+				rino->updateVillager(0, deltaTime);
+			}
+		}
+
+
+		bool hitted = _personaje->getIsHitted();
+
+		_background.backgroundUpdate(deltaTime, hitted);
+
+		_personaje->update(0, deltaTime);
+
+		//_cryst->Update(0, deltaTime, world);
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			_crystals[i]->Update(0, deltaTime, world);
+		}
+
+
+		_ui.update(deltaTime, _personaje->getVida());
+
+
+		sf::Vector2f position = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+
+		position.x = std::clamp(position.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+		position.y = std::clamp(position.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
+
+
+
+		_vista.setCenter(position.x, 600 - position.y);
+
+
+		gameStateController();
+
+		break;
+	}
 
 }
 
@@ -286,11 +381,29 @@ void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+void Nivel::setLevel(NIVELES nivel) {
+	_nivel = nivel;
+}
+
+void Nivel::cmdNivel(sf::Event& event) {
+	switch (_nivel) {
+	case NIVELES::MENU:
+
+		if (menuSi) {
+			menu.manejoEvents(event, menuSi);
+		}
+		break;
+	}
+}
+
 
 
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
-
+	/*
+	
+	
+	if(menuSi) menu.draw(window);
 
 	window.setView(_vista);
 
@@ -344,8 +457,74 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 	window.setView(window.getDefaultView());
 	_ui.drawUi(window);
+	*/
 
 
+	// MODIFICACION ALE
+	switch (_nivel) {
+	case NIVELES::MENU:
+
+		if (menuSi) {
+			menu.draw(window);
+		}
+		else {
+			setLevel(NIVELES::NIVEL_1);
+		}
+
+
+
+		break;
+	case NIVELES::NIVEL_1:
+
+		window.setView(_vista);
+
+
+		window.draw(_background);
+
+		window.draw(_mapa->getShape());
+
+		for (int i = 0; i < _plataformasN.size(); i++) {
+			window.draw(_plataformasN[i]->getShape());
+		}
+
+		for (const auto& enemigo : enemigos) {
+			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+				window.draw(calavera->getSprite());
+			}
+			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+				window.draw(conejo->getSprite());
+			}
+		}
+
+		for (const auto& aldeano : aldeanos) {
+			if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+				window.draw(tortuga->getSprite());
+			}
+			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
+				window.draw(fatbird->getSprite());
+			}
+			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+				window.draw(rino->getSprite());
+			}
+		}
+
+
+		for (int i = 0; i < _frutas.size(); i++) {
+			window.draw(*_frutas[i]);
+		}
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			window.draw(*_crystals[i]);
+		}
+
+		window.draw(*_personaje);
+
+
+		window.setView(window.getDefaultView());
+		_ui.drawUi(window);
+
+		break;
+	}
 
 }
 
@@ -354,7 +533,7 @@ void Nivel::gameStateController()
 {
 	bool* _alive = _personaje->getVida();
 	int time = _ui.getTime();
-	if (_alive[0] == false || time >=3) {
+	if (_alive[0] == false || time >= 3) {
 		std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 	}
 }

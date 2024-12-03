@@ -1,10 +1,8 @@
 #include <iostream>
 #include "Ranking.h"
-//#include "PuntajeJugadorArchivo.h"
-//#include "PuntajeJugador.h"
 
 
-Ranking::Ranking(){
+Ranking::Ranking() {
     // Fondo
     if (!_rankingTexture.loadFromFile("./assets/fondos/fondo.png")) { // Ruta a la imagen de fondo
         std::cout << "Error al cargar fondo ranking" << std::endl;
@@ -34,7 +32,7 @@ Ranking::Ranking(){
     _rankingTituloSombra.setFillColor(sf::Color(20, 10, 10, 250));
     _rankingTituloSombra.setPosition(115.0f, 40.0f);
 
-    
+
 }
 
 
@@ -42,15 +40,7 @@ Ranking::~Ranking()
 {
 }
 
-void Ranking::update(bool& cambioEstado){
-
-    //std::cout << "DESDE Ranking.Update()" << std::endl;
-    //PuntajeJugadorArchivo archivo;
-    //PuntajeJugador top[5];
-    //std::string players = "";
-    //std::string scores = "";
-    //players = "";
-    //scores = "";
+void Ranking::update(bool& cambioEstado) {
 
     archivo.leerTodos(top, 5);
 
@@ -77,7 +67,7 @@ void Ranking::update(bool& cambioEstado){
     players += "\n5. " + top[4].getNombreJugador();
     scores += "\n" + std::to_string(top[4].getPuntaje());
 
-    
+
     //playersText.setFillColor(sf::Color(180, 80, 80, 255)); // ROJIZO
     _jugadoresText.setFillColor(sf::Color::White);
     _jugadoresText.setCharacterSize(40);
@@ -89,15 +79,12 @@ void Ranking::update(bool& cambioEstado){
     _puntajesText.setPosition(520.0f, 225.0f);  // Posición de los puntajes
 }
 
-void Ranking::draw(sf::RenderTarget& target, sf::RenderStates states) const{
-    
+void Ranking::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+
     target.draw(_rankingSprite, states); // Dibujar FONDO
     target.draw(_rankingTituloSombra, states);
     target.draw(_rankingTitulo, states);
     target.draw(_jugadoresText, states);  // Dibujar JUGADORES
     target.draw(_puntajesText, states);  // Dibujar PUNTAJES
 
-    //window.draw(pressText);
 }
-
-

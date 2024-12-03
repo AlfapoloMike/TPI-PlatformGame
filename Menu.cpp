@@ -2,12 +2,12 @@
 #include <iostream>
 
 /// CONSTRUCTOR
-Menu::Menu(){
+Menu::Menu() {
 
     selectedIndex = 0; // 
     currentState = intro; // Estado inicial
     nextState = menu;
-    
+
     // CARGA FONT GENERAL
     if (!font.loadFromFile("./assets/fonts/Pixelon.ttf")) {
         std::cout << "Error al cargar la fuente" << std::endl;
@@ -76,7 +76,7 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
 
     setMusica(); // Actualiza musica segun estado
 
-    if (currentState == intro) { 
+    if (currentState == intro) {
         _intro.update(cambioEstado);
         if (cambioEstado) {
             currentState = nextState;
@@ -86,20 +86,21 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
     }
 
     if (cambioEstado) { // Chequeo cambio de estado;
-        if (clock.getElapsedTime().asSeconds() >= 0.4f) { // Seteo tiempo de transicion
+
+        if (_clockMenu.getElapsedTime().asSeconds() >= 0.4f) { // Seteo tiempo de transicion
             if (currentState == history && nextState == menu) {
                 menuSi = false;
             }
             _musicaFondo.stop();   // Stopeo la música de fondo
             currentState = nextState; // Actualizo el estado
-            cambioEstado = false;  // Termina transicion
+            cambioEstado = false;  // Termina transicion   
         }
     }
 
     else if (currentState == menu) {
 
-     /// CONFIGURACION OPCIONES MENU + SOMBRA
-     // TITULO     
+        /// CONFIGURACION OPCIONES MENU + SOMBRA
+        // TITULO     
         menuTitulo.setFont(font);
         menuTitulo.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
         menuTitulo.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
@@ -119,11 +120,13 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
         menuTituloSombra.setPosition(60.0f, 30.0f);
 
         // OPCIONES
+        float entrelineado = 60.0f; // Regula espacio entre opciones del menu. A partir de 38 para que no se pisen con Size(40)
+
         for (int i = 0; i < numOptions; ++i) {
             menuText[i].setFont(font); // Asigna la fuente a cada opción del menú
             menuText[i].setString(options[i]); // Asigna el texto de la opción
             menuText[i].setCharacterSize(40); // Establece el tamaño de la fuente
-            menuText[i].setPosition(350.0f, 210.0f + i * 60.0f); // Establece la posición de cada opción
+            menuText[i].setPosition(350.0f, 210.0f + i * entrelineado); // Establece la posición de cada opción
             menuText[i].setFillColor(sf::Color::White); // Establece el color del texto
             menuText[i].setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
             menuText[i].setOutlineThickness(5); // Grosor del contorno
@@ -138,7 +141,20 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
             sombra[i].setFillColor(sf::Color(20, 10, 10, 100));  // Color oscuro y un poco transparente
             sombra[i].move(10, 8);  // Desplazar ligeramente la sombra respecto de la posicion de opciones
         }
-        _selectorMenuSprite.setPosition(310.0f, 217.0f + selectedIndex * 60.0f); // Posición del selector basado en la opción seleccionada
+        _selectorMenuSprite.setPosition(310.0f, 217.0f + selectedIndex * entrelineado); // Posición del selector basado en la opción seleccionada
+
+
+        /// OPCIONAL - Opcion en resaltada en tamaño y color
+        /*
+        menuText[selectedIndex].setFillColor(sf::Color(180, 80, 80, 255)); // Pongo en rojizo la opcion actual del menu.
+        menuText[selectedIndex].setPosition(320.0f, 190.0f + selectedIndex * entrelineado);
+        menuText[selectedIndex].setCharacterSize(70);
+        sombra[selectedIndex].setFillColor(sf::Color(20, 10, 10, 220));
+        sombra[selectedIndex].setPosition(320.0f, 190.0f + selectedIndex * entrelineado);
+        sombra[selectedIndex].setCharacterSize(70);
+        sombra[selectedIndex].move(10, 8);
+        _selectorMenuSprite.setPosition(280.0f, 217.0f + selectedIndex * entrelineado); // Posición del selector basado en la opción seleccionada
+        */
     }
 
     else if (currentState == enter_name) {
@@ -180,13 +196,20 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
         window.close();
     }
 
+    else if (currentState == instructions) {
+        _ayuda.update();
+    }
+
+    else if (currentState == result) {
+        _resultado.update();
+    }
 }
 
 
 /////////////////////////////////////////// DRAW ///////////////////////////////////////////
 void Menu::draw(sf::RenderWindow& window) {
 
-    window.clear(); // Limpio ventana (podria estar en main antes de draw)
+    //window.clear(); // Limpio ventana (podria estar en main antes de draw)
 
     if (currentState == intro) {
         window.draw(_intro);
@@ -238,13 +261,22 @@ void Menu::draw(sf::RenderWindow& window) {
         window.draw(_historia); // Historia
     }
 
-    window.display(); // Dibujos a pantalla (podria estar en main despues de draw)
+    else if (currentState == instructions) {
+        window.draw(_ayuda); // Como jugar
+        window.draw(pressText); // Aux
+    }
+
+    else if (currentState == result) {
+        window.draw(_resultado); // Como jugar
+        window.draw(pressText); // Aux
+    }
+    //window.display(); // Dibujos a pantalla (podria estar en main despues de draw)
 }
 
 
 
 
-/////////////////////////////////////////// HANDLEEVENT ///////////////////////////////////////////
+/////////////////////////////////////////// MANEJO EVENTOS ///////////////////////////////////////////
 void Menu::manejoEvents(sf::Event& event, bool& menuSi) {
 
     if (currentState == menu) {
@@ -269,13 +301,14 @@ void Menu::manejoEvents(sf::Event& event, bool& menuSi) {
                 _enter.play();
                 //_musicaFondo.stop();  comento por que stopeo en UPDATE
                 nextState = menu;
+                //nextState = result; // Para probar estado RESULT ***********************  ACA SETEO PARA IR A JUEGO
 
                 //*********** Resetea texto de la historia para el proximo ingreso a historia
                 _completa = true; // bandera true historia completa
                 _noComenzar = false; // bandera vuelta historia desde el comienzo
-                
+
                 cambioEstado = true;
-                clock.restart();
+                _clockMenu.restart();
             }
             if (event.key.code == sf::Keyboard::Escape) {
                 _musicaFondo.stop();
@@ -293,19 +326,29 @@ void Menu::manejoEvents(sf::Event& event, bool& menuSi) {
             }
 
         }
-        
+
+    }
+
+    else if (currentState == instructions) {
+        manejoInputs(event); // Manejo entrada Instrucciones
+    }
+
+    else if (currentState == result) {
+        manejoInputs(event); // Manejo entrada Instrucciones
     }
 
 }
 
 
 
-/////////////////////////////////////////// HANDLEINPUT ///////////////////////////////////////////
+/////////////////////////////////////////// MANEJO INPUTS ///////////////////////////////////////////
 void Menu::manejoInputs(sf::Event& event) {
 
     if (event.type == sf::Event::KeyPressed) {
-        if (event.key.code == sf::Keyboard::Enter && !cambioEstado) {
-            //clock.restart();
+        if (event.key.code == sf::Keyboard::Enter
+            && !cambioEstado
+            && (currentState == menu || currentState == quit)) { // Para que ENTER solo actue en estos 2 estados.
+            //_clockMenu.restart();
             if (_enter.getStatus() != sf::Music::Playing) {
                 _enter.setVolume(100);
                 _enter.play();
@@ -325,10 +368,13 @@ void Menu::manejoInputs(sf::Event& event) {
             else if (options[selectedIndex] == "CREDITOS") {
                 nextState = credits;
             }
+            else if (options[selectedIndex] == "COMO JUGAR") {
+                nextState = instructions;
+            }
 
             // Activar la transición y reiniciar el reloj
             cambioEstado = true;
-            clock.restart();
+            _clockMenu.restart();
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             selectedIndex = (selectedIndex - 1 + numOptions) % numOptions; // Mover el selector hacia arriba
@@ -337,15 +383,21 @@ void Menu::manejoInputs(sf::Event& event) {
             selectedIndex = (selectedIndex + 1) % numOptions; // Mover el selector hacia abajo
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-            _musicaFondo.stop();
-            currentState = menu;  // Volver al menú principal
+            if (currentState == menu) {
+                selectedIndex = numOptions - 1;
+            }
+            else {
+                _musicaFondo.stop();
+                currentState = menu;  // Volver al menú principal
+            }
+
         }
     }
 }
 
 
 
-/////////////////////////////////////////// HANDLENAMEINPUT ///////////////////////////////////////////
+/////////////////////////////////////////// MANEJO ENTER_NAME ///////////////////////////////////////////
 void Menu::manejoNameInput(sf::Event& event) {
 
     const int maxTamNombre = 12; // Tamaño máximo permitido para el nombre
@@ -363,28 +415,28 @@ void Menu::manejoNameInput(sf::Event& event) {
                 (letratipeada >= '0' && letratipeada <= '9') || // 48 - 57
                 letratipeada == ' ') { // 32
                 playerName += letratipeada;
-                _letra.play();                
+                _letra.play();
             }
         }
     }
-    
+
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Enter && !cambioEstado) {
-            clock.restart();
+            _clockMenu.restart();
             if (!playerName.empty()) {
                 if (_enter.getStatus() != sf::Music::Playing) {
                     _enter.setVolume(100);
                     _enter.play();
                 }
                 nextState = history;
-                _musicaFondo.stop();
+                //_musicaFondo.stop();
                 cambioEstado = true;
             }
             else {
                 _error.play();
             }
-            
-            clock.restart();
+
+            _clockMenu.restart();
         }
         else if (event.key.code == sf::Keyboard::Escape && !cambioEstado) {
             playerName = ""; // Limpiar el nombre si se cancela
@@ -392,9 +444,9 @@ void Menu::manejoNameInput(sf::Event& event) {
             _musicaFondo.stop();
             cambioEstado = true;
         }
-        
+
     }
-    
+
 }
 
 void Menu::setMusica() {
@@ -408,7 +460,7 @@ void Menu::setMusica() {
             break;
         case menu:
             rutaMusica = "./assets/audios/menu.mp3";
-            _musicaFondo.setVolume(100);            
+            _musicaFondo.setVolume(100);
             break;
         case enter_name:
             rutaMusica = "./assets/audios/enter_name.mp3";
@@ -419,19 +471,30 @@ void Menu::setMusica() {
             _musicaFondo.setVolume(100);
             //_musicaFondo.play();
             break;
-        case credits:
-            rutaMusica = "./assets/audios/creditos.mp3";
-            _musicaFondo.setVolume(100);
+        case instructions:
+            rutaMusica = "./assets/audios/instrucciones.mp3";
+            _musicaFondo.setVolume(40);
+            //_musicaFondo.play();
             break;
         case statics:
             rutaMusica = "./assets/audios/ranking.mp3";
             _musicaFondo.setVolume(100);
             break;
+        case credits:
+            rutaMusica = "./assets/audios/creditos.mp3";
+            _musicaFondo.setVolume(100);
+            break;
+        case result:
+            rutaMusica = "./assets/audios/creditos.mp3";
+            _musicaFondo.setVolume(0);
+            break;
         }
 
-        if (!_musicaFondo.openFromFile(rutaMusica)) {
-            std::cout << "Error al cargar la musicaFondo: " << currentState << std::endl;
+        if (currentState != quit) {
+            if (!_musicaFondo.openFromFile(rutaMusica)) {
+                std::cout << "Error al cargar la musicaFondo: " << currentState << std::endl;
+            }
+            _musicaFondo.play();
         }
-        _musicaFondo.play();
     }
 }

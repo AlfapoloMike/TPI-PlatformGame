@@ -27,7 +27,6 @@
 #include "Laser.h"
 #include "Crystal.h"
 #include "IceBall.h"
-#include "Menu.h"
 
 using namespace std;
 
@@ -41,7 +40,7 @@ int main()
 
 	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
 
-	
+
 	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
 	sf::Clock clock;
@@ -57,12 +56,10 @@ int main()
 	b2World world(gravity);
 
 	///// Creamos el Nivel con los parametros nivel = 1, el mundo como referencia, y pixeles por metro es decir 40px = 1 metro en este caso.
-	Nivel newNivel(1, world, pixelMetro);
-	
+	Nivel newNivel(0, world, pixelMetro);
+
 	GameContactListener _contactListener;
 
-	bool menuSi = true;
-	Menu menu;
 
 	world.SetContactListener(&_contactListener);
 
@@ -73,11 +70,13 @@ int main()
 		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
 		world.Step(1 / 60.0f, 8, 5);
-	
+
 
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
+			newNivel.cmdNivel(event); // Agregado Ale
+
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
@@ -101,31 +100,12 @@ int main()
 					viewport = sf::FloatRect(0.0f, (1.0f - height) / 2.0f, 1.0f, height);
 				}
 				///////ESTO ESTA SIN IMPLEMENTAR, ESTA COMENTADO EN NIVEL PORQUE LOS BORDES QUEDAN CON FRANJA NEGRA
-				//newNivel.vistaSetViewPort(viewport, window);
-			}
-			// Manejar eventos según el estado actual
-			if (menuSi) {
-				menu.manejoEvents(event, menuSi); // Método para manejar eventos en el menú
+				newNivel.vistaSetViewPort(viewport, window);
 			}
 
 		}
-		/*
-		if (menuSi) {
-			menu.update(window, menuSi);
-			menu.draw(window);
-		}
-		else {
-			newNivel.nivelUpdate(world, window, deltaTime);
-
-			window.clear();
 
 
-
-			newNivel.nivelDrawer(window);
-			window.display();
-
-		}
-		*/
 		newNivel.nivelUpdate(world, window, deltaTime);
 		window.clear();
 
@@ -133,6 +113,6 @@ int main()
 		newNivel.nivelDrawer(window);
 		window.display();
 	}
-	
+
 	return 0;
 }
