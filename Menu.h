@@ -8,11 +8,13 @@
 #include "Ranking.h"
 #include "Creditos.h"
 #include "Historia.h"
+#include "Ayuda.h"
+#include "Resultado.h"
 
 
 class Menu {
 public:
-    enum AppState { intro, menu, enter_name, history, statics, credits, quit }; // Estados del MENU
+    enum AppState { intro, menu, enter_name, history, instructions, statics, credits, result, quit }; // Estados del MENU
     Menu();
     ~Menu();
     void update(sf::RenderWindow& window, bool& menuSi);
@@ -23,7 +25,6 @@ public:
     void setMusica();
 
 private:
-    //enum AppState {intro, menu, enter_name, history, statics, credits, quit}; // Estados del MENU
 
     AppState currentState; // Estado actual del MENU
     AppState nextState; // Proximo estado 
@@ -51,9 +52,9 @@ private:
     sf::Text menuTitulo;
     sf::Text menuTituloSombra;
     std::string menuTituloeText = "AGAINST THE CLOCK";
-    sf::Text menuText[4], sombra[4]; // Vectores Text de opciones+sombra
-    const int numOptions = 4; // Cantidad de opciones
-    std::string options[4] = { "JUGAR", "RANKING", "CREDITOS", "SALIR" }; // Opciones del menú
+    sf::Text menuText[5], sombra[5]; // Vectores Text de opciones+sombra
+    const int numOptions = 5; // Cantidad de opciones
+    std::string options[5] = { "JUGAR", "COMO JUGAR", "RANKING", "CREDITOS", "SALIR"}; // Opciones del menú
 
     /// INGRESO NOMBRE
     sf::Text nombrePress;
@@ -70,4 +71,6 @@ private:
     Ranking _ranking;
     Creditos _creditos;
     Historia _historia;
+    Ayuda _ayuda;
+    Resultado _resultado;
 };

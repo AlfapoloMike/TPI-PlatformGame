@@ -177,6 +177,12 @@
     <ClCompile Include="Creditos.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Ayuda.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Resultado.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemigo.h">
@@ -267,6 +273,12 @@
       <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Ranking.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Ayuda.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Resultado.h">
       <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
   </ItemGroup>

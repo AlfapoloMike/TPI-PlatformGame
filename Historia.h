@@ -24,7 +24,7 @@ private:
 	sf::Text _historiaPress;
 	std::string _historia = "";
 
-	sf::Clock _clockHistoria;               // Reloj para medir el tiempo
+	sf::Clock _clockHistoria;  // Reloj para regular el tiempo de aparicion de letras
 	std::string _textoMostrado; // Texto mostrado hasta ahora
 	int _letraActual = 0;   // Índice del carácter que estamos mostrando actualmente
 
