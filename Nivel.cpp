@@ -28,7 +28,10 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	setEnemigos(world, pixelMetro);
 	setPlayer(world);
 	setVillager(world, pixelMetro);
-	setCrystals(world, 0);
+	//setCrystals(world, 0);
+
+	mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
+
 	setPlayerView();
 
 }
@@ -117,8 +120,7 @@ void Nivel::setTottems(b2World& world, float deltaTime) {
 
 	for (int i = 0; i < _tottems.size(); i++) {
 		if (_tottems[i]->isDestroyed() == true) {
-			///std::cout << " EL MAGO RECIBIO DANIO " << std::endl;
-			///// HACER DAÑO AL MAGO CON METODO
+			mago->damaged(_tottems[i]->isDestroyed());
 			_tottems.erase(_tottems.begin() + i);
 			i--;
 		}
@@ -260,6 +262,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		_tottems[i]->Update(0, deltaTime, world);
 	}
 
+	mago->Update(0, deltaTime, world);
 
 	_ui.update(deltaTime,_personaje->getVida());
 
@@ -334,6 +337,7 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		window.draw(*_tottems[i]);
 	}
 
+	window.draw(*mago);
 
 	window.draw(*_personaje);
 
@@ -373,7 +377,9 @@ Nivel::~Nivel()
 	if (_mapa != nullptr) {
 		delete _mapa;
 	}
-
+	if (mago != nullptr) {
+		delete mago;
+	}
 }
 
 void checkFruits() {

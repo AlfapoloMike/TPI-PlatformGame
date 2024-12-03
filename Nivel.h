@@ -19,6 +19,7 @@
 #include "Rino.h"
 #include "Crystal.h"
 #include "Tottem.h"
+#include "Mage.h"
 
 enum class NIVELES {
 	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS
@@ -61,6 +62,8 @@ protected:
 	std::vector<std::unique_ptr<Crystal>> _crystals;
 
 	std::vector<std::unique_ptr<Tottem>> _tottems;
+
+	Mage* mago = nullptr;
 
 
 	sf::FloatRect _viewport;

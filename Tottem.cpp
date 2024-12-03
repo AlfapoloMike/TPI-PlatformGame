@@ -181,7 +181,6 @@ void Tottem::Update(int row, float deltaTime, b2World& world) {
 
 void Tottem::setDestroyed() {
 
-	std::cout << " SETEE DESTROYED? " << std::endl;
 
 	_state = TOTTEM_STATE::HITTED;
 	setAnimationState();
@@ -198,6 +197,7 @@ void Tottem::setSpawning() {
 	setAnimationState();
 
 }
+
 
 bool Tottem::isDestroyed() {
 	return _isDestroyed;

@@ -8,7 +8,11 @@
 enum class MAGE_STATE {
 	CASTING,
 	IDLE,
-	DEAD
+	DEAD,
+	SPAWN,
+	CASTING_FINAL,
+	SKILL,
+	DYING,
 };
 
 class Mage : public sf::Drawable {
@@ -20,7 +24,7 @@ private:
 	sf::Vector2f _position;
 	sf::Vector2f _size;
 	Animation _animation;
-	bool _vida[12]{true};
+	bool _vida[12] = { true, true, true, true, true, true, true, true, true, true, true, true };
 
 	float _animationTimer = 0;
 
@@ -29,8 +33,9 @@ private:
 	b2PolygonShape _bodyBox;
 	b2Fixture* _fixture;
 	b2Vec2 _positionBody;
-	sf::Vector2f _velocidad = sf::Vector2f(2.5f, 2.5f);
+	sf::Vector2f _velocidad = sf::Vector2f(0.0f, 0.0f);
 
+	MAGE_STATE _state = MAGE_STATE::CASTING_FINAL;
 
 	bool _isDestroyed = false;
 
@@ -58,9 +63,10 @@ public:
 
 	void Update(int row, float deltaTime, b2World& world);
 
-	void setDestroyed();
+	void damaged(bool damageIs);
 
-	void setSpawning();
+
+	void checkLife();
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
