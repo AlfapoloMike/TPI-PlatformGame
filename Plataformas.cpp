@@ -117,6 +117,11 @@ void Plataformas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 }
 
 
+void Plataformas::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
+
 
 Plataformas::Plataformas()
 {

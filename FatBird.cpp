@@ -224,6 +224,10 @@ void Fatbird::updateVillager(int row, float deltaTime)
 	_animation.Update(row, deltaTime);
 
 }
+void Fatbird::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
 
 Fatbird::~Fatbird() {
 }

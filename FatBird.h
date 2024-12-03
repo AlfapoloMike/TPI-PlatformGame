@@ -54,6 +54,8 @@ public:
 
 	void updateVillager(int row, float deltaTime);
 
+	void destroyBody(b2World& world);
+
 	void setContact(bool state);
 
 	b2Vec2 getPositionBody();

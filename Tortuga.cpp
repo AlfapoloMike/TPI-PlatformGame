@@ -277,5 +277,11 @@ void Tortuga::updateVillager(int row, float deltaTime)
 }
 
 
+void Tortuga::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
+
+
 Tortuga::~Tortuga() {
 }

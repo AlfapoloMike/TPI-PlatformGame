@@ -39,6 +39,7 @@ public:
 
 
 	void updateVillager(int row, float deltaTime);
+	void destroyBody(b2World& world);
 	~Rino();
 
 private:

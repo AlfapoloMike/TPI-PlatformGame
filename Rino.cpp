@@ -194,6 +194,12 @@ void Rino::updateVillager(int row, float deltaTime)
 
 }
 
+void Rino::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
+
+
 Rino::~Rino() {
 
 }

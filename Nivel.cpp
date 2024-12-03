@@ -36,7 +36,6 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	//	setUI();
 	//}
 
-	mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
 
 
 }
@@ -49,8 +48,8 @@ void Nivel::setPlayer(b2World& world) {
 	}
 }
 void Nivel::setPlayerView() {
-	b2Vec2 position = _personaje->getPosition();
-	_vista.setCenter(position.x * 40, 600 - position.y * 40);
+	playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+	_vista.setCenter(playerPosition.x * 40, 600 - playerPosition.y * 40);
 	_vistaSize.x = _vista.getSize().x / 2;
 	_vistaSize.y = _vista.getSize().y / 2;
 }
@@ -138,11 +137,18 @@ void Nivel::setMap(b2World& world)
 	switch (_nivel)
 	{
 	case NIVELES::NIVEL_1:
-
+		/*
 		_mapa = new Map(1);
+		std::cout << "Se creo otro mapa?" << std::endl;
 		if (_mapa == nullptr) {
 			return;
 		}
+		*/
+		_map = std::make_unique<Map>(1);
+
+		_background = std::make_unique<backgroundTile>();
+
+	
 
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.25f, 2.85f), sf::Vector2f(16.75f, 0.1f), world, true));
@@ -183,7 +189,50 @@ void Nivel::setMap(b2World& world)
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.55f, 20.75f), sf::Vector2f(0.25f, 4.25f), world, false));
 
 		break;
-	case NIVELES::NIVEL_2:
+	case NIVELES::BOSS:
+		_map = std::make_unique<Map>(1);
+
+
+		_background = std::make_unique<backgroundTile>();
+
+
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.25f, 2.85f), sf::Vector2f(16.75f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(14.25f, 4.85f), sf::Vector2f(5.75f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(11.25f, 8.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(16.5f, 7.85f), sf::Vector2f(2.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(9.75f, 11.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(5.25f, 12.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(17.5f, 10.85f), sf::Vector2f(1.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(23.25f, 6.85f), sf::Vector2f(1.75f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(25.0f, 4.35f), sf::Vector2f(2.0f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(20.75f, 10.35f), sf::Vector2f(0.6f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(28.25f, 7.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(30.75f, 9.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(33.25f, 11.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(30.25f, 13.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(26.25f, 15.35f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(31.25f, 16.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(26.25f, 19.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(31.25f, 19.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(33.75f, 6.85f), sf::Vector2f(1.25f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(20.75f, 17.35f), sf::Vector2f(1.75f, 0.1f), world, true));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(6.25f, 17.85f), sf::Vector2f(9.75f, 0.1f), world, true));
+
+
+
+
+		////OBSTACULO
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(20.75f, 6.5f), sf::Vector2f(0.5f, 3.75f), world, false));
+
+
+		///// BORDES DEL MAPA
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.25f, 12.0f), sf::Vector2f(0.1f, 10.5f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(35.25f, 12.0f), sf::Vector2f(0.1f, 10.5f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.25f, 1.375), sf::Vector2f(16.75f, 0.1f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.25f, 22.75f), sf::Vector2f(16.75f, 0.1f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(8.75f, 17.0f), sf::Vector2f(7.15f, 0.85f), world, false));
+		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(1.55f, 20.75f), sf::Vector2f(0.25f, 4.25f), world, false));
 		break;
 	case NIVELES::NIVEL_3:
 		break;
@@ -288,6 +337,10 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	gameStateController();*/
 
 	/// MODIFICACION ALE
+
+	gameStateController(world);
+
+
 	switch (_nivel) {
 	case NIVELES::MENU:
 
@@ -306,12 +359,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 			setEnemigos(world, _pixelMetro);
 			setPlayer(world);
 			setVillager(world, _pixelMetro);
-			//if (_nivel == NIVELES::BOSS) {
-			setCrystals(world, 0);
-
-			//}
 			setPlayerView();
-			setUI();
 			settingAll = false;
 		}
 
@@ -342,37 +390,75 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 			}
 		}
 
-
-		bool hitted = _personaje->getIsHitted();
-
-		_background.backgroundUpdate(deltaTime, hitted);
+		//// EFECTO CAMBIO DE FONDO ----
+		_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
+		//// EFECTO CAMBIO DE FONDO ----
 
 		_personaje->update(0, deltaTime);
-
-		//_cryst->Update(0, deltaTime, world);
-
-		for (int i = 0; i < _crystals.size(); i++) {
-			_crystals[i]->Update(0, deltaTime, world);
-		}
 
 
 		_ui.update(deltaTime, _personaje->getVida());
 
 
-		sf::Vector2f position = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
 
-		position.x = std::clamp(position.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
-		position.y = std::clamp(position.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
-
-
-
-		_vista.setCenter(position.x, 600 - position.y);
+		playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+		playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
 
 
-		gameStateController();
 
-		break;
+		_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+
+
+
+			break;
+		case NIVELES::BOSS:
+
+			///// solo una vez
+
+			if (bossSetted == false) {
+				std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
+				setMap(world);
+				setCrystals(world, 0);
+				mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
+				bossSetted = true;
+			}
+			////////solo  una vez
+			_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
+
+
+			setTottems(world, deltaTime);
+
+			for (int i = 0; i < _crystals.size(); i++) {
+				_crystals[i]->Update(0, deltaTime, world);
+			}
+
+			for (int i = 0; i < _tottems.size(); i++) {
+				_tottems[i]->Update(0, deltaTime, world);
+			}
+
+			_personaje->update(0, deltaTime);
+
+
+			mago->Update(0, deltaTime, world);
+
+			_ui.update(deltaTime, _personaje->getVida());
+
+
+			playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+
+			playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+			playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
+
+
+
+			_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+
+
+			break;
 	}
+
+
 
 }
 
@@ -478,10 +564,9 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 		window.setView(_vista);
 
+		window.draw(*_background);
 
-		window.draw(_background);
-
-		window.draw(_mapa->getShape());
+		window.draw(*_map);
 
 		for (int i = 0; i < _plataformasN.size(); i++) {
 			window.draw(_plataformasN[i]->getShape());
@@ -513,10 +598,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 			window.draw(*_frutas[i]);
 		}
 
-		for (int i = 0; i < _crystals.size(); i++) {
-			window.draw(*_crystals[i]);
-		}
-
 		window.draw(*_personaje);
 
 
@@ -524,18 +605,68 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		_ui.drawUi(window);
 
 		break;
+	case NIVELES::BOSS:
+		if (bossSetted == true) {
+			window.setView(_vista);
+
+			window.draw(*_background);
+			/*
+			if (_mapa == nullptr) {
+				std::cout << "MAPA ES NULL " << std::endl;
+			}
+			else {
+				std::cout << _mapa << std::endl;
+			}
+			*/
+
+			window.draw(*_map);
+
+			for (int i = 0; i < _plataformasN.size(); i++) {
+				window.draw(_plataformasN[i]->getShape());
+			}
+
+
+			window.draw(*_personaje);
+
+			for (int i = 0; i < _crystals.size(); i++) {
+				window.draw(*_crystals[i]);
+			}
+
+
+			for (int i = 0; i < _tottems.size(); i++) {
+				window.draw(*_tottems[i]);
+			}
+
+			window.draw(*mago);
+
+
+			window.setView(window.getDefaultView());
+			_ui.drawUi(window);
+
+		}
+
+		break;
 	}
 
 }
 
 
-void Nivel::gameStateController()
+void Nivel::gameStateController(b2World& world)
 {
-	bool* _alive = _personaje->getVida();
-	int time = _ui.getTime();
-	if (_alive[0] == false || time >= 3) {
-		std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
+	if (_nivel == NIVELES::NIVEL_1 && settingAll == false) {
+
+		bool* _alive = _personaje->getVida();
+		int time = _ui.getTime();
+		if (_alive[0] == false || time >= 3) {
+			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
+		}else if (_ui.getPoints() > 200 && _nivel != NIVELES::BOSS) {
+			_nivel = NIVELES::BOSS;
+			cleanLevel(world);
+			clean = true;
+			settingAll = true;
+		}
 	}
+
 }
 
 void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
@@ -544,6 +675,58 @@ void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
 	_vista.setViewport(viewport); // Ajusta el viewport para mantener la proporción
 	window.setView(_vista);
 	*/
+
+}
+
+void Nivel::cleanLevel(b2World& world) {
+
+	if (clean == false && menuSi == false) {
+
+		for (const auto& enemigo : enemigos) {
+			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+				calavera->destroyBody(world);
+			}
+			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+				conejo->destroyBody(world);
+			}
+		}
+
+		for (const auto& aldeano : aldeanos) {
+			if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+				tortuga->destroyBody(world);
+			}
+			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
+				fatbird->destroyBody(world);
+			}
+			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+				rino->destroyBody(world);
+			}
+		}
+
+		for (int i = 0; i < _frutas.size(); i++) {
+			_frutas[i]->destroyBody(world);
+		}
+
+		for (int i = 0; i < _plataformasN.size(); i++) {
+			_plataformasN[i]->destroyBody(world);
+		}
+
+		enemigos.clear();
+		aldeanos.clear();
+		_frutas.clear();
+		_plataformasN.clear();
+		_map.reset();
+		_background.reset();
+		
+		/*
+		if (_mapa != nullptr) {
+			delete _mapa;
+			_mapa = nullptr;
+		}
+		*/
+		
+		clean = true;
+	}
 
 }
 
@@ -559,16 +742,13 @@ Nivel::~Nivel()
 	if (mago != nullptr) {
 		delete mago;
 	}
+
 }
 
 void checkFruits() {
 
 }
 
-Plataformas Nivel::getPlataforma(int plataforma)
-{
-	return _plataformas[plataforma];
-}
 
 
 

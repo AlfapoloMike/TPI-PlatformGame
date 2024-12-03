@@ -34,6 +34,7 @@ public:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void updateEnemie(int row, float deltaTime) override;
 	sf::Sprite getSpriteSkull();
+	void destroyBody(b2World& world);
 	~Skull();
 };
 
