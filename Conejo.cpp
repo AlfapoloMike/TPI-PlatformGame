@@ -195,7 +195,10 @@ void Conejo::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(_sprite, states);
 }
 
-
+void Conejo::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
 
 Conejo::~Conejo()
 {

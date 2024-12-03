@@ -38,6 +38,8 @@ public:
 	void updateEnemie(int row, float deltaTime) override;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+	void destroyBody(b2World& world);
+
 	~Conejo();
 
 	//// Box2D GENERACION

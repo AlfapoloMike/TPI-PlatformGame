@@ -169,6 +169,11 @@ sf::Sprite Skull::getSpriteSkull()
 	return _sprite;
 }
 
+void Skull::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
+}
+
 Skull::~Skull()
 {
 }

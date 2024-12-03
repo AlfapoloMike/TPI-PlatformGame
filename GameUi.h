@@ -31,6 +31,7 @@ public:
 	void sumarPuntos(int puntos);
 	void setGameUiBackground();
 	int getTime();
+	int getPoints();
 	void update(float deltaTime, bool vidas[4]);
 	void drawUi(sf::RenderWindow& window);
 	~GameUi();

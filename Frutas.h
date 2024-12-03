@@ -53,5 +53,6 @@ public:
 	//sf::Texture getTexture();
 	//sf::Vector2f getPosition();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	void destroyBody(b2World& world);
 	~Frutas();
 };

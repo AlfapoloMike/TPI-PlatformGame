@@ -160,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="Aldeano.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Ayuda.cpp" />
     <ClCompile Include="Conejo.cpp" />
     <ClCompile Include="Corazon.cpp" />
     <ClCompile Include="Creditos.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="PuntajeJugador.cpp" />
     <ClCompile Include="PuntajeJugadorArchivo.cpp" />
     <ClCompile Include="Ranking.cpp" />
+    <ClCompile Include="Resultado.cpp" />
     <ClCompile Include="Rino.cpp" />
     <ClCompile Include="Skull.cpp" />
     <ClCompile Include="Tortuga.cpp" />
@@ -194,6 +196,7 @@
   <ItemGroup>
     <ClInclude Include="Aldeano.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Ayuda.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="CollisionCategories.h" />
     <ClInclude Include="Conejo.h" />
@@ -220,6 +223,7 @@
     <ClInclude Include="PuntajeJugador.h" />
     <ClInclude Include="PuntajeJugadorArchivo.h" />
     <ClInclude Include="Ranking.h" />
+    <ClInclude Include="Resultado.h" />
     <ClInclude Include="Rino.h" />
     <ClInclude Include="Skull.h" />
     <ClInclude Include="Tortuga.h" />

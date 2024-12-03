@@ -32,6 +32,7 @@ public:
 	//***************UPDATE Y DRAW****************************/
 
 	void updateVillager(int row, float deltaTime) override;
+	void destroyBody(b2World& world);
 	~Tortuga();
 
 private:

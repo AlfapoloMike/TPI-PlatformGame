@@ -27,6 +27,7 @@ public:
 
 	sf::RectangleShape getShape();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	void destroyBody(b2World& world);
 	Plataformas();
 	~Plataformas();
 

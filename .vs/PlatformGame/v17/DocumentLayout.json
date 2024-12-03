@@ -3,84 +3,100 @@
   "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Crystal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Crystal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\IceBall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:IceBall.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\IceBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:IceBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Tottem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Tottem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Tottem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Tottem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\CollisionCategories.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:CollisionCategories.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Plataformas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Plataformas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Jugador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Jugador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Tortuga.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Tortuga.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Frutas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Tortuga.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Tortuga.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Rino.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Rino.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Rino.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Rino.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\FatBird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:FatBird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\FatBird.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:FatBird.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Conejo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TPI-PlatformGame\\packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Conejo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Conejo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Enemigo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Skull.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Skull.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\IceBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:IceBall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameUi.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameUi.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameUi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameUi.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,244 +118,315 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IceBall.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\IceBall.cpp",
-              "RelativeDocumentMoniker": "IceBall.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\IceBall.cpp",
-              "RelativeToolTip": "IceBall.cpp",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T23:14:43.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Mage.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.cpp",
-              "RelativeDocumentMoniker": "Mage.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Mage.cpp",
-              "RelativeToolTip": "Mage.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-01T22:39:01.57Z",
+              "DocumentIndex": 10,
+              "Title": "Tortuga.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Tortuga.h",
+              "RelativeDocumentMoniker": "Tortuga.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Tortuga.h",
+              "RelativeToolTip": "Tortuga.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAawCgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T17:16:55.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Mage.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.h",
-              "RelativeDocumentMoniker": "Mage.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\Mage.h",
-              "RelativeToolTip": "Mage.h",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-01T22:39:20.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameContactListener.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.h",
-              "RelativeDocumentMoniker": "GameContactListener.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.h",
-              "RelativeToolTip": "GameContactListener.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-30T21:28:31.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Tottem.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Tottem.h",
-              "RelativeDocumentMoniker": "Tottem.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\Tottem.h",
-              "RelativeToolTip": "Tottem.h",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAawEIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-30T21:12:34.87Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Tottem.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Tottem.cpp",
-              "RelativeDocumentMoniker": "Tottem.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Tottem.cpp",
-              "RelativeToolTip": "Tottem.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "Title": "Tortuga.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Tortuga.cpp",
+              "RelativeDocumentMoniker": "Tortuga.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Tortuga.cpp",
+              "RelativeToolTip": "Tortuga.cpp",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAABYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-30T21:12:27.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Enemigo.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Enemigo.cpp",
-              "RelativeDocumentMoniker": "Enemigo.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Enemigo.cpp",
-              "RelativeToolTip": "Enemigo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-26T17:14:52.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameContactListener.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
-              "RelativeDocumentMoniker": "GameContactListener.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
-              "RelativeToolTip": "GameContactListener.cpp",
-              "ViewState": "AgIAANUCAAAAAAAAAAAqwOgCAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T13:06:11.427Z"
+              "WhenOpened": "2024-12-03T17:16:41.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Nivel.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.h",
-              "RelativeDocumentMoniker": "Nivel.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.h",
-              "RelativeToolTip": "Nivel.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEEAAAALAAAAAAAAAA==",
+              "Title": "Rino.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Rino.h",
+              "RelativeDocumentMoniker": "Rino.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Rino.h",
+              "RelativeToolTip": "Rino.h",
+              "ViewState": "AgIAABMAAAAAAAAAAAAawCkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T14:24:12.043Z"
+              "WhenOpened": "2024-12-03T17:16:38.975Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Nivel.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
-              "RelativeDocumentMoniker": "Nivel.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.cpp",
-              "RelativeToolTip": "Nivel.cpp",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAAAB4AAAADAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Rino.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Rino.cpp",
+              "RelativeDocumentMoniker": "Rino.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Rino.cpp",
+              "RelativeToolTip": "Rino.cpp",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T14:35:08.433Z"
+              "WhenOpened": "2024-12-03T17:16:27.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FatBird.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\FatBird.h",
+              "RelativeDocumentMoniker": "FatBird.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\FatBird.h",
+              "RelativeToolTip": "FatBird.h",
+              "ViewState": "AgIAACIAAAAAAAAAAAAawDgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T17:16:16.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Jugador.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Jugador.cpp",
-              "RelativeDocumentMoniker": "Jugador.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Jugador.cpp",
-              "RelativeToolTip": "Jugador.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACPAAAAAAAAAA==",
+              "Title": "FatBird.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\FatBird.cpp",
+              "RelativeDocumentMoniker": "FatBird.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\FatBird.cpp",
+              "RelativeToolTip": "FatBird.cpp",
+              "ViewState": "AgIAANMAAAAAAAAAAAD4v+IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T01:10:16.373Z"
+              "WhenOpened": "2024-12-03T17:14:39.862Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Jugador.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Jugador.h",
-              "RelativeDocumentMoniker": "Jugador.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\Jugador.h",
-              "RelativeToolTip": "Jugador.h",
-              "ViewState": "AgIAACgAAAAAAAAAAAAawDoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T01:10:34.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Plataformas.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Plataformas.cpp",
-              "RelativeDocumentMoniker": "Plataformas.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Plataformas.cpp",
-              "RelativeToolTip": "Plataformas.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADcAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T15:59:16.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "Frutas.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeDocumentMoniker": "Frutas.cpp",
               "ToolTip": "F:\\TPI-PlatformGame\\Frutas.cpp",
               "RelativeToolTip": "Frutas.cpp",
-              "ViewState": "AgIAAP0AAAAAAAAAAAAawBMBAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABcBAAAAAAAAAAD4vzwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-27T23:11:08.841Z"
+              "WhenOpened": "2024-12-03T17:13:44.394Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Crystal.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Crystal.cpp",
-              "RelativeDocumentMoniker": "Crystal.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Crystal.cpp",
-              "RelativeToolTip": "Crystal.cpp",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-02T23:15:51.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CollisionCategories.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\CollisionCategories.h",
-              "RelativeDocumentMoniker": "CollisionCategories.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\CollisionCategories.h",
-              "RelativeToolTip": "CollisionCategories.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Nivel.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.h",
+              "RelativeDocumentMoniker": "Nivel.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.h",
+              "RelativeToolTip": "Nivel.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAawC0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T01:09:31.92Z"
+              "WhenOpened": "2024-11-27T14:24:12.043Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "Nivel.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
+              "RelativeDocumentMoniker": "Nivel.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.cpp",
+              "RelativeToolTip": "Nivel.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-27T14:35:08.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Conejo.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Conejo.h",
+              "RelativeDocumentMoniker": "Conejo.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Conejo.h",
+              "RelativeToolTip": "Conejo.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T14:47:37.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Conejo.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Conejo.cpp",
+              "RelativeDocumentMoniker": "Conejo.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Conejo.cpp",
+              "RelativeToolTip": "Conejo.cpp",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAAAMUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T14:47:26.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "IceBall.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\IceBall.h",
               "RelativeDocumentMoniker": "IceBall.h",
               "ToolTip": "F:\\TPI-PlatformGame\\IceBall.h",
               "RelativeToolTip": "IceBall.h",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAawCAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T17:43:28.395Z"
+              "WhenOpened": "2024-12-03T14:44:48.13Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "main.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAAGcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-17T18:51:08.204Z"
+              "DocumentIndex": 20,
+              "Title": "Skull.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Skull.h",
+              "RelativeDocumentMoniker": "Skull.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Skull.h",
+              "RelativeToolTip": "Skull.h",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAawCQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T14:44:37.434Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Enemigo.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Enemigo.h",
               "RelativeDocumentMoniker": "Enemigo.h",
               "ToolTip": "F:\\TPI-PlatformGame\\Enemigo.h",
               "RelativeToolTip": "Enemigo.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T17:14:58.652Z"
+              "WhenOpened": "2024-12-03T14:43:12.513Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 4,
+              "Title": "Map.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Map.h",
+              "RelativeDocumentMoniker": "Map.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Map.h",
+              "RelativeToolTip": "Map.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T17:39:42.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwFQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-17T18:51:08.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Frutas.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Frutas.h",
               "RelativeDocumentMoniker": "Frutas.h",
               "ToolTip": "F:\\TPI-PlatformGame\\Frutas.h",
               "RelativeToolTip": "Frutas.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAawDkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T23:09:56.878Z"
+              "WhenOpened": "2024-12-03T17:17:16.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Map.cpp",
+              "RelativeDocumentMoniker": "Map.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Map.cpp",
+              "RelativeToolTip": "Map.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T17:25:53.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Plataformas.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Plataformas.cpp",
+              "RelativeDocumentMoniker": "Plataformas.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Plataformas.cpp",
+              "RelativeToolTip": "Plataformas.cpp",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T17:21:58.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Plataformas.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Plataformas.h",
+              "RelativeDocumentMoniker": "Plataformas.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Plataformas.h",
+              "RelativeToolTip": "Plataformas.h",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAawB0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T17:22:10.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GameContactListener.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
+              "RelativeDocumentMoniker": "GameContactListener.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
+              "RelativeToolTip": "GameContactListener.cpp",
+              "ViewState": "AgIAAD4AAAAAAAAAAAD4v1MAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T14:36:50.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "b2_body.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h",
+              "RelativeDocumentMoniker": "packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h",
+              "RelativeToolTip": "packages\\Box2D-static.2.4.1.1\\build\\native\\include\\box2d\\b2_body.h",
+              "ViewState": "AgIAAKICAAAAAAAAAAD4v7kCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T17:14:33.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GameUi.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameUi.cpp",
+              "RelativeDocumentMoniker": "GameUi.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\GameUi.cpp",
+              "RelativeToolTip": "GameUi.cpp",
+              "ViewState": "AgIAACMAAAAAAAAAAAAawDsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T13:36:03.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GameUi.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameUi.h",
+              "RelativeDocumentMoniker": "GameUi.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\GameUi.h",
+              "RelativeToolTip": "GameUi.h",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T13:35:46.544Z",
+              "EditorCaption": ""
             }
           ]
         }

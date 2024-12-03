@@ -55,6 +55,10 @@ int GameUi::getTime()
 {
 	return _timeCount[0];
 }
+int GameUi::getPoints()
+{
+	return _totalPoints;
+}
 void GameUi::update(float deltaTime, bool vidas[4])
 {
 
