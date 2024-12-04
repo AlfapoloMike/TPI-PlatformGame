@@ -33,7 +33,7 @@ private:
 	b2PolygonShape _bodyBox;
 	b2Fixture* _fixture;
 	b2Vec2 _positionBody;
-	sf::Vector2f _velocidad = sf::Vector2f(2.5f, 2.5f);
+	sf::Vector2f _velocidad = sf::Vector2f(0.0f, 2.5f);
 
 
 	bool _isDestroyed = false;

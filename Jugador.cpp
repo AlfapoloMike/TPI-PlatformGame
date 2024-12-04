@@ -18,7 +18,7 @@ Jugador::Jugador(b2World& world) {
 	_fixtureDef.friction = 0.3f;
 	_fixtureDef.restitution = 0.0f; // Sin rebote
 	_fixtureDef.filter.categoryBits = PLAYER; // Categoría del muro
-	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE | FATBIRD | RINO | LASER | CRYSTAL | ICEBALL | TOTTEMS | MAGE;   // Colisiona solo con el personaje
+	_fixtureDef.filter.maskBits = WALL | BUNNY | FRUITS | PLATFORM | SKULLS | TURTLE | FATBIRD | RINO | LASER | CRYSTAL | ICEBALL | TOTTEMS | MAGE | PORTAL;   // Colisiona solo con el personaje
 		
 	_fixture = _body->CreateFixture(&_fixtureDef);
 
@@ -461,6 +461,11 @@ bool Jugador::getIsHitted() {
 
 void Jugador::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	target.draw(_sprite, states);
+}
+
+void Jugador::destroyBody(b2World& world)
+{
+	world.DestroyBody(_body);
 }
 
 Jugador::~Jugador() {

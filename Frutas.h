@@ -1,11 +1,10 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "Animation.h"
-#include <stdlib.h>
-#include <time.h>
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include "CollisionCategories.h"
-
+#include <stdlib.h>
+#include <time.h>
 
 enum FRUIT_TYPE {
 	MANZANA, BANANA, FRUTILLA, KIWI, NARANJA, CEREZA, MELON, ANANA, PICKED

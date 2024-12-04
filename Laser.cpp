@@ -141,7 +141,7 @@ void Laser::AnimationControl(float deltaTime, sf::Vector2f newPosition, b2World&
 
 	if (_state == LASER_STATE::ACTIVADO) {
 		timer += deltaTime;
-		if (timer >= 1.4f) {
+		if (timer >= 1.0f) {
 			timer = 0;
 			_state = LASER_STATE::DESACTIVADO;
 			createOrDestroyBody(newPosition, world);
@@ -150,7 +150,7 @@ void Laser::AnimationControl(float deltaTime, sf::Vector2f newPosition, b2World&
 	}
 	else if (_state == LASER_STATE::CARGANDO) {
 		timer += deltaTime;
-		if (timer >= 1.4f) {
+		if (timer >= 2.0f) {
 			timer = 0;
 			_state = LASER_STATE::ACTIVADO;
 			setAnimationState();

@@ -21,6 +21,7 @@
 #include "Tottem.h"
 #include "Mage.h"
 #include "Menu.h"
+#include "Portal.h"
 
 
 enum class NIVELES {
@@ -36,9 +37,10 @@ protected:
 	std::vector<std::shared_ptr<Aldeano>> aldeanos;
 
 	/// mapa con las texturas del fondo
-	Map* _mapa = nullptr;
 
 	std::unique_ptr<Map> _map;
+
+	std::unique_ptr<Portal> _portal;
 
 	/// plataformas segun nivel
 	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
@@ -56,7 +58,9 @@ protected:
 	/// contador de tiempo para el spawn de frutas
 	float _fruitSpawnerTime = 0;
 
-	Jugador* _personaje = nullptr;
+	std::unique_ptr<Jugador> _personaje;
+	//Jugador* _personaje = nullptr;
+
 	//Aldeanos _aldeanos;
 	sf::Vector2f _nivelSize = sf::Vector2f(1460.0f, 960.0f);
 	sf::View _vista = sf::View(sf::FloatRect(0, 0, 800, 600));
@@ -79,8 +83,14 @@ protected:
 	bool menuSi = true;
 	bool settingAll = true;
 	bool bossSetted = false;
-
+	bool _win = false;
+	bool _lose = false;
+	bool _portalState = false;
+	bool _teleporting = false;
 	bool clean = false;
+
+	///TEST OPACIDAD
+	sf::RectangleShape _overlay;
 
 public:
 
@@ -93,6 +103,7 @@ public:
 	void setTottems(b2World& world, float deltaTime);
 	void setMap(b2World& world);
 	void setVillager(b2World& world, float pixelMetro);
+	void setPortal(b2World& world);
 	void nivelDrawer(sf::RenderWindow& window);
 	void gameStateController(b2World& world);
 	void vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window);

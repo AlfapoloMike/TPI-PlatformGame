@@ -34,6 +34,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	Crystal* crystal = nullptr;
 	IceBall* iceball = nullptr;
 	Tottem* tottem = nullptr;
+	Portal* portal = nullptr;
 
 	/***********************************************FATBIRD Y PLATAFORMAS****************************************************************/
 	if ((categoryA & FATBIRD) && (categoryB & PLATFORM) ||
@@ -483,8 +484,8 @@ void GameContactListener::BeginContact(b2Contact* contact)
 	//*********************************** COLISIONES CON JUGADOR Y CONEJO **************************************
 
 
-	if ((categoryA & BUNNY) && (categoryB & PLAYER)||
-		(categoryA & PLAYER) && (categoryB & BUNNY)) {
+	if ((categoryA & RINO) && (categoryB & PLAYER)||
+		(categoryA & PLAYER) && (categoryB & RINO)) {
 
 
 
@@ -513,7 +514,72 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 	}
 
+
+	if ((categoryA & PORTAL) && (categoryB & PLAYER) ||
+		(categoryA & PLAYER) && (categoryB & PORTAL)) {
+
+
+
+		if (categoryA & PORTAL) {
+			portal = reinterpret_cast<Portal*>(bodyA->GetUserData().pointer);
+			if (portal) {
+				std::cout << "esta tocando el portal" << std::endl;
+				portal->setTouched();
+				std::cout << "se seteo el contacto en: " << portal->isTouched() << std::endl;
+				contact->SetEnabled(false);
+
+
+			}
+		}
+		else if (categoryB & PORTAL) {
+			portal = reinterpret_cast<Portal*>(bodyB->GetUserData().pointer);
+
+			if (portal) {
+				std::cout << "esta tocando el portal" << std::endl;
+				portal->setTouched();
+				std::cout << "se seteo el contacto en: " << portal->isTouched() << std::endl;
+
+				contact->SetEnabled(false);
+
+
+			}
+		}
+
+
+	}
 	//*********************************** COLISIONES CON JUGADOR Y CONEJO **************************************
+
+	if ((categoryA & BUNNY) && (categoryB & PLAYER) ||
+		(categoryA & PLAYER) && (categoryB & BUNNY)) {
+
+
+
+		if (categoryA & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+			if (player) {
+				player->recibeDanio(2);
+				player->setFilterDataPlayer(false);
+				contact->SetEnabled(false);
+
+			}
+		}
+		else if (categoryB & PLAYER) {
+			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+
+			if (player) {
+
+				player->recibeDanio(2);
+				player->setFilterDataPlayer(false);
+				contact->SetEnabled(false);
+
+
+			}
+		}
+
+
+	}
+
+	
 	//********************************** COLISIONES CON JUGADOR Y CALAVERA **************************************
 
 
@@ -704,7 +770,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 					crystal->changeDirection();
 				}
 				else {
-					crystal->setRandomPosition();
+					//crystal->setRandomPosition();
+					crystal->changeDirection();
+
 				}
 			}
 		}
@@ -717,7 +785,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 					crystal->changeDirection();
 				}
 				else {
-					crystal->setRandomPosition();
+					//crystal->setRandomPosition();
+					crystal->changeDirection();
+
 				}
 			}
 
