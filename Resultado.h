@@ -2,12 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-class Resultado : public sf::Drawable{
+class Resultado : public sf::Drawable {
 public:
 	Resultado();
 	~Resultado();
 	void update();
-	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+	void setGano(bool vencio);
+	void setCantidadesRecolectadas(int frutas[]);
+	int getPuntajeTotal();
+	void resetAll();
 
 private:
 	sf::Font font;
@@ -27,8 +32,8 @@ private:
 
 
 	sf::Text _resultadoTitulo;
-	sf::Text _resultadoTituloSombra;	
-	
+	sf::Text _resultadoTituloSombra;
+
 	sf::Text _frutasText;
 	sf::Text _cantidadFrutaText;
 	sf::Text _puntajesFrutasText;
@@ -38,7 +43,9 @@ private:
 	int contadores[8]{};
 
 	// Vector de prueba por cantidades diferentes
-	int cantidades[8]{12, 6, 12, 0, 12, 6, 12, 6};
+	//int cantidades[8]{1, 6, 12, 0, 12, 6, 12, 6};
+	//int cantidades[8]{1, 0, 0, 0, 10, 0, 0, 0};
+	int cantidades[8]{};
 
 	int puntosFruta[8]{};
 	bool contada[8]{ false };

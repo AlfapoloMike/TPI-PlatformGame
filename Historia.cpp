@@ -137,3 +137,8 @@ void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(_historiaPress, states);  // Dibujar los botones o texto adicional si es necesario
 
 }
+
+void Historia::resetAll() {
+    _letraActual = 0;
+    _historia = "";
+}

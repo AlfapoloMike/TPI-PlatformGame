@@ -25,7 +25,6 @@ private:
 	sf::Text _jugadoresText;
 
 	PuntajeJugadorArchivo archivo;
-	PuntajeJugador top[5];
 	std::string players;
 	std::string scores;
 

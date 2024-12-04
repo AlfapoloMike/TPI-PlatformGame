@@ -91,6 +91,7 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
             if (currentState == history && nextState == menu) {
                 menuSi = false;
             }
+            //if(currentState == result && nextState == menu){}
             _musicaFondo.stop();   // Stopeo la música de fondo
             currentState = nextState; // Actualizo el estado
             cambioEstado = false;  // Termina transicion   
@@ -450,6 +451,7 @@ void Menu::manejoNameInput(sf::Event& event) {
 }
 
 void Menu::setMusica() {
+
     std::string rutaMusica;
 
     if (_musicaFondo.getStatus() != sf::Music::Playing) {
@@ -497,4 +499,40 @@ void Menu::setMusica() {
             _musicaFondo.play();
         }
     }
+}
+
+void Menu::setState(std::string estado) {
+    if (estado == "menu") {
+        nextState = menu;
+        cambioEstado = true;
+
+    }
+}
+
+void Menu::setResultado(bool gano) {
+    _resultado.setGano(gano);
+    currentState = result;
+}
+
+void Menu::setFrutasRecolectadas(int frutas[]) {
+    _resultado.setCantidadesRecolectadas(frutas);
+}
+
+std::string Menu::getNombreJugador() {
+    return playerName;
+}
+
+int Menu::getPuntajeFinal() {
+    return _resultado.getPuntajeTotal();
+}
+
+void Menu::resetAll() {
+    selectedIndex = 0;
+    //cambioEstado = false;
+    _completa = false;
+    _noComenzar = false;
+    enterPress = false;
+    playerName = "";
+    _resultado.resetAll();
+    //_historia.resetAll();
 }
