@@ -45,7 +45,9 @@ void Crystal::setPositionBody(sf::Vector2f newPosition)
 	///// DEFINIMOS LA POSICION DEL CUERPO
 
 	if (_type == CRYSTAL_TYPE::ICEBALL) {
-		setRandomPosition();
+		//setRandomPosition();
+		_bodyDef.position.Set(newPosition.x, newPosition.y);
+		_bodyDef.type = b2_dynamicBody;
 	}
 	else if (_type == CRYSTAL_TYPE::LASER) {
 		_bodyDef.position.Set(newPosition.x, newPosition.y);
@@ -91,11 +93,14 @@ void Crystal::setBodyInWorld(b2World& world)
 	////// Asignamos una escala de gravedad 0 para que no sea afectado por la gravedad.
 	if (_type == CRYSTAL_TYPE::LASER) {
 		_body->SetGravityScale(0.0f);
+		_body->SetLinearVelocity(b2Vec2(_velocidad.x, _velocidad.y));
+
 	}
 	else if (_type == CRYSTAL_TYPE::ICEBALL) {
-		_body->SetGravityScale(1.0f);
+		_body->SetGravityScale(0.0f);
+		_body->SetLinearVelocity(b2Vec2(_velocidad.x, 0));
+
 	}
-	_body->SetLinearVelocity(b2Vec2(_velocidad.x, _velocidad.y));
 	
 
 }
@@ -228,14 +233,22 @@ void Crystal::move() {
 
 	b2Vec2 velocidadActual = _body->GetLinearVelocity();
 	
-	_body->SetLinearVelocity(b2Vec2(0, velocidadActual.y));
+	if (_type == CRYSTAL_TYPE::ICEBALL) {
+		_body->SetLinearVelocity(b2Vec2(velocidadActual.x, 0));
 
+
+	}
+	else {
+		_body->SetLinearVelocity(b2Vec2(0, velocidadActual.y));
+
+	}
 }
 
 void Crystal::changeDirection() {
 
 	b2Vec2 velocidadActual = _body->GetLinearVelocity();
 	if (_type == CRYSTAL_TYPE::ICEBALL) {
+		_body->SetLinearVelocity(b2Vec2(velocidadActual.x *-1, 0));
 
 	}
 	else {

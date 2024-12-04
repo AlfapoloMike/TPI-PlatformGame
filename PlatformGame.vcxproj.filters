@@ -85,6 +85,9 @@
     <Filter Include="Archivos de encabezado\Menu">
       <UniqueIdentifier>{338c9262-4453-4d55-8cfb-e7cbd5623019}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\NewFilter1">
+      <UniqueIdentifier>{add81c0e-d5ca-4135-aeba-a1e1c328ae24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -156,12 +159,6 @@
     <ClCompile Include="IceBall.cpp">
       <Filter>Archivos de origen\Boss</Filter>
     </ClCompile>
-    <ClCompile Include="PuntajeJugador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="PuntajeJugadorArchivo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Ranking.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
@@ -177,10 +174,22 @@
     <ClCompile Include="Creditos.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Tottem.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Mage.cpp">
+      <Filter>Archivos de origen\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Ayuda.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="PuntajeJugador.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Resultado.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="PuntajeJugadorArchivo.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Tottem.cpp">
       <Filter>Archivos de origen\Boss</Filter>
     </ClCompile>
   </ItemGroup>
@@ -254,12 +263,6 @@
     <ClInclude Include="IceBall.h">
       <Filter>Archivos de encabezado\Boss</Filter>
     </ClInclude>
-    <ClInclude Include="PuntajeJugador.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PuntajeJugadorArchivo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Creditos.h">
       <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
@@ -275,10 +278,22 @@
     <ClInclude Include="Ranking.h">
       <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Tottem.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Mage.h">
+      <Filter>Archivos de encabezado\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Ayuda.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="PuntajeJugador.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="PuntajeJugadorArchivo.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Resultado.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Tottem.h">
       <Filter>Archivos de encabezado\Boss</Filter>
     </ClInclude>
   </ItemGroup>

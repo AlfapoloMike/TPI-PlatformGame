@@ -13,8 +13,10 @@ private:
 	int _type = 0;
 	int _change = false;
 	float counterTime = 0;
+	bool _isBoss = false;
+
 public:
-	backgroundTile();
+	backgroundTile(bool isBoss);
 	void backgroundUpdate(float deltaTime, bool change);
 	void draw(sf::RenderTarget& target, sf::RenderStates states)const;
 

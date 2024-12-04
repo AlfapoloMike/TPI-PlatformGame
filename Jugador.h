@@ -40,9 +40,11 @@ public:
     void rebote();
 
     bool getIsHitted();
+    void destroyBody(b2World& world);
 
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
 
     b2BodyDef _bodyDef;
     b2Body* _body;
@@ -72,7 +74,7 @@ private:
     bool roofContacting = false;
     bool vidas[4]{true, true, true, true};
     CollisionCategory _lastEnemyContact;
-    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL | CollisionCategory::TOTTEMS;
+    uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL | CollisionCategory::TOTTEMS | CollisionCategory::PORTAL;
     bool hittedCd = false;
 
 };

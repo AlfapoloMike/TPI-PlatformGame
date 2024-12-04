@@ -120,7 +120,7 @@ void Mage::setAnimationState()
 	}
 	else if (_state == MAGE_STATE::DYING) {
 		setTexture("./assets/mago/MageDeath.png");
-		_animation.setImageCount(sf::Vector2u(11, 1));
+		_animation.setImageCount(sf::Vector2u(10, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
 	}
@@ -170,7 +170,6 @@ void Mage::damaged(bool damageIs) {
 
 	for (int i = 0; i < 12; i++) {
 		if(_vida[i] == true && aux == true){
-			std::cout << "El mago recibio danio y se puso en false la posicion: " << i << "  " << std::endl;
 			_vida[i] = false;
 			return;
 		}
