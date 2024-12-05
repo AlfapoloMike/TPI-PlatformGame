@@ -206,6 +206,11 @@ void Mage::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+bool Mage::isDeath()
+{
+	return _vida[12];
+}
+
 
 Mage::~Mage()
 {
