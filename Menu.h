@@ -24,6 +24,13 @@ public:
     void manejoNameInput(sf::Event& event);
     void setMusica();
 
+    void setState(std::string estado);
+    void setResultado(bool gano);
+    void setFrutasRecolectadas(int frutas[]);
+    std::string getNombreJugador();
+    int getPuntajeFinal();
+    void resetAll();
+
 private:
 
     AppState currentState; // Estado actual del MENU
@@ -54,7 +61,7 @@ private:
     std::string menuTituloeText = "AGAINST THE CLOCK";
     sf::Text menuText[5], sombra[5]; // Vectores Text de opciones+sombra
     const int numOptions = 5; // Cantidad de opciones
-    std::string options[5] = { "JUGAR", "COMO JUGAR", "RANKING", "CREDITOS", "SALIR"}; // Opciones del menú
+    std::string options[5] = { "JUGAR", "COMO JUGAR", "RANKING", "CREDITOS", "SALIR" }; // Opciones del menú
 
     /// INGRESO NOMBRE
     sf::Text nombrePress;

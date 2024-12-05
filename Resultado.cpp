@@ -1,8 +1,8 @@
 #include "Resultado.h"
 #include <iostream>
 
-Resultado::Resultado(){
-    
+Resultado::Resultado() {
+
     // FONDO
     if (!_resultadoTexture.loadFromFile("./assets/fondos/fondo.png")) { // Ruta a la imagen de fondo
         std::cout << "Error al cargar fondo Resultado" << std::endl;
@@ -30,15 +30,15 @@ Resultado::Resultado(){
     //tapaFondo.setFillColor(sf::Color( 0, 0, 0, 0));
 }
 
-Resultado::~Resultado(){
-    
+Resultado::~Resultado() {
+
 }
 
 
-void Resultado::update(){
+void Resultado::update() {
 
-    if(counter > 0){
-        counter-= 1.30f;
+    if (counter > 0) {
+        counter -= 1.30f;
     }
     else {
         counter = 0;
@@ -76,7 +76,7 @@ void Resultado::update(){
         _resultadoTituloSombra.setPosition(215.0f, 40.0f + counter);
     }
 
-    
+
     _resultadoTitulo.setFont(font);
     _resultadoTitulo.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
     _resultadoTitulo.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
@@ -84,7 +84,7 @@ void Resultado::update(){
     _resultadoTitulo.setString(resultado);
     _resultadoTitulo.setCharacterSize(90);
     _resultadoTitulo.setFillColor(sf::Color(180, 80, 80, 255));
-    
+
     _resultadoTituloSombra.setFont(font);
     _resultadoTituloSombra.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
     _resultadoTituloSombra.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
@@ -94,7 +94,7 @@ void Resultado::update(){
     _resultadoTituloSombra.setCharacterSize(90);
     _resultadoTituloSombra.setFillColor(sf::Color(20, 10, 10, 250));
 
-    if (counter == 0) {
+    if (counter == 0) { // VICTORIA titulo termino de ascender
         _frutasText.setFont(font);
         _frutasText.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
         _frutasText.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
@@ -104,8 +104,8 @@ void Resultado::update(){
 
         /// CONTEO PUNTOS x Fruta recolectada para MARCADOR
         // Manzana
-        if(contadores[0] < cantidades[0] && !contada[0]) {
-        
+        if (contadores[0] < cantidades[0] && !contada[0]) {
+
             contadores[0]++;
             puntosFruta[0] = (contadores[0] * 100);
 
@@ -201,12 +201,12 @@ void Resultado::update(){
             contadores[3]++;
             puntosFruta[3] = (contadores[3] * 70);
 
-            if (puntosFruta[3] < 10) {            
+            if (puntosFruta[3] < 10) {
                 espacioPuntos[3] = "           ";
             }
             else if (puntosFruta[3] < 100) {
                 espacioPuntos[3] = "         ";
-            
+
             }
             else if (puntosFruta[3] < 1000) {
                 espacioPuntos[3] = "       ";
@@ -318,7 +318,7 @@ void Resultado::update(){
         // Melon
         else if (contadores[7] < cantidades[7] && !contada[7]) {
             contadores[7]++;
-            puntosFruta[7] = (contadores[7] * 110); 
+            puntosFruta[7] = (contadores[7] * 110);
 
             if (puntosFruta[7] < 10) {
                 espacioPuntos[7] = "           ";
@@ -340,14 +340,19 @@ void Resultado::update(){
             else {
                 espacioCant[7] = "           ";
             }
+
             if (contadores[7] == cantidades[7]) {
                 contada[7] = true;
                 conteoPuntos.stop();
             }
         }
+        else if (cantidades[7] == 0 && !contada[7]) { // Correccion para que cuando haya 0
+            contada[7] = true;
+            conteoPuntos.stop();
+        }
 
         // Sonidito
-        if (conteoPuntos.getStatus() != sf::Music::Playing
+        if (conteoPuntos.getStatus() != sf::Music::Playing /// Si ultimo contador == 0 suena eternamente el sonidito CORREGIR
             && !contada[7]) {
             conteoPuntos.play();
         }
@@ -384,15 +389,15 @@ void Resultado::update(){
         cantFrutas += "\n\n" + espacioCant[5] + std::to_string(contadores[5]);
         puntosFrutas += "\n\n" + espacioPuntos[5] + std::to_string(puntosFruta[5]);
 
-        frutas += "\n\nAnana";
+        frutas += "\n\nMelon"; // ******************************************* Anana
         cantFrutas += "\n\n" + espacioCant[6] + std::to_string(contadores[6]);
         puntosFrutas += "\n\n" + espacioPuntos[6] + std::to_string(puntosFruta[6]);
 
-        frutas += "\n\nMelon";
+        frutas += "\n\nAnana";  // *************************** Melon
         cantFrutas += "\n\n" + espacioCant[7] + std::to_string(contadores[7]);
         puntosFrutas += "\n\n" + espacioPuntos[7] + std::to_string(puntosFruta[7]);
 
-    
+
 
         frutas += "\n\nTOTAL OBTENIDO";
         cantFrutas += "\n\n          " + std::to_string(cantidadTotal);
@@ -412,7 +417,7 @@ void Resultado::update(){
     }
 }
 
-void Resultado::draw(sf::RenderTarget& target, sf::RenderStates states) const{
+void Resultado::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(_resultadoSprite, states);
     //target.draw(tapaFondo, states);
     target.draw(_resultadoTituloSombra, states);
@@ -420,4 +425,34 @@ void Resultado::draw(sf::RenderTarget& target, sf::RenderStates states) const{
     target.draw(_frutasText, states);
     target.draw(_cantidadFrutaText, states);
     target.draw(_puntajesFrutasText, states);
+}
+
+void Resultado::setGano(bool vencio) {
+    if (vencio) {
+        gano = true;
+    }
+    else {
+        gano = false;
+    }
+}
+
+void Resultado::setCantidadesRecolectadas(int frutas[]) {
+    for (int i = 0; i < 8; i++) {
+        cantidades[i] = frutas[i];
+        std::cout << cantidades[i] << std::endl;
+    }
+}
+
+int Resultado::getPuntajeTotal() {
+    return puntosTotal;
+}
+void Resultado::resetAll() {
+    gano = false;
+    counter = 245.0f;
+    int contadores[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
+    int cantidades[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
+    int puntosFruta[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
+    bool contada[8]{ false, false, false, false, false, false, false, false };
+    std::string espacioCant[8]{};
+    std::string espacioPuntos[8]{};
 }

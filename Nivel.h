@@ -25,7 +25,7 @@
 
 
 enum class NIVELES {
-	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS
+	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS, WIN, LOSE
 };
 
 class Nivel : public sf::Drawable {
@@ -88,6 +88,10 @@ protected:
 	bool _portalState = false;
 	bool _teleporting = false;
 	bool clean = false;
+
+	// Agregado Ale
+	int frutasRecolectadas[8]{ 1, 6, 12, 0, 12, 6, 0, 0 };
+	PuntajeJugadorArchivo archivo;
 
 	///TEST OPACIDAD
 	sf::RectangleShape _overlay;

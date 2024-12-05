@@ -10,6 +10,8 @@ public:
 	void update(bool& _completa, bool& noComenzar);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+	void resetAll();
+
 
 private:
 	sf::Texture _historiaTexture;

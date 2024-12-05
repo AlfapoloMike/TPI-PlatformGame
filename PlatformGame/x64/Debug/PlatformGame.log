@@ -1,3 +1,2 @@
-﻿  Jugador.cpp
-F:\TPI-PlatformGame\Jugador.cpp(84,17): warning C4305: '=': truncamiento de 'double' a 'float'
-  PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+﻿  Menu.cpp
+  PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe
