@@ -42,14 +42,15 @@ Ranking::~Ranking()
 
 void Ranking::update(bool& cambioEstado) {
 
-    archivo.leerTodos(top, 5);
+    PuntajeJugador top[10];
+    archivo.leerTodos(top, 10);
+    int mostrar = 10;
 
     _puntajesText.setFont(font);
     _puntajesText.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
     _puntajesText.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
     _puntajesText.setOutlineThickness(5); // Grosor del contorno
     _jugadoresText = _puntajesText;
-
 
 
     players = "1. " + top[0].getNombreJugador();
@@ -77,6 +78,30 @@ void Ranking::update(bool& cambioEstado) {
     _jugadoresText.setPosition(200.0f, 225.0f);  // Posición de los nombres
     _puntajesText.setString(scores);
     _puntajesText.setPosition(520.0f, 225.0f);  // Posición de los puntajes
+
+    if (mostrar == 10) {
+        players += "\n6. " + top[5].getNombreJugador();
+        scores += "\n" + std::to_string(top[5].getPuntaje());
+
+        players += "\n7. " + top[6].getNombreJugador();
+        scores += "\n" + std::to_string(top[6].getPuntaje());
+
+        players += "\n8. " + top[7].getNombreJugador();
+        scores += "\n" + std::to_string(top[7].getPuntaje());
+
+        players += "\n9. " + top[8].getNombreJugador();
+        scores += "\n" + std::to_string(top[8].getPuntaje());
+
+        players += "\n10. " + top[9].getNombreJugador();
+        scores += "\n" + std::to_string(top[9].getPuntaje());
+
+        _jugadoresText.setCharacterSize(35);
+        _puntajesText = _jugadoresText;
+        _jugadoresText.setString(players);
+        _jugadoresText.setPosition(200.0f, 160.0f);  // Posición de los nombres
+        _puntajesText.setString(scores);
+        _puntajesText.setPosition(520.0f, 160.0f);  // Posición de los puntajes
+    }
 }
 
 void Ranking::draw(sf::RenderTarget& target, sf::RenderStates states) const {

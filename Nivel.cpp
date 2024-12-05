@@ -36,8 +36,8 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	//	setUI();_personaje
 	//}
 
-	_overlay = sf::RectangleShape(sf::Vector2f(1460,960));
-	_overlay.setPosition(_overlay.getPosition().x,-360);
+	_overlay = sf::RectangleShape(sf::Vector2f(1460, 960));
+	_overlay.setPosition(_overlay.getPosition().x, -360);
 	_overlay.setFillColor(sf::Color(0, 0, 128, 100));
 
 
@@ -347,7 +347,8 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	gameStateController();*/
 
 	/// MODIFICACION ALE
-
+	//std::cout << "menuSi (0): " << menuSi << std::endl;
+	//std::cout << "settingAll: " << settingAll << std::endl;
 	gameStateController(world);
 
 
@@ -360,11 +361,16 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		}
 		else {
 			setLevel(NIVELES::NIVEL_1);
+			//std::cout << "_nivel: " << _nivel << std::endl;
+			std::cout << "settingAll ELSE: " << settingAll << std::endl;
+			std::cout << "menuSi (0) ELSE: " << menuSi << std::endl;
+
 		}
 
 		break;
 	case NIVELES::NIVEL_1:
 		if (settingAll) {
+			std::cout << "PRIMER SETEO" << std::endl;
 			setMap(world);
 			setEnemigos(world, _pixelMetro);
 			setPlayer(world);
@@ -429,57 +435,72 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 		}
 
-		
-
-
-			break;
-		case NIVELES::BOSS:
-
-			///// solo una vez
-
-			if (bossSetted == false) {
-				std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
-				setMap(world);
-				setCrystals(world, 0);
-				mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
-				bossSetted = true;
-			}
-			////////solo  una vez
-			_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
-
-
-			setTottems(world, deltaTime);
-
-			for (int i = 0; i < _crystals.size(); i++) {
-				_crystals[i]->Update(0, deltaTime, world);
-			}
-
-			for (int i = 0; i < _tottems.size(); i++) {
-				_tottems[i]->Update(0, deltaTime, world);
-			}
-
-			_map->update(0, deltaTime);
-
-
-			_personaje->update(0, deltaTime);
-
-
-			mago->Update(0, deltaTime, world);
-
-			_ui.update(deltaTime, _personaje->getVida());
-
-
-			playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
-
-			playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
-			playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
 
 
 
-			_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+		break;
+	case NIVELES::BOSS:
+
+		///// solo una vez
+
+		if (bossSetted == false) {
+			std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
+			setMap(world);
+			setCrystals(world, 0);
+			mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
+			bossSetted = true;
+		}
+		////////solo  una vez
+		_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
 
 
-			break;
+		setTottems(world, deltaTime);
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			_crystals[i]->Update(0, deltaTime, world);
+		}
+
+		for (int i = 0; i < _tottems.size(); i++) {
+			_tottems[i]->Update(0, deltaTime, world);
+		}
+
+		_map->update(0, deltaTime);
+
+
+		_personaje->update(0, deltaTime);
+
+
+		mago->Update(0, deltaTime, world);
+
+		_ui.update(deltaTime, _personaje->getVida());
+
+
+		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+
+		playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+		playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
+
+
+
+		_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+
+
+		break;
+	case NIVELES::WIN:  // ******************************************* WIN LOSE UPDATE ************************************************
+
+		menu.setResultado(true);
+		menu.update(window, menuSi);
+		//_resultado.update();
+
+		break;
+	case NIVELES::LOSE:
+
+		menu.setResultado(false);
+		menu.update(window, menuSi);
+		//_resultado.update();
+		//std::cout << "menuSi :" << menuSi << std::endl;
+
+		break;
 	}
 
 
@@ -502,6 +523,32 @@ void Nivel::cmdNivel(sf::Event& event) {
 		if (menuSi) {
 			menu.manejoEvents(event, menuSi);
 		}
+		break;
+	case NIVELES::WIN:  // ******************************************* WIN LOSE cmdNIVEL ************************************************
+
+		if (event.type == sf::Event::KeyPressed) {
+			if (event.key.code == sf::Keyboard::Escape) {
+
+				_nivel = NIVELES::MENU;
+			}
+		}
+
+		break;
+	case NIVELES::LOSE:
+
+		if (event.type == sf::Event::KeyPressed) {
+			if (event.key.code == sf::Keyboard::Escape) {
+				std::cout << "APRETE ESCAPE. Bloque para guardar puntaje y actualizar archivo" << std::endl;
+				menu.setState("menu");
+				PuntajeJugador jugador(menu.getNombreJugador(), menu.getPuntajeFinal());
+				archivo.grabarMarcador(jugador);
+				archivo.ordenarRanking();
+				menu.resetAll();
+				_nivel = NIVELES::MENU;
+				menuSi = true;
+			}
+		}
+
 		break;
 	}
 }
@@ -615,6 +662,18 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		}
 
 		break;
+	case NIVELES::WIN:  // ******************************************* WIN LOSE DRAWER ************************************************
+
+		//window.draw(_resultado);
+
+		break;
+	case NIVELES::LOSE:
+
+		menu.draw(window);
+		//window.draw(_resultado);
+
+		break;
+
 	}
 
 }
@@ -634,19 +693,23 @@ void Nivel::gameStateController(b2World& world)
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 				_lose = true;
 				cleanLevel(world);
-			}else if (_ui.getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
+				menu.setFrutasRecolectadas(frutasRecolectadas);
+				_nivel = NIVELES::LOSE;
+			}
+			else if (_ui.getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
 
 				setPortal(world);
 				_portalState = true;
 
-			}else if (_portalState == true && _teleporting == true) {
+			}
+			else if (_portalState == true && _teleporting == true) {
 
 				cleanLevel(world);
 				_nivel = NIVELES::BOSS;
-				clean = true;
-				settingAll = true;
+				//clean = true;
+				//settingAll = true;
 			}
-	
+
 		}
 
 	}
@@ -705,7 +768,7 @@ void Nivel::cleanLevel(b2World& world) {
 		_plataformasN.clear();
 		_map.reset();
 		_background.reset();
-		
+
 		clean = true;
 	}
 	*/
@@ -754,7 +817,7 @@ void Nivel::cleanLevel(b2World& world) {
 		_map.reset();
 		_background.reset();
 		_personaje.reset();
-		
+
 		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
 		clean = true;
 	}
@@ -788,7 +851,7 @@ void Nivel::cleanLevel(b2World& world) {
 			_plataformasN[i]->destroyBody(world);
 		}
 
-		
+
 		_portal->destroyBody(world);
 
 		enemigos.clear();
@@ -808,6 +871,9 @@ void Nivel::cleanLevel(b2World& world) {
 	else if (_nivel == NIVELES::BOSS && _win == true) {
 
 	}
+	// Agregado Ale
+	settingAll = true;
+	_lose = false;
 
 }
 
