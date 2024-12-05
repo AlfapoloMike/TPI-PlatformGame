@@ -16,8 +16,11 @@ Crystal::Crystal(sf::Vector2f newPosition, b2World& world,  int pixelMetro, int 
 	_sprite.setScale(0.6, 0.6);
 
 	if (_type == CRYSTAL_TYPE::LASER) {
-		_laser = new Laser(newPosition, pixelMetro, laserR);
+	
+
+		_laser = std::make_unique<Laser>(newPosition, pixelMetro, laserR);
 		_laser->setSpritePosition(sf::Vector2f(newPosition.x * pixelMetro + (float)_animation.getUvRect().width * 5.5, 600 - newPosition.y * pixelMetro));
+
 	}
 
 	
@@ -292,9 +295,35 @@ bool Crystal::isLaser()
 	}
 }
 
+void Crystal::destroyBody(b2World& world)
+{
+
+	if (_type == CRYSTAL_TYPE::LASER) {
+		if (_laser != nullptr) {
+			_laser->destroyBody(world);
+		}
+	}
+
+
+	if (_type == CRYSTAL_TYPE::ICEBALL) {
+		for (int i = 0; i < _iceBall.size(); i++) {
+
+			if (_iceBall[i] != nullptr) {
+				_iceBall[i]->destroyBody(world);
+			}
+			
+		}
+	}
+
+	_laser.reset();
+	_iceBall.clear();
+
+	if (_body != nullptr) {
+		world.DestroyBody(_body);
+	}
+}
+
 Crystal::~Crystal()
 {
-	if (_laser != nullptr) {
-		delete _laser;
-	}
+
 }

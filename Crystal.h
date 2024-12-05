@@ -18,9 +18,9 @@ protected:
 	sf::Vector2f _velocity;
 	sf::Vector2f _size;
 	Animation _animation;
-	Laser* _laser;
 
 	float spawnTime=0;
+	std::unique_ptr<Laser> _laser;
 	std::vector<std::unique_ptr<IceBall>> _iceBall;
 	CRYSTAL_TYPE _type;
 
@@ -68,6 +68,8 @@ public:
 	void spawnIceBall(b2World& world, float deltaTime);
 
 	bool isLaser();
+
+	void destroyBody(b2World& world);
 
 	~Crystal();
 };

@@ -68,6 +68,8 @@ public:
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+	void destroyBody(b2World& world);
+
 	bool isDestroyed();
 
 	~Tottem();

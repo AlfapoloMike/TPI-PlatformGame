@@ -943,12 +943,20 @@ void Nivel::gameStateController(b2World& world)
 		int time = _ui->getTime();
 		bool mageLife = mago->isDeath();
 
+
+
 		if (_alive[0] == false || time >= 3) {
 			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 			//_lose = true;
 			menu.setFrutasRecolectadas(frutasRecolectadas);
 			_nivel = NIVELES::LOSE;
 			cleanLevel(world);
+		}
+		else if (mageLife == true) {
+			_nivel = NIVELES::WIN;
+			cleanLevel(world);
+			std::cout << " LA PARTIDA HA TERMINADO - GANASTE ! " << std::endl;
+
 		}
 		
 	}
@@ -1048,6 +1056,18 @@ void Nivel::cleanLevel(b2World& world) {
 
 	if (_nivel == NIVELES::LOSE) {
 
+
+		for (int i = 0; i < _plataformasN.size(); i++) {
+			_plataformasN[i]->destroyBody(world);
+		}
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			_crystals[i]->destroyBody(world);
+		}
+		for (int i = 0; i < _tottems.size(); i++) {
+			_tottems[i]->destroyBody(world);
+		}
+		////////////
 		for (const auto& enemigo : enemigos) {
 			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
 				calavera->destroyBody(world);
@@ -1074,9 +1094,6 @@ void Nivel::cleanLevel(b2World& world) {
 			_frutas[i]->destroyBody(world);
 		}
 
-		for (int i = 0; i < _plataformasN.size(); i++) {
-			_plataformasN[i]->destroyBody(world);
-		}
 
 		if (_portalState == true) {
 			_portalState = false;
@@ -1094,6 +1111,9 @@ void Nivel::cleanLevel(b2World& world) {
 		_background.reset();
 		_personaje.reset();
 		_ui.reset();
+
+		_crystals.clear();
+		_tottems.clear();
 
 		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
 		clean = true;
@@ -1141,18 +1161,44 @@ void Nivel::cleanLevel(b2World& world) {
 		_portalState = false;
 		_teleporting = false;
 		clean = true;
-	}
-	else if (_nivel == NIVELES::BOSS && _lose == true) {
+	}	
+	if (_nivel == NIVELES::WIN) {
 
-	}
-	else if (_nivel == NIVELES::BOSS && _win == true) {
 
+
+		for (int i = 0; i < _plataformasN.size(); i++) {
+			_plataformasN[i]->destroyBody(world);
+		}
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			_crystals[i]->destroyBody(world);
+		}
+		for (int i = 0; i < _tottems.size(); i++) {
+			_tottems[i]->destroyBody(world);
+		}
+	
+
+		_personaje->destroyBody(world);
+
+
+		_plataformasN.clear();
+		_map.reset();
+		_crystals.clear();
+		_tottems.clear();
+		_background.reset();
+		_personaje.reset();
+		_ui.reset();
+
+		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
+		clean = true;
 	}
+	
 	// Agregado Ale
 	settingAll = true;
 	_lose = false;
 
 }
+
 
 Nivel::~Nivel()
 {

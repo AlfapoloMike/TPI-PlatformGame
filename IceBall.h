@@ -73,6 +73,8 @@ public:
 
 	void explodeBall();
 
+	void destroyBody(b2World& world);
+
 	bool Destroyed();
 
 	sf::Sprite getShape();
