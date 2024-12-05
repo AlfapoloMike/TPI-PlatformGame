@@ -217,40 +217,48 @@ void Frutas::setRandomFruit()
 
 	if (random == 1) {
 		frutaTipo = FRUIT_TYPE::MANZANA;
+		_fruitType = 1;
 		_points = 100;
 	}
 	else if (random == 2) {
 		frutaTipo = FRUIT_TYPE::BANANA;
+		_fruitType = 2;
 		_points = 50;
 
 	}
 	else if (random == 3) {
 		frutaTipo = FRUIT_TYPE::FRUTILLA;
+		_fruitType = 3;
 		_points = 150;
 
 	}
 	else if (random == 4) {
 		frutaTipo = FRUIT_TYPE::KIWI;
+		_fruitType = 4;
 		_points = 70;
 
 	}
 	else if (random == 5) {
 		frutaTipo = FRUIT_TYPE::NARANJA;
+		_fruitType = 5;
 		_points = 30;
 
 	}
 	else if (random == 6) {
 		frutaTipo = FRUIT_TYPE::CEREZA;
+		_fruitType = 6;
 		_points = 30;
 
 	}
 	else if (random == 7) {
 		frutaTipo = FRUIT_TYPE::MELON;
+		_fruitType = 7;
 		_points = 110;
 
 	}
 	else if (random == 8) {
 		frutaTipo = FRUIT_TYPE::ANANA;
+		_fruitType = 8;
 		_points = 70;
 
 	}
@@ -303,7 +311,9 @@ bool Frutas::getPickedState()
 	return _picked;
 }
 
-
+int Frutas::getFruitType() {
+	return _fruitType;
+}
 
 void Frutas::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {

@@ -25,7 +25,7 @@ protected:
 	bool _picked = false;
 	float _animationTimer = 0;
 	int _points;
-
+	int _fruitType = -1;
 
 public:
 	Frutas(b2World &world);
@@ -47,6 +47,8 @@ public:
 
 	int getPoints();
 	bool getPickedState();
+
+	int getFruitType();
 
 	//sf::Sprite getSprite();
 	//sf::Texture getTexture();

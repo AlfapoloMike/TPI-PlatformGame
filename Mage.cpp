@@ -208,7 +208,13 @@ void Mage::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 bool Mage::isDeath()
 {
-	return _vida[12];
+	if (_vida[0] == false) {
+		return true;
+	}
+	else {
+		return false;
+	}
+
 }
 
 

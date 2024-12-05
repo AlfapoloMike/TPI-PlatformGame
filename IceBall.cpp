@@ -211,6 +211,12 @@ void IceBall::explodeBall() {
 	_state = ICEBALL_STATE::ACTIVADO;
 	setAnimationState();
 }
+void IceBall::destroyBody(b2World& world)
+{
+	if (_body != nullptr) {
+		world.DestroyBody(_body);
+	}
+}
 
 bool IceBall::Destroyed() {
 

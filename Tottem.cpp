@@ -211,6 +211,12 @@ void Tottem::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 }
 
+void Tottem::destroyBody(b2World& world)
+{
+	if (_body != nullptr) {
+		world.DestroyBody(_body);
+	}
+}
 
 Tottem::~Tottem()
 {

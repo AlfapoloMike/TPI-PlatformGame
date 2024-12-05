@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\",
+  "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,16 +45,25 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Laser.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Laser.cpp",
+              "RelativeDocumentMoniker": "Laser.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Laser.cpp",
+              "RelativeToolTip": "Laser.cpp",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-05T20:12:16.904Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Mage.cpp",
-              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.cpp",
               "RelativeDocumentMoniker": "Mage.cpp",
-              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Mage.cpp",
               "RelativeToolTip": "Mage.cpp",
               "ViewState": "AgIAALoAAAAAAAAAAAAawNAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -58,11 +71,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Mage.h",
-              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.h",
               "RelativeDocumentMoniker": "Mage.h",
-              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Mage.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Mage.h",
               "RelativeToolTip": "Mage.h",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAEgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -70,11 +83,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\main.cpp",
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAFsAAAAAAAAAAAD4v3AAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -82,11 +95,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Nivel.h",
-              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.h",
               "RelativeDocumentMoniker": "Nivel.h",
-              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
+              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.h",
               "RelativeToolTip": "Nivel.h",
               "ViewState": "AgIAAGAAAAAAAAAAAAAAAHQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -94,13 +107,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Nivel.cpp",
-              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeDocumentMoniker": "Nivel.cpp",
-              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeToolTip": "Nivel.cpp",
-              "ViewState": "AgIAAIwDAAAAAAAAAAAAAJgDAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAJgEAAAAAAAAAAAAAJgDAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-03T23:08:42.198Z",
               "EditorCaption": ""

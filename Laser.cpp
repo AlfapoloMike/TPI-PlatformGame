@@ -90,6 +90,7 @@ void Laser::createOrDestroyBody(sf::Vector2f newPosition,b2World& world) {
 	else if (_state == LASER_STATE::DESACTIVADO) {
 
 		world.DestroyBody(_body);
+		_body = nullptr;
 
 	}
 }
@@ -186,6 +187,13 @@ void Laser::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(_sprite, states);
 
+}
+
+void Laser::destroyBody(b2World& world)
+{
+	if (_body != nullptr) {
+		world.DestroyBody(_body);
+	}
 }
 
 sf::Sprite Laser::getShape() {
