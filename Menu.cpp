@@ -269,7 +269,7 @@ void Menu::draw(sf::RenderWindow& window) {
 
     else if (currentState == result) {
         window.draw(_resultado); // Como jugar
-        window.draw(pressText); // Aux
+        //window.draw(pressText); // Aux
     }
     //window.display(); // Dibujos a pantalla (podria estar en main despues de draw)
 }
@@ -529,8 +529,8 @@ int Menu::getPuntajeFinal() {
 void Menu::resetAll() {
     selectedIndex = 0;
     //cambioEstado = false;
-    _completa = false;
-    _noComenzar = false;
+    //_completa = true;
+    //_noComenzar = false;
     enterPress = false;
     playerName = "";
     _resultado.resetAll();

@@ -1,4 +1,2 @@
-﻿  Laser.cpp
-F:\TPI-PlatformGame\Laser.cpp(12,26): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-F:\TPI-PlatformGame\Laser.cpp(16,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+﻿  Nivel.cpp
+  PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe

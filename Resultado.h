@@ -38,6 +38,8 @@ private:
 	sf::Text _cantidadFrutaText;
 	sf::Text _puntajesFrutasText;
 
+	sf::Text pressTextResultado;
+
 	// Vectores     Manzana, Banana, Frutilla, Kiwi, Naranja, Cereza, Anana, Melon
 
 	int contadores[8]{};
