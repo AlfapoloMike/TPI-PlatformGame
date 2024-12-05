@@ -918,6 +918,11 @@ void Nivel::gameStateController(b2World& world)
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 				//_lose = true;
+				
+				// Vector de frutas recolectadas cargada con valores random
+				for (int i = 0; i < 8; i++) {
+					frutasRecolectadas[i] = rand() % 11;
+				}
 				menu.setFrutasRecolectadas(frutasRecolectadas);
 				_nivel = NIVELES::LOSE;
 				cleanLevel(world);

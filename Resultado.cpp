@@ -28,6 +28,18 @@ Resultado::Resultado() {
     // SOBREFONDO para oscurecer el fondo regulando opacidad OPCIONAL
     //tapaFondo.setSize(sf::Vector2f(800, 600));
     //tapaFondo.setFillColor(sf::Color( 0, 0, 0, 0));
+    pressTextResultado.setFont(font);
+    pressTextResultado.setString("Presiona ESC para volver al menú");
+    pressTextResultado.setCharacterSize(20);
+    pressTextResultado.setOutlineThickness(4); // Grosor del contorno
+    pressTextResultado.setScale(0.8f, 1.0f);
+    pressTextResultado.setPosition(100.0f, 550.0f);
+
+    for (int i = 0; i < 8; i++) {
+
+        espacioCant[i] = "           ";
+        espacioPuntos[i] = "           ";
+    }
 }
 
 Resultado::~Resultado() {
@@ -104,9 +116,10 @@ void Resultado::update() {
 
         /// CONTEO PUNTOS x Fruta recolectada para MARCADOR
         // Manzana
-        if (contadores[0] < cantidades[0] && !contada[0]) {
-
-            contadores[0]++;
+        if (contadores[0] <= cantidades[0] && !contada[0]) {
+            if (cantidades[0] != 0) {
+                contadores[0]++;
+            }
             puntosFruta[0] = (contadores[0] * 100);
 
             if (puntosFruta[0] < 10) {
@@ -136,8 +149,10 @@ void Resultado::update() {
             }
         }
         // Banana
-        else if (contadores[1] < cantidades[1] && !contada[1]) {
-            contadores[1]++;
+        else if (contadores[1] <= cantidades[1] && !contada[1]) {
+            if (cantidades[1] != 0) {
+                contadores[1]++;
+            }
             puntosFruta[1] = (contadores[1] * 50);
 
             if (puntosFruta[1] < 10) {
@@ -167,8 +182,10 @@ void Resultado::update() {
             }
         }
         // Frutilla
-        else if (contadores[2] < cantidades[2] && !contada[2]) {
-            contadores[2]++;
+        else if (contadores[2] <= cantidades[2] && !contada[2]) {
+            if (cantidades[2] != 0) {
+                contadores[2]++;
+            }
             puntosFruta[2] = (contadores[2] * 150);
 
             if (puntosFruta[2] < 10) {
@@ -197,8 +214,10 @@ void Resultado::update() {
             }
         }
         //Kiwi
-        else if (contadores[3] < cantidades[3] && !contada[3]) {
-            contadores[3]++;
+        else if ((contadores[3] <= cantidades[3]) && !contada[3]) { // problemas con imprimir 0
+            if (cantidades[3] != 0) {
+                contadores[3]++;
+            }
             puntosFruta[3] = (contadores[3] * 70);
 
             if (puntosFruta[3] < 10) {
@@ -228,8 +247,10 @@ void Resultado::update() {
             }
         }
         // Naranaja
-        else if (contadores[4] < cantidades[4] && !contada[4]) {
-            contadores[4]++;
+        else if (contadores[4] <= cantidades[4] && !contada[4]) {
+            if (cantidades[4] != 0) {
+                contadores[4]++;
+            }
             puntosFruta[4] = (contadores[4] * 30);
 
             if (puntosFruta[4] < 10) {
@@ -258,8 +279,10 @@ void Resultado::update() {
             }
         }
         // Cereza
-        else if (contadores[5] < cantidades[5] && !contada[5]) {
-            contadores[5]++;
+        else if (contadores[5] <= cantidades[5] && !contada[5]) {
+            if (cantidades[5] != 0) {
+                contadores[5]++;
+            }
             puntosFruta[5] = (contadores[5] * 30);
 
             if (puntosFruta[5] < 10) {
@@ -287,8 +310,10 @@ void Resultado::update() {
             }
         }
         // Anana
-        else if (contadores[6] < cantidades[6] && !contada[6]) {
-            contadores[6]++;
+        else if (contadores[6] <= cantidades[6] && !contada[6]) {
+            if (cantidades[6] != 0) {
+                contadores[6]++;
+            }
             puntosFruta[6] = (contadores[6] * 70);
 
             if (puntosFruta[6] < 10) {
@@ -316,8 +341,10 @@ void Resultado::update() {
             }
         }
         // Melon
-        else if (contadores[7] < cantidades[7] && !contada[7]) {
-            contadores[7]++;
+        else if (contadores[7] <= cantidades[7] && !contada[7]) {
+            if (cantidades[7] != 0) {
+                contadores[7]++;
+            }
             puntosFruta[7] = (contadores[7] * 110);
 
             if (puntosFruta[7] < 10) {
@@ -346,7 +373,8 @@ void Resultado::update() {
                 conteoPuntos.stop();
             }
         }
-        else if (cantidades[7] == 0 && !contada[7]) { // Correccion para que cuando haya 0
+
+        else if (cantidades[7] == 0 && !contada[7]) { // Correccion para cuando haya 0
             contada[7] = true;
             conteoPuntos.stop();
         }
@@ -422,9 +450,12 @@ void Resultado::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     //target.draw(tapaFondo, states);
     target.draw(_resultadoTituloSombra, states);
     target.draw(_resultadoTitulo, states);
-    target.draw(_frutasText, states);
-    target.draw(_cantidadFrutaText, states);
-    target.draw(_puntajesFrutasText, states);
+    if (counter == 0) {
+        target.draw(_frutasText, states);
+        target.draw(_cantidadFrutaText, states);
+        target.draw(_puntajesFrutasText, states);
+        target.draw(pressTextResultado, states);
+    }
 }
 
 void Resultado::setGano(bool vencio) {
@@ -439,6 +470,7 @@ void Resultado::setGano(bool vencio) {
 void Resultado::setCantidadesRecolectadas(int frutas[]) {
     for (int i = 0; i < 8; i++) {
         cantidades[i] = frutas[i];
+        //cantidades[i] = 0;
         std::cout << cantidades[i] << std::endl;
     }
 }
@@ -449,10 +481,15 @@ int Resultado::getPuntajeTotal() {
 void Resultado::resetAll() {
     gano = false;
     counter = 245.0f;
-    int contadores[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
-    int cantidades[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
-    int puntosFruta[8]{ 0, 0, 0, 0, 0, 0, 0, 0 };
-    bool contada[8]{ false, false, false, false, false, false, false, false };
-    std::string espacioCant[8]{};
-    std::string espacioPuntos[8]{};
+    gameoverPlayed = false;
+    for (int i = 0; i < 8; i++) {
+        contadores[i] = 0;
+        //cantidades[i] = 0;
+        puntosFruta[i] = 0;
+        contada[i] = false;
+        //espacioCant[i] = "";
+        espacioCant[i] = "           ";
+        //espacioPuntos[i] = "";
+        espacioPuntos[i] = "           ";
+    }
 }
