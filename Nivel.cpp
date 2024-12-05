@@ -24,18 +24,6 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 		break;
 	}
 
-	//if(level != 0){
-	//	setMap(world);
-	//	setEnemigos(world, pixelMetro);
-	//	setPlayer(world);
-	//	setVillager(world, pixelMetro);
-	//	if (_nivel == NIVELES::BOSS) {
-	//		setCrystals(world, 0);
-	//	}
-	//	setPlayerView();
-	//	setUI();_personaje
-	//}
-
 	_overlay = sf::RectangleShape(sf::Vector2f(1460, 960));
 	_overlay.setPosition(_overlay.getPosition().x, -360);
 	_overlay.setFillColor(sf::Color(0, 0, 128, 100));
@@ -96,7 +84,7 @@ void Nivel::setFruits(b2World& world, float deltaTime)
 	for (int i = 0; i < _frutas.size(); i++) {
 		if (_frutas[i]->getPickedState() == true) {
 			std::cout << _frutas[i]->getPoints() << std::endl;
-			_ui.sumarPuntos(_frutas[i]->getPoints());
+			_ui->sumarPuntos(_frutas[i]->getPoints());
 			_frutas.erase(_frutas.begin() + i);
 			i--;
 		}
@@ -138,17 +126,12 @@ void Nivel::setMap(b2World& world)
 	switch (_nivel)
 	{
 	case NIVELES::NIVEL_1:
-		/*
-		_mapa = new Map(1);
-		std::cout << "Se creo otro mapa?" << std::endl;
-		if (_mapa == nullptr) {
-			return;
-		}
-		*/
+
 		_map = std::make_unique<Map>(1);
 
 		_background = std::make_unique<backgroundTile>(false);
 
+		_ui = std::make_unique<GameUi>();
 
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(18.25f, 2.85f), sf::Vector2f(16.75f, 0.1f), world, true));
@@ -195,6 +178,9 @@ void Nivel::setMap(b2World& world)
 
 
 		_background = std::make_unique<backgroundTile>(true);
+
+
+		_ui = std::make_unique<GameUi>();
 
 
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
@@ -280,78 +266,177 @@ void Nivel::setPortal(b2World& world) {
 
 void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime)
 {
-	/*if (menuSi) {
-		menu.update(window, menuSi);
-	}
 
-	setFruits(world, deltaTime);
-	setTottems(world, deltaTime);
-
-	for (int i = 0; i < _frutas.size(); i++) {
-		_frutas[i]->fruitUpdate(0, deltaTime);
-	}
-
-	for (const auto& enemigo : enemigos) {
-		if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
-			calavera->updateEnemie(0, deltaTime);
-		}
-		else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
-			conejo->updateEnemie(0, deltaTime);
-		}
-	}
-
-	for (const auto& aldeano : aldeanos) {
-		if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
-			tortuga->updateVillager(0, deltaTime);
-		}
-		if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
-			fatbird->updateVillager(0, deltaTime);
-		}
-		if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
-			rino->updateVillager(0, deltaTime);
-		}
-	}
-
-
-	bool hitted = _personaje->getIsHitted();
-
-	_background.backgroundUpdate(deltaTime,hitted);
-
-	_personaje->update(0, deltaTime);
-
-	//_cryst->Update(0, deltaTime, world);
-
-	for (int i = 0; i < _crystals.size(); i++) {
-		_crystals[i]->Update(0, deltaTime, world);
-	}
-
-	for (int i = 0; i < _tottems.size(); i++) {
-		_tottems[i]->Update(0, deltaTime, world);
-	}
-
-	mago->Update(0, deltaTime, world);
-
-	_ui.update(deltaTime,_personaje->getVida());
-
-
-	sf::Vector2f position = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
-
-	position.x = std::clamp(position.x*40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
-	position.y = std::clamp(position.y*40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
-
-
-
-	_vista.setCenter(position.x, 600 - position.y);
-
-
-	gameStateController();*/
-
-	/// MODIFICACION ALE
-	//std::cout << "menuSi (0): " << menuSi << std::endl;
-	//std::cout << "settingAll: " << settingAll << std::endl;
 	gameStateController(world);
 
 
+	switch (_nivel)
+	{
+	case NIVELES::PRESET_NIVEL:
+		_nivel = NIVELES::NIVEL_1;
+		std::cout << "PRIMER SETEO" << std::endl;
+		setMap(world);
+		setEnemigos(world, _pixelMetro);
+		setPlayer(world);
+		setVillager(world, _pixelMetro);
+		setPlayerView();
+		break;
+	case NIVELES::NIVEL_1:
+
+		/// <summary>
+		/// ////// IMPLEMENTAR UN IF PARA PAUSAR <<<<<<<<<<<<<
+		/// </summary>
+
+		setFruits(world, deltaTime);
+
+		for (int i = 0; i < _frutas.size(); i++) {
+			_frutas[i]->fruitUpdate(0, deltaTime);
+		}
+
+		for (const auto& enemigo : enemigos) {
+			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+				calavera->updateEnemie(0, deltaTime);
+			}
+			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+				conejo->updateEnemie(0, deltaTime);
+			}
+		}
+
+		for (const auto& aldeano : aldeanos) {
+			if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+				tortuga->updateVillager(0, deltaTime);
+			}
+			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
+				fatbird->updateVillager(0, deltaTime);
+			}
+			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+				rino->updateVillager(0, deltaTime);
+			}
+		}
+
+		//// EFECTO CAMBIO DE FONDO ----
+		_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
+		//// EFECTO CAMBIO DE FONDO ----
+
+		_map->update(0, deltaTime);
+
+		_personaje->update(0, deltaTime);
+
+		if (_portalState == true) {
+			_portal->Update(0, deltaTime);
+			_teleporting = _portal->isTouched();
+		}
+
+
+		_ui->update(deltaTime, _personaje->getVida());
+
+
+		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+
+		playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+		playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
+
+
+
+		_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+
+		break;
+	case NIVELES::PRESET_BOSS:
+
+		_nivel = NIVELES::BOSS;
+		std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
+		setMap(world);
+		setCrystals(world, 0);
+		mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
+
+		break;
+	case NIVELES::MENU:
+
+
+		if (menuSi) {
+			menu.update(window, menuSi);
+
+		}
+		else {
+			setLevel(NIVELES::PRESET_NIVEL);
+			//std::cout << "_nivel: " << _nivel << std::endl;
+			std::cout << "settingAll ELSE: " << settingAll << std::endl;
+			std::cout << "menuSi (0) ELSE: " << menuSi << std::endl;
+
+		}
+
+		break;
+	case NIVELES::BOSS:
+
+		_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
+
+
+		setTottems(world, deltaTime);
+
+		for (int i = 0; i < _crystals.size(); i++) {
+			_crystals[i]->Update(0, deltaTime, world);
+		}
+
+		for (int i = 0; i < _tottems.size(); i++) {
+			_tottems[i]->Update(0, deltaTime, world);
+		}
+
+		_map->update(0, deltaTime);
+
+
+		_personaje->update(0, deltaTime);
+
+
+		mago->Update(0, deltaTime, world);
+
+		_ui->update(deltaTime, _personaje->getVida());
+
+
+		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
+
+		playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
+		playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
+
+
+
+		_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
+
+		break;
+	case NIVELES::WIN:
+
+		menu.setResultado(true);
+		menu.update(window, menuSi);
+		//_resultado.update();
+
+		break;
+	case NIVELES::LOSE:
+		menu.setResultado(false);
+		menu.update(window, menuSi);
+		//_resultado.update();
+		//std::cout << "menuSi :" << menuSi << std::endl;
+		break;
+	default:
+		break;
+
+
+
+		/*
+		/
+		/
+		/
+		/
+		///
+		/
+		/
+		/
+		/
+		/
+
+		/
+		/
+		*/
+
+		/*
 	switch (_nivel) {
 	case NIVELES::MENU:
 
@@ -421,7 +506,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 			}
 
 
-			_ui.update(deltaTime, _personaje->getVida());
+			_ui->update(deltaTime, _personaje->getVida());
 
 
 			playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
@@ -472,7 +557,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 		mago->Update(0, deltaTime, world);
 
-		_ui.update(deltaTime, _personaje->getVida());
+		_ui->update(deltaTime, _personaje->getVida());
 
 
 		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
@@ -504,7 +589,9 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	}
 
 
+		*/
 
+	}
 }
 
 void Nivel::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -521,6 +608,7 @@ void Nivel::cmdNivel(sf::Event& event) {
 	case NIVELES::MENU:
 
 		if (menuSi) {
+
 			menu.manejoEvents(event, menuSi);
 		}
 		break;
@@ -558,6 +646,144 @@ void Nivel::cmdNivel(sf::Event& event) {
 void Nivel::nivelDrawer(sf::RenderWindow& window)
 {
 
+
+	switch (_nivel) {
+	case NIVELES::MENU:
+		if (menuSi) {
+
+			menu.draw(window);
+		}
+		else {
+			setLevel(NIVELES::PRESET_NIVEL);
+		}
+		break;
+
+	case NIVELES::NIVEL_1:
+
+			window.setView(_vista);
+
+			window.draw(*_background);
+
+			window.draw(*_map);
+
+			for (int i = 0; i < _plataformasN.size(); i++) {
+				window.draw(_plataformasN[i]->getShape());
+			}
+
+			for (const auto& enemigo : enemigos) {
+				if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
+					window.draw(calavera->getSprite());
+				}
+				else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+					window.draw(conejo->getSprite());
+				}
+			}
+
+			for (const auto& aldeano : aldeanos) {
+				if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
+					window.draw(tortuga->getSprite());
+				}
+				if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
+					window.draw(fatbird->getSprite());
+				}
+				if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
+					window.draw(rino->getSprite());
+				}
+			}
+
+
+			for (int i = 0; i < _frutas.size(); i++) {
+				window.draw(*_frutas[i]);
+			}
+
+			if (_portalState == true) {
+				window.draw(*_portal);
+			}
+
+			window.draw(*_personaje);
+
+			///window.draw(_overlay);
+
+			window.setView(window.getDefaultView());
+
+			_ui->drawUi(window);
+
+		break;
+	case NIVELES::BOSS:
+
+			window.setView(_vista);
+
+			window.draw(*_background);
+
+			window.draw(*_map);
+
+			for (int i = 0; i < _plataformasN.size(); i++) {
+				window.draw(_plataformasN[i]->getShape());
+			}
+
+
+			window.draw(*_personaje);
+
+			for (int i = 0; i < _crystals.size(); i++) {
+				window.draw(*_crystals[i]);
+			}
+
+
+			for (int i = 0; i < _tottems.size(); i++) {
+				window.draw(*_tottems[i]);
+			}
+
+			window.draw(*mago);
+
+			window.draw(_overlay);
+
+
+			window.setView(window.getDefaultView());
+
+			_ui->drawUi(window);
+
+		break;
+	case NIVELES::WIN:  // ******************************************* WIN LOSE DRAWER ************************************************
+
+		//window.draw(_resultado);
+
+		break;
+	case NIVELES::LOSE:
+
+		menu.draw(window);
+		//window.draw(_resultado);
+
+		break;
+
+	}
+
+
+
+	/*
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+
+	/
+	/
+	/
+	/
+	/
+	/
+	*/
+
+	/*
 	switch (_nivel) {
 	case NIVELES::MENU:
 
@@ -621,7 +847,7 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 			window.setView(window.getDefaultView());
 
-			_ui.drawUi(window);
+			_ui->drawUi(window);
 		}
 
 
@@ -657,7 +883,7 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 			window.setView(window.getDefaultView());
 
-			_ui.drawUi(window);
+			_ui->drawUi(window);
 
 		}
 
@@ -675,19 +901,86 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		break;
 
 	}
-
+	*/
 }
 
 
 void Nivel::gameStateController(b2World& world)
 {
+
+
+	if (_nivel == NIVELES::NIVEL_1) {
+
+
+			bool* _alive = _personaje->getVida();
+			int time = _ui->getTime();
+
+			if (_alive[0] == false || time >= 3) {
+				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
+				//_lose = true;
+				menu.setFrutasRecolectadas(frutasRecolectadas);
+				_nivel = NIVELES::LOSE;
+				cleanLevel(world);
+			}
+			else if (_ui->getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
+
+				setPortal(world);
+				_portalState = true;
+
+			}
+			else if (_portalState == true && _teleporting == true) {
+
+				cleanLevel(world);
+				_nivel = NIVELES::PRESET_BOSS;
+	
+			}
+	
+
+	}
+	else if (_nivel == NIVELES::BOSS) {
+		
+		bool* _alive = _personaje->getVida();
+		int time = _ui->getTime();
+		bool mageLife = mago->isDeath();
+
+		if (_alive[0] == false || time >= 3) {
+			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
+			//_lose = true;
+			menu.setFrutasRecolectadas(frutasRecolectadas);
+			_nivel = NIVELES::LOSE;
+			cleanLevel(world);
+		}
+		
+	}
+
+	/*
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+
+	/
+	/
+	*/
+	/*
+	
 	if (_nivel == NIVELES::NIVEL_1 && settingAll == false) {
 
 
 		if (_lose == false) {
 
 			bool* _alive = _personaje->getVida();
-			int time = _ui.getTime();
+			int time = _ui->getTime();
 
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
@@ -696,7 +989,7 @@ void Nivel::gameStateController(b2World& world)
 				menu.setFrutasRecolectadas(frutasRecolectadas);
 				_nivel = NIVELES::LOSE;
 			}
-			else if (_ui.getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
+			else if (_ui->getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
 
 				setPortal(world);
 				_portalState = true;
@@ -716,7 +1009,7 @@ void Nivel::gameStateController(b2World& world)
 	else if (_nivel == NIVELES::NIVEL_1 && settingAll == false) {
 
 	}
-
+	*/
 }
 
 void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
@@ -730,54 +1023,36 @@ void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
 
 void Nivel::cleanLevel(b2World& world) {
 
+
+
 	/*
-	if (clean == false && menuSi == false) {
-
-		for (const auto& enemigo : enemigos) {
-			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
-				calavera->destroyBody(world);
-			}
-			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
-				conejo->destroyBody(world);
-			}
-		}
-
-		for (const auto& aldeano : aldeanos) {
-			if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
-				tortuga->destroyBody(world);
-			}
-			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
-				fatbird->destroyBody(world);
-			}
-			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
-				rino->destroyBody(world);
-			}
-		}
-
-		for (int i = 0; i < _frutas.size(); i++) {
-			_frutas[i]->destroyBody(world);
-		}
-
-		for (int i = 0; i < _plataformasN.size(); i++) {
-			_plataformasN[i]->destroyBody(world);
-		}
-
-		enemigos.clear();
-		aldeanos.clear();
-		_frutas.clear();
-		_plataformasN.clear();
-		_map.reset();
-		_background.reset();
-
-		clean = true;
-	}
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
+	/
 	*/
-	if (_nivel == NIVELES::NIVEL_1 && _lose == true) {
+
+
+	if (_nivel == NIVELES::LOSE) {
+
 		for (const auto& enemigo : enemigos) {
 			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
 				calavera->destroyBody(world);
 			}
-			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
+			else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) { 
 				conejo->destroyBody(world);
 			}
 		}
@@ -788,6 +1063,7 @@ void Nivel::cleanLevel(b2World& world) {
 			}
 			if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
 				fatbird->destroyBody(world);
+
 			}
 			if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
 				rino->destroyBody(world);
@@ -817,11 +1093,12 @@ void Nivel::cleanLevel(b2World& world) {
 		_map.reset();
 		_background.reset();
 		_personaje.reset();
+		_ui.reset();
 
 		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
 		clean = true;
 	}
-	else if (_nivel == NIVELES::NIVEL_1 && _portalState == true && _lose == false) {
+	else if (_nivel == NIVELES::NIVEL_1 && _portalState == true) {
 		for (const auto& enemigo : enemigos) {
 			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
 				calavera->destroyBody(world);
@@ -885,10 +1162,26 @@ Nivel::~Nivel()
 
 }
 
-void checkFruits() {
-
-}
 
 
 
+
+
+
+/*
+
+
+
+MENU - MENU = TRUE - MUESTRO MENU
+MENU - MENU = FALSE - SETEO NIVEL 1
+
+NIVEL - SETALL = TRUE - CREO OBJETOS / SETALL>FALSE
+NIVEL - LOSE = FALSE - ACTUALIZA Y CONTINUA
+NIVEL - LOSE = TRUE - BORRA Y INVOCA A GAMEOVER ( MENU )
+NIVEL - LOSE = FALSE && REQUISITOS CUMPLIDOS - BORRADO PARCIAL - SETEA BOSS
+BOSS - LOSE = FALSE - ACTUALIZA Y CONTINUA
+BOSS - LOSE = TRUE - BORRADO PARCIAL Y INVOCA GAMEOVER ( MENU )
+BOSS - LOSE = FALSE && REQUISITOS CUMPLIDOS - BORRADO PARCIAL - INVOCA GANASTE
+
+*/
 

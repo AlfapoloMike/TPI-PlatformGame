@@ -25,7 +25,7 @@
 
 
 enum class NIVELES {
-	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS, WIN, LOSE
+	NIVEL_1, NIVEL_2, NIVEL_3, MENU, BOSS, WIN, LOSE, PRESET_NIVEL, PRESET_BOSS
 };
 
 class Nivel : public sf::Drawable {
@@ -47,12 +47,14 @@ protected:
 	/// fondo segun nviel
 	std::unique_ptr<backgroundTile> _background;
 
+	std::unique_ptr<GameUi> _ui;
+
 	/// indicador de nivel
 	NIVELES _nivel = NIVELES::MENU;
 	/// pixeles por metro para la conversion de box2d a sfml
 	float _pixelMetro;
 	/// corazones, puntos y tiempo dentro de la ui
-	GameUi _ui;
+
 	/// vector de punteros para las frutas
 	std::vector<std::unique_ptr<Frutas>> _frutas;
 	/// contador de tiempo para el spawn de frutas
