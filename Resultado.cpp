@@ -214,7 +214,7 @@ void Resultado::update() {
             }
         }
         //Kiwi
-        else if ((contadores[3] <= cantidades[3]) && !contada[3]) { // problemas con imprimir 0
+        else if ((contadores[3] <= cantidades[3]) && !contada[3]) {
             if (cantidades[3] != 0) {
                 contadores[3]++;
             }
@@ -309,12 +309,12 @@ void Resultado::update() {
                 conteoPuntos.stop();
             }
         }
-        // Anana
+        // Melon
         else if (contadores[6] <= cantidades[6] && !contada[6]) {
             if (cantidades[6] != 0) {
                 contadores[6]++;
             }
-            puntosFruta[6] = (contadores[6] * 70);
+            puntosFruta[6] = (contadores[6] * 120);
 
             if (puntosFruta[6] < 10) {
                 espacioPuntos[6] = "           ";
@@ -340,12 +340,12 @@ void Resultado::update() {
                 conteoPuntos.stop();
             }
         }
-        // Melon
+        // Anana
         else if (contadores[7] <= cantidades[7] && !contada[7]) {
             if (cantidades[7] != 0) {
                 contadores[7]++;
             }
-            puntosFruta[7] = (contadores[7] * 110);
+            puntosFruta[7] = (contadores[7] * 70);
 
             if (puntosFruta[7] < 10) {
                 espacioPuntos[7] = "           ";
@@ -417,19 +417,38 @@ void Resultado::update() {
         cantFrutas += "\n\n" + espacioCant[5] + std::to_string(contadores[5]);
         puntosFrutas += "\n\n" + espacioPuntos[5] + std::to_string(puntosFruta[5]);
 
-        frutas += "\n\nMelon"; // ******************************************* Anana
+        frutas += "\n\nMelon";
         cantFrutas += "\n\n" + espacioCant[6] + std::to_string(contadores[6]);
         puntosFrutas += "\n\n" + espacioPuntos[6] + std::to_string(puntosFruta[6]);
 
-        frutas += "\n\nAnana";  // *************************** Melon
+        frutas += "\n\nAnana";
         cantFrutas += "\n\n" + espacioCant[7] + std::to_string(contadores[7]);
         puntosFrutas += "\n\n" + espacioPuntos[7] + std::to_string(puntosFruta[7]);
 
+        // ESPACIOS TOTALES
+        if (puntosTotal < 10) {
+            espacioTotales[1] = "           ";
+        }
+        else if (puntosTotal < 100) {
+            espacioTotales[1] = "         ";
+        }
+        else if (puntosTotal < 1000) {
+            espacioTotales[1] = "       ";
+        }
+        else {
+            espacioTotales[1] = "      ";
+        }
 
+        if (cantidadTotal < 10) {
+            espacioTotales[0] = "            ";
+        }
+        else {
+            espacioTotales[0] = "           ";
+        }
 
         frutas += "\n\nTOTAL OBTENIDO";
-        cantFrutas += "\n\n          " + std::to_string(cantidadTotal);
-        puntosFrutas += "\n\n     " + std::to_string(puntosTotal);
+        cantFrutas += "\n\n" + espacioTotales[0] + std::to_string(cantidadTotal);
+        puntosFrutas += "\n\n" + espacioTotales[1] + std::to_string(puntosTotal);
 
 
         _frutasText.setFillColor(sf::Color::White);
@@ -487,9 +506,7 @@ void Resultado::resetAll() {
         //cantidades[i] = 0;
         puntosFruta[i] = 0;
         contada[i] = false;
-        //espacioCant[i] = "";
         espacioCant[i] = "           ";
-        //espacioPuntos[i] = "";
         espacioPuntos[i] = "           ";
     }
 }

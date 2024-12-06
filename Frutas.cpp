@@ -253,7 +253,7 @@ void Frutas::setRandomFruit()
 	else if (random == 7) {
 		frutaTipo = FRUIT_TYPE::MELON;
 		_fruitType = 7;
-		_points = 110;
+		_points = 120;
 
 	}
 	else if (random == 8) {
