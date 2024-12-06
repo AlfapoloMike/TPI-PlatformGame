@@ -43,16 +43,14 @@ private:
 	// Vectores     Manzana, Banana, Frutilla, Kiwi, Naranja, Cereza, Anana, Melon
 
 	int contadores[8]{};
-
-	// Vector de prueba por cantidades diferentes
-	//int cantidades[8]{1, 6, 12, 0, 12, 6, 12, 6};
-	//int cantidades[8]{1, 0, 0, 0, 10, 0, 0, 0};
+	
 	int cantidades[8]{};
 
 	int puntosFruta[8]{};
 	bool contada[8]{ false };
 	std::string espacioCant[8]{};
 	std::string espacioPuntos[8]{};
+	std::string espacioTotales[2]{};
 
 	/// TOTALES
 	int cantidadTotal = 0;

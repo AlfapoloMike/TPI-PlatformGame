@@ -92,7 +92,7 @@ protected:
 	bool clean = false;
 
 	// Agregado Ale
-	int frutasRecolectadas[8]{ 1, 6, 12, 0, 12, 6, 0, 0 };
+	int frutasRecolectadas[8]{};
 	PuntajeJugadorArchivo archivo;
 
 	///TEST OPACIDAD
