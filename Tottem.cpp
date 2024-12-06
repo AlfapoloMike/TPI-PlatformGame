@@ -215,6 +215,7 @@ void Tottem::destroyBody(b2World& world)
 {
 	if (_body != nullptr) {
 		world.DestroyBody(_body);
+		_body = nullptr;
 	}
 }
 

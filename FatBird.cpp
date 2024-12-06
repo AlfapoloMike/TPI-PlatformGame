@@ -227,6 +227,8 @@ void Fatbird::updateVillager(int row, float deltaTime)
 void Fatbird::destroyBody(b2World& world)
 {
 	world.DestroyBody(_body);
+	_body = nullptr;
+
 }
 
 Fatbird::~Fatbird() {

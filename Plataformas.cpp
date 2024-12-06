@@ -43,10 +43,9 @@ void Plataformas::setFixture(bool tipo)
 	if (tipo == true) {
 		b2FixtureDef _fixtureDef;
 		_fixtureDef.shape = &_bodyBox;
-		_fixtureDef.friction = 0.5f;
-		_fixtureDef.density = 0.0f;
+		_fixtureDef.friction = 0.3f; /// 0.5
+		_fixtureDef.density = 0.0f; // 0.2
 		_fixtureDef.restitution = 0.0f;
-
 		_fixtureDef.filter.categoryBits = PLATFORM; // Categoría del muro
 		_fixtureDef.filter.maskBits = PLAYER | BUNNY | SKULLS | TURTLE | FATBIRD | RINO | TOTTEMS | MAGE | PORTAL;   // Colisiona solo con el personaje
 

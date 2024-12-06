@@ -72,6 +72,8 @@ public:
 
 	bool isDeath();
 
+	void destroyBody(b2World& world);
+
 	bool isDestroyed();
 
 	~Mage();

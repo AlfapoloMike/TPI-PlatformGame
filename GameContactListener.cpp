@@ -189,11 +189,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 				if (normal.x > 0.5f) {
 
 					rino->setNewDirectionL();
-					std::cout << "toque derecha - rino=a" << std::endl;
 				}
 				else if (normal.x < 0.0f) {
 
-					std::cout << "toque izquierda - rino=a" << std::endl;
 
 					rino->setNewDirectionR();
 				}
@@ -207,13 +205,11 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 				if (normal.x > 0.0f) {
 			
-					std::cout << "toque izquierda - rino=a" << std::endl;
 					rino->setNewDirectionR();
 
 				}
 				else if (normal.x < 0.5f) {
 
-					std::cout << "toque derecha - rino=b" << std::endl;
 					rino->setNewDirectionL();
 
 				}
@@ -523,9 +519,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		if (categoryA & PORTAL) {
 			portal = reinterpret_cast<Portal*>(bodyA->GetUserData().pointer);
 			if (portal) {
-				std::cout << "esta tocando el portal" << std::endl;
 				portal->setTouched();
-				std::cout << "se seteo el contacto en: " << portal->isTouched() << std::endl;
 				contact->SetEnabled(false);
 
 
@@ -535,10 +529,8 @@ void GameContactListener::BeginContact(b2Contact* contact)
 			portal = reinterpret_cast<Portal*>(bodyB->GetUserData().pointer);
 
 			if (portal) {
-				std::cout << "esta tocando el portal" << std::endl;
+	
 				portal->setTouched();
-				std::cout << "se seteo el contacto en: " << portal->isTouched() << std::endl;
-
 				contact->SetEnabled(false);
 
 
@@ -622,7 +614,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
 
-			std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
+			std::cout << "Normal A: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
 				if (normal.y < 0.0f)
@@ -638,7 +630,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		else if (categoryB & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
-			std::cout << "Normal: (" << normal.x << ", " << normal.y << ")" << std::endl;
+			std::cout << "Normal B: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
 				if (normal.y > 0.0f)
@@ -881,7 +873,6 @@ void GameContactListener::BeginContact(b2Contact* contact)
 					contact->SetEnabled(false);
 				}
 				else {
-					std::cout << " LO TOQUE POR UN LADO QUE NO ES ARRIBA " << std::endl;
 					contact->SetEnabled(false);
 				}
 
@@ -902,7 +893,6 @@ void GameContactListener::BeginContact(b2Contact* contact)
 					contact->SetEnabled(false);
 				}
 				else {
-					std::cout << " LO TOQUE POR UN LADO QUE NO ES ARRIBA " << std::endl;
 					contact->SetEnabled(false);
 
 				}
