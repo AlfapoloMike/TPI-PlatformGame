@@ -89,8 +89,7 @@ void Laser::createOrDestroyBody(sf::Vector2f newPosition,b2World& world) {
 	}
 	else if (_state == LASER_STATE::DESACTIVADO) {
 
-		world.DestroyBody(_body);
-		_body = nullptr;
+		destroyBody(world);
 
 	}
 }
@@ -193,6 +192,8 @@ void Laser::destroyBody(b2World& world)
 {
 	if (_body != nullptr) {
 		world.DestroyBody(_body);
+		_body = nullptr;
+
 	}
 }
 

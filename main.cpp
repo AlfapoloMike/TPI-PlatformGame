@@ -69,7 +69,7 @@ int main()
 
 		///// DELTATIME SE GUARDA EL CLOCK COMO SEGUNDOS
 		deltaTime = clock.restart().asSeconds();
-		world.Step(1 / 60.0f, 8, 5);
+		world.Step(1 / 60.0f, 6,3);
 
 
 		sf::Event event;

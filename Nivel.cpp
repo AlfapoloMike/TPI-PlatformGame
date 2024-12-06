@@ -114,6 +114,7 @@ void Nivel::setTottems(b2World& world, float deltaTime) {
 	for (int i = 0; i < _tottems.size(); i++) {
 		if (_tottems[i]->isDestroyed() == true) {
 			mago->damaged(_tottems[i]->isDestroyed());
+			_tottems[i]->destroyBody(world);
 			_tottems.erase(_tottems.begin() + i);
 			i--;
 		}
@@ -417,179 +418,6 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		break;
 	default:
 		break;
-
-
-
-		/*
-		/
-		/
-		/
-		/
-		///
-		/
-		/
-		/
-		/
-		/
-
-		/
-		/
-		*/
-
-		/*
-	switch (_nivel) {
-	case NIVELES::MENU:
-
-		if (menuSi) {
-			menu.update(window, menuSi);
-
-		}
-		else {
-			setLevel(NIVELES::NIVEL_1);
-			//std::cout << "_nivel: " << _nivel << std::endl;
-			std::cout << "settingAll ELSE: " << settingAll << std::endl;
-			std::cout << "menuSi (0) ELSE: " << menuSi << std::endl;
-
-		}
-
-		break;
-	case NIVELES::NIVEL_1:
-		if (settingAll) {
-			std::cout << "PRIMER SETEO" << std::endl;
-			setMap(world);
-			setEnemigos(world, _pixelMetro);
-			setPlayer(world);
-			setVillager(world, _pixelMetro);
-			setPlayerView();
-			settingAll = false;
-		}
-
-		if (_lose == false) {
-			setFruits(world, deltaTime);
-
-			for (int i = 0; i < _frutas.size(); i++) {
-				_frutas[i]->fruitUpdate(0, deltaTime);
-			}
-
-			for (const auto& enemigo : enemigos) {
-				if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
-					calavera->updateEnemie(0, deltaTime);
-				}
-				else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
-					conejo->updateEnemie(0, deltaTime);
-				}
-			}
-
-			for (const auto& aldeano : aldeanos) {
-				if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
-					tortuga->updateVillager(0, deltaTime);
-				}
-				if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
-					fatbird->updateVillager(0, deltaTime);
-				}
-				if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
-					rino->updateVillager(0, deltaTime);
-				}
-			}
-
-			//// EFECTO CAMBIO DE FONDO ----
-			_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
-			//// EFECTO CAMBIO DE FONDO ----
-
-			_map->update(0, deltaTime);
-
-			_personaje->update(0, deltaTime);
-
-			if (_portalState == true) {
-				_portal->Update(0, deltaTime);
-				_teleporting = _portal->isTouched();
-			}
-
-
-			_ui->update(deltaTime, _personaje->getVida());
-
-
-			playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
-
-			playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
-			playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
-
-
-
-			_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
-
-		}
-
-
-
-
-		break;
-	case NIVELES::BOSS:
-
-		///// solo una vez
-
-		if (bossSetted == false) {
-			std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
-			setMap(world);
-			setCrystals(world, 0);
-			mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
-			bossSetted = true;
-		}
-		////////solo  una vez
-		_background->backgroundUpdate(deltaTime, _personaje->getIsHitted());
-
-
-		setTottems(world, deltaTime);
-
-		for (int i = 0; i < _crystals.size(); i++) {
-			_crystals[i]->Update(0, deltaTime, world);
-		}
-
-		for (int i = 0; i < _tottems.size(); i++) {
-			_tottems[i]->Update(0, deltaTime, world);
-		}
-
-		_map->update(0, deltaTime);
-
-
-		_personaje->update(0, deltaTime);
-
-
-		mago->Update(0, deltaTime, world);
-
-		_ui->update(deltaTime, _personaje->getVida());
-
-
-		playerPosition = sf::Vector2f(_personaje->getPosition().x, _personaje->getPosition().y);
-
-		playerPosition.x = std::clamp(playerPosition.x * 40, _vistaSize.x, _nivelSize.x - _vistaSize.x);
-		playerPosition.y = std::clamp(playerPosition.y * 40, _vistaSize.y, _nivelSize.y - _vistaSize.y);
-
-
-
-		_vista.setCenter(playerPosition.x, 600 - playerPosition.y);
-
-
-		break;
-	case NIVELES::WIN:  // ******************************************* WIN LOSE UPDATE ************************************************
-
-		menu.setResultado(true);
-		menu.update(window, menuSi);
-		//_resultado.update();
-
-		break;
-	case NIVELES::LOSE:
-
-		menu.setResultado(false);
-		menu.update(window, menuSi);
-		//_resultado.update();
-		//std::cout << "menuSi :" << menuSi << std::endl;
-
-		break;
-	}
-
-
-		*/
 
 	}
 }
@@ -1037,28 +865,6 @@ void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
 void Nivel::cleanLevel(b2World& world) {
 
 
-
-	/*
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	*/
-
-
 	if (_nivel == NIVELES::LOSE) {
 
 
@@ -1216,23 +1022,4 @@ Nivel::~Nivel()
 
 
 
-
-
-
-/*
-
-
-
-MENU - MENU = TRUE - MUESTRO MENU
-MENU - MENU = FALSE - SETEO NIVEL 1
-
-NIVEL - SETALL = TRUE - CREO OBJETOS / SETALL>FALSE
-NIVEL - LOSE = FALSE - ACTUALIZA Y CONTINUA
-NIVEL - LOSE = TRUE - BORRA Y INVOCA A GAMEOVER ( MENU )
-NIVEL - LOSE = FALSE && REQUISITOS CUMPLIDOS - BORRADO PARCIAL - SETEA BOSS
-BOSS - LOSE = FALSE - ACTUALIZA Y CONTINUA
-BOSS - LOSE = TRUE - BORRADO PARCIAL Y INVOCA GAMEOVER ( MENU )
-BOSS - LOSE = FALSE && REQUISITOS CUMPLIDOS - BORRADO PARCIAL - INVOCA GANASTE
-
-*/
 

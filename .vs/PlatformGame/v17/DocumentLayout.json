@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Jugador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Plataformas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Mage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -19,12 +23,8 @@
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Mage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Tottem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Tottem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,76 +46,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Laser.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Laser.cpp",
-              "RelativeDocumentMoniker": "Laser.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Laser.cpp",
-              "RelativeToolTip": "Laser.cpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAF4AAAACAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Jugador.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Jugador.cpp",
+              "RelativeDocumentMoniker": "Jugador.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Jugador.cpp",
+              "RelativeToolTip": "Jugador.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T20:12:16.904Z",
+              "WhenOpened": "2024-12-06T15:56:46.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Plataformas.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Plataformas.cpp",
+              "RelativeDocumentMoniker": "Plataformas.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Plataformas.cpp",
+              "RelativeToolTip": "Plataformas.cpp",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-06T15:56:23.839Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Mage.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.cpp",
-              "RelativeDocumentMoniker": "Mage.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Mage.cpp",
-              "RelativeToolTip": "Mage.cpp",
-              "ViewState": "AgIAALoAAAAAAAAAAAAawNAAAAASAAAAAAAAAA==",
+              "Title": "GameContactListener.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
+              "RelativeDocumentMoniker": "GameContactListener.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
+              "RelativeToolTip": "GameContactListener.cpp",
+              "ViewState": "AgIAAF4CAAAAAAAAAAAAAGsDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T17:45:18.146Z"
+              "WhenOpened": "2024-12-06T15:40:49.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Tottem.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Tottem.cpp",
+              "RelativeDocumentMoniker": "Tottem.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Tottem.cpp",
+              "RelativeToolTip": "Tottem.cpp",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAANkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-06T15:23:04.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Mage.h",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.h",
               "RelativeDocumentMoniker": "Mage.h",
               "ToolTip": "F:\\TPI-PlatformGame\\Mage.h",
               "RelativeToolTip": "Mage.h",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAawEoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-05T17:44:36.671Z"
+              "WhenOpened": "2024-12-06T15:23:21.299Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "main.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAFsAAAAAAAAAAAD4v3AAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Mage.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Mage.cpp",
+              "RelativeDocumentMoniker": "Mage.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Mage.cpp",
+              "RelativeToolTip": "Mage.cpp",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAAAN4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T18:55:37.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Nivel.h",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.h",
-              "RelativeDocumentMoniker": "Nivel.h",
-              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.h",
-              "RelativeToolTip": "Nivel.h",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-03T23:06:08.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Nivel.cpp",
-              "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
-              "RelativeDocumentMoniker": "Nivel.cpp",
-              "ToolTip": "F:\\TPI-PlatformGame\\Nivel.cpp",
-              "RelativeToolTip": "Nivel.cpp",
-              "ViewState": "AgIAAJEEAAAAAAAAAAAqwCUEAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-03T23:08:42.198Z",
+              "WhenOpened": "2024-12-06T15:22:44.832Z",
               "EditorCaption": ""
             }
           ]

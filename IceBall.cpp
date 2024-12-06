@@ -79,7 +79,7 @@ void IceBall::checkBody(b2World& world) {
 	if (_state == ICEBALL_STATE::DESACTIVADO && destroyed == false) {
 
 		if (_body != nullptr) {
-		world.DestroyBody(_body);
+		destroyBody(world);
 		destroyed = true;
 		}
 
@@ -215,6 +215,7 @@ void IceBall::destroyBody(b2World& world)
 {
 	if (_body != nullptr) {
 		world.DestroyBody(_body);
+		_body = nullptr;
 	}
 }
 
