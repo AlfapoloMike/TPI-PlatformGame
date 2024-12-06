@@ -84,6 +84,7 @@ void Nivel::setFruits(b2World& world, float deltaTime)
 	for (int i = 0; i < _frutas.size(); i++) {
 		if (_frutas[i]->getPickedState() == true) {
 			std::cout << _frutas[i]->getPoints() << std::endl;
+			frutasRecolectadas[_frutas[i]->getFruitType() - 1]++; // **************************
 			_ui->sumarPuntos(_frutas[i]->getPoints());
 			_frutas.erase(_frutas.begin() + i);
 			i--;
@@ -281,6 +282,10 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		setPlayer(world);
 		setVillager(world, _pixelMetro);
 		setPlayerView();
+		for (int i = 0; i < 8; i++) { // ******************************************
+			frutasRecolectadas[i] = 0;
+		}
+		break;
 		break;
 	case NIVELES::NIVEL_1:
 
@@ -407,14 +412,11 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 		menu.setResultado(true);
 		menu.update(window, menuSi);
-		//_resultado.update();
 
 		break;
 	case NIVELES::LOSE:
 		menu.setResultado(false);
 		menu.update(window, menuSi);
-		//_resultado.update();
-		//std::cout << "menuSi :" << menuSi << std::endl;
 		break;
 	default:
 		break;
@@ -442,10 +444,16 @@ void Nivel::cmdNivel(sf::Event& event) {
 		break;
 	case NIVELES::WIN:  // ******************************************* WIN LOSE cmdNIVEL ************************************************
 
-		if (event.type == sf::Event::KeyPressed) {
+		if (event.type == sf::Event::KeyPressed) { // *****************************
 			if (event.key.code == sf::Keyboard::Escape) {
-
+				std::cout << "APRETE ESCAPE EN WIN. Bloque para guardar puntaje y actualizar archivo" << std::endl;
+				menu.setState("menu");
+				PuntajeJugador jugador(menu.getNombreJugador(), menu.getPuntajeFinal());
+				archivo.grabarMarcador(jugador);
+				archivo.ordenarRanking();
+				menu.resetAll();
 				_nivel = NIVELES::MENU;
+				menuSi = true;
 			}
 		}
 
@@ -573,13 +581,12 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 		break;
 	case NIVELES::WIN:  // ******************************************* WIN LOSE DRAWER ************************************************
 
-		//window.draw(_resultado);
+		menu.draw(window); // *************************************
 
 		break;
 	case NIVELES::LOSE:
 
 		menu.draw(window);
-		//window.draw(_resultado);
 
 		break;
 
@@ -745,13 +752,8 @@ void Nivel::gameStateController(b2World& world)
 
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-				//_lose = true;
-				
-				// Vector de frutas recolectadas cargada con valores random
-				for (int i = 0; i < 8; i++) {
-					frutasRecolectadas[i] = rand() % 11;
-				}
-				menu.setFrutasRecolectadas(frutasRecolectadas);
+				//_lose = true;				
+				menu.setFrutasRecolectadas(frutasRecolectadas); // *********
 				_nivel = NIVELES::LOSE;
 				cleanLevel(world);
 			}
@@ -781,11 +783,12 @@ void Nivel::gameStateController(b2World& world)
 		if (_alive[0] == false || time >= 3) {
 			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 			//_lose = true;
-			menu.setFrutasRecolectadas(frutasRecolectadas);
+			menu.setFrutasRecolectadas(frutasRecolectadas); // ********
 			_nivel = NIVELES::LOSE;
 			cleanLevel(world);
 		}
 		else if (mageLife == true) {
+			menu.setFrutasRecolectadas(frutasRecolectadas); // **************************
 			_nivel = NIVELES::WIN;
 			cleanLevel(world);
 			std::cout << " LA PARTIDA HA TERMINADO - GANASTE ! " << std::endl;
