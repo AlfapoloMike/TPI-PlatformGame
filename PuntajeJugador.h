@@ -13,5 +13,7 @@ public:
 	int getPuntaje() const;
 	void setNombreJugador(const std::string& jugador);
 	void setPuntaje(int puntos);
-};
 
+	// Sobrecarga de operador
+	bool operator<(PuntajeJugador aux);
+};

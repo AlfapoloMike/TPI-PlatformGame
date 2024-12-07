@@ -96,8 +96,8 @@ void PuntajeJugadorArchivo::ordenarRanking() {
     PuntajeJugador aux;
     for (int i = 0; i < cantidad; i++) {
         for (int j = i + 1; j < cantidad; j++) {
-            if (ranking[i].getPuntaje() < ranking[j].getPuntaje()) {
-
+            //if (ranking[i].getPuntaje() < ranking[j].getPuntaje()) {
+            if (ranking[i] < ranking[j]) {
                 aux = ranking[i];
                 ranking[i] = ranking[j];
                 ranking[j] = aux;
@@ -121,6 +121,8 @@ void PuntajeJugadorArchivo::ordenarRanking() {
         fwrite(ranking, sizeof(PuntajeJugador), cantidad, p10); // CREAMOS / REESCRIBIMOS EL ARCHIVO CON LOS REGISTROS EXISTENTES Y ORDENADOS
         fclose(p10);
     }
+
+    delete[] ranking;
 }
 
 
