@@ -86,11 +86,15 @@ void Menu::update(sf::RenderWindow& window, bool& menuSi) {
     }
 
     if (cambioEstado) { // Chequeo cambio de estado;
+        if (currentState == history && nextState == menu) {
+            menuSi = false;
+            _musicaFondo.stop();
+        }
 
         if (_clockMenu.getElapsedTime().asSeconds() >= 0.4f) { // Seteo tiempo de transicion
-            if (currentState == history && nextState == menu) {
-                menuSi = false;
-            }
+            //if (currentState == history && nextState == menu) {
+            //    menuSi = false;
+            //}
             //if(currentState == result && nextState == menu){}
             _musicaFondo.stop();   // Stopeo la música de fondo
             currentState = nextState; // Actualizo el estado

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp> // ************
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include <iostream>
 #include "CollisionCategories.h"
@@ -76,5 +77,7 @@ private:
     CollisionCategory _lastEnemyContact;
     uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL | CollisionCategory::TOTTEMS | CollisionCategory::PORTAL;
     bool hittedCd = false;
+
+    sf::Music _soundJump; // *************
 
 };

@@ -29,6 +29,10 @@ Jugador::Jugador(b2World& world) {
 	_sprite.setPosition(2.50f * 40, 600 - 7.0f * 40);
 	_saltos = 0;
 
+	if (!_soundJump.openFromFile("./assets/audios/saltofrogar.mp3")) { // ****************************
+		std::cout << "Error al cargar la audio _soundJump" << std::endl;
+	}
+	_soundJump.setVolume(10);
 
 }
 
@@ -80,10 +84,14 @@ void Jugador::cmd() {
 			&& velocity.y <= 0.01f
 			&& _saltos < 2) {
 
-
 			velocity.y = 5.6;
-
 			_saltos++;
+			if (_saltos == 2) { // ************************
+				if (_soundJump.getStatus() != sf::Music::Playing) {
+					_soundJump.play(); // ***************
+				}
+			}
+
 
 		}
 	}
