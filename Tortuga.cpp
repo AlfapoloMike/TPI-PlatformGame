@@ -108,8 +108,8 @@ void Tortuga::move(float velocidad)
 
 void Tortuga::recibeDanio() {
 
-
 	_alive = false;
+	_liberar.play(); // ******************
 	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 	filtro.maskBits &= ~PLAYER;
 	_body->GetFixtureList()->SetFilterData(filtro);

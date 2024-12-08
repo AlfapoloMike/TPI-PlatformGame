@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp" // ***********
 #include "Animation.h"
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
 #include "CollisionCategories.h"
@@ -26,6 +27,8 @@ protected:
 	float _animationTimer = 0;
 	int _points;
 	int _fruitType = -1;
+
+	sf::Music _pickFruit; // ************
 
 public:
 	Frutas(b2World &world);
