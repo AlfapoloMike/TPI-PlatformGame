@@ -89,12 +89,17 @@ void PuntajeJugadorArchivo::ordenarRanking() {
     PuntajeJugador* ranking = nullptr;
 
     ranking = new PuntajeJugador[cantidad];
+    if (ranking == nullptr) { // ****************************
+        std::cout << "NO SE PUDO LEER - ordenarRanking()" << std::endl;
+        return;
+    }
 
     leerTodos(ranking, cantidad);
     
     // SE ORDENA RANKING POR PUNTAJE
     PuntajeJugador aux;
-    for (int i = 0; i < cantidad; i++) {
+    // Ordenamiento Burbuja
+    /*for (int i = 0; i < cantidad; i++) {
         for (int j = i + 1; j < cantidad; j++) {
             //if (ranking[i].getPuntaje() < ranking[j].getPuntaje()) {
             if (ranking[i] < ranking[j]) {
@@ -103,6 +108,20 @@ void PuntajeJugadorArchivo::ordenarRanking() {
                 ranking[j] = aux;
             }
         }
+    }*/
+
+    // Ordenamiento por Seleccion /*******************
+    int posMax;
+    for (int i = 0; i < cantidad - 1; i++) {
+        posMax = i;
+        for (int j = i + 1; j < cantidad; j++) {
+            if (ranking[posMax] < ranking[j]) {
+                posMax = j;
+            }
+        }
+        aux = ranking[i];
+        ranking[i] = ranking[posMax];
+        ranking[posMax] = aux;
     }
 
     // LIMITAMOS LA CANTIDAD DE REGISTROS A 10

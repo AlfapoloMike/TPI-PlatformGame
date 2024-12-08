@@ -45,7 +45,7 @@ C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Frutas.cpp(181,11): warning C4244
   IceBall.cpp
   Intro.cpp
   Jugador.cpp
-C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Jugador.cpp(84,17): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Jugador.cpp(87,17): warning C4305: '=': truncamiento de 'double' a 'float'
   Laser.cpp
 C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Laser.cpp(12,26): warning C4305: 'argumento': truncamiento de 'double' a 'float'
 C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Laser.cpp(16,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
