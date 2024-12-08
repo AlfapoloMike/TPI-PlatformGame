@@ -4,6 +4,11 @@
 Aldeano::Aldeano(sf::Vector2f newPosition, sf::Vector2f newVelocity, float pixelMetro){
 	setPosition(newPosition, pixelMetro);
 	setVelocity(newVelocity);
+
+	if (!_liberar.openFromFile("./assets/audios/liberar.mp3")) { // ******************************
+		//std::cout << "Error al cargar sonido pickfruit: Frutas" << std::endl;
+	}
+	_liberar.setVolume(50); // **************************************
 }
 
 /// SETTERS

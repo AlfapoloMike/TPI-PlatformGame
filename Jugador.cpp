@@ -29,11 +29,15 @@ Jugador::Jugador(b2World& world) {
 	_sprite.setPosition(2.50f * 40, 600 - 7.0f * 40);
 	_saltos = 0;
 
+	// SONIDOS
 	if (!_soundJump.openFromFile("./assets/audios/saltofrogar.mp3")) { // ****************************
 		std::cout << "Error al cargar la audio _soundJump" << std::endl;
 	}
 	_soundJump.setVolume(10);
-
+	if (!_danio.openFromFile("./assets/audios/ouch.mp3")) { // **************************** 3
+		std::cout << "Error al cargar la audio _soundJump" << std::endl;
+	}
+	_danio.setVolume(100);
 }
 
 
@@ -390,6 +394,7 @@ void Jugador::setInWall(bool state)
 
 void Jugador::recibeDanio(int lado)
 {
+	_danio.play(); // **************************
 	if (hittedCd == false) {
 		if (_estado != HITTED) {
 

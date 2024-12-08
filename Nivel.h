@@ -120,8 +120,8 @@ public:
 	// Agregado Ale
 	void setLevel(NIVELES nivel);
 	void cmdNivel(sf::Event& event);
-	void setMusic(); // **************
-	sf::Music _musicaFondo;  // *************
+	void setMusic(); 
+	sf::Music _musicaFondo;
 
 
 

@@ -78,6 +78,7 @@ private:
     uint16_t _maskBits = CollisionCategory::BUNNY | CollisionCategory::FRUITS | CollisionCategory::SKULLS | CollisionCategory::TURTLE | CollisionCategory::FATBIRD | CollisionCategory::RINO | CollisionCategory::LASER | CollisionCategory::ICEBALL | CollisionCategory::TOTTEMS | CollisionCategory::PORTAL;
     bool hittedCd = false;
 
-    sf::Music _soundJump; // *************
+    sf::Music _soundJump;
+    sf::Music _danio;
 
 };

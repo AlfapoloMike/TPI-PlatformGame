@@ -13,6 +13,11 @@ Frutas::Frutas(b2World &world)
 	setSizeBody();
 	setFixture();
 	_sprite.setScale(1.2, 1.2);
+
+	if (!_pickFruit.openFromFile("./assets/audios/pickfruit.mp3")) { // ******************************
+		std::cout << "Error al cargar sonido pickfruit: Frutas" << std::endl;
+	}
+	_pickFruit.setVolume(50); // **************************************
 }
 
 
@@ -296,6 +301,7 @@ void Frutas::setFruitPicked()
 	_body->GetFixtureList()->SetFilterData(filtro);
 
 	frutaTipo = PICKED;
+	_pickFruit.play(); // **********************
 	setTextureFruit();
 	setAnimationState();
 }

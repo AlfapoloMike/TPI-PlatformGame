@@ -195,8 +195,8 @@ void Fatbird::setStateFloor() {
 
 void Fatbird::recibeDanio() {
 
-
 	_alive = false;
+	_liberar.play(); // ********************
 	b2Filter filtro = _body->GetFixtureList()->GetFilterData();
 	filtro.maskBits &= ~PLAYER;
 	_body->GetFixtureList()->SetFilterData(filtro);
