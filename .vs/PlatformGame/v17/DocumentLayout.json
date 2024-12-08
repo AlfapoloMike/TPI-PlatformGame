@@ -3,12 +3,37 @@
   "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+=======
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:PuntajeJugadorArchivo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:PuntajeJugadorArchivo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Nivel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+>>>>>>> master
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +43,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
+=======
+          "SelectedChildIndex": 4,
+>>>>>>> master
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +59,99 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PuntajeJugadorArchivo.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.h",
+              "RelativeDocumentMoniker": "PuntajeJugadorArchivo.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.h",
+              "RelativeToolTip": "PuntajeJugadorArchivo.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-08T01:06:51.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "GameContactListener.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeDocumentMoniker": "GameContactListener.cpp",
               "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeToolTip": "GameContactListener.cpp",
               "ViewState": "AgIAAGQCAAAAAAAAAAAAAHYCAAAdAAAAAAAAAA==",
+=======
+              "Title": "PuntajeJugadorArchivo.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.cpp",
+              "RelativeDocumentMoniker": "PuntajeJugadorArchivo.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\PuntajeJugadorArchivo.cpp",
+              "RelativeToolTip": "PuntajeJugadorArchivo.cpp",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-08T01:06:58.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+>>>>>>> master
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-07T01:47:35.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
+=======
+              "DocumentIndex": 5,
+              "Title": "Nivel.h",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
+              "RelativeDocumentMoniker": "Nivel.h",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Nivel.h",
+              "RelativeToolTip": "Nivel.h",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAwHsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-03T23:06:08.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+>>>>>>> master
               "Title": "Nivel.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeDocumentMoniker": "Nivel.cpp",
               "ToolTip": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeToolTip": "Nivel.cpp",
+<<<<<<< HEAD
               "ViewState": "AgIAACEAAAAAAAAAAAAAACkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-07T01:33:06.312Z",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOUBAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-03T23:08:42.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Menu.cpp",
+              "RelativeDocumentMoniker": "Menu.cpp",
+              "ToolTip": "C:\\Users\\Ale\\Documents\\GitHub\\TPI-PlatformGame\\Menu.cpp",
+              "RelativeToolTip": "Menu.cpp",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAE4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-08T00:43:00.901Z",
+>>>>>>> master
               "EditorCaption": ""
             }
           ]

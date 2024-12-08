@@ -269,6 +269,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 {
 
 	gameStateController(world);
+	setMusic();  // ***********************************************************
 
 
 	switch (_nivel)
@@ -281,10 +282,9 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		setPlayer(world);
 		setVillager(world, _pixelMetro);
 		setPlayerView();
-		for (int i = 0; i < 8; i++) { // ******************************************
+		for (int i = 0; i < 8; i++) { 
 			frutasRecolectadas[i] = 0;
 		}
-		break;
 		break;
 	case NIVELES::NIVEL_1:
 
@@ -348,6 +348,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		break;
 	case NIVELES::PRESET_BOSS:
 
+		_musicaFondo.stop(); // ************************************************************** PODRIA IR EN BOSS TAMBIEN
 		_nivel = NIVELES::BOSS;
 		std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
 		setMap(world);
@@ -436,10 +437,9 @@ void Nivel::cmdNivel(sf::Event& event) {
 	switch (_nivel) {
 	case NIVELES::MENU:
 
-		if (menuSi) {
-
+		//if (menuSi) {
 			menu.manejoEvents(event, menuSi);
-		}
+		//}
 		break;
 	case NIVELES::WIN:  // ******************************************* WIN LOSE cmdNIVEL ************************************************
 
@@ -473,6 +473,30 @@ void Nivel::cmdNivel(sf::Event& event) {
 		}
 
 		break;
+	}
+}
+
+void Nivel::setMusic(){ // ******************************
+	std::string rutaMusica;
+
+	if (_musicaFondo.getStatus() != sf::Music::Playing) {
+		switch (_nivel) {
+		case NIVELES::PRESET_NIVEL:
+			rutaMusica = "./assets/audios/nivel2.mp3"; // Hay audios opcionales para nivel en assets/audios
+			_musicaFondo.setVolume(100);
+			break;
+		case NIVELES::BOSS:
+			rutaMusica = "./assets/audios/hechicero.mp3";
+			_musicaFondo.setVolume(100);
+			break;
+		}
+
+		if (_nivel == NIVELES::PRESET_NIVEL || _nivel == NIVELES::BOSS) {
+			if (!_musicaFondo.openFromFile(rutaMusica)) {
+				std::cout << "Error al cargar la musicaFondo: Nivel" << std::endl;
+			}
+			_musicaFondo.play();
+		}
 	}
 }
 
@@ -751,7 +775,8 @@ void Nivel::gameStateController(b2World& world)
 
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-				//_lose = true;				
+				//_lose = true;
+				_musicaFondo.stop();  // *****************************************			
 				menu.setFrutasRecolectadas(frutasRecolectadas); // *********
 				_nivel = NIVELES::LOSE;
 				cleanLevel(world);
@@ -782,12 +807,14 @@ void Nivel::gameStateController(b2World& world)
 		if (_alive[0] == false || time >= 3) {
 			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
 			//_lose = true;
-			menu.setFrutasRecolectadas(frutasRecolectadas); // ********
+			_musicaFondo.stop(); // *******************************************
+			menu.setFrutasRecolectadas(frutasRecolectadas); 
 			_nivel = NIVELES::LOSE;
 			cleanLevel(world);
 		}
 		else if (mageLife == true) {
-			menu.setFrutasRecolectadas(frutasRecolectadas); // **************************
+			_musicaFondo.stop(); // *******************************************
+			menu.setFrutasRecolectadas(frutasRecolectadas); 
 			_nivel = NIVELES::WIN;
 			cleanLevel(world);
 			std::cout << " LA PARTIDA HA TERMINADO - GANASTE ! " << std::endl;

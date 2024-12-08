@@ -64,6 +64,10 @@ void Resultado::update() {
             gameover.play();
             gameoverPlayed = true;
         }
+        // FONDO GANASTE
+        if (!_resultadoTexture.loadFromFile("./assets/fondos/fondo.png")) { // Ruta a la imagen de fondo
+            std::cout << "Error al cargar fondo Resultado" << std::endl;
+        }
         resultado = "VICTORIA";
         _resultadoTitulo.setPosition(240.0f, 1.0f + counter);
         _resultadoTituloSombra.setPosition(250.0f, 40.0f + counter);
@@ -76,18 +80,16 @@ void Resultado::update() {
             gameover.play();
             gameoverPlayed = true;
         }
-        // FONDO PERDISTE - Actualizamos fondo o regulamos opacidad de tapaFondo(shape negro)
+        // FONDO 
         if (!_resultadoTexture.loadFromFile("./assets/fondos/fondoperdio.png")) { // Ruta a la imagen de fondo
             std::cout << "Error al cargar fondo Resultado" << std::endl;
         }
-        //tapaFondo.setFillColor(sf::Color(0, 0, 0, 200));
-
-        _resultadoSprite.setTexture(_resultadoTexture); // Asignamos la textura al sprite
+        //tapaFondo.setFillColor(sf::Color(0, 0, 0, 200));        
         resultado = "GAME OVER";
         _resultadoTitulo.setPosition(205.0f, 1.0f + counter);
         _resultadoTituloSombra.setPosition(215.0f, 40.0f + counter);
     }
-
+    _resultadoSprite.setTexture(_resultadoTexture); // Asignamos la textura al sprite
 
     _resultadoTitulo.setFont(font);
     _resultadoTitulo.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
