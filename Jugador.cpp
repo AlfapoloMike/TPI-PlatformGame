@@ -7,6 +7,7 @@ Jugador::Jugador(b2World& world) {
 	_bodyDef.position.Set(8.50f, 19.0f); // Posición inicial en metros
 
 	_body = world.CreateBody(&_bodyDef);
+	_body->SetGravityScale(1.2f); // El cuerpo cae más lento
 
 	/////////asgina a travez de un puntero el objeto Jugador al userData
 	_body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
@@ -38,19 +39,21 @@ void Jugador::update(int row, float deltaTime) {
 	// Obtener posición de Box2D y adaptarla con el nuevo SCALE
 	b2Vec2 pos = _body->GetPosition();
 	b2Vec2 velocity = _body->GetLinearVelocity();
+	cmd();
 
+	/*
 	if (velocity.y > 0 && floorContacting == false) {
 		
-		setFilterDataPlayer(PLATFORM, false);
+		//setFilterDataPlayer(PLATFORM, false);
 	}
 	else if (velocity.y < 0) {
-		setFilterDataPlayer(PLATFORM, true);
+	///	setFilterDataPlayer(PLATFORM, true);
 
 	}
+	*/
 
 
 	_sprite.setPosition(pos.x * SCALE, 600.0f - (pos.y * SCALE));
-	cmd();
 	animationControl(deltaTime);
 	_sprite.setTextureRect(_animation.uvRect);
 	_animation.Update(0, deltaTime);

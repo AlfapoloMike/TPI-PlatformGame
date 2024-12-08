@@ -49,13 +49,12 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 	case NIVELES::NIVEL_1:
 
 		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(7.75f, 10.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
-		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(10.75f, 5.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
-		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(13.75f, 7.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
-		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(8.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
+		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(15.75f, 15.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
+		enemigos.push_back(std::make_shared<Skull>(sf::Vector2f(28.75f, 4.5f), sf::Vector2f(0.34f, 0.3f), world, sf::Vector2f(1.5f, 1.5f), pixelMetro));
 		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(18.0f, 8.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
 		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(24.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
 		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(30.0f, 11.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
-		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(28.0f, 20.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
+		
 
 
 		break;
@@ -240,17 +239,17 @@ void Nivel::setVillager(b2World& world, float pixelMetro) {
 	case NIVELES::NIVEL_1:
 
 		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(18.0f, 12.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
-		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(26.0f, 12.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
-		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(8.0f, 20.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(28.0f, 7.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(6.0f, 20.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(12.75f, 12.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(3.75f, 8.5f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Tortuga>(sf::Vector2f(28.0f, 20.0f), sf::Vector2f(0.55f, 0.325f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(23.5f, 15.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
-		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(30.50f, 15.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
+		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(20.50f, 20.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Fatbird>(sf::Vector2f(3.50f, 8.0f), sf::Vector2f(0.5f, 0.6f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Rino>(sf::Vector2f(3.50f, 4.0f), sf::Vector2f(0.65f, 0.425f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		aldeanos.push_back(std::make_shared<Rino>(sf::Vector2f(24.50f, 4.0f), sf::Vector2f(0.65f, 0.425f), world, sf::Vector2f(1.5f, 0.0f), pixelMetro));
 		///8.50f, 19.0f
-
 		break;
 
 	default:

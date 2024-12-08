@@ -617,11 +617,21 @@ void GameContactListener::BeginContact(b2Contact* contact)
 			std::cout << "Normal A: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
-				if (normal.y < 0.0f)
+				if (normal.y < 0.0f && normal.x >0.2f)
 				{
+					
+					player->setFilterDataPlayer(PLATFORM, true);
+					contact->SetEnabled(true);
 					player->setSaltos();
 					player->setContactFloor(true);
 					player->setInWall(false);
+					
+
+				}
+				else if(normal.y >0.0f) {
+					
+					contact->SetEnabled(false);
+					player->setFilterDataPlayer(PLATFORM, false);
 
 				}
 			}
@@ -633,12 +643,22 @@ void GameContactListener::BeginContact(b2Contact* contact)
 			std::cout << "Normal B: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
-				if (normal.y > 0.0f)
+				if (normal.y > 0.0f && normal.x < 0.2f)
 				{
-
+					
+					player->setFilterDataPlayer(PLATFORM, true);
+					contact->SetEnabled(true);
 					player->setSaltos();
 					player->setContactFloor(true);
 					player->setInWall(false);
+
+					
+				}
+				else  if (normal.y <= 0.0f) {
+					
+					contact->SetEnabled(false);
+					player->setFilterDataPlayer(PLATFORM, false);
+
 
 				}
 			}
@@ -1006,12 +1026,21 @@ void GameContactListener::EndContact(b2Contact* contact)
 
 		if (categoryA & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
+
+			
+			player->setFilterDataPlayer(PLATFORM, true);
+
 			player->setContactFloor(false);
+			
 
 		}
 		if (categoryB & PLAYER) {
+			
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
+			player->setFilterDataPlayer(PLATFORM, true);
+
 			player->setContactFloor(false);
+			
 
 		}
 	}
