@@ -86,25 +86,34 @@ void Fatbird::setAnimationState() {
 		_animation.setImageCount(sf::Vector2u(8, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
-	}
-	if (_state == STATE::FALLING) {
+	}else if (_state == STATE::FALLING) {
 		setTexture("./assets/aldeanos/fatbird/Fall(40x48).png");
 		_animation.setImageCount(sf::Vector2u(4, 1));
 		_animation.setSwitchTime(0.12f);
 		_animation.setImageUvRectSize(&_texture);
 
-	}
-	if (_state == STATE::HIT) {
+	}else if (_state == STATE::HIT) {
 		setTexture("./assets/aldeanos/fatbird/Hit(40x48).png");
 		_animation.setImageCount(sf::Vector2u(5, 1));
 		_animation.setSwitchTime(0.09f);
 		_animation.setImageUvRectSize(&_texture);
 
-	}
-	if (_state == STATE::GROUND) {
+	}else if (_state == STATE::GROUND) {
 		setTexture("./assets/aldeanos/fatbird/Ground(40x48).png");
 		_animation.setImageCount(sf::Vector2u(4, 1));
 		_animation.setSwitchTime(0.2f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == STATE::GROUND_SAFE) {
+		setTexture("./assets/aldeanos/fatbird/GroundSafe(40x48).png");
+		_animation.setImageCount(sf::Vector2u(4, 1));
+		_animation.setSwitchTime(0.2f);
+		_animation.setImageUvRectSize(&_texture);
+	}
+	else if (_state == STATE::FALLING_SAFE) {
+		setTexture("./assets/aldeanos/fatbird/FallSafe(40x48).png");
+		_animation.setImageCount(sf::Vector2u(4, 1));
+		_animation.setSwitchTime(0.12f);
 		_animation.setImageUvRectSize(&_texture);
 	}
 }
@@ -147,12 +156,12 @@ void Fatbird::animationControl(float deltaTime) {  /// Control de tiempo por ani
 		_animationTimeCounter += deltaTime;
 		if (_animationTimeCounter >= 0.9f) { //0.37segs Termina de retraerlas y vuelve a estado inicial IDLE.
 			if (_contacting == true) {
-				_state = STATE::GROUND;
+				_state = STATE::GROUND_SAFE;
 				setAnimationState();
 				_animationTimeCounter = 0;
 			}
 			else {
-				_state = STATE::FALLING;
+				_state = STATE::FALLING_SAFE;
 				setAnimationState();
 				_animationTimeCounter = 0;
 			}
@@ -186,7 +195,12 @@ void Fatbird::move()
 
 void Fatbird::setStateFloor() {
 	_dizzy = true;
+	if (_alive == true) {
 	_state = STATE::GROUND;
+	}
+	else {
+	_state = STATE::GROUND_SAFE;
+	}
 	_contacting = true;
 	_animationTimeCounter = 0;
 	setAnimationState();

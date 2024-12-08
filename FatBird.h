@@ -9,6 +9,8 @@ enum class STATE {
 	GROUND,
 	HIT,
 	IDLE,
+	GROUND_SAFE,
+	FALLING_SAFE
 };
 
 
