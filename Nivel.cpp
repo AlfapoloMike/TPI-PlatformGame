@@ -103,7 +103,7 @@ void Nivel::setCrystals(b2World& world, float deltaTime) {
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(8.0f, 8.0f), world, 40, 1, false));
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(26.0f, 8.0f), world, 40, 1, false));
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(16.0f, 5.0f), world, 40, 1, false));
-	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(13.0f, 17.0f), world, 40, 1, false));
+	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(25.0f, 17.2f), world, 40, 1, false));
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(20.0f, 12.0f), world, 40, 1, false));
 	_crystals.push_back(std::make_unique<Crystal>(sf::Vector2f(35.0f, 5.0f), world, 40, 2, true));
 

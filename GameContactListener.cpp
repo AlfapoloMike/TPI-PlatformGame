@@ -238,11 +238,9 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 				if (normal.x < 0.0f) {
 					
-					std::cout << "El body es A" << std::endl;
 					conejo->setNewDirection(true);
 				}
 				else if (normal.x > 0.0f) {
-					std::cout << "El body es A" << std::endl;
 
 					conejo->setNewDirection(false);
 
@@ -860,14 +858,12 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		if (categoryA & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
 
-			std::cout << "Auch recibi danio" << std::endl;
 
 		}
 
 		if (categoryB & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
-			std::cout << "Auch recibi danio" << std::endl;
 
 
 		}
