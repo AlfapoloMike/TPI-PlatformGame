@@ -1,3 +1,4 @@
-﻿  GameContactListener.cpp
-box2d.lib(b2_timer.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_timer.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-  PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+﻿  Nivel.cpp
+  Resultado.cpp
+  Generando código...
+  PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe

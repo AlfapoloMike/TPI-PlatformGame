@@ -24,6 +24,7 @@ private:
 	sf::Text _historiaTituloSombra;
 	sf::Text _historiaText;
 	sf::Text _historiaPress;
+	sf::Text storyTextDisplay;
 	std::string _historia = "";
 
 	sf::Clock _clockHistoria;  // Reloj para regular el tiempo de aparicion de letras
