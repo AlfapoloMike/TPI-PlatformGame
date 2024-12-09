@@ -97,7 +97,7 @@ protected:
 	PuntajeJugadorArchivo archivo;
 
 	///TEST OPACIDAD
-	//sf::RectangleShape _overlay;
+	sf::RectangleShape _overlay;
 
 public:
 

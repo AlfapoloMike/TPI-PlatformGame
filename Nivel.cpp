@@ -23,11 +23,11 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	default:
 		break;
 	}
-	/*
+	
 	_overlay = sf::RectangleShape(sf::Vector2f(1460, 960));
 	_overlay.setPosition(_overlay.getPosition().x, -360);
 	_overlay.setFillColor(sf::Color(0, 0, 128, 100));
-	*/
+	
 
 	setPortalAlert();
 
@@ -595,7 +595,7 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 			window.draw(*mago);
 
-		//	window.draw(_overlay);
+			window.draw(_overlay);
 
 
 			window.setView(window.getDefaultView());
@@ -843,6 +843,7 @@ void Nivel::cleanLevel(b2World& world) {
 
 		//std::cout << "Se realizo la limpieza de los vectores" << std::endl;
 		//clean = true;
+		bossSetted = false;
 	}
 	
 
