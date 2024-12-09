@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp> // **********
 #include "Animation.h"
 #include "CollisionCategories.h"
 
@@ -31,6 +32,8 @@ protected:
     sf::Vector2f _velocity;
     Animation _animation;
     sf::Vector2f _size;
+
+    sf::Music _liberar;
 
 };
 

@@ -1,4 +1,83 @@
-﻿box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+﻿  Aldeano.cpp
+  Animation.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Animation.cpp(75,22): warning C4018: '>=': no coinciden signed/unsigned
+  Ayuda.cpp
+  Conejo.cpp
+  Corazon.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Corazon.cpp(9,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Corazon.cpp(9,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Corazon.cpp(134,86): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Corazon.cpp(134,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Creditos.cpp
+  Crystal.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(16,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(16,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         with
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         [
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:             T=float
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         ]
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(64,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         with
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         [
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:             T=float
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         ]
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         with
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         [
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:             T=float
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         ]
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         with
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         [
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:             T=float
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         ]
+  Enemigo.cpp
+  FatBird.cpp
+  Frutas.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Frutas.cpp(15,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Frutas.cpp(15,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Frutas.cpp(186,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  GameContactListener.cpp
+  GameUi.cpp
+  Historia.cpp
+  IceBall.cpp
+  Intro.cpp
+  Jugador.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Jugador.cpp(94,17): warning C4305: '=': truncamiento de 'double' a 'float'
+  Laser.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Laser.cpp(12,26): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Laser.cpp(16,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Mage.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Mage.cpp(15,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Mage.cpp(15,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  main.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\main.cpp(85,23): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\main.cpp(86,24): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Background.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Background.cpp(20,17): warning C4805: '==': combinación no segura del tipo 'int' y el tipo 'bool' en la operación
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Background.cpp(43,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Background.cpp(52,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Compilando...
+  Map.cpp
+  MappingLevel.cpp
+  Menu.cpp
+  Nivel.cpp
+  Plataformas.cpp
+  Portal.cpp
+  PuntajeJugador.cpp
+  PuntajeJugadorArchivo.cpp
+  Ranking.cpp
+  Resultado.cpp
+  Rino.cpp
+  Skull.cpp
+  Tortuga.cpp
+  Tottem.cpp
+C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\Tottem.cpp(24,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código...
+box2d.lib(b2_polygon_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_polygon_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_body.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_body.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_world.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_world.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_fixture.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_fixture.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
@@ -41,4 +120,4 @@ box2d.lib(b2_chain_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box
 box2d.lib(b2_edge_shape.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_edge_shape.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_collide_circle.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_circle.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 box2d.lib(b2_collide_polygon.obj) : warning LNK4099: no se encontró PDB '' con 'box2d.lib(b2_collide_polygon.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-  PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Debug\PlatformGame.exe
+  PlatformGame.vcxproj -> C:\Users\Ale\Documents\GitHub\TPI-PlatformGame\x64\Debug\PlatformGame.exe
