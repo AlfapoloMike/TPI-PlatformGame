@@ -1,6 +1,73 @@
-﻿  Generando código
-  0 of 940 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+﻿  Aldeano.cpp
+  Ayuda.cpp
+  Conejo.cpp
+  Creditos.cpp
+  Crystal.cpp
+F:\TPI-PlatformGame\Crystal.cpp(16,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Crystal.cpp(16,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+F:\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         with
+F:\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         [
+F:\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:             T=float
+F:\TPI-PlatformGame\Crystal.cpp(22,69): warning C4244:         ]
+F:\TPI-PlatformGame\Crystal.cpp(64,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+F:\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+F:\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         with
+F:\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         [
+F:\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:             T=float
+F:\TPI-PlatformGame\Crystal.cpp(179,34): warning C4244:         ]
+F:\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+F:\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         with
+F:\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         [
+F:\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:             T=float
+F:\TPI-PlatformGame\Crystal.cpp(182,34): warning C4244:         ]
+F:\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+F:\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         with
+F:\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         [
+F:\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:             T=float
+F:\TPI-PlatformGame\Crystal.cpp(196,33): warning C4244:         ]
+  FatBird.cpp
+  Frutas.cpp
+F:\TPI-PlatformGame\Frutas.cpp(15,24): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Frutas.cpp(15,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Frutas.cpp(186,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  GameContactListener.cpp
+  GameUi.cpp
+  Historia.cpp
+  IceBall.cpp
+  Intro.cpp
+  Jugador.cpp
+F:\TPI-PlatformGame\Jugador.cpp(94,17): warning C4305: '=': truncamiento de 'double' a 'float'
+  Laser.cpp
+F:\TPI-PlatformGame\Laser.cpp(12,26): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Laser.cpp(16,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Mage.cpp
+F:\TPI-PlatformGame\Mage.cpp(15,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+F:\TPI-PlatformGame\Mage.cpp(15,19): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  main.cpp
+F:\TPI-PlatformGame\main.cpp(85,23): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+F:\TPI-PlatformGame\main.cpp(86,24): warning C4244: 'inicializando': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Background.cpp
+F:\TPI-PlatformGame\Background.cpp(20,17): warning C4805: '==': combinación no segura del tipo 'int' y el tipo 'bool' en la operación
+F:\TPI-PlatformGame\Background.cpp(43,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+F:\TPI-PlatformGame\Background.cpp(52,16): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Map.cpp
+  Menu.cpp
+  Nivel.cpp
+  Compilando...
+  Plataformas.cpp
+  Portal.cpp
+  PuntajeJugador.cpp
+  PuntajeJugadorArchivo.cpp
+  Ranking.cpp
+  Resultado.cpp
+  Rino.cpp
+  Skull.cpp
+  Tortuga.cpp
+  Tottem.cpp
+F:\TPI-PlatformGame\Tottem.cpp(24,11): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 1312 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generación de código finalizada
   PlatformGame.vcxproj -> F:\TPI-PlatformGame\x64\Release\PlatformGame.exe
