@@ -42,6 +42,9 @@ protected:
 
 	std::unique_ptr<Portal> _portal;
 
+	std::unique_ptr<Mage> mago;
+
+
 	/// plataformas segun nivel
 	std::vector<std::unique_ptr<Plataformas>> _plataformasN;
 	/// fondo segun nviel
@@ -75,33 +78,32 @@ protected:
 
 	std::vector<std::unique_ptr<Tottem>> _tottems;
 
-	Mage* mago = nullptr;
-
-
 	sf::FloatRect _viewport;
+
+
+	sf::Text _portalAlert;
+	sf::Font font;
 
 	// Agregado Ale
 	Menu menu;
 	bool menuSi = true;
-	bool settingAll = true;
 	bool bossSetted = false;
-	bool _win = false;
-	bool _lose = false;
 	bool _portalState = false;
 	bool _teleporting = false;
-	bool clean = false;
+	//bool clean = false;
 
 	// Agregado Ale
 	int frutasRecolectadas[8]{};
 	PuntajeJugadorArchivo archivo;
 
 	///TEST OPACIDAD
-	sf::RectangleShape _overlay;
+	//sf::RectangleShape _overlay;
 
 public:
 
 	Nivel(int level, b2World& world, float pixelMetro);
 	void setPlayer(b2World& world);
+	void setMago(b2World& world);
 	void setPlayerView();
 	void setEnemigos(b2World& world, float pixelMetro);
 	void setFruits(b2World& world, float deltaTime);
@@ -114,6 +116,7 @@ public:
 	void gameStateController(b2World& world);
 	void vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window);
 	void cleanLevel(b2World& world);
+	void setPortalAlert();
 	void nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTime);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
