@@ -126,9 +126,6 @@
     <ClCompile Include="Map.cpp">
       <Filter>Archivos de origen\Niveles\Mapa</Filter>
     </ClCompile>
-    <ClCompile Include="MappingLevel.cpp">
-      <Filter>Archivos de origen\Niveles\Mapa</Filter>
-    </ClCompile>
     <ClCompile Include="Conejo.cpp">
       <Filter>Archivos de origen\Enemigos</Filter>
     </ClCompile>
@@ -220,9 +217,6 @@
     </ClInclude>
     <ClInclude Include="Nivel.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
-    </ClInclude>
-    <ClInclude Include="MappingLevel.h">
-      <Filter>Archivos de encabezado\Niveles\Mapa</Filter>
     </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>Archivos de encabezado\Niveles\Mapa</Filter>

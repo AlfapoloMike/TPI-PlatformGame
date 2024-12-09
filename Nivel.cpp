@@ -23,16 +23,22 @@ Nivel::Nivel(int level, b2World& world, float pixelMetro)
 	default:
 		break;
 	}
-
+	/*
 	_overlay = sf::RectangleShape(sf::Vector2f(1460, 960));
 	_overlay.setPosition(_overlay.getPosition().x, -360);
 	_overlay.setFillColor(sf::Color(0, 0, 128, 100));
+	*/
 
+	setPortalAlert();
 
 }
 
 void Nivel::setPlayer(b2World& world) {
 	_personaje = std::make_unique<Jugador>(world);
+
+}
+void Nivel::setMago(b2World& world) {
+	mago = std::make_unique<Mage>(world, sf::Vector2f(5.0f, 18.8f), 40);
 
 }
 void Nivel::setPlayerView() {
@@ -55,7 +61,6 @@ void Nivel::setEnemigos(b2World& world, float pixelMetro)
 		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(24.0f, 4.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
 		enemigos.push_back(std::make_shared<Conejo>(sf::Vector2f(30.0f, 11.0f), sf::Vector2f(0.425f, 0.55f), world, sf::Vector2f(0.2f, 1.1f), pixelMetro));
 		
-
 
 		break;
 
@@ -179,9 +184,6 @@ void Nivel::setMap(b2World& world)
 
 
 		_background = std::make_unique<backgroundTile>(true);
-
-
-		_ui = std::make_unique<GameUi>();
 
 
 		_plataformasN.push_back(std::make_unique<Plataformas>(sf::Vector2f(2.5f, 10.37f), sf::Vector2f(1.0f, 0.1f), world, true));
@@ -353,8 +355,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
 		setMap(world);
 		setCrystals(world, 0);
-		mago = new Mage(world, sf::Vector2f(5.0f, 18.8f), 40);
-
+		setMago(world);
 		break;
 	case NIVELES::MENU:
 
@@ -365,9 +366,6 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		}
 		else {
 			setLevel(NIVELES::PRESET_NIVEL);
-			//std::cout << "_nivel: " << _nivel << std::endl;
-			std::cout << "settingAll ELSE: " << settingAll << std::endl;
-			std::cout << "menuSi (0) ELSE: " << menuSi << std::endl;
 
 		}
 
@@ -523,6 +521,12 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 			window.draw(*_background);
 
+			if (_portalState == true) {
+				window.draw(*_portal);
+				window.draw(_portalAlert);
+
+			}
+
 			window.draw(*_map);
 
 			for (int i = 0; i < _plataformasN.size(); i++) {
@@ -555,9 +559,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 				window.draw(*_frutas[i]);
 			}
 
-			if (_portalState == true) {
-				window.draw(*_portal);
-			}
 
 			window.draw(*_personaje);
 
@@ -594,7 +595,7 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 
 			window.draw(*mago);
 
-			window.draw(_overlay);
+		//	window.draw(_overlay);
 
 
 			window.setView(window.getDefaultView());
@@ -616,150 +617,6 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 	}
 
 
-
-	/*
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-
-	/
-	/
-	/
-	/
-	/
-	/
-	*/
-
-	/*
-	switch (_nivel) {
-	case NIVELES::MENU:
-
-		if (menuSi) {
-			menu.draw(window);
-		}
-		else {
-			setLevel(NIVELES::NIVEL_1);
-		}
-
-
-
-		break;
-	case NIVELES::NIVEL_1:
-
-		if (_lose == false) {
-
-			window.setView(_vista);
-
-			window.draw(*_background);
-
-			window.draw(*_map);
-
-			for (int i = 0; i < _plataformasN.size(); i++) {
-				window.draw(_plataformasN[i]->getShape());
-			}
-
-			for (const auto& enemigo : enemigos) {
-				if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
-					window.draw(calavera->getSprite());
-				}
-				else if (auto conejo = std::dynamic_pointer_cast<Conejo>(enemigo)) {
-					window.draw(conejo->getSprite());
-				}
-			}
-
-			for (const auto& aldeano : aldeanos) {
-				if (auto tortuga = std::dynamic_pointer_cast<Tortuga>(aldeano)) {
-					window.draw(tortuga->getSprite());
-				}
-				if (auto fatbird = std::dynamic_pointer_cast<Fatbird>(aldeano)) {
-					window.draw(fatbird->getSprite());
-				}
-				if (auto rino = std::dynamic_pointer_cast<Rino>(aldeano)) {
-					window.draw(rino->getSprite());
-				}
-			}
-
-
-			for (int i = 0; i < _frutas.size(); i++) {
-				window.draw(*_frutas[i]);
-			}
-
-			if (_portalState == true) {
-				window.draw(*_portal);
-			}
-
-			window.draw(*_personaje);
-
-			///window.draw(_overlay);
-
-			window.setView(window.getDefaultView());
-
-			_ui->drawUi(window);
-		}
-
-
-		break;
-	case NIVELES::BOSS:
-		if (bossSetted == true) {
-			window.setView(_vista);
-
-			window.draw(*_background);
-
-			window.draw(*_map);
-
-			for (int i = 0; i < _plataformasN.size(); i++) {
-				window.draw(_plataformasN[i]->getShape());
-			}
-
-
-			window.draw(*_personaje);
-
-			for (int i = 0; i < _crystals.size(); i++) {
-				window.draw(*_crystals[i]);
-			}
-
-
-			for (int i = 0; i < _tottems.size(); i++) {
-				window.draw(*_tottems[i]);
-			}
-
-			window.draw(*mago);
-
-			window.draw(_overlay);
-
-
-			window.setView(window.getDefaultView());
-
-			_ui->drawUi(window);
-
-		}
-
-		break;
-	case NIVELES::WIN:  // ******************************************* WIN LOSE DRAWER ************************************************
-
-		//window.draw(_resultado);
-
-		break;
-	case NIVELES::LOSE:
-
-		menu.draw(window);
-		//window.draw(_resultado);
-
-		break;
-
-	}
-	*/
 }
 
 
@@ -775,7 +632,6 @@ void Nivel::gameStateController(b2World& world)
 
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-				//_lose = true;
 				_musicaFondo.stop();  // *****************************************			
 				menu.setFrutasRecolectadas(frutasRecolectadas); // *********
 				_nivel = NIVELES::LOSE;
@@ -788,7 +644,7 @@ void Nivel::gameStateController(b2World& world)
 
 			}
 			else if (_portalState == true && _teleporting == true) {
-
+				bossSetted = true;
 				cleanLevel(world);
 				_nivel = NIVELES::PRESET_BOSS;
 	
@@ -823,63 +679,6 @@ void Nivel::gameStateController(b2World& world)
 		
 	}
 
-	/*
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-	/
-
-	/
-	/
-	*/
-	/*
-	
-	if (_nivel == NIVELES::NIVEL_1 && settingAll == false) {
-
-
-		if (_lose == false) {
-
-			bool* _alive = _personaje->getVida();
-			int time = _ui->getTime();
-
-			if (_alive[0] == false || time >= 3) {
-				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-				_lose = true;
-				cleanLevel(world);
-				menu.setFrutasRecolectadas(frutasRecolectadas);
-				_nivel = NIVELES::LOSE;
-			}
-			else if (_ui->getPoints() > 1000 && _nivel != NIVELES::BOSS && _portalState == false) {
-
-				setPortal(world);
-				_portalState = true;
-
-			}
-			else if (_portalState == true && _teleporting == true) {
-
-				cleanLevel(world);
-				_nivel = NIVELES::BOSS;
-				//clean = true;
-				//settingAll = true;
-			}
-
-		}
-
-	}
-	else if (_nivel == NIVELES::NIVEL_1 && settingAll == false) {
-
-	}
-	*/
 }
 
 void Nivel::vistaSetViewPort(sf::FloatRect viewport, sf::RenderWindow& window) {
@@ -901,12 +700,7 @@ void Nivel::cleanLevel(b2World& world) {
 			_plataformasN[i]->destroyBody(world);
 		}
 
-		for (int i = 0; i < _crystals.size(); i++) {
-			_crystals[i]->destroyBody(world);
-		}
-		for (int i = 0; i < _tottems.size(); i++) {
-			_tottems[i]->destroyBody(world);
-		}
+
 		////////////
 		for (const auto& enemigo : enemigos) {
 			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
@@ -941,8 +735,25 @@ void Nivel::cleanLevel(b2World& world) {
 			_portal.reset();
 		}
 
-		_personaje->destroyBody(world);
+		if (bossSetted) {
 
+			mago->destroyBody(world);
+			mago.reset();
+
+			for (int i = 0; i < _crystals.size(); i++) {
+				_crystals[i]->destroyBody(world);
+			}
+			_crystals.clear();
+
+			for (int i = 0; i < _tottems.size(); i++) {
+				_tottems[i]->destroyBody(world);
+			}
+			_tottems.clear();
+
+			bossSetted = false;
+		}
+
+		_personaje->destroyBody(world);
 		enemigos.clear();
 		aldeanos.clear();
 		_frutas.clear();
@@ -951,14 +762,13 @@ void Nivel::cleanLevel(b2World& world) {
 		_background.reset();
 		_personaje.reset();
 		_ui.reset();
-
-		_crystals.clear();
-		_tottems.clear();
+		///
+	
 
 		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
-		clean = true;
+		//clean = true;
 	}
-	else if (_nivel == NIVELES::NIVEL_1 && _portalState == true) {
+	else if (_nivel == NIVELES::NIVEL_1 && _teleporting == true) {
 		for (const auto& enemigo : enemigos) {
 			if (auto calavera = std::dynamic_pointer_cast<Skull>(enemigo)) {
 				calavera->destroyBody(world);
@@ -1000,7 +810,7 @@ void Nivel::cleanLevel(b2World& world) {
 		_portal.reset();
 		_portalState = false;
 		_teleporting = false;
-		clean = true;
+		//clean = true;
 	}	
 	if (_nivel == NIVELES::WIN) {
 
@@ -1019,6 +829,7 @@ void Nivel::cleanLevel(b2World& world) {
 	
 
 		_personaje->destroyBody(world);
+		mago->destroyBody(world);
 
 
 		_plataformasN.clear();
@@ -1028,23 +839,40 @@ void Nivel::cleanLevel(b2World& world) {
 		_background.reset();
 		_personaje.reset();
 		_ui.reset();
+		mago.reset();
 
-		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
-		clean = true;
+		//std::cout << "Se realizo la limpieza de los vectores" << std::endl;
+		//clean = true;
 	}
 	
-	// Agregado Ale
-	settingAll = true;
-	_lose = false;
+
+
+}
+
+
+void Nivel::setPortalAlert() {
+
+	if (!font.loadFromFile("./assets/fonts/Pixelon.ttf")) {
+		std::cout << "Error al cargar la fuente" << std::endl;
+	}
+
+	_portalAlert.setFont(font);
+	_portalAlert.setScale(0.8f, 1.0f); // 1.0 para mantener el ALTO, 0.8 para comprimir ANCHO
+	_portalAlert.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
+	_portalAlert.setOutlineThickness(5); // Grosor del contorno
+	_portalAlert.setString("Un portal misterioso aparecio!");
+	_portalAlert.setCharacterSize(70);
+
+	_portalAlert.setFillColor(sf::Color(180, 80, 80, 255));
+	_portalAlert.setPosition(130.0f, 1.0f);
+
 
 }
 
 
 Nivel::~Nivel()
 {
-	if (mago != nullptr) {
-		delete mago;
-	}
+
 
 }
 
