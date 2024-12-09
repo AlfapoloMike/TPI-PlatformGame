@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "F:\\TPI-PlatformGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\FatBird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:FatBird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\Aldeano.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:Aldeano.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|F:\\TPI-PlatformGame\\GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7A850125-B0AE-40BA-846A-42338BE06C76}|PlatformGame.vcxproj|solutionrelative:GameContactListener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -31,19 +39,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FatBird.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\FatBird.cpp",
+              "RelativeDocumentMoniker": "FatBird.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\FatBird.cpp",
+              "RelativeToolTip": "FatBird.cpp",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T14:09:45.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Aldeano.cpp",
+              "DocumentMoniker": "F:\\TPI-PlatformGame\\Aldeano.cpp",
+              "RelativeDocumentMoniker": "Aldeano.cpp",
+              "ToolTip": "F:\\TPI-PlatformGame\\Aldeano.cpp",
+              "RelativeToolTip": "Aldeano.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T14:09:44.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameContactListener.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeDocumentMoniker": "GameContactListener.cpp",
               "ToolTip": "F:\\TPI-PlatformGame\\GameContactListener.cpp",
               "RelativeToolTip": "GameContactListener.cpp",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAAAPUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAL4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-07T01:47:35.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Nivel.cpp",
               "DocumentMoniker": "F:\\TPI-PlatformGame\\Nivel.cpp",
               "RelativeDocumentMoniker": "Nivel.cpp",
