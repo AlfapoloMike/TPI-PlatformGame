@@ -34,12 +34,12 @@ void PuntajeJugador::setPuntaje(int puntos){
 // SOBRECARGA DE OPERADOR
 bool PuntajeJugador::operator<(PuntajeJugador aux){
 
-	if (this->_puntaje < aux._puntaje) {
+	if (_puntaje < aux._puntaje) {
 		return true;
 	}
-	else if (this->_puntaje == aux._puntaje) {
+	else if (_puntaje == aux._puntaje) {
 		// > 0  Porque devuelve la diferencia entre el nombre1 y nombre2 comparando sus valores(de tabla ascii) de sus respectivas iniciales.
-		return std::strcmp(this->_nombreJugador, aux._nombreJugador) > 0;
+		return std::strcmp(_nombreJugador, aux._nombreJugador) > 0;
 	}
 	return false;
 }

@@ -271,7 +271,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 {
 
 	gameStateController(world);
-	setMusic();  // ***********************************************************
+	setMusic(); 
 
 
 	switch (_nivel)
@@ -349,7 +349,7 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 		break;
 	case NIVELES::PRESET_BOSS:
 
-		_musicaFondo.stop(); // ************************************************************** PODRIA IR EN BOSS TAMBIEN
+		_musicaFondo.stop(); 
 		_nivel = NIVELES::BOSS;
 		setMap(world);
 		setCrystals(world, 0);
@@ -437,9 +437,9 @@ void Nivel::cmdNivel(sf::Event& event) {
 			menu.manejoEvents(event, menuSi);
 		//}
 		break;
-	case NIVELES::WIN:  // ******************************************* WIN LOSE cmdNIVEL ************************************************
+	case NIVELES::WIN:  
 
-		if (event.type == sf::Event::KeyPressed) { // *****************************
+		if (event.type == sf::Event::KeyPressed) { 
 			if (event.key.code == sf::Keyboard::Escape) {
 			//	std::cout << "APRETE ESCAPE EN WIN. Bloque para guardar puntaje y actualizar archivo" << std::endl;
 				menu.setState("menu");
@@ -601,9 +601,9 @@ void Nivel::nivelDrawer(sf::RenderWindow& window)
 			_ui->drawUi(window);
 
 		break;
-	case NIVELES::WIN:  // ******************************************* WIN LOSE DRAWER ************************************************
+	case NIVELES::WIN:  
 
-		menu.draw(window); // *************************************
+		menu.draw(window); 
 
 		break;
 	case NIVELES::LOSE:
@@ -630,8 +630,8 @@ void Nivel::gameStateController(b2World& world)
 
 			if (_alive[0] == false || time >= 3) {
 				std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-				_musicaFondo.stop();  // *****************************************			
-				menu.setFrutasRecolectadas(frutasRecolectadas); // *********
+				_musicaFondo.stop();		
+				menu.setFrutasRecolectadas(frutasRecolectadas); 
 				_nivel = NIVELES::LOSE;
 				cleanLevel(world);
 			}

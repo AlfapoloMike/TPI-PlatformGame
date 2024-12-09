@@ -71,6 +71,16 @@ Historia::Historia() {
     _historiaText.setString(_historia);
     _historiaText.setCharacterSize(20);
     _historiaText.setPosition(45.0f, 100.0f); // Ajustar posición para centrar historia
+
+    storyTextDisplay.setFont(font); // Establecer la fuente
+    storyTextDisplay.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
+    storyTextDisplay.setOutlineThickness(3); // Grosor del contorno
+    storyTextDisplay.setOutlineColor(sf::Color::Black); // Color del contorno
+    storyTextDisplay.setScale(0.8f, 1.0f);
+    storyTextDisplay.setCharacterSize(20); // Ajusta el tamaño de la fuente si es necesario
+    storyTextDisplay.setPosition(45.0f, 100.0f); // Posición en la ventana (ajusta según sea necesario)
+    //storyTextDisplay.setFillColor(sf::Color(180, 80, 80, 255)); // Color ROJIZO
+    storyTextDisplay.setFillColor(sf::Color::White); // Color BLANCO
 }
 
 Historia::~Historia() {
@@ -113,6 +123,8 @@ void Historia::update(bool& _completa, bool& noComenzar) {
         }
     }
 
+    storyTextDisplay.setString(_textoMostrado); // Texto que se mostrará
+
 }
 
 void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -122,7 +134,7 @@ void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(_historiaTitulo, states);        // Dibuja el título
 
     // Dibujar solo el texto que ha sido mostrado hasta ahora
-    sf::Text storyTextDisplay;
+    /*sf::Text storyTextDisplay;
     storyTextDisplay.setFont(font); // Establecer la fuente
     storyTextDisplay.setStyle(sf::Text::Bold); // Aplicar negrita para mayor espesor
     storyTextDisplay.setOutlineThickness(3); // Grosor del contorno
@@ -132,7 +144,7 @@ void Historia::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     storyTextDisplay.setCharacterSize(20); // Ajusta el tamaño de la fuente si es necesario
     storyTextDisplay.setPosition(45.0f, 100.0f); // Posición en la ventana (ajusta según sea necesario)
     //storyTextDisplay.setFillColor(sf::Color(180, 80, 80, 255)); // Color ROJIZO
-    storyTextDisplay.setFillColor(sf::Color::White); // Color BLANCO
+    storyTextDisplay.setFillColor(sf::Color::White); // Color BLANCO*/
     target.draw(storyTextDisplay, states); // Dibujar el texto de la historia
     target.draw(_historiaPress, states);  // Dibujar los botones o texto adicional si es necesario
 

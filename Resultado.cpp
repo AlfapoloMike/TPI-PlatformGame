@@ -17,9 +17,7 @@ Resultado::Resultado() {
     if (!conteoPuntos.openFromFile("./assets/audios/conteopuntos.mp3")) {
         std::cout << "Error al cargar audio Resultado - conteoPuntos ";
     }
-    //if (!gameover.openFromFile("./assets/audios/gameover.mp3")) {
-    //    std::cout << "Error al cargar audio Resultado - gameover ";
-    //}
+
     // ESPACIOS SEPARADORES
     for (int i = 0; i < 8; i++) {
         espacioCant[i] = "            ";
@@ -491,8 +489,7 @@ void Resultado::setGano(bool vencio) {
 void Resultado::setCantidadesRecolectadas(int frutas[]) {
     for (int i = 0; i < 8; i++) {
         cantidades[i] = frutas[i];
-        //cantidades[i] = 0;
-        std::cout << cantidades[i] << std::endl;
+        //std::cout << cantidades[i] << std::endl;
     }
 }
 
