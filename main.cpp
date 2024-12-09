@@ -1,32 +1,9 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "./packages/Box2D-static.2.4.1.1/build/native/include/box2d/box2d.h"
-#include "Background.h"
-#include "Map.h"
-////// PRUEBA DE CALAVERA ENEMIGO
-#include "Enemigo.h" 
-#include "Skull.h"
-///// PRUEBA FRUTAS
-#include "Frutas.h"
-//// PRUEBA PLATAFORMAS
-#include "Plataformas.h" 
-/// INCLUYENDO EL NIVEL
-#include "Nivel.h"
-/// INCLUDE DE ALE
-#include "Jugador.h"
-#include "Aldeano.h"
-#include "Tortuga.h"
-#include "Conejo.h"
-#include "Fatbird.h"
-
-#include "GameUi.h"
 #include "GameContactListener.h"
+#include "Nivel.h"
 
-
-#include "Portal.h"
-#include "Laser.h"
-#include "Crystal.h"
-#include "IceBall.h"
 
 using namespace std;
 
@@ -38,15 +15,10 @@ int main()
 	window.setFramerateLimit(60);
 	srand((unsigned)time(NULL));
 
-	///////////TODO ESTO DEBERIA IR EN UNA CLASE NIVEL
-
 
 	//// SE CREA UN CLOCK Y UN DELTA TIME PARA CONTROLAR LAS ANIMACIONES.
 	float deltaTime = 0.0f;
 	sf::Clock clock;
-
-
-	//////////////////////PRUEBAS DE BOX2D*********************************************
 
 	 // Definir la gravedad (ej. 9.8 m/s^2 hacia abajo)
 	b2Vec2 gravity(0.0f, -9.8f);
@@ -59,8 +31,6 @@ int main()
 	Nivel newNivel(0, world, pixelMetro);
 
 	GameContactListener _contactListener;
-
-
 	world.SetContactListener(&_contactListener);
 
 
