@@ -193,12 +193,10 @@ void Frutas::setRandomPosition()
 
 	
 	if (randomX >= 20 && randomX <= 22 && randomY >= 2.5 && randomY <= 11) {
-		std::cout << "Debe cambiar de posicion " << std::endl;
 		setRandomPosition();
 
 	}
 	else if (randomX >= 1.0 && randomX <= 16.5 && randomY >= 15 && randomY < 18.5) {
-		std::cout << "Debe cambiar de posicion " << std::endl;
 
 		setRandomPosition();
 	}
