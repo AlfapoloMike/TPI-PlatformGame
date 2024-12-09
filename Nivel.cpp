@@ -87,7 +87,7 @@ void Nivel::setFruits(b2World& world, float deltaTime)
 
 	for (int i = 0; i < _frutas.size(); i++) {
 		if (_frutas[i]->getPickedState() == true) {
-			std::cout << _frutas[i]->getPoints() << std::endl;
+
 			frutasRecolectadas[_frutas[i]->getFruitType() - 1]++; // **************************
 			_ui->sumarPuntos(_frutas[i]->getPoints());
 			_frutas.erase(_frutas.begin() + i);
@@ -278,7 +278,6 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 	{
 	case NIVELES::PRESET_NIVEL:
 		_nivel = NIVELES::NIVEL_1;
-		std::cout << "PRIMER SETEO" << std::endl;
 		setMap(world);
 		setEnemigos(world, _pixelMetro);
 		setPlayer(world);
@@ -352,7 +351,6 @@ void Nivel::nivelUpdate(b2World& world, sf::RenderWindow& window, float deltaTim
 
 		_musicaFondo.stop(); // ************************************************************** PODRIA IR EN BOSS TAMBIEN
 		_nivel = NIVELES::BOSS;
-		std::cout << " PASAMOS AL MAPA DEL BOSS " << std::endl;
 		setMap(world);
 		setCrystals(world, 0);
 		setMago(world);
@@ -443,7 +441,7 @@ void Nivel::cmdNivel(sf::Event& event) {
 
 		if (event.type == sf::Event::KeyPressed) { // *****************************
 			if (event.key.code == sf::Keyboard::Escape) {
-				std::cout << "APRETE ESCAPE EN WIN. Bloque para guardar puntaje y actualizar archivo" << std::endl;
+			//	std::cout << "APRETE ESCAPE EN WIN. Bloque para guardar puntaje y actualizar archivo" << std::endl;
 				menu.setState("menu");
 				PuntajeJugador jugador(menu.getNombreJugador(), menu.getPuntajeFinal());
 				archivo.grabarMarcador(jugador);
@@ -459,7 +457,7 @@ void Nivel::cmdNivel(sf::Event& event) {
 
 		if (event.type == sf::Event::KeyPressed) {
 			if (event.key.code == sf::Keyboard::Escape) {
-				std::cout << "APRETE ESCAPE. Bloque para guardar puntaje y actualizar archivo" << std::endl;
+			//	std::cout << "APRETE ESCAPE. Bloque para guardar puntaje y actualizar archivo" << std::endl;
 				menu.setState("menu");
 				PuntajeJugador jugador(menu.getNombreJugador(), menu.getPuntajeFinal());
 				archivo.grabarMarcador(jugador);
@@ -661,8 +659,6 @@ void Nivel::gameStateController(b2World& world)
 
 
 		if (_alive[0] == false || time >= 3) {
-			std::cout << " LA PARTIDA HA TERMINADO - PERDISTE ! " << std::endl;
-			//_lose = true;
 			_musicaFondo.stop(); // *******************************************
 			menu.setFrutasRecolectadas(frutasRecolectadas); 
 			_nivel = NIVELES::LOSE;
@@ -673,7 +669,6 @@ void Nivel::gameStateController(b2World& world)
 			menu.setFrutasRecolectadas(frutasRecolectadas); 
 			_nivel = NIVELES::WIN;
 			cleanLevel(world);
-			std::cout << " LA PARTIDA HA TERMINADO - GANASTE ! " << std::endl;
 
 		}
 		
@@ -765,8 +760,6 @@ void Nivel::cleanLevel(b2World& world) {
 		///
 	
 
-		std::cout << "Se realizo la limpieza de los vectores" << std::endl;
-		//clean = true;
 	}
 	else if (_nivel == NIVELES::NIVEL_1 && _teleporting == true) {
 		for (const auto& enemigo : enemigos) {

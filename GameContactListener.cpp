@@ -615,7 +615,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 
 			player = reinterpret_cast<Jugador*>(bodyA->GetUserData().pointer);
 
-			std::cout << "Normal A: (" << normal.x << ", " << normal.y << ")" << std::endl;
+			//std::cout << "Normal A: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
 				if (normal.y < 0.0f && normal.x <0.2f)
@@ -641,7 +641,7 @@ void GameContactListener::BeginContact(b2Contact* contact)
 		else if (categoryB & PLAYER) {
 			player = reinterpret_cast<Jugador*>(bodyB->GetUserData().pointer);
 
-			std::cout << "Normal B: (" << normal.x << ", " << normal.y << ")" << std::endl;
+			//std::cout << "Normal B: (" << normal.x << ", " << normal.y << ")" << std::endl;
 
 			if (player) {
 				if (normal.y > 0.0f && normal.x < 0.2f)
